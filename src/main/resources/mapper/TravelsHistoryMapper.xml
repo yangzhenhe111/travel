@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.travels.dao.TravelsHistoryMapper">
+
+    <sql id="column">
+        a.id AS "id",
+        a.user_id AS "userId",
+        a.travels_id AS "travelsId",
+        a.create_time AS "createTime",
+        a.is_deleted AS "isDeleted"
+    </sql>
+    <select id="getAllHistoryList" resultType="com.cy.travels.model.dto.TravelsHistoryDTO">
+        select
+        <include refid="column">
+        </include>,
+        t.publish_date AS "publishDate",
+        t.cover AS "cover",
+        t.name AS "name",
+        t.address AS "address",
+        t.opentime AS "opentime"
+        from travels_history a
+        left join travels t on a.travels_id = t.id
+        where a.is_deleted = 'N' AND t.is_deleted = 'N'
+        <if test="userId!=null">
+            and a.user_id = #{userId}
+        </if>
+        order by t.publish_date DESC
+    </select>
+</mapper>

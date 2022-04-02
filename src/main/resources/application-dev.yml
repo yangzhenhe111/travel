@@ -1,0 +1,9 @@
+server:
+  port: 8090
+
+#spring:
+#  datasource:
+#    username: root
+#    password: travelsdevmysql20220401
+
+#  INSERT INTO user (host, user, authentication_string, select_priv, insert_priv, ssl_cipher,x509_issuer,x509_subject, update_priv) VALUES ('@', 'travelsdevmysqluser20220401', MD5('travelsdevmysqlpassword20220401'), 'Y', 'Y','','','', 'Y');

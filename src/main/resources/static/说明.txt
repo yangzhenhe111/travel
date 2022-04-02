@@ -1,0 +1,2 @@
+
+1.在AppModel中的159行添加builder.addHeader("header-user", new Gson().toJson(CommonUtils.getLoginUser(context)));//添加请求头
