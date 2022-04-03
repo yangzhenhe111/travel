@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.TrafficActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="@color/frag_bg"
+            android:id="@+id/detail_top_bar">
+            <ImageButton
+                android:id="@+id/traffic_top_back"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent"
+                android:src="@drawable/fanhui"
+
+                android:background="@null"
+                android:tint="@color/blue_edit"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/top_title"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="交通详情"
+                android:textSize="@dimen/sp_20"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:id="@+id/shanchu"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="@+id/top_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageButton
+                    android:id="@+id/traffic_shanchu_image"
+                    android:layout_width="61dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="60dp"
+                    android:background="@null"
+
+                    android:src="@drawable/baocun"
+                    android:tint="@color/blue_edit"
+                    tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/traffic_shanchu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="删除"
+                    android:layout_marginLeft="60dp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="@+id/baocun"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <ImageButton
+                    android:id="@+id/traffic_baocun_image"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baocun"
+                    android:layout_marginLeft="70dp"
+
+                    android:background="@null"
+                    android:tint="@color/blue_edit"
+                    tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/traffic_baocun_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存"
+                    android:layout_marginLeft="70dp"></TextView>
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="交通信息"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <EditText
+                android:id="@+id/Traffic_Information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#182C57"
+                android:textColorHint="#182C57"
+                android:hint="介绍一下如何到达景点吧"
+                android:background="@drawable/edittext_back"></EditText>
+
+
+        </LinearLayout>
+
+        <View style="@style/line_2"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="交通建议"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold">
+            </TextView>
+            <EditText
+                android:id="@+id/Traffic_suggestion"
+                android:inputType="textMultiLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#182C57"
+                android:textColorHint="#182C57"
+                android:background="@drawable/edittext_back"
+                android:theme="@style/loginEditText"
+                android:drawablePadding="10dp"
+                android:hint="对于本地的交通，告诉大家一些建议吧！"></EditText>
+
+        </LinearLayout>
+
+        <View style="@style/line_2"/>
+
+    </LinearLayout>
+</ScrollView>

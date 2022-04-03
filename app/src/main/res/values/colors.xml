@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">#2A5EFF</color>
+
+    <!--
+颜色透明度描述：
+前两位是透明度，后六位是颜色代码；不透明前两位是 FF ，全透明前两位是 00
+透明度90% ：E6
+透明度80%： CC
+透明度70%： B3
+透明度60%： 99
+半透明50%： 80
+透明度40%： 66
+透明度30%： 4D
+透明度20%： 33
+透明度10%： 1A
+    -->
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_30">#30FFFFFF</color>
+    <color name="white_fd">#FDFDFD</color>
+    <color name="black_3333">#333333</color>
+    <color name="black_33_50">#80333333</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_30">#4D000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_10">#1A000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_666">#666666</color>
+    <color name="color_f6">#f6f6f6</color>
+    <color name="gray_999">#999999</color>
+    <color name="gray_e9">#e9e9e9</color>
+    <color name="gray_9d9d">#9D9D9D</color>
+    <color name="gray_6d6d">#6D6D6E</color>
+    <color name="gray_acac">#ACACAD</color>
+    <color name="gray_cc">#CCCCCC</color>
+    <color name="gray_f4">#F4F4F4</color>
+    <color name="gray_f5">#F5F5F5</color>
+    <color name="gray_f7">#F7F7F7</color>
+
+
+    <color name="gray_f4f4">#F4F4F4</color>
+    <color name="gray_f1">#F1F1F1</color>
+    <color name="blue_5a82">#5A82FE</color>
+    <color name="accent_80">#CC2A5EFF</color>
+    <color name="blue_2a70ff">#2A70FF</color>
+    <color name="blue_2a5e">#2A5EFF</color>
+    <color name="color_time">#4a4a4a</color>
+    <color name="blue_2a5e_30">#4D2A5EFF</color>
+    <color name="blue_79cbfd">#79CBFD</color>
+    <color name="blue_48c3">#48C3FE</color>
+    <color name="blue_8fd7fa">#8FD7FA</color>
+    <color name="blue_aabf">#AABFFF</color>
+    <color name="blue_99b3ff">#99B3FF</color>
+    <color name="blue_e9edfb">#E9EDFB</color>
+    <color name="blue_d6e0ff">#D6E0FF</color>
+    <color name="blue_e9efff">#E9EFFF</color>
+    <color name="blue_f6f8fd">#F6F8FD</color>
+    <color name="blue_eaf0ff">#EAF0FF</color>
+    <color name="blue_e8eeff">#E8EEFF</color>
+    <color name="blue_10">#333A69FC</color>
+    <color name="blue_20">#4D598BFF</color>
+    <color name="wire_color_e5e5">#E5E5E5</color>
+    <color name="wire_color_d3d3">#D3D3D3</color>
+    <color name="default_bg">#EBEEF3</color>
+    <color name="read_ff2f2a">#FF2F2A</color>
+    <color name="yellow_f5b139">#F5B139</color>
+    <color name="yellow_f0cf9b">#F0CF9B</color>
+    <color name="yellow_fff100">#FFF100</color>
+    <color name="yellow_fff8e0">#FFF8E0</color>
+    <color name="gold">#F0CF9B</color>
+    <color name="blue_edit">#43596F</color>
+    <color name="frag_bg">#e5ffffff</color>
+
+
+    <color name="main_btn_wire_color">#E5E5E5</color>
+    <color name="Transparent">#00000000</color>
+    <color name="golden">#F0CF9B</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="input">#e5ffffff</color>
+    <color name="black_41">#414141</color>
+    <color name="brown_6a410d">#6A410D</color>
+
+    <color name="shadow">#cc222222</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="btn_blue_normal">#9EB6FF</color>
+    <color name="btn_blue_pressed">#2A5EFF</color>
+    <color name="translucent_white">#61FFFFFF</color>
+    <color name="gray_fa">#FAFAFA</color>
+    <color name="gray_f0">#F0F0F0</color>
+    <color name="blue_30b7f8">#30B7F8</color>
+    <color name="black_1b">#1B1B1B</color>
+    <color name="wire_color_b3">#B3B3B3</color>
+    <color name="green_437b">#43E7AB</color>
+    <color name="graye5e5">#E5E5E5</color>
+    <color name="grayf1">#F1F1F1</color>
+    <color name="item_content_new">#325181</color>
+    <color name="black_0b">#0B0B0b</color>
+    <color name="read_d33a45">#D33A45</color>
+    <color name="read_fd2f2a">#FD2F2A</color>
+    <color name="pink">#F079B2</color>
+    <color name="gray_d1">#D1D1D1</color>
+    <color name="black_40">#66000000</color>
+    <color name="green_43e7ab">#43E7AB</color>
+    <color name="blue_2acfff">#2ACFFF</color>
+    <color name="green_light">#93de8e</color>
+    <color name="transparent_black_dark">#88000000</color>
+    <color name="black_02_40">#66020202</color>
+    <color name="green_05a56a">#05A56A</color>
+    <color name="green_25db76">#25DB76</color>
+    <color name="green_2ddd88">#2DDD88</color>
+    <color name="yellow_af740b">#AF740B</color>
+    <color name="blue_00aeff">#00AEFF</color>
+    <color name="gray_aa">#AAAAAA</color>
+    <color name="red_f18676">#F18676</color>
+    <color name="gray_ed">#EDEDED</color>
+    <color name="green_9db90f">#9DB90F</color>
+    <color name="green_9cb90f">#9CB90F</color>
+    <color name="purple_f079b2">#F079B2</color>
+    <color name="gray_dd">#DDDDDD</color>
+    <color name="red_ff5350">#FF5350</color>
+
+
+    <!--分割线-->
+    <color name="color_f9cc00">#f9cc00</color>
+    <color name="color_31d3ff">#31d3ff</color>
+    <!--结束分割线-->
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_frame_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_radio_group"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/main_btm_wire"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/wire_color_e5e5"
+        app:layout_constraintBottom_toTopOf="@+id/main_radio_group"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/main_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="@dimen/dp_50"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <RadioButton
+            android:id="@+id/home_radio_btn"
+            style="@style/MainBtm.RadioBtnStyle"
+            android:checked="true"
+            android:drawableTop="@drawable/home_radio_btn_selector"
+            android:text="@string/home_str"
+            android:textColor="@color/radiotextcolor"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/spots_radio_btn"
+            style="@style/MainBtm.RadioBtnStyle"
+            android:visibility="visible"
+            android:drawableTop="@drawable/spots_radio_btn_selector"
+            android:text="@string/spots_str"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/wtite_radio_btn"
+            style="@style/MainBtm.RadioBtnStyle"
+            android:visibility="visible"
+            android:drawableTop="@drawable/qa_radio_btn_selector"
+            android:text="@string/qa_str"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:id="@+id/mine_radio_btn"
+            style="@style/MainBtm.RadioBtnStyle"
+            android:drawableTop="@drawable/my_radio_btn_selector"
+            android:text="@string/mine_str"
+            android:textSize="20dp"/>
+
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

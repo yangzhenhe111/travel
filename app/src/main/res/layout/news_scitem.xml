@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/scnewsitem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/frag_bg"
+        android:paddingBottom="@dimen/sp_13">
+
+        <ImageView
+            android:id="@+id/scnewsFmIv"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_margin="@dimen/sp_13"
+            android:src="@color/cardview_dark_background" />
+
+        <TextView
+            android:id="@+id/sctitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_13"
+            android:layout_toRightOf="@+id/scnewsFmIv"
+            android:text="xxx医生"
+            android:textColor="#4a4a4a"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/sccreateTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sctitleTv"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@+id/scnewsFmIv"
+            android:text="20210606"
+            android:textColor="@color/transparent_black_dark"
+            android:textSize="@dimen/sp_13" />
+
+        <ImageView
+            android:id="@+id/scview_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_below="@+id/sccreateTimeTv"
+            android:layout_toRightOf="@+id/scnewsFmIv"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/view">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/scbrowse_countTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sccreateTimeTv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_toRightOf="@+id/scview_iv"
+            android:text="111222"
+            android:textColor="@color/transparent_black_dark"
+            android:textSize="@dimen/sp_13" />
+
+        <ImageView
+            android:id="@+id/scfill_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_below="@+id/sccreateTimeTv"
+            android:layout_toRightOf="@+id/scbrowse_countTv"
+            android:layout_marginLeft="100dp"
+            android:src="@mipmap/sc_fill">
+
+        </ImageView>
+    </RelativeLayout>
+</LinearLayout>

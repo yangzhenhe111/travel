@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.TravelsDetailActivity">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@color/frag_bg"
+                android:id="@+id/detail_top_bar">
+                <TextView
+                    android:id="@+id/top_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的游记"
+                    android:textSize="@dimen/sp_20"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <LinearLayout
+                    android:id="@+id/baocun"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="@+id/top_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/wtite_baocun_image"
+                        android:layout_width="61dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="60dp"
+                        android:background="@null"
+                        android:src="@drawable/baocun"
+                        android:tint="@color/blue_edit"
+                        tools:ignore="MissingConstraints" />
+                    <TextView
+                        android:id="@+id/wtite_baocun_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="保存"
+                        android:layout_marginLeft="60dp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="@+id/baocun"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <ImageButton
+                        android:id="@+id/wtite_fabiao_image"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/zhuangfa"
+                        android:layout_marginLeft="70dp"
+
+                        android:background="@null"
+                        android:tint="@color/blue_edit"
+                        tools:ignore="MissingConstraints" />
+                    <TextView
+                        android:id="@+id/wtite_fabiao_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发表"
+                        android:layout_marginLeft="70dp"></TextView>
+                </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/write_cover"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:background="#ffffcc">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:id="@+id/write_sc_but"
+                android:text="上传封面"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:background="@drawable/write_fragment_sc_bck"
+                ></Button>
+        </LinearLayout>
+
+        <View style="@style/line_1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/dangdigiakuang"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="当地概况"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/write_briefDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="230dp"
+                android:text="填写"></TextView>
+
+        </LinearLayout>
+
+        <View style="@style/line_1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/jiaotong"
+                android:layout_gravity="center">
+            </ImageView>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="交通"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/write_trafficInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填写"
+                android:layout_marginLeft="230dp"
+                android:layout_gravity="center">
+            </TextView>
+
+        </LinearLayout>
+
+        <View style="@style/line_1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/zhusu"
+                android:layout_gravity="center">
+            </ImageView>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="住宿"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/write_hotelInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填写"
+                android:layout_marginLeft="230dp"
+                android:layout_gravity="center">
+            </TextView>
+
+        </LinearLayout>
+
+        <View style="@style/line_1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/meishi"
+                android:layout_gravity="center">
+            </ImageView>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="8dp"
+                android:text="美食"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/write_resraurantInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填写"
+                android:layout_marginLeft="230dp"
+                android:layout_gravity="center">
+            </TextView>
+
+        </LinearLayout>
+
+        <View style="@style/line_1"/>
+
+        <TextView
+            android:id="@+id/ceshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/ceshi1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/ceshi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:id="@+id/ceshi3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+    </LinearLayout>
+</ScrollView>

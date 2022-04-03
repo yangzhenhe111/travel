@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/newsitem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/frag_bg"
+        android:paddingBottom="@dimen/sp_13">
+
+        <ImageView
+            android:id="@+id/doctorFmIv"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_margin="@dimen/sp_13"
+            android:src="@color/cardview_dark_background" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_13"
+            android:layout_toRightOf="@id/doctorFmIv"
+            android:text="张医生"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/createTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameTv"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="20210606"
+            android:layout_toRightOf="@id/doctorFmIv"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13" />
+
+        <ImageView
+            android:id="@+id/tellel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/tel1"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@id/doctorFmIv"
+            android:layout_below="@+id/createTimeTv"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/telTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/createTimeTv"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="18899019902"
+            android:layout_toRightOf="@id/tellel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13" />
+
+        <ImageView
+            android:id="@+id/yylabel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/yy"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toRightOf="@id/telTv"
+            android:layout_below="@+id/createTimeTv"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/yyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/createTimeTv"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="立即预约"
+            android:layout_toRightOf="@id/yylabel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_13" />
+
+
+    </RelativeLayout>
+</LinearLayout>

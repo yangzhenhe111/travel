@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical"
+    android:theme="@android:style/Theme.Light.NoTitleBar">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/frag_bg"
+        android:id="@+id/detail_top_bar">
+        <ImageButton
+            android:id="@+id/yy_top_back"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent"
+            android:src="@mipmap/back_icon"
+
+            android:background="@null"
+            android:tint="@color/blue_edit"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预定信息填报"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue_edit"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="end"
+            android:dividerPadding="20dp"
+            android:scrollbars="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景区名称:"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/yd_spotsnameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="峨眉山景区"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="end"
+            android:dividerPadding="20dp"
+            android:scrollbars="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景区地址:"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/yd_addressTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="都江堰市西南部青城山风景区"
+                
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="end"
+            android:dividerPadding="20dp"
+            android:scrollbars="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开放时间:"
+                
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="08:00开放（17:00停止入园）"
+                
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/yd_opentimeTv"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:showDividers="end"
+            android:dividerPadding="20dp"
+            android:scrollbars="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景区电话:"
+                
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="028-87111907"
+                
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/yd_telTv"
+                >
+
+            </TextView>
+
+<!--            <EditText-->
+<!--                android:id="@+id/yytime"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:textColor="#dbdbdb"-->
+<!--                android:textColorHint="#dbdbdb"-->
+<!--                android:theme="@style/loginEditText"-->
+<!--                android:drawablePadding="10dp"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:textSize="20sp"-->
+<!--                android:hint="输入预约时间">-->
+<!--            </EditText>-->
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出行日期:"
+            
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="如:2021-10-10"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_traveltimeEt"
+            >
+        </EditText>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成人数量:"
+            
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+
+        </TextView>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_adultsnumEt"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/yd_price1Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x 188元"
+            android:textColor="@color/red"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="儿童数量:"
+            
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_childnumEt"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/yd_price2Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x 0.5 x 188元"
+            android:textColor="@color/red"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/frag_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人信息填报"
+            android:gravity="center"
+            android:textColor="@color/blue_edit"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+
+            tools:ignore="MissingConstraints" />
+
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人名称:"
+            
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:hint="如:zs"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_linknameEt"
+            >
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人电话:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="如:18899119922"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_linktelEt"
+            >
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人邮箱:"
+            
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="如:889911xx@qq.com"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_linkemailEt"
+            >
+        </EditText>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/frag_bg">
+
+        <TextView
+            android:id="@+id/lkinfo_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预定人证件信息填报"
+            android:gravity="center"
+            android:textColor="@color/blue_edit"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+
+            tools:ignore="MissingConstraints" />
+
+<!--        <Button-->
+<!--            android:id="@+id/addTravelerBtn"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="新增"-->
+<!--            android:layout_marginLeft="160dp"-->
+<!--            android:layout_toRightOf="@+id/lkinfo_label"-->
+<!--          >-->
+
+<!--        </Button>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/removeTravelerBtn"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="删除"-->
+<!--            android:layout_toRightOf="@+id/addTravelerBtn"-->
+<!--            >-->
+<!--        </Button>-->
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预定人名称:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="如:zs"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_travelnameTv"
+            >
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号码:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="如:511500202011224354"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_cardTv"
+            >
+        </EditText>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/frag_bg">
+
+        <TextView
+            android:id="@+id/hotelinfo_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酒店信息填报"
+            android:gravity="center"
+            android:textColor="@color/blue_edit"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+
+            tools:ignore="MissingConstraints" />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酒店名称:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+<!--        <EditText-->
+<!--            android:layout_width="260dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="希尔顿酒店"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="20dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:id="@+id/yd_hotelnameTv"-->
+<!--            >-->
+<!--        </EditText>-->
+        <Spinner android:id="@+id/yd_hotelSel"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"></Spinner>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="18899119922"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_hoteltelEt"
+            >
+        </EditText>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="入住人数:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <EditText
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_hotelnumEt"
+            >
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酒店价格:"
+
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="1888"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/yd_hotelpriceTv"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/frag_bg">
+
+        <TextView
+            android:id="@+id/totalprice_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="费用信息总计"
+            android:gravity="center"
+            android:textColor="@color/blue_edit"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+
+            tools:ignore="MissingConstraints" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="总价格=(成人数*门票价)+(儿童数*门票价*0.5)+酒店房间数*酒店单价"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:showDividers="end"
+        android:dividerPadding="20dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="合计:3888元"
+            android:textColor="@color/red"
+            android:id="@+id/yd_totalpriceTv"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+       <Button
+            android:id="@+id/ydSaveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+            android:text="立刻预约"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            
+            android:background="@drawable/shape"
+            >
+        </Button>
+
+
+
+    </LinearLayout>
+</ScrollView>

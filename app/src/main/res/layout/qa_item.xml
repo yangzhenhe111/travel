@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/qaTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_20"
+        android:paddingLeft="10dp"
+        android:text="名字订错了怎么办？"
+        />
+
+    <TextView
+        android:id="@+id/qaAnswerTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_15"
+        android:paddingLeft="10dp"
+        android:text="其他信息不变更情况下，一般中文姓名错一个汉字且同音字或英文姓名错3个字母以内的情况下可协调更改一次，具体是否能操作以航司答复为准。"
+        />
+</LinearLayout>

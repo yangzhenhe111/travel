@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:orientation="horizontal"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:focusable="false"
+        android:orientation="vertical"
+        android:background="@drawable/card_background">
+        <ImageView
+            android:id="@+id/tjspots_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:focusable="false"
+            android:src="@drawable/lb1">
+        </ImageView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:focusable="false"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tjspots_name"
+                android:layout_width="match_parent"
+                android:focusable="false"
+                android:layout_height="30dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:ellipsize="none"
+                android:text="九寨沟"
+                android:textColor="#203152"
+                android:textSize="20sp"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tjspots_createTime"
+                android:layout_width="match_parent"
+                android:focusable="false"
+                android:layout_height="30dp"
+                android:layout_below="@id/tjspots_name"
+                android:text="20201118"
+                android:textSize="15sp"
+                >
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
