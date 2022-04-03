@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.SheHuan:NiceImageView:1.0.5@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/eee417afe151fa31ed12dbe9096d9b33/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/eee417afe151fa31ed12dbe9096d9b33/res" />
+      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/eee417afe151fa31ed12dbe9096d9b33/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/15e89d68d3cd05b0788a16a839330bbe/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/15e89d68d3cd05b0788a16a839330bbe/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/15e89d68d3cd05b0788a16a839330bbe/res" />
+      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7b680a8d02cebd0cc1aa08a64dc2c14f/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7b680a8d02cebd0cc1aa08a64dc2c14f/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7b680a8d02cebd0cc1aa08a64dc2c14f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4caabb71fcbf5bb7e18e8744dbc0cbb2/jetified-NiceImageView-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4caabb71fcbf5bb7e18e8744dbc0cbb2/jetified-NiceImageView-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4caabb71fcbf5bb7e18e8744dbc0cbb2/jetified-NiceImageView-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/212b1567d62f6341e466a5d961a95a05/jetified-NiceImageView-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/212b1567d62f6341e466a5d961a95a05/jetified-NiceImageView-1.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/212b1567d62f6341e466a5d961a95a05/jetified-NiceImageView-1.0.5/jars/classes.jar!/" />
+      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d73af7735b82c0616acd08636c64dc86/jetified-NiceImageView-1.0.5/AndroidManifest.xml" />
+      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d73af7735b82c0616acd08636c64dc86/jetified-NiceImageView-1.0.5/jars/classes.jar!/" />
+      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d73af7735b82c0616acd08636c64dc86/jetified-NiceImageView-1.0.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.github.SheHuan/NiceImageView/1.0.5/d07365f81fa8ecab87767a0abc3075cc18ac3b43/NiceImageView-1.0.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.github.SheHuan/NiceImageView/1.0.5/d07365f81fa8ecab87767a0abc3075cc18ac3b43/NiceImageView-1.0.5-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.SheHuan/NiceImageView/1.0.5/d07365f81fa8ecab87767a0abc3075cc18ac3b43/NiceImageView-1.0.5-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.github.SheHuan/NiceImageView/1.0.5/d07365f81fa8ecab87767a0abc3075cc18ac3b43/NiceImageView-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
