@@ -1,27 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.interpolator:interpolator:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/2d4ffd721c2fa3f8d29176aa6c5bef6d/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/2d4ffd721c2fa3f8d29176aa6c5bef6d/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/2d4ffd721c2fa3f8d29176aa6c5bef6d/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/2d4ffd721c2fa3f8d29176aa6c5bef6d/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/ef1f72160b2ef980eb0725103930025a/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/ef1f72160b2ef980eb0725103930025a/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/ef1f72160b2ef980eb0725103930025a/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/42608d17c9bc5462d0fb432b41a0bda2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/res" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/884715ee5d4759e99f0bf4b3058e7279/interpolator-1.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/androidx.interpolator/interpolator/1.0.0/fefd5e3cbc479b6b4a9532d05688a1e659e8d3d2/interpolator-1.0.0-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/androidx.interpolator/interpolator/1.0.0/fefd5e3cbc479b6b4a9532d05688a1e659e8d3d2/interpolator-1.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.interpolator/interpolator/1.0.0/fefd5e3cbc479b6b4a9532d05688a1e659e8d3d2/interpolator-1.0.0-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/androidx.interpolator/interpolator/1.0.0/fefd5e3cbc479b6b4a9532d05688a1e659e8d3d2/interpolator-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

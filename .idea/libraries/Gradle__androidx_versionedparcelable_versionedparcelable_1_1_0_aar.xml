@@ -1,27 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5df30755492e5e99febb886431a19f0f/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5df30755492e5e99febb886431a19f0f/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5df30755492e5e99febb886431a19f0f/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5df30755492e5e99febb886431a19f0f/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/dcba955172ae242fa4d17760ed8974c7/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/dcba955172ae242fa4d17760ed8974c7/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/dcba955172ae242fa4d17760ed8974c7/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/12886e71406643fb1682a1b593689a49/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/AndroidManifest.xml" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/94115104efb23786ea53cd1a51dde3af/versionedparcelable-1.1.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/androidx.versionedparcelable/versionedparcelable/1.1.0/d9085927216387af679d18b6f472bc0fc5c7cc81/versionedparcelable-1.1.0-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/androidx.versionedparcelable/versionedparcelable/1.1.0/d9085927216387af679d18b6f472bc0fc5c7cc81/versionedparcelable-1.1.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.versionedparcelable/versionedparcelable/1.1.0/d9085927216387af679d18b6f472bc0fc5c7cc81/versionedparcelable-1.1.0-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/androidx.versionedparcelable/versionedparcelable/1.1.0/d9085927216387af679d18b6f472bc0fc5c7cc81/versionedparcelable-1.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

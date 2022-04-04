@@ -1,36 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.hannesdorfmann.mosby:viewstate:2.0.1@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/20dbad9a6a34265410cd34e899aa5e72/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/20dbad9a6a34265410cd34e899aa5e72/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/20dbad9a6a34265410cd34e899aa5e72/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5495a1b00b351477f4ae52bd5dd7b7d3/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/daca756464d95948f546ae832f71d6e1/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/daca756464d95948f546ae832f71d6e1/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/daca756464d95948f546ae832f71d6e1/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c8c9e9326a8a5aff30145353c3d851b8/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c8c9e9326a8a5aff30145353c3d851b8/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c8c9e9326a8a5aff30145353c3d851b8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1845d4723c0dacd8baa797d8f4e5a81/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c9f0cb408d2b66f377bee60fac4a963d/jetified-viewstate-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c9f0cb408d2b66f377bee60fac4a963d/jetified-viewstate-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c9f0cb408d2b66f377bee60fac4a963d/jetified-viewstate-2.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58a70b57a225c2a30d90b60752a540ea/jetified-viewstate-2.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58a70b57a225c2a30d90b60752a540ea/jetified-viewstate-2.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58a70b57a225c2a30d90b60752a540ea/jetified-viewstate-2.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58a70b57a225c2a30d90b60752a540ea/jetified-viewstate-2.0.1/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d6f776432e5dbf102f3f849a13ff5573/jetified-viewstate-2.0.1/res" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d6f776432e5dbf102f3f849a13ff5573/jetified-viewstate-2.0.1/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/d6f776432e5dbf102f3f849a13ff5573/jetified-viewstate-2.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/7f382da0026d071d4022e02e19d3848a137dff63/viewstate-2.0.1-javadoc.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/7f382da0026d071d4022e02e19d3848a137dff63/viewstate-2.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/d757a518e60356d0a90a9fcbda61aa011c3a0eb4/viewstate-2.0.1-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/d757a518e60356d0a90a9fcbda61aa011c3a0eb4/viewstate-2.0.1-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/d757a518e60356d0a90a9fcbda61aa011c3a0eb4/viewstate-2.0.1-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/viewstate/2.0.1/d757a518e60356d0a90a9fcbda61aa011c3a0eb4/viewstate-2.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

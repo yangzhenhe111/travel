@@ -1,23 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.arch.core:core-runtime:2.1.0@aar">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/2b8ff1064d06098a12e5604779a95966/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/038061231da346d466ad19b006605642/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/038061231da346d466ad19b006605642/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/038061231da346d466ad19b006605642/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dee349823015b4a4453d3d0f78b2213f/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/res" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/AndroidManifest.xml" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5344f376b9f142648746b3ae893fe6dc/core-runtime-2.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/androidx.arch.core/core-runtime/2.1.0/f19886651c9946b39f83d8c184fd0e2ce9f43c16/core-runtime-2.1.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-runtime/2.1.0/f19886651c9946b39f83d8c184fd0e2ce9f43c16/core-runtime-2.1.0-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-runtime/2.1.0/f19886651c9946b39f83d8c184fd0e2ce9f43c16/core-runtime-2.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

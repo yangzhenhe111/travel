@@ -1,27 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.legacy:legacy-support-core-utils:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/771fb1d79f973c6e3c0bf1607e41314e/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/771fb1d79f973c6e3c0bf1607e41314e/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/771fb1d79f973c6e3c0bf1607e41314e/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/771fb1d79f973c6e3c0bf1607e41314e/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/538e069771f4901c9da2d0cb8083b48a/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/538e069771f4901c9da2d0cb8083b48a/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/538e069771f4901c9da2d0cb8083b48a/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25c252c7e5904fc69cf57e26ea6c8104/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/res" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bdfbb38555a741f74d62c90cf85e0b35/legacy-support-core-utils-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/androidx.legacy/legacy-support-core-utils/1.0.0/46c37f178088153618cfb0afef08ec96c48f93cb/legacy-support-core-utils-1.0.0-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/androidx.legacy/legacy-support-core-utils/1.0.0/46c37f178088153618cfb0afef08ec96c48f93cb/legacy-support-core-utils-1.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.legacy/legacy-support-core-utils/1.0.0/46c37f178088153618cfb0afef08ec96c48f93cb/legacy-support-core-utils-1.0.0-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/androidx.legacy/legacy-support-core-utils/1.0.0/46c37f178088153618cfb0afef08ec96c48f93cb/legacy-support-core-utils-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,36 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/914ae5a3ec1fbcebd02825ed3e083cf7/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/914ae5a3ec1fbcebd02825ed3e083cf7/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/914ae5a3ec1fbcebd02825ed3e083cf7/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/419ec08dc7172d7a97d0a9b3a7b49823/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/615169c080bad16ed8527c0a10fa4acf/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/615169c080bad16ed8527c0a10fa4acf/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/615169c080bad16ed8527c0a10fa4acf/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7d3bb0e76e7388addc8bc05ffe2630be/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7d3bb0e76e7388addc8bc05ffe2630be/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/7d3bb0e76e7388addc8bc05ffe2630be/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ab18c44ce3a36faf495a5eb6d7c1728f/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25fe2b98fd9f84bb6dcd0253eeda6530/jetified-rxpermissions-0.9.5/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25fe2b98fd9f84bb6dcd0253eeda6530/jetified-rxpermissions-0.9.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25fe2b98fd9f84bb6dcd0253eeda6530/jetified-rxpermissions-0.9.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/19e697292248dcb437472562f9a9fbdd/jetified-rxpermissions-0.9.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/19e697292248dcb437472562f9a9fbdd/jetified-rxpermissions-0.9.5/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/19e697292248dcb437472562f9a9fbdd/jetified-rxpermissions-0.9.5/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/19e697292248dcb437472562f9a9fbdd/jetified-rxpermissions-0.9.5/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/970bf544e3fa3a22410ce55a18a8dbdf/jetified-rxpermissions-0.9.5/AndroidManifest.xml" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/970bf544e3fa3a22410ce55a18a8dbdf/jetified-rxpermissions-0.9.5/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/970bf544e3fa3a22410ce55a18a8dbdf/jetified-rxpermissions-0.9.5/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/83c3ed06f00e7d6a03a73c6582b638c1709fc983/rxpermissions-0.9.5-javadoc.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/83c3ed06f00e7d6a03a73c6582b638c1709fc983/rxpermissions-0.9.5-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/85006e7be3b02081f955ddb444ac54dc5f18e808/rxpermissions-0.9.5-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/85006e7be3b02081f955ddb444ac54dc5f18e808/rxpermissions-0.9.5-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/85006e7be3b02081f955ddb444ac54dc5f18e808/rxpermissions-0.9.5-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.tbruyelle.rxpermissions2/rxpermissions/0.9.5/85006e7be3b02081f955ddb444ac54dc5f18e808/rxpermissions-0.9.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

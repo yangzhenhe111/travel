@@ -1,25 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.gittjy:LoadingDialog:1.0.2@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5444fd9d1600a91ad997ec18e57f1909/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5444fd9d1600a91ad997ec18e57f1909/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/5444fd9d1600a91ad997ec18e57f1909/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c49ab300b4d323cb7971a24ec6e24e60/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c49ab300b4d323cb7971a24ec6e24e60/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/c49ab300b4d323cb7971a24ec6e24e60/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/res" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5e3890a445235bfaf3dd6808dbb5cf2a/jetified-LoadingDialog-1.0.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.github.gittjy/LoadingDialog/1.0.2/e2fee3e168f53e5c59b3db2cde3c199f1727d201/LoadingDialog-1.0.2-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.github.gittjy/LoadingDialog/1.0.2/e2fee3e168f53e5c59b3db2cde3c199f1727d201/LoadingDialog-1.0.2-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gittjy/LoadingDialog/1.0.2/e2fee3e168f53e5c59b3db2cde3c199f1727d201/LoadingDialog-1.0.2-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.github.gittjy/LoadingDialog/1.0.2/e2fee3e168f53e5c59b3db2cde3c199f1727d201/LoadingDialog-1.0.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

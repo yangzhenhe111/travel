@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -18,345 +9,40 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/app" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61a54a55-9bb7-4218-b36c-cc5e6569ad0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/chung_beibei/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/base/BaseActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/base/BaseFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/base/BasePresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/base/BaseView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/common/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/common/FlowAutoRadioGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/contract/BaseContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/contract/LoginViewContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/di/componet/AppComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/di/componet/RegComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/di/module/AppModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/di/module/RegModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/di/module/Tls12SocketFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/CasesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Custorm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/DoctorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/HealthyEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/HttpStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Level.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/PriceArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Qa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Spots.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Theme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/Travels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/model/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/APIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/BaseObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/HttpResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/CustomGsonConverterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/CustomGsonRequestBodyConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/CustomGsonResponseBodyConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/DoubleTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/FloatTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/IntegerTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/converter/LongTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/network/exception/ApiException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/BriefDescPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/ConditionPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/DelicaciesPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/DoctorDetailPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/HealThyDetailPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/HistoryPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/HomePerenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/LodgingPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/LoginPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/MainPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/Minepresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/MyTravelsPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/RegPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/TrafficPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/TravelsDetailPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/TravelsPersenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/Writepresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/YdPerenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/persenter/YdRecordPerenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/BriefDescActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/ConditionActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/DelicaciesActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/HistoryActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/LodgingActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/LoginActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/MyTravelsActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/RegActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/TrafficActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/TravelsDetailActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/YdActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/YdRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/adapter/AdapterBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/adapter/TjTravelsAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/adapter/TravelsAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/adapter/WriteAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/adapter/YdRecordAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/HomeFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/MineFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/MineFview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/TravelsFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/WriteFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/fragment/Writeview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/AppTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/CommonViewPagerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/CrashHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/DynamicTimeFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/FullyGridLayoutManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/ItFxqConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/LoadingUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/ScreenUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/SpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/ToastUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/utils/utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/BriefDescView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/CollectionView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/Conditionview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/DelicaciesView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/DoctorDetailView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/HealthyDetailView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/HistoryView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/HomeView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/LodgingView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/LoginView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/MyTravelsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/RegView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/TrafficView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/TravelsDetailView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/Travelsview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/YdRecordView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/Travels_App/view/YdView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/invoice_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/main_btm_tab_text_color_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/member_label_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/member_tab_item_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/order_check_tecxt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/order_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/personal_text_cheack.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/radiotextcolor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/sex_cheack.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/sqpt_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/baocun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/bianji1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/dangdigiakuang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fanhui.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_shouye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_shouye2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_wode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_wode2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_xieyouji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_xieyouji2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_youji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/home_youji2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/jiaotong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/lb1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/lishijilv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/login1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/meishi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/mima.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/shouji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/wode1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/wodeyouji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/yonghu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/youxiang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/zhuangfa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/zhusu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/zhuye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/apple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_detail_comment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_news_search.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_searchview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_login_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/card_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edit_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_back.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/home_radio_btn_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_gray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/left_wtr_bg_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/my_radio_btn_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/qa_radio_btn_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/sc_radio_btn_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/select_bg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shape.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/spots_item_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/spots_radio_btn_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/textveiw_border.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/toast_actionsheet_top_normal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/top_wtr_bg_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/transparent_black.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/white_bg_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/write_fragment_sc_back2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/write_fragment_sc_bck.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/write_fragment_sc_selector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_briefdesc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_condition.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_delicacies.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lodging.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mytravels.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_traffic.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_travels_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_yd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_yd_record.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_yy_record2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/collection_frgm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doctor_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/doctor_listview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fm_act.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/home_frgm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_act.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/mine_frgm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/news_scitem.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/push_frag.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/qa_frgm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/qa_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/tjlist_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/toast_view_actionsheet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/top_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/travels_frgm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/travels_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/write_fragment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/yd_myitem.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/bianji1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/bianxie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/fenxiang.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/lvyou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/wode1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/zhuye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/age.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/h_fj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/h_my.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/h_qa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/lb1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/lb2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/login1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/password.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/run_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/sg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/tel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/tel1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/tz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/yy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/add_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/dz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/dz_fill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/green_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/green_radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/pl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/red_radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/sc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/sc_fill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/send.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/splb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/yellow_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/add_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/addimg_1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/back_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/case1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/case_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fj1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/green_btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/green_radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hhmoren.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/home_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/llogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/login_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/my.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/my_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/order.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/order_manager.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ph.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ph_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/qa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/qa_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/rad_radio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/resources.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/run_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/scg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/scg_sel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/unfj1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/kll.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-round/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw1024dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw1280dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw1365dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw384dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw392dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw400dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw410dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw411dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw432dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw480dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw533dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw592dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw640dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw662dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw720dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw768dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw800dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw811dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw820dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw960dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-sw961dp/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/file_paths.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/6.5/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/travel.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/travel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_1_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_aar.xml" afterDir="false" />
@@ -445,8 +131,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -454,7 +142,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -463,179 +151,64 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="travel" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="layoutResourceFile" />
-        <option value="resourceFile" />
-        <option value="valueResourceFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="app" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="ROOT_SYNC" value="SYNC" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="415a33db-7950-4d39-b7a5-85f08c1e3998" />
+  <component name="ProjectId" id="27KqidyrpdN3jAIPyCFay82V6wQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectId" id="1tYRoMYEGjQcEVpDbQyAuFjJEae" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="127.0.0.1:62001" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-02-11T15:13:14.567Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2022-04-04T14:26:01.801Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/CompoundButton.java_SELECTED" value="CompoundButton" />
-    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ListView.java_SELECTED" value="ListView" />
-    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/RadioGroup.java_SELECTED" value="RadioGroup" />
-    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/SearchView.java_SELECTED" value="SearchView" />
-    <property name="android-custom-viewD:/ideaworkspace/itfxq_travel_app/itfxq_travel_app/app/src/main/java/cn/itfxq/common/FlowAutoRadioGroup.java_SELECTED" value="FlowAutoRadioGroup" />
-    <property name="android-custom-viewD:/ideaworkspace/itfxq_travel_app/itfxq_travel_app/app/src/main/java/cn/itfxq/common/FlowRadioGroup.java_SELECTED" value="FlowAutoRadioGroup" />
-    <property name="android-custom-viewF:/APP/itfxq_travel_app/Travels_App/app/src/main/java/cn/Travels_App/common/FlowAutoRadioGroup.java_SELECTED" value="FlowAutoRadioGroup" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/CompoundButton.java_selected" value="Custom views" />
-    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ListView.java_selected" value="Custom views" />
-    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/RadioGroup.java_selected" value="Custom views" />
-    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/SearchView.java_selected" value="Custom views" />
-    <property name="multi-representation-previewD:/ideaworkspace/itfxq_travel_app/itfxq_travel_app/app/src/main/java/cn/itfxq/common/FlowAutoRadioGroup.java_selected" value="Custom views" />
-    <property name="multi-representation-previewD:/ideaworkspace/itfxq_travel_app/itfxq_travel_app/app/src/main/java/cn/itfxq/common/FlowRadioGroup.java_selected" value="Custom views" />
-    <property name="multi-representation-previewF:/APP/itfxq_travel_app/Travels_App/app/src/main/java/cn/Travels_App/common/FlowAutoRadioGroup.java_selected" value="Custom views" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="PsdUISettings">
-    <option name="MODULE_TAB" value="Default Config" />
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="BUILD_VARIANTS_TAB" value="Flavors" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
-    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="debug" />
   </component>
-  <component name="RecentsManager">
-    <key name="android.template.1757772988">
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Android\workSpace.001\Travels_App\Travels_App\Travels_App" />
-      <recent name="F:\APP\itfxq_travel_app\Travels_App\app\src\main\res\drawable-v24" />
-      <recent name="F:\APP\itfxq_travel_app\itfxq_travel_app\app\src\main\res\drawable-v24" />
-      <recent name="F:\APP\itfxq_travel_app\itfxq_travel_app\app\src\main\res\mipmap-anydpi-v26" />
-      <recent name="D:\ideaworkspace\itfxq_travel_app\itfxq_travel_app\app\src\main\res\layout" />
-    </key>
-    <key name="android.template.-845582257">
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\APP\itfxq_travel_app\itfxq_travel_app\app\src\main\res\mipmap-anydpi-v26" />
-      <recent name="F:\APP\itfxq_travel_app\itfxq_travel_app\app\src\main\res\mipmap-mdpi" />
-      <recent name="F:\APP\itfxq_travel_app\itfxq_travel_app\app\src\main\res\drawable-v24" />
-      <recent name="D:\ideaworkspace\itfxq_travel_app\itfxq_travel_app\app\src\main\res\drawable" />
-      <recent name="D:\android2020workspace\newsapp\app\src\main\res\mipmap-xxhdpi" />
-    </key>
-    <key name="android.template.-727905489">
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="android.template.1836940649">
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.itfxq.persenter" />
-      <recent name="cn.itfxq.view" />
-      <recent name="cn.itfxq.ui.adapter" />
-      <recent name="cn.itfxq.model.entity" />
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="android.template.1839858006">
-      <recent name="cn.itfxq.ui.activity" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cn.Travels_App.persenter" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginActivity" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="Travels_App.app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="cn.Travels_App.ui.activity.LoginActivity" />
-      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
-      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="Travels_App.app" />
+      <module name="travel.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -688,24 +261,20 @@
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" goal="" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Android App.app" />
-      <item itemvalue="Android App.LoginActivity" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="61a54a55-9bb7-4218-b36c-cc5e6569ad0e" name="Default Changelist" comment="" />
-      <created>1622944209629</created>
+      <changelist id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="" />
+      <created>1649079253445</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622944209629</updated>
+      <updated>1649079253445</updated>
     </task>
     <servers />
   </component>
@@ -714,7 +283,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/app" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -722,161 +303,52 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="652" y="129" key="#Inspections" timestamp="1644971985448">
+    <state x="286" y="178" key="#PSD" timestamp="1649081627697">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="652" y="129" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1644971985448" />
-    <state x="386" y="194" key="#PSD" timestamp="1648916765638">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="386" y="194" key="#PSD/0.0.1536.824@0.0.1536.824" timestamp="1648916765638" />
-    <state x="572" y="206" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1644975750470" />
-    <state x="499" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1647676542971">
+    <state x="286" y="178" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1649081627697" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649083680340">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1647676542971" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648976423972">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1648976423971" />
-    <state x="788" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1648888716729">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1649083680340" />
+    <state x="465" y="47" key="#travel" timestamp="1649080185409">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="788" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1648888716729" />
-    <state x="544" y="299" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1645524556463">
+    <state x="465" y="47" key="#travel/0.0.1536.864@0.0.1536.864" timestamp="1649080185409" />
+    <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1649084395727">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="544" y="299" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1645524556463" />
-    <state x="209" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1646289762482">
+    <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1649084395727" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1649081514615">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="209" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1646289762482" />
-    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1647518190864">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1649081514615" />
+    <state width="1493" height="398" key="GridCell.Tab.0.bottom" timestamp="1649083982221">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1647518190864" />
-    <state x="499" y="178" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1645514715821">
+    <state width="1493" height="398" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649083982221" />
+    <state width="1493" height="398" key="GridCell.Tab.0.center" timestamp="1649083982221">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="178" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.864@0.0.1536.864" timestamp="1645514715821" />
-    <state x="603" y="348" width="838" height="475" key="AndroidCreateResourceFileDialog" timestamp="1647939166523">
+    <state width="1493" height="398" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649083982221" />
+    <state width="1493" height="398" key="GridCell.Tab.0.left" timestamp="1649083982220">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="603" y="348" width="838" height="475" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1647939166523" />
-    <state x="721" y="197" key="AndroidCreateXmlResourceDialog" timestamp="1645691387316">
+    <state width="1493" height="398" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649083982220" />
+    <state width="1493" height="398" key="GridCell.Tab.0.right" timestamp="1649083982221">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="721" y="197" key="AndroidCreateXmlResourceDialog/0.0.1536.864@0.0.1536.864" timestamp="1645691387316" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1648976231176">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1648976231176" />
-    <state x="147" y="64" key="DiffContextDialog" timestamp="1648976223258">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1648976223258" />
-    <state x="714" y="220" key="FileChooserDialogImpl" timestamp="1648891976470">
+    <state width="1493" height="398" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649083982221" />
+    <state x="270" y="76" key="SettingsEditor" timestamp="1649084392207">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="714" y="220" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1648891976470" />
-    <state x="1090" y="346" key="Github.ShareDialog" timestamp="1648891999322">
+    <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1649084392207" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1649082020861">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="1090" y="346" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1648891999322" />
-    <state x="739" y="149" key="Github.UntrackedFilesDialog" timestamp="1648891840634">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="739" y="149" key="Github.UntrackedFilesDialog/0.0.1536.864@0.0.1536.864" timestamp="1648891840634" />
-    <state width="1493" height="296" key="GridCell.Tab.0.bottom" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="229" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1648891865175" />
-    <state width="1493" height="296" key="GridCell.Tab.0.center" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="229" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1648891865175" />
-    <state width="1493" height="296" key="GridCell.Tab.0.left" timestamp="1648976432630">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1648976432630" />
-    <state width="1493" height="229" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1648891865174" />
-    <state width="1493" height="296" key="GridCell.Tab.0.right" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="229" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1648891865175" />
-    <state width="1493" height="296" key="GridCell.Tab.1.bottom" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="296" key="GridCell.Tab.1.center" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="296" key="GridCell.Tab.1.left" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state width="1493" height="296" key="GridCell.Tab.1.right" timestamp="1648976432631">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="296" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1648976432631" />
-    <state x="349" y="175" key="IDE.errors.dialog" timestamp="1645191783169">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="349" y="175" key="IDE.errors.dialog/0.0.1536.864@0.0.1536.864" timestamp="1645191783169" />
-    <state x="270" y="76" key="SettingsEditor" timestamp="1648891897811">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1648891897811" />
-    <state x="690" y="223" key="Vcs.Push.Dialog.v2" timestamp="1648887380185">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="690" y="223" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1648887380185" />
-    <state x="561" y="245" key="chooseDestDirectoryDialog" timestamp="1647518202461">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="561" y="245" key="chooseDestDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1647518202461" />
-    <state x="-6" y="51" width="863" height="617" key="dock-window-1" timestamp="1647674280450">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="-6" y="51" width="863" height="617" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1647674280450" />
-    <state x="20" y="31" width="863" height="620" key="dock-window-2" timestamp="1647676319695">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="20" y="31" width="863" height="620" key="dock-window-2/0.0.1536.864@0.0.1536.864" timestamp="1647676319695" />
-    <state x="250" y="78" width="863" height="617" key="dock-window-3" timestamp="1647676901937">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="250" y="78" width="863" height="617" key="dock-window-3/0.0.1536.864@0.0.1536.864" timestamp="1647676901937" />
-    <state x="707" y="189" key="extract.method.dialog" timestamp="1645693525634">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="707" y="189" key="extract.method.dialog/0.0.1536.864@0.0.1536.864" timestamp="1645693525634" />
-    <state x="426" y="197" key="run.anything.popup" timestamp="1645609812958">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="426" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1645609812958" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/cn/Travels_App/ui/activity/LodgingActivity.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo typeName="cn.itfxq.ui.adapter.NewsCommentsAdapter" fieldName="mCommentEntityList" />
-      </pinned-members>
-    </pin-to-top-manager>
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1649082020861" />
   </component>
 </project>

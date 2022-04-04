@@ -1,34 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.hannesdorfmann.mosby:mvp:2.0.1@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/15050f44fff8ec1f3d72dbba411c3fda/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/15050f44fff8ec1f3d72dbba411c3fda/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/15050f44fff8ec1f3d72dbba411c3fda/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/fdcd495d95070cfad4bb21107a0c2e28/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/fdcd495d95070cfad4bb21107a0c2e28/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/fdcd495d95070cfad4bb21107a0c2e28/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d233db0283bd150d02344666f4d36d6b/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d233db0283bd150d02344666f4d36d6b/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d233db0283bd150d02344666f4d36d6b/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c157eac8fc4ad2b859aa622bb821aabd/jetified-mvp-2.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c157eac8fc4ad2b859aa622bb821aabd/jetified-mvp-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c157eac8fc4ad2b859aa622bb821aabd/jetified-mvp-2.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c6443383d73ee96684e5e82508e13f/jetified-mvp-2.0.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c6443383d73ee96684e5e82508e13f/jetified-mvp-2.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c6443383d73ee96684e5e82508e13f/jetified-mvp-2.0.1/res" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/1f18dd226b1f49f9b493d8130b75ccc4/jetified-mvp-2.0.1/res" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/1f18dd226b1f49f9b493d8130b75ccc4/jetified-mvp-2.0.1/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/1f18dd226b1f49f9b493d8130b75ccc4/jetified-mvp-2.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c6443383d73ee96684e5e82508e13f/jetified-mvp-2.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/c17961c33ee9417afac44ce8b6a31021c4c66012/mvp-2.0.1-javadoc.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/c17961c33ee9417afac44ce8b6a31021c4c66012/mvp-2.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/da33f1332240fc549bedcaa332fe8c4ad289f871/mvp-2.0.1-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/da33f1332240fc549bedcaa332fe8c4ad289f871/mvp-2.0.1-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/da33f1332240fc549bedcaa332fe8c4ad289f871/mvp-2.0.1-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.hannesdorfmann.mosby/mvp/2.0.1/da33f1332240fc549bedcaa332fe8c4ad289f871/mvp-2.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

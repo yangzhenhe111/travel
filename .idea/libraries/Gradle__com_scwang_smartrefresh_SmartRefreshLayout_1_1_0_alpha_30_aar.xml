@@ -1,34 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-30@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/9d7b6b00b89f6533399a843cb6f95dc5/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/9d7b6b00b89f6533399a843cb6f95dc5/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/9d7b6b00b89f6533399a843cb6f95dc5/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d54c913680cd1dbfc2013f3cd7c3602f/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d54c913680cd1dbfc2013f3cd7c3602f/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/d54c913680cd1dbfc2013f3cd7c3602f/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/29d3a783e212631f62429c766ff082ce/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/29d3a783e212631f62429c766ff082ce/res" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/29d3a783e212631f62429c766ff082ce/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce804a74bfaf35a1b135bce5a1b1245f/jetified-SmartRefreshLayout-1.1.0-alpha-30/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce804a74bfaf35a1b135bce5a1b1245f/jetified-SmartRefreshLayout-1.1.0-alpha-30/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce804a74bfaf35a1b135bce5a1b1245f/jetified-SmartRefreshLayout-1.1.0-alpha-30/jars/classes.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fdbddc839a6f929607d1a94ab3e1ed4/jetified-SmartRefreshLayout-1.1.0-alpha-30/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fdbddc839a6f929607d1a94ab3e1ed4/jetified-SmartRefreshLayout-1.1.0-alpha-30/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fdbddc839a6f929607d1a94ab3e1ed4/jetified-SmartRefreshLayout-1.1.0-alpha-30/res" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/75f9b6083f439011fc067c876da59947/jetified-SmartRefreshLayout-1.1.0-alpha-30/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/75f9b6083f439011fc067c876da59947/jetified-SmartRefreshLayout-1.1.0-alpha-30/res" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/75f9b6083f439011fc067c876da59947/jetified-SmartRefreshLayout-1.1.0-alpha-30/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fdbddc839a6f929607d1a94ab3e1ed4/jetified-SmartRefreshLayout-1.1.0-alpha-30/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/e59ab0804b0097a2607eabcb6e76625238b0ed8/SmartRefreshLayout-1.1.0-alpha-30-javadoc.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/e59ab0804b0097a2607eabcb6e76625238b0ed8/SmartRefreshLayout-1.1.0-alpha-30-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/29e9ebb966707554468298f6b3e3afae8368d92b/SmartRefreshLayout-1.1.0-alpha-30-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/29e9ebb966707554468298f6b3e3afae8368d92b/SmartRefreshLayout-1.1.0-alpha-30-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/29e9ebb966707554468298f6b3e3afae8368d92b/SmartRefreshLayout-1.1.0-alpha-30-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.1.0-alpha-30/29e9ebb966707554468298f6b3e3afae8368d92b/SmartRefreshLayout-1.1.0-alpha-30-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

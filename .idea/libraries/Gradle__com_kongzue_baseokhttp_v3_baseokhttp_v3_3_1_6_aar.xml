@@ -1,25 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.kongzue.baseokhttp_v3:baseokhttp_v3:3.1.6@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/d5048a8188e38f3c04b1a62d4deb0cc4/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/d5048a8188e38f3c04b1a62d4deb0cc4/res" />
-      <root url="file://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/transforms-2/files-2.1/d5048a8188e38f3c04b1a62d4deb0cc4/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/0a6e773ac3d7ca6bc2184c87970554d8/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/0a6e773ac3d7ca6bc2184c87970554d8/res" />
-      <root url="file://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/transforms-2/files-2.1/0a6e773ac3d7ca6bc2184c87970554d8/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/jars/classes.jar!/" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/AndroidManifest.xml" />
-      <root url="file://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/res" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/transforms-2/files-2.1/68a8a7b5ae16f51487cf86b3e2d51a41/jetified-baseokhttp_v3-3.1.6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../soft/gradle/gradle-6.5.1-all/gradle-6.5.1/caches/modules-2/files-2.1/com.kongzue.baseokhttp_v3/baseokhttp_v3/3.1.6/f66c4a3ffe459dc7265fdbfafb962fa60320642e/baseokhttp_v3-3.1.6-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../bug/Android/gradle/wrapper/gradle-6.5-bin/gradle-6.5/caches/modules-2/files-2.1/com.kongzue.baseokhttp_v3/baseokhttp_v3/3.1.6/f66c4a3ffe459dc7265fdbfafb962fa60320642e/baseokhttp_v3-3.1.6-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kongzue.baseokhttp_v3/baseokhttp_v3/3.1.6/f66c4a3ffe459dc7265fdbfafb962fa60320642e/baseokhttp_v3-3.1.6-sources.jar!/" />
-      <root url="jar://$MAVEN_REPOSITORY$/Android/.gradle/caches/modules-2/files-2.1/com.kongzue.baseokhttp_v3/baseokhttp_v3/3.1.6/f66c4a3ffe459dc7265fdbfafb962fa60320642e/baseokhttp_v3-3.1.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
