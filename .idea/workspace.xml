@@ -87,6 +87,13 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="415a33db-7950-4d39-b7a5-85f08c1e3998" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/yangzhenhe111/travel.git" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="27KqidyrpdN3jAIPyCFay82V6wQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -229,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649251267065</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="提交code">
+      <created>1649251335966</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649251335966</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,22 +304,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1649247541000" />
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1649251312056">
+    <state width="746" height="209" key="GridCell.Tab.0.bottom" timestamp="1649251346364">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649251312056" />
-    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1649251312056">
+    <state width="746" height="209" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
+    <state width="746" height="209" key="GridCell.Tab.0.center" timestamp="1649251346364">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649251312056" />
-    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1649251312056">
+    <state width="746" height="209" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
+    <state width="746" height="209" key="GridCell.Tab.0.left" timestamp="1649251346364">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649251312056" />
-    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1649251312056">
+    <state width="746" height="209" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
+    <state width="746" height="209" key="GridCell.Tab.0.right" timestamp="1649251346364">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649251312056" />
+    <state width="746" height="209" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
     <state width="1493" height="192" key="GridCell.Tab.1.bottom" timestamp="1649087208414">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
