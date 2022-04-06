@@ -37,7 +37,27 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="提交code" />
+    <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="提交code">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_LuckSiege_PictureSelector_picture_library_v2_5_9_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_LuckSiege_PictureSelector_ucrop_v2_5_9_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_70.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_70.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_LuckSiege_PictureSelector_picture_library_v2_3_4_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/travel.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/travel.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +89,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -94,6 +121,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="last_opened_file_path" value="F:/APP/itfxq_travel_app/Travels_App" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -105,6 +133,11 @@
     <option name="BUILD_VARIANTS_TAB" value="Flavors" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
     <option name="LAST_EDITED_BUILD_TYPE" value="debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Android-studio\Android-studio\travel\app\src\main\res\drawable-v24" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -202,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649144172083</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="提交code">
+      <created>1649144285648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649144285648</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,38 +283,42 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1649083680340" />
+    <state x="126" y="275" key="#com.intellij.ide.util.MemberChooser" timestamp="1649250415070">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="126" y="275" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1649250415070" />
     <state x="465" y="47" key="#travel" timestamp="1649080185409">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="465" y="47" key="#travel/0.0.1536.864@0.0.1536.864" timestamp="1649080185409" />
-    <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1649142024065">
+    <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1649151029172">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1649142024065" />
+    <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1649151029172" />
     <state x="601" y="230" key="AndroidCreateXmlResourceDialog" timestamp="1649143560767">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="601" y="230" key="AndroidCreateXmlResourceDialog/0.0.1536.864@0.0.1536.864" timestamp="1649143560767" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1649143420069">
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1649247541000">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1649143420069" />
-    <state width="746" height="178" key="GridCell.Tab.0.bottom" timestamp="1649144194750">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1649247541000" />
+    <state width="946" height="248" key="GridCell.Tab.0.bottom" timestamp="1649250493952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="178" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649144194750" />
-    <state width="746" height="178" key="GridCell.Tab.0.center" timestamp="1649144194749">
+    <state width="946" height="248" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649250493952" />
+    <state width="946" height="248" key="GridCell.Tab.0.center" timestamp="1649250493952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="178" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649144194749" />
-    <state width="746" height="178" key="GridCell.Tab.0.left" timestamp="1649144194749">
+    <state width="946" height="248" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649250493952" />
+    <state width="946" height="248" key="GridCell.Tab.0.left" timestamp="1649250493951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="178" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649144194749" />
-    <state width="746" height="178" key="GridCell.Tab.0.right" timestamp="1649144194749">
+    <state width="946" height="248" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649250493951" />
+    <state width="946" height="248" key="GridCell.Tab.0.right" timestamp="1649250493952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="178" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649144194749" />
+    <state width="946" height="248" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649250493952" />
     <state width="1493" height="192" key="GridCell.Tab.1.bottom" timestamp="1649087208414">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -295,14 +339,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1649144279583" />
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1649144184111">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1649144287456">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1649144184111" />
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649143829155">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1649144287456" />
+    <state x="565" y="209" key="chooseDestDirectoryDialog" timestamp="1649247097733">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1649143829155" />
+    <state x="565" y="209" key="chooseDestDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1649247097733" />
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649239126782">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1649239126782" />
     <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1649082020861">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
