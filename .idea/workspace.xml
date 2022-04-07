@@ -37,13 +37,15 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="提交code" />
+    <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="提交code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -243,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649251335966</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="提交code">
+      <created>1649251427248</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649251427248</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,18 +349,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1649251330826" />
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1649251275772">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1649251429732">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1649251275772" />
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1649251429732" />
     <state x="565" y="209" key="chooseDestDirectoryDialog" timestamp="1649247097733">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="565" y="209" key="chooseDestDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1649247097733" />
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649251248617">
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649251416107">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1649251248617" />
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1649251416107" />
     <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1649082020861">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
