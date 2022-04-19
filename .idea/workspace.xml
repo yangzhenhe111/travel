@@ -30,14 +30,26 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/app" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:app" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8558c6b4-33bc-4aa2-9c22-795499f6e8dd" name="Default Changelist" comment="提交code">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_glide_3_7_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/travel.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/travel.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +57,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -74,6 +86,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile" />
+        <option value="Interface" />
+        <option value="resourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -110,8 +125,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ExpandableListView.java_SELECTED" value="ExpandableListView" />
+    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ImageView.java_SELECTED" value="ImageView" />
+    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/SearchView.java_SELECTED" value="SearchView" />
+    <property name="android-custom-viewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/TextView.java_SELECTED" value="TextView" />
+    <property name="android-custom-viewE:/Android-studio/Android-studio/travel/app/src/main/java/cn/Travels_App/utils/ClipPathCircleImage.java_SELECTED" value="ClipPathCircleImage" />
+    <property name="android-custom-viewE:/Android-studio/Android-studio/travel/app/src/main/java/cn/Travels_App/utils/CommentExpandableListView.java_SELECTED" value="CommentExpandableListView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="F:/APP/itfxq_travel_app/Travels_App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ExpandableListView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/ImageView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/SearchView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/10911/AppData/Local/Android/Sdk/sources/android-29/android/widget/TextView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewE:/Android-studio/Android-studio/travel/app/src/main/java/cn/Travels_App/utils/ClipPathCircleImage.java_selected" value="" />
+    <property name="multi-representation-previewE:/Android-studio/Android-studio/travel/app/src/main/java/cn/Travels_App/utils/CommentExpandableListView.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -124,8 +151,17 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="debug" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="cn.Travels_App.ui.activity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Android-studio\Android-studio\travel\app\src\main\res\drawable" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Android-studio\Android-studio\travel\app\src\main\java\cn\Travels_App\model\entity" />
+      <recent name="E:\Android-studio\Android-studio\travel\app\src\main\java\cn\Travels_App\utils" />
       <recent name="E:\Android-studio\Android-studio\travel\app\src\main\res\drawable-v24" />
+      <recent name="E:\Android-studio\Android-studio\travel\app\src\main\res\layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649251427248</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="提交code">
+      <created>1649332677598</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649332677598</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +309,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/app" />
+                        <option value="app" />
                       </list>
                     </value>
                   </entry>
@@ -293,10 +336,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1649083680340" />
-    <state x="126" y="275" key="#com.intellij.ide.util.MemberChooser" timestamp="1649250415070">
+    <state x="126" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1650271911328">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="126" y="275" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1649250415070" />
+    <state x="126" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1650271911328" />
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1650269435915">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1650269435915" />
     <state x="465" y="47" key="#travel" timestamp="1649080185409">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -305,30 +352,34 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1649151029172" />
-    <state x="601" y="230" key="AndroidCreateXmlResourceDialog" timestamp="1649143560767">
+    <state x="607" y="333" key="AndroidCreateResourceFileDialog" timestamp="1650335230628">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="601" y="230" key="AndroidCreateXmlResourceDialog/0.0.1536.864@0.0.1536.864" timestamp="1649143560767" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1649247541000">
+    <state x="607" y="333" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1650335230628" />
+    <state x="601" y="230" key="AndroidCreateXmlResourceDialog" timestamp="1649840400683">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1649247541000" />
-    <state width="746" height="209" key="GridCell.Tab.0.bottom" timestamp="1649251346364">
+    <state x="601" y="230" key="AndroidCreateXmlResourceDialog/0.0.1536.864@0.0.1536.864" timestamp="1649840400683" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1650362530857">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="209" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
-    <state width="746" height="209" key="GridCell.Tab.0.center" timestamp="1649251346364">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1650362530857" />
+    <state width="1493" height="147" key="GridCell.Tab.0.bottom" timestamp="1650363241143">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="209" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
-    <state width="746" height="209" key="GridCell.Tab.0.left" timestamp="1649251346364">
+    <state width="1493" height="147" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1650363241143" />
+    <state width="1493" height="147" key="GridCell.Tab.0.center" timestamp="1650363241142">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="209" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
-    <state width="746" height="209" key="GridCell.Tab.0.right" timestamp="1649251346364">
+    <state width="1493" height="147" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1650363241142" />
+    <state width="1493" height="147" key="GridCell.Tab.0.left" timestamp="1650363241142">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="746" height="209" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1649251346364" />
+    <state width="1493" height="147" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1650363241142" />
+    <state width="1493" height="147" key="GridCell.Tab.0.right" timestamp="1650363241142">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="147" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1650363241142" />
     <state width="1493" height="192" key="GridCell.Tab.1.bottom" timestamp="1649087208414">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -345,25 +396,29 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="192" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1649087208414" />
-    <state x="270" y="76" key="SettingsEditor" timestamp="1649251330826">
+    <state x="270" y="76" key="SettingsEditor" timestamp="1650374230594">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1649251330826" />
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1649251429732">
+    <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1650374230594" />
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1650374433086">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1649251429732" />
-    <state x="565" y="209" key="chooseDestDirectoryDialog" timestamp="1649247097733">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1650374433086" />
+    <state x="565" y="209" key="chooseDestDirectoryDialog" timestamp="1649839297083">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="565" y="209" key="chooseDestDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1649247097733" />
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649251416107">
+    <state x="565" y="209" key="chooseDestDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1649839297083" />
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1650363729372">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1649251416107" />
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1649082020861">
+    <state x="564" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1650363729372" />
+    <state x="-106" y="234" width="1005" height="554" key="dock-window-1" timestamp="1650358791813">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1649082020861" />
+    <state x="-106" y="234" width="1005" height="554" key="dock-window-1/0.0.1536.864@0.0.1536.864" timestamp="1650358791813" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1650073395134">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1650073395134" />
   </component>
 </project>
