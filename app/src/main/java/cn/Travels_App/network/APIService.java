@@ -35,11 +35,15 @@ public interface APIService {
     @POST(Constants.URL_REG)
     Observable<HttpResult<UserEntity>> reg(@Body UserEntity userEntity);
 
-    //编写游记
+    //保存游记
     @Headers({"name:super"})
-    @POST(Constants.URL_TRAVELS)
-    Observable<HttpResult<Travels>> maketravels(@Query("file") MultipartBody file,
-                                               @Body Travels travels);
+    @POST(Constants.URL_SAVETRAVELS)
+    Observable<HttpResult<Travels>> maketravels(@Body Travels travels);
+
+    //发表游记
+    @Headers({"name:super"})
+    @POST(Constants.URL_PUBTRAVELS)
+    Observable<HttpResult<Travels>> pubtravels(@Body Travels travels);
 
     @Headers({"name:super"})
     @POST(Constants.URL_FINDMYORDER)
@@ -57,10 +61,8 @@ public interface APIService {
     //根据条件查询景区
     @Headers({"name:super"})
     @POST(Constants.URL_FINDSPOTSBYCONDITION)
-    Observable<HttpResult<List<Travels>>> queryTravelsByCondition(@Query("cityid")Long cityid,
-                                                         @Query("levelid")Long levelid,
-                                                         @Query("themeid")Long themeid,
-                                                         @Query("pricefwid")Long pricefwid);
+    Observable<HttpResult<List<Travels>>> queryTravelsByCondition(@Query("cityid")String sousuo);
+
     //查询所有的酒店信息
     @Headers({"name:super"})
     @POST(Constants.URL_FINDALLHOTELS)

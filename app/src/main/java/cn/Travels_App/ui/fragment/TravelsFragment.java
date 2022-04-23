@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseFragment;
 import cn.Travels_App.model.entity.Travels;
@@ -34,8 +35,8 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
      GridView mListView;
 
      //搜索框绑定事件
-     @BindView(R.id.spotsSV)
-     SearchView mSearchView;
+    /* @BindView(R.id.spotsSV)
+     SearchView mSearchView;*/
 
     public static TravelsFragment newInstance() {
 
@@ -55,21 +56,6 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
 
     @Override
     public void initView() {
-        mSearchView.setSubmitButtonEnabled(true);
-
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                Intent intent=new Intent();
-                intent.setClass(getContext(), ConditionActivity.class);
-                startActivity(intent);
-                return false;
-            }
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
 
     }
 
@@ -78,11 +64,8 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         Bundle bundle = this.getArguments();
         if(bundle != null){
            String queryTag =  bundle.getString("queryTag");
-            Long cityid = bundle.getLong("cityid");
-             Long themeid = bundle.getLong("themeid");
-            Long pricefwid = bundle.getLong("pricefwid");
-            Long levelid = bundle.getLong("levelid");
-            createPresenter().queryTravelsByCondition(cityid,levelid,themeid,pricefwid);
+            String sousuo = bundle.getString("sousuo");
+            createPresenter().queryTravelsByCondition(sousuo);
         }else {
             createPresenter().queryAllTravels();
         }
@@ -94,6 +77,13 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         TravelsAdapter travelsAdapter = new TravelsAdapter(getContext(),R.layout.travels_item,
                 spotsList);
         mListView.setAdapter(travelsAdapter);
+    }
+
+    @OnClick(R.id.travels_sousuo)
+    public void sousuo(){
+        Intent intent=new Intent();
+        intent.setClass(getContext(), ConditionActivity.class);
+        startActivity(intent);
     }
 
 

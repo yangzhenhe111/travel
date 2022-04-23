@@ -8,6 +8,25 @@
     android:orientation="vertical"
     android:background="#FAFAFA"
     >
+    <ScrollView
+        android:id="@+id/scro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
     <com.youth.banner.Banner
         android:id="@+id/banner"
@@ -289,13 +308,8 @@
         </TextView>
 
     </LinearLayout>
+            </LinearLayout>
 
-    <!-- 首页菜单end -->
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="vertical"
-        android:fadingEdge="vertical">
 
     <!-- 推荐景区start -->
 
@@ -319,9 +333,9 @@
 
         </LinearLayout>
         <!--推荐景区end-->
-
     </LinearLayout>
 
-    <!-- 推荐景区end -->
+        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 </LinearLayout>

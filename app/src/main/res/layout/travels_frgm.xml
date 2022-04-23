@@ -20,18 +20,20 @@
             android:gravity="center"
             android:onClick="travels_sousuo"
             android:orientation="vertical">
-            <SearchView
-                android:id="@+id/spotsSV"
+            <EditText
+                android:id="@+id/travels_sousuo"
                 android:layout_width="match_parent"
-                android:layout_margin="12dp"
-                android:layout_height="46dp"
-                android:background="@drawable/bg_searchview"
-                android:iconifiedByDefault="false"
-                android:queryHint="请输入要搜索内容"
-                android:queryBackground="@null"
-                ></SearchView>
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/sousuokuang_bck"
+                android:drawableLeft="@drawable/sousuo2"
+                android:drawablePadding="10dp"
+                android:hint="请输入账号名称"
+                android:textColor="#182C57"
+                android:textColorHint="#919295"
+                android:theme="@style/loginEditText"></EditText>
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"

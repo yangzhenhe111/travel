@@ -26,9 +26,9 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
     DelicaciesPersenter delicaciesPersenter;
 
     @BindView(R.id.delicacies_restaurant)
-    TextView restaurant;
+    EditText restaurant;
     @BindView(R.id.delicacies_dishes)
-    TextView dishes;
+    EditText dishes;
     @BindView(R.id.delicacies_baocun_image)
     ImageButton baocun_image;
     @BindView(R.id.delicacies_baocun_text)
@@ -37,24 +37,15 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
     private String delicacies_shuju;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
-        //获取焦点
-        jiadian();
-    }
-
-    @Override
     public int getLayoutId() {
         return R.layout.activity_delicacies;
     }
 
     @Override
     public void initView() {
+        xianshi();
+        //获取焦点
+        jiadian();
 
     }
 
@@ -109,13 +100,13 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
             Toast.makeText(DelicaciesActivity.this, "请将信息填写完整",Toast.LENGTH_SHORT).show();
         }
         else{
-            delicacies_shuju=restaurant.getText().toString()+"|"+dishes.getText().toString();
-            Intent intent = new Intent(DelicaciesActivity.this,MainActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("date", delicacies_shuju);
-            intent.putExtras(bundle);
-            DelicaciesActivity.this.setResult(4,intent);
-            finish();
+            StringBuilder de= new StringBuilder();
+            delicacies_shuju = de.append(restaurant.getText().toString()).append("---").append(dishes.getText().toString()).toString();
+            Intent intent = new Intent(DelicaciesActivity.this,
+                    MainActivity.class);
+            intent.putExtra("tag", "2");
+            intent.putExtra("write_resraurantInfo",delicacies_shuju);
+            startActivity(intent);
         }
     }
 
@@ -146,5 +137,16 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
                 }
             }
         });
+    }
+
+    private void xianshi() {
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        if(bundle!=null){
+            String getTrafficInfo_1=bundle.getString("resraurantInfo_1");
+            String [] temp = getTrafficInfo_1.split("---");
+            restaurant.setText(temp[0]);
+            dishes.setText(temp[1]);
+        }
     }
 }

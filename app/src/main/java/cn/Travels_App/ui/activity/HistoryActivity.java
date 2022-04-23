@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
 import cn.Travels_App.model.entity.Travels;
@@ -94,5 +95,9 @@ public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter>
                 + (listView.getDividerHeight() * (listAdapter.getCount() - 1))
                 + 15;
         listView.setLayoutParams(params);
+    }
+    @OnClick(R.id.detail_top_back)
+    void backPage(View view){
+        finish();
     }
 }

@@ -11,6 +11,14 @@
         android:layout_height="@dimen/dp_45"
         android:background="@color/frag_bg"
         android:id="@+id/detail_top_bar">
+        <ImageButton
+            android:id="@+id/detail_top_back"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent"
+            android:src="@drawable/fanhui"
+            android:background="@null"
+            android:tint="@color/blue_edit"
+            tools:ignore="MissingConstraints" />
         <TextView
             android:id="@+id/top_title"
             android:layout_width="100dp"

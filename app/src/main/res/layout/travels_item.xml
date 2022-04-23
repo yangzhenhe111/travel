@@ -16,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="160dp"
             android:id="@+id/spotsfmIv"
+            android:scaleType="fitXY"
             android:src="@drawable/lb1"
             android:background="@drawable/lb1"
             ></ImageView>

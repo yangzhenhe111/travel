@@ -24,10 +24,29 @@ public class Writepresenter extends BasePresenter<Writeview>{
     }
 
     //保存游记
-    public void maketravels(MultipartBody file,Travels travels) {
-        getAppComponent().getAPIService().maketravels(file,travels)
+    public void maketravels(Travels travels) {
+        getAppComponent().getAPIService().maketravels(travels)
                 .subscribe(new BaseObserver<HttpResult<Travels>>() {
 
+                    @Override
+                    public void onSuccess(HttpResult<Travels> resp) {
+                        if (resp.isSuccess()) {
+                            writeview.onCompleted();
+                        } else {
+                            //上传失败
+                            writeview.onFailed(resp.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        System.out.println(e.getMessage());
+                    }
+                });
+    }
+    public void publication(Travels travels) {
+        getAppComponent().getAPIService().pubtravels(travels)
+                .subscribe(new BaseObserver<HttpResult<Travels>>() {
                     @Override
                     public void onSuccess(HttpResult<Travels> resp) {
                         if (resp.isSuccess()) {

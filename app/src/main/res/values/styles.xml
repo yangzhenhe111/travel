@@ -63,5 +63,13 @@
         <item name="android:background">#FFFFFF</item>
     </style>
 
+    <style name="line_4">
+        <item name="android:layout_height">3dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#EDECEC</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
 
 </resources>

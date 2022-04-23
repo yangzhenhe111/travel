@@ -64,11 +64,10 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
     private HomeFragment homeFragment;
     private TravelsFragment travelsFragment;
     private WriteFragment writeFragment;
-    
-
     private MineFragment mineFragment;
 
     private String  queryTag;
+    public static String write_name = null;
     private static MainActivity mainInstance = null;
 
     public static MainActivity getInstance() {
@@ -99,10 +98,8 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
         //获取参数，是否是搜索景区，跳转到第二个
         Intent intent = getIntent();
         String queryTag = intent.getStringExtra("queryTag");
-        Long cityid = intent.getLongExtra("cityid",0L);
-        Long themeid = intent.getLongExtra("themeid",0L);
-        Long pricefwid = intent.getLongExtra("pricefwid",0L);
-        Long levelid = intent.getLongExtra("levelid",0L);
+        String sousuo = intent.getStringExtra("sousuo");
+
 
         //如果等于1 表示跳转到景区
         String gotoFragmentTag = intent.getStringExtra("gotoFragmentTag");
@@ -123,6 +120,19 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
             return;
         }
 
+        //获取参数是否为2分享游记，跳转到第三个
+        String writetag=intent.getStringExtra("tag");
+        System.out.println(writetag);
+        /* String cover=intent.getStringExtra("write_cover");*/
+        String name=intent.getStringExtra("write_name");
+        String address=intent.getStringExtra("write_address");
+        String opentime=intent.getStringExtra("write_opentime");
+        String briefDesc=intent.getStringExtra("write_briefDesc");
+        String trafficInfo=intent.getStringExtra("write_trafficInfo");
+        String resraurantInfo=intent.getStringExtra("write_resraurantInfo");
+        String hotelInfo=intent.getStringExtra("write_hotelInfo");
+
+
 
 
         if("1".equals(queryTag)){
@@ -130,14 +140,24 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
                 //有搜索条件的参数
                 Bundle bundle = new Bundle();
                 bundle.putString("queryTag","1");
-                bundle.putLong("cityid",cityid);
-                bundle.putLong("themeid",themeid);
-                bundle.putLong("pricefwid",pricefwid);
-                bundle.putLong("cityid",cityid);
-                bundle.putLong("levelid",levelid);
+                bundle.putString("sousuo",sousuo);
                 travelsFragment.setArguments(bundle);
-
             showAsFragment(1);
+        }else if("2".equals(writetag)){
+            System.out.println("M1");
+            wtiteRadioBtn.setChecked(true);
+            Bundle bundle = new Bundle();
+            bundle.putString("tag","2");
+            /*bundle.putString("write_cover",cover);*/
+            bundle.putString("write_name",name);
+            bundle.putString("write_address",address);
+            bundle.putString("write_opentime",opentime);
+            bundle.putString("write_briefDesc",briefDesc);
+            bundle.putString("write_trafficInfo",trafficInfo);
+            bundle.putString("write_resraurantInfo",resraurantInfo);
+            bundle.putString("write_hotelInfo",hotelInfo);
+            writeFragment.setArguments(bundle);
+            showAsFragment(2);
         }else {
 
             // 默认显示第一个

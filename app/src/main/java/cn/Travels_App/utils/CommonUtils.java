@@ -170,6 +170,44 @@ public class CommonUtils {
         return userEntity;
     }
 
+    //储存当地概况信息
+   /* public static void savetravels(Travels travels, Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        *//*private Long id;
+        private String publishDate;
+        private String cover;
+        private String name;
+        private String address;
+        private String opentime;
+        private Double budget;
+        private String briefDesc;
+        private String trafficInfo;
+        private String resraurantInfo;
+        private String hotelInfo;
+        private String createtime;
+        private Long creator;
+        private String creatorName;
+        private String creatorCover;*//*
+        editor.putString("name",String.valueOf(travels.getName()));
+        editor.putString("address",String.valueOf(travels.getAddress()));
+        editor.putString("briefDesc",String.valueOf(travels.getBriefDesc()));
+        editor.putString("opentime",String.valueOf(travels.getOpentime()));
+        editor.commit();
+    }
+
+    //读取当地概况信息
+    public static Travels gettravels(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        Travels travels = new Travels();
+        travels.setName(settings.getString("name",""));
+        travels.setAddress(settings.getString("address",""));
+        travels.setBriefDesc(settings.getString("briefDesc",""));
+        travels.setOpentime(settings.getString("opentime",""));
+        return travels;
+    }*/
+
+
     public static List<HealthyEntity> transeToHealthyList(String data) {
         Gson gson = new Gson();
         //通过反射得到type对象

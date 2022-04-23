@@ -73,6 +73,9 @@
             android:name="cn.Travels_App.ui.activity.HistoryActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
+            android:name="cn.Travels_App.ui.activity.PersonalActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name="cn.Travels_App.ui.activity.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>

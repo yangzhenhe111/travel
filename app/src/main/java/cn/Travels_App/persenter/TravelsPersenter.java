@@ -44,7 +44,6 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
 
                         }
                     }
-
                     @Override
                     public void onFailure(Throwable e) {
                         System.out.println(e.getMessage());
@@ -53,10 +52,9 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
     }
 
     //根据条件查询景区
-    public void queryTravelsByCondition(Long cityid,Long levelid,Long themeid,Long pricefwid) {
-        getAppComponent().getAPIService().queryTravelsByCondition(cityid,levelid,themeid,pricefwid)
+    public void queryTravelsByCondition(String sousuo) {
+        getAppComponent().getAPIService().queryTravelsByCondition(sousuo)
                 .subscribe(new BaseObserver<HttpResult<List<Travels>>>() {
-
                     @Override
                     public void onSuccess(HttpResult<List<Travels>> resp) {
                         if (resp.isSuccess()) {
@@ -69,7 +67,6 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
 
                         }
                     }
-
                     @Override
                     public void onFailure(Throwable e) {
                         System.out.println(e.getMessage());

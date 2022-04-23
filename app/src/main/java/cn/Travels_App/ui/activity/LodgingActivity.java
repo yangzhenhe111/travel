@@ -23,9 +23,9 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
     LodgingPersenter lodgingPersenter;
 
     @BindView(R.id.lodging_restaurant)
-    TextView restaurant;
+    EditText restaurant;
     @BindView(R.id.lodging_dishes)
-    TextView dishes;
+    EditText dishes;
     @BindView(R.id.lodging_baocun_image)
     ImageButton baocun_image;
     @BindView(R.id.lodging_baocun_text)
@@ -40,6 +40,7 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
 
     @Override
     public void initView() {
+        xianshi();
         //获取焦点
         jiadian();
     }
@@ -95,13 +96,12 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
             Toast.makeText(LodgingActivity.this, "请将信息填写完整",Toast.LENGTH_SHORT).show();
         }
         else{
-            lodging_shuju=restaurant.getText().toString()+"|"+dishes.getText().toString();
-            Intent intent = new Intent(LodgingActivity.this,MainActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("date", lodging_shuju);
-            intent.putExtras(bundle);
-            LodgingActivity.this.setResult(3,intent);
-            finish();
+            StringBuilder lo= new StringBuilder();
+            lodging_shuju = lo.append(restaurant.getText().toString()).append("---").append(dishes.getText().toString()).toString();
+            Intent intent = new Intent(LodgingActivity.this,
+                    MainActivity.class);
+            intent.putExtra("write_hotelInfo",lodging_shuju);
+            startActivity(intent);
         }
     }
 
@@ -133,5 +133,18 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
                 }
             }
         });
+    }
+
+    private void xianshi() {
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        System.out.println("B3");
+        if(bundle!=null){
+            System.out.println("B4");
+            String getTrafficInfo_1=bundle.getString("hotelInfo_1");
+            String [] temp = getTrafficInfo_1.split("---");
+            restaurant.setText(temp[0]);
+            dishes.setText(temp[1]);
+        }
     }
 }

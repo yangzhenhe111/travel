@@ -28,5 +28,7 @@ public class Constants {
     //支付我的订单
     public static final String URL_PAYMYORDER = "/front/order/goPayOrder";
     //保存游记
-    public static final String URL_TRAVELS ="front/travels/makeTravels" ;
+    public static final String URL_SAVETRAVELS = "front/travels/saveOrUpdata";
+    //发表游记
+    public static final String URL_PUBTRAVELS ="front/travels/submit";
 }

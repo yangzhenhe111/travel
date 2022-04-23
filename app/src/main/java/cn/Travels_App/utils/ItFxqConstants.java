@@ -21,6 +21,7 @@ public class ItFxqConstants {
     public static final int ERROR_STATUS = 500;
     //登录的Key
     public static final String LOGIN_USER_KEY = "loginUser";
+    //
 
 
 }

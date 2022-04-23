@@ -24,10 +24,10 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
     TrafficPersenter trafficPersenter;
     //信息
     @BindView(R.id.Traffic_suggestion)
-    TextView suggestion;
+    EditText suggestion;
     //建议
     @BindView(R.id.Traffic_Information)
-    TextView information;
+    EditText information;
     @BindView(R.id.traffic_baocun_image)
     ImageButton baocun_image;
     @BindView(R.id.traffic_baocun_text)
@@ -43,6 +43,7 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
 
     @Override
     public void initView() {
+        xianshi();
         //获取焦点
         jiadian();
     }
@@ -98,13 +99,14 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
             Toast.makeText(TrafficActivity.this, "请将信息填写完整",Toast.LENGTH_SHORT).show();
         }
         else{
-            traffic_shuju=suggestion.getText().toString()+"|"+information.getText().toString();
-            Intent intent = new Intent(TrafficActivity.this,MainActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("date", traffic_shuju);
-            intent.putExtras(bundle);
-            TrafficActivity.this.setResult(2,intent);
-            finish();
+            StringBuilder tr= new StringBuilder();
+            traffic_shuju = tr.append(suggestion.getText().toString()).append("---").append(information.getText().toString()).toString();
+            Intent intent = new Intent(TrafficActivity.this,
+                    MainActivity.class);
+            intent.putExtra("tag", "2");
+            /*intent.putExtra("write_cover",0L);*/
+            intent.putExtra("write_trafficInfo",traffic_shuju);
+            startActivity(intent);
         }
     }
 
@@ -135,5 +137,18 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
                 }
             }
         });
+    }
+
+    private void xianshi() {
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        System.out.println("B3");
+        if(bundle!=null){
+            System.out.println("B4");
+            String getTrafficInfo_1=bundle.getString("getTrafficInfo_1");
+            String [] temp = getTrafficInfo_1.split("---");
+            suggestion.setText(temp[0]);
+            information.setText(temp[1]);
+        }
     }
 }

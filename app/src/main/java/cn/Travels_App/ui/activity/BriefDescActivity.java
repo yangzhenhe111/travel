@@ -2,6 +2,7 @@ package cn.Travels_App.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -29,15 +30,16 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
 
     BriefDescView briefDescView;
     BriefDescPersenter briefDescPersenter;
+    private WriteFragment writeFragment;
 
     @BindView(R.id.BriefDesc_name)
-    TextView name;
+    EditText name;
     @BindView(R.id.BriefDesc_address)
-    TextView address;
+    EditText address;
     @BindView(R.id.BriefDesc_briefDesc)
-    TextView briefDesc;
+    EditText briefDesc;
     @BindView(R.id.BriefDesc_time)
-    TextView time;
+    EditText time;
     @BindView(R.id.briefdesc_baocun_image)
     ImageButton baocun_image;
     @BindView(R.id.briefdesc_baocun_text)
@@ -45,6 +47,7 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
 
     //需要页面保存的数据
     private String briefdesc_shuju;
+    private View view;
 
 
 
@@ -66,14 +69,15 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
 
     @Override
     public void initView() {
+        xianshi();
         //获取焦点
         jiadian();
     }
 
 
+
     @Override
     public void initData() {
-
     }
 
 
@@ -98,34 +102,33 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
     }
 
     @OnClick(R.id.brief_top_back)
-    void backPage(View view){
-        Intent intent = new Intent(BriefDescActivity.this,MainActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("date", "fanhui");
-        intent.putExtras(bundle);
-        BriefDescActivity.this.setResult(RESULT_CANCELED,intent);
+    public void backPage(){
         finish();
     }
 
     @OnClick({R.id.briefdesc_shanchu_image,R.id.briefdesc_shanchu_text})
-    void shanchu(View view){
+    public void shanchu(){
         finish();
     }
 
     @OnClick({R.id.briefdesc_baocun_image,R.id.briefdesc_baocun_text})
-    void baocun(View view){
-        if("".equals(name.getText().toString()) || "".equals(address.getText().toString()) ||
-                "".equals(briefDesc.getText().toString()) || "".equals(time.getText().toString())){
+    public void baocun(){
+        if(TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(address.getText().toString()) ||
+                TextUtils.isEmpty(briefDesc.getText().toString()) || TextUtils.isEmpty(time.getText().toString())){
             Toast.makeText(BriefDescActivity.this, "请将信息填写完整",Toast.LENGTH_SHORT).show();
         }
         else{
-            briefdesc_shuju=name.getText().toString()+"|"+address.getText().toString()+"|"+time.getText().toString()+"|"+briefDesc.getText().toString();
-            Intent intent = new Intent(BriefDescActivity.this,MainActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("date", briefdesc_shuju);
-            intent.putExtras(bundle);
-            BriefDescActivity.this.setResult(1,intent);
-            finish();
+            System.out.println("B1");
+            Intent intent = new Intent(BriefDescActivity.this,
+                    MainActivity.class);
+            intent.putExtra("tag", "2");
+            /*intent.putExtra("write_cover",0L);*/
+            intent.putExtra("write_name",name.getText().toString());
+            intent.putExtra("write_address",address.getText().toString());
+            intent.putExtra("write_opentime",time.getText().toString());
+            intent.putExtra("write_briefDesc",briefDesc.getText().toString());
+            System.out.println("B2");
+            startActivity(intent);
         }
     }
 
@@ -183,5 +186,18 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
                 }
             }
         });
+    }
+
+    private void xianshi() {
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        System.out.println("B3");
+        if(bundle!=null){
+            System.out.println("B4");
+            name.setText(bundle.getString("name_1"));
+            address.setText(bundle.getString("Address_1"));
+            briefDesc.setText(bundle.getString("BriefDesc_1"));
+            time.setText(bundle.getString("Opentime_1"));
+        }
     }
 }

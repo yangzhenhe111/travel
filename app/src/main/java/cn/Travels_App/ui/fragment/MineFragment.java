@@ -3,11 +3,18 @@ package cn.Travels_App.ui.fragment;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.ui.activity.HistoryActivity;
@@ -16,32 +23,38 @@ import cn.Travels_App.persenter.Minepresenter;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseFragment;
 import cn.Travels_App.ui.activity.MyTravelsActivity;
-import cn.Travels_App.ui.activity.YdRecordActivity;
+import cn.Travels_App.ui.activity.PersonalActivity;
 import cn.Travels_App.utils.CommonUtils;
 
 public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
 
-    @BindView(R.id.my_name)
-    TextView myNameTv;
+    /*@BindView(R.id.geren)
+    View geren;
+    @BindView(R.id.touxiang)
+    View touxiang;
+*/
 
-    @BindView(R.id.my_email)
-    TextView myEmailTv;
+    /*@OnClick(R.id.geren)
+    public void geren(){
+        Intent intent=new Intent();
+        intent.setClass(getContext(), PersonalActivity.class);
+        startActivity(intent);
+    }*/
+    @OnClick(R.id.touxiang)
+    public void touxiang(){
+        Intent intent=new Intent();
+        intent.setClass(getContext(), PersonalActivity.class);
+        startActivity(intent);
+    }
 
-    @BindView(R.id.my_tel)
-    TextView myTelTv;
-
-    @BindView(R.id.gerentouxiang)
-    ImageView mycove;
-    Fragment fragment;
-
-    @OnClick(R.id.his)
+    @OnClick(R.id.my_his)
     public void his(){
         Intent intent=new Intent();
         intent.setClass(getContext(), HistoryActivity.class);
         startActivity(intent);
     }
 
-    @OnClick(R.id.mytv)
+    @OnClick(R.id.my_tr)
     public void mytv(){
         Intent intent=new Intent();
         intent.setClass(getContext(), MyTravelsActivity.class);
@@ -55,10 +68,7 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
         startActivity(intent);
     }
 
-
-
     public static MineFragment newInstance() {
-
         return new MineFragment();
     }
 
@@ -69,19 +79,27 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
 
     @Override
     public void initView() {
-
     }
 
     @Override
     public void initData() {
-        UserEntity loginUser = CommonUtils.getLoginUser(getContext());
+        /*UserEntity loginUser = CommonUtils.getLoginUser(getContext());
         myNameTv.setText(loginUser.getUsername());
         myEmailTv.setText(loginUser.getEmail());
         myTelTv.setText(loginUser.getTel());
-        /*Glide.with(fragment)
-                .load(mycove.getHandler())
-                .placeholder(R.drawable.login1)
-                .into(mycove);*/
+        *//*if(TextUtils.isEmpty(loginUser.getHeadImg())){*//*
+            *//*Glide.with(fragment)
+                .load(R.drawable.login1)
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                .into(mycove);*//*
+
+        *//*}else {
+            Glide.with(fragment)
+                .load(loginUser.getHeadImg())
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                .into(mycove);
+        }*//*
+*/
     }
 
     @Override

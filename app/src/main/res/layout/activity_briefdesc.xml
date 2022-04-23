@@ -114,14 +114,16 @@
                 android:textStyle="bold"></TextView>
             <EditText
                 android:id="@+id/BriefDesc_name"
+                android:inputType="textMultiLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="#182C57"
                 android:textColorHint="#182C57"
-                android:hint="介绍一下景点的名字吧"
-                android:focusableInTouchMode="true"
-                android:background="@drawable/edittext_back"></EditText>
+                android:background="@drawable/edittext_back"
+                android:theme="@style/loginEditText"
+                android:drawablePadding="10dp"
+                android:hint="介绍一下景点的名字吧"></EditText>
         </LinearLayout>
 
         <View style="@style/line_2"/>

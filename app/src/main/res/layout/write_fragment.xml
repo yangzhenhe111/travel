@@ -17,11 +17,19 @@
                 android:layout_height="@dimen/dp_45"
                 android:background="@color/frag_bg"
                 android:id="@+id/detail_top_bar">
+                <!--<ImageButton
+                    android:id="@+id/write_top_back"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/fanhui"
+                    android:background="@null"
+                    android:tint="@color/blue_edit"
+                    tools:ignore="MissingConstraints" />-->
                 <TextView
                     android:id="@+id/top_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="我的游记"
+                    android:text="分享游记"
                     android:textSize="@dimen/sp_20"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -96,18 +104,19 @@
             android:layout_marginLeft="20dp"
             android:gravity="center"
             android:background="#ffffcc">
-            <Button
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
                 android:id="@+id/write_sc_but"
-                android:text="上传封面"
-                android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:background="@drawable/write_fragment_sc_bck"
-                ></Button>
+                android:scaleType="fitXY"
+                android:background="@drawable/shangchuanfengmian"
+                ></ImageView>
         </LinearLayout>
 
-        <View style="@style/line_1"/>
+
+        <View
+            android:layout_marginTop="20dp"
+            style="@style/line_1"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -243,6 +252,7 @@
         </LinearLayout>
 
         <View style="@style/line_1"/>
+
 
         <TextView
             android:id="@+id/ceshi"

@@ -99,16 +99,28 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
             viewHolder=(ViewHolder) view.getTag();
         }
 
-        System.out.println("331");
-        viewHolder.tjspots_nameTv.setText(spotsItem.getName());
-        String[] str=spotsItem.getCreatetime().split("[T]");
-        viewHolder.tjspots_createTimeTv.setText(str[0]);
 
-        System.out.println("332");
-        Glide.with(getContext())
-                .load(spotsItem.getCover())
-                .into(viewHolder.tjspots_image);
-        System.out.println("333");
+        if((isEmpty(spotsItem.getName())==true)){
+            viewHolder.tjspots_nameTv.setText(spotsItem.getName());
+        }else{
+            viewHolder.tjspots_nameTv.setText("---");
+        }
+        if((isEmpty(spotsItem.getCreatetime())==true)){
+            String[] str=spotsItem.getCreatetime().split("[T]");
+            viewHolder.tjspots_createTimeTv.setText(str[0]);
+        }else{
+            viewHolder.tjspots_createTimeTv.setText("------");
+        }
+
+        if((isEmpty(spotsItem.getCover())==true)){
+            Glide.with(getContext())
+                    .load(spotsItem.getCover())
+                    .into(viewHolder.tjspots_image);
+        }else{
+            Glide.with(getContext())
+                    .load(R.drawable.touxaing)
+                    .into(viewHolder.tjspots_image);
+        }
         return view;
     }
 
@@ -118,6 +130,13 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
         TextView tjspots_nameTv;
         TextView tjspots_createTimeTv;
 
+    }
+    public static boolean isEmpty(final Object obj) {
+        if (obj == null) {
+            return false;
+        }else {
+            return true;
+        }
     }
 
 

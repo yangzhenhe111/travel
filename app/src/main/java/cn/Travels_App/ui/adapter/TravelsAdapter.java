@@ -55,7 +55,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
             viewHolder=new ViewHolder();
             viewHolder.spotsfmIv=view.findViewById(R.id.spotsfmIv);
             viewHolder.spotsnameTv=view.findViewById(R.id.spotsnameTv);
-            viewHolder.priceTv=view.findViewById(R.id.biaoti);
+            viewHolder.titleTv=view.findViewById(R.id.biaoti);
             /*viewHolder.ydBtn=view.findViewById(R.id.ydBtn);
 
             viewHolder.ydBtn.setOnClickListener(new View.OnClickListener() {
@@ -71,11 +71,9 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
             viewHolder.spotsfmIv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    System.out.println("spad1");
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
                     intent.putExtra("travelEntity", travelEntity);
-                    System.out.println("spad2");
                     getContext().startActivity(intent);
                 }
             });
@@ -87,8 +85,21 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
         }
 
 
+        if((isEmpty(travelEntity.getName())==true)){
+            viewHolder.spotsnameTv.setText(travelEntity.getName());
+        }else{
+            viewHolder.spotsnameTv.setText("---");
+        }
+
+        /*if((isEmpty(travelEntity.getName())==true)){
+            viewHolder.spotsnameTv.setText(travelEntity.getName());
+        }else{
+            viewHolder.spotsnameTv.setText("---");
+        }*/
+
+
         viewHolder.spotsnameTv.setText(travelEntity.getName());
-        viewHolder.priceTv.setTextColor(Color.RED);
+        viewHolder.titleTv.setTextColor(Color.RED);
 
         Glide.with(getContext())
                 .load(travelEntity.getCover())
@@ -100,7 +111,15 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
     // 定义一个内部类，用于对控件的实例进行缓存
     class ViewHolder{
         ImageView spotsfmIv;
-        TextView spotsnameTv,priceTv;
+        TextView spotsnameTv,titleTv;
+    }
+
+    public static boolean isEmpty(final Object obj) {
+        if (obj == null) {
+            return false;
+        }else {
+            return true;
+        }
     }
 }
 

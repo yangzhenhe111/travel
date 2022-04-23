@@ -50,10 +50,10 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
     @BindView(R.id.h_my)
     TextView h_my;
     //我的游记
-    @BindView(R.id.h_gy)
+    @BindView(R.id.my_tr)
     TextView h_gy;
     //历史记录
-    @BindView(R.id.h_his)
+    @BindView(R.id.my_trjil)
     TextView h_his;
     @BindView(R.id.banner)
     Banner banner;
@@ -116,17 +116,14 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
     @Override
     public void initView() {
         initData();
+        TjTravelsAdapter adapter=new TjTravelsAdapter(getActivity(),R.layout.tjlist_item,tjSpotsList);
+        listView.setAdapter(adapter);
+        setListViewHeight(listView);
 
         //去除水平滚动条
         horizontalScrollView.setHorizontalScrollBarEnabled(false);
         bannerview();
-        System.out.println("hf1");
-        TjTravelsAdapter adapter=new TjTravelsAdapter(getActivity(),R.layout.tjlist_item,tjSpotsList);
-        System.out.println("hf2");
-        listView.setAdapter(adapter);
-        System.out.println("hf21");
-        setListViewHeight(listView);
-        System.out.println("hf3");
+
 
         h_spotsMddTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,7 +132,6 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
                         MainActivity.class);
                 intent.putExtra("gotoFragmentTag","1");
                 startActivity(intent);
-
             }
         });
         h_qa.setOnClickListener(new View.OnClickListener() {
@@ -151,7 +147,7 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
         h_my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                System.out.println("Home0");
                 Intent intent = new Intent(getContext(),
                         MainActivity.class);
                 intent.putExtra("gotoFragmentTag","3");
@@ -160,16 +156,18 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
         });
         h_gy.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(),
+            public void onClick(View view) {
+                System.out.println("Home1");
+                Intent intent = new Intent(getActivity(),
                         MyTravelsActivity.class);
                 startActivity(intent);
             }
         });
         h_his.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(),
+            public void onClick(View view) {
+                System.out.println("Home2");
+                Intent intent = new Intent(getActivity(),
                         HistoryActivity.class);
                 startActivity(intent);
             }
@@ -211,13 +209,12 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
         image.add(R.drawable.lb1);
         image.add(R.drawable.lb1);
         image.add(R.drawable.lb1);
-        title.add("圣诞节活动");
         title.add("不一样的美");
-        title.add("夏季推荐");
-        title.add("家具打折");
-        title.add("手表上新");
+        title.add("不一样的美");
+        title.add("不一样的美");
+        title.add("不一样的美");
+        title.add("不一样的美");
         //查找推荐的景区
-        System.out.println("0");
         createPresenter().findTjTravels();
     }
 
