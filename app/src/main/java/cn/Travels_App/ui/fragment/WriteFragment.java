@@ -22,8 +22,10 @@ import com.luck.picture.lib.entity.LocalMedia;
 import java.io.File;
 import java.util.List;
 
+import cn.Travels_App.common.Constants;
 import cn.Travels_App.ui.activity.MainActivity;
 import cn.Travels_App.utils.GlideEngine;
+import cn.Travels_App.utils.UpLoadUtils;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import butterknife.BindView;
@@ -79,6 +81,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     private Context mContext;
     private String imageurl;
+    private String imgUrl;
 
 
     public static WriteFragment newInstance() {
@@ -203,6 +206,8 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
                             Log.i(TAG, "Android Q 特有Path::" + media.getAndroidQToPath());
 
                             imageurl=media.getPath();
+                            imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
+                            Log.e("imgUrl",imgUrl);
                             write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));
                     }
                     System.out.println("w1");
@@ -239,7 +244,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setTrafficInfo(bundle.getString("write_trafficInfo"));
             travels.setResraurantInfo(bundle.getString("write_resraurantInfo"));
             travels.setHotelInfo(bundle.getString("write_hotelInfo"));
-            travels.setCover(imageurl);
+            travels.setCover(imgUrl);
             return travels;
         }else {
             return null;
@@ -254,7 +259,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setAddress(bundle.getString("write_address"));
             travels.setOpentime(bundle.getString("write_opentime"));
             travels.setBriefDesc(bundle.getString("write_briefDesc"));
-            travels.setCover(imageurl);
+            travels.setCover(imgUrl);
             createPresenter().publication(travels);
         }else {
             Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
