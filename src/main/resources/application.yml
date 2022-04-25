@@ -5,9 +5,9 @@ spring:
     active: local
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: travelsdevmysqluser20220401
-    password: travelsdevmysqlpassword20220401
-    url: jdbc:mysql://59.110.222.11:3306/travels?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: travels*********20220401
+    password: travels*********20220401
+    url: jdbc:mysql://59.XXX.XXX.11:3306/travels?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
 #    #hikari数据源特性配置
 #    hikari:
 #      maximum-pool-size: 800 #最大连接数,默认值10.
@@ -40,8 +40,8 @@ spring:
       max-file-size: 200MB
       enabled: true
   redis:
-    host: 59.110.222.11
-    password: travelsdev20220330
+    host: 59.XXX.XXX.11
+    password: t*********0330
     database: 0
     port: 6379
     jedis:
@@ -70,5 +70,3 @@ logging:
   file:
     path: /error
 
-#  Al1yun
-#Yzh12345 yzh@1810906871843294
