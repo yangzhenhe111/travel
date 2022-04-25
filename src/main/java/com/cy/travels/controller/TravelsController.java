@@ -8,6 +8,7 @@ import com.cy.travels.model.entity.User;
 import com.cy.travels.service.TravelsHistoryService;
 import com.cy.travels.service.TravelsService;
 import com.cy.travels.utils.Constant;
+import com.cy.travels.utils.RedisUtil;
 import com.cy.travels.utils.RequestContextUtil;
 import com.cy.travels.utils.dto.PageBean;
 import com.cy.travels.utils.dto.PageRequest;
@@ -18,12 +19,15 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,7 +43,8 @@ public class TravelsController {
     @Resource
     private TravelsHistoryService historyService;
 
-    private Gson gson = new Gson();
+    @Autowired
+    private RedisUtil redisUtil;
 
     @ApiOperation("分页获取游记列表")
     @PostMapping("/listPage")
@@ -135,6 +140,20 @@ public class TravelsController {
             return ResultResponse.fail("上传文件为null");
         }
         String fileName = file.getOriginalFilename();
+        //设置文件名
+        int count = 0;
+        //锁住的是同一对象
+        synchronized (this){
+            String string = (String) redisUtil.get("File-count");
+            if (Objects.nonNull(string)) {
+                count = Integer.valueOf(string);
+            }
+            ++count;
+            redisUtil.set("File-count",count,1);
+        }
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmmss");
+        String fileType = file.getOriginalFilename().split("\\.")[1];
+        fileName = format.format(new Date())+"_"+count+"."+fileType;
         String filePath = "/upload/travels/cover/";
         File path = new File(filePath);
         if (!path.exists()) {

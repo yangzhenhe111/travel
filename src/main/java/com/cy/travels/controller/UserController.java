@@ -148,8 +148,7 @@ public class UserController {
     //更新用户头像
     @ApiOperation("更新头像(现用)")
     @PostMapping("/uploadHeadImg")
-    public ResultResponse<UserDTO> uploadHeadImg(@RequestParam("file") MultipartFile file/*,
-                                HttpServletRequest request*/){
+    public ResultResponse<UserDTO> uploadHeadImg(@RequestParam("file") MultipartFile file){
 
         if (file.isEmpty()) {
             return ResultResponse.fail("上传文件为null");
