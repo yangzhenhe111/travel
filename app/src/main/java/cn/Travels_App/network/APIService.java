@@ -7,11 +7,9 @@ import java.util.List;
 
 import cn.Travels_App.common.Constants;
 
-import cn.Travels_App.model.entity.Order;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
 import io.reactivex.Observable;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
@@ -68,10 +66,6 @@ public interface APIService {
     @POST(Constants.URL_FINDALLHOTELS)
     Observable<HttpResult<String>> queryAllHotel();
 
-    //保存预定的订单
-    @Headers({"name:super"})
-    @POST(Constants.URL_SAVEYDORDER)
-    Observable<HttpResult<String>> saveYdOrder(@Body Order saveOrder);
 
 
     @POST(Constants.URL_FINDALLQA)

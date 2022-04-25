@@ -1,16 +1,12 @@
 package cn.Travels_App.persenter;
 
 
-import com.google.gson.Gson;
-
 import java.util.List;
 
 import cn.Travels_App.App;
-import cn.Travels_App.model.entity.Spots;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
-import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.HomeView;
 import cn.Travels_App.base.BasePresenter;
 

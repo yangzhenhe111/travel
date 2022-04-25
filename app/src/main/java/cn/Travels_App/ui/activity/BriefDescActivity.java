@@ -6,25 +6,18 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.hannesdorfmann.mosby.mvp.MvpPresenter;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
-import cn.Travels_App.base.BasePresenter;
 import cn.Travels_App.persenter.BriefDescPersenter;
-import cn.Travels_App.persenter.YdPerenter;
 import cn.Travels_App.ui.fragment.WriteFragment;
 import cn.Travels_App.view.BriefDescView;
-import cn.Travels_App.view.YdView;
 
 public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPersenter> implements BriefDescView{
 

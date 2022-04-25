@@ -2,8 +2,6 @@ package cn.Travels_App.network.converter;
 
 import android.util.Log;
 
-import cn.Travels_App.model.entity.HttpStatus;
-
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
@@ -23,13 +21,6 @@ import retrofit2.Converter;
 import static okhttp3.internal.Util.UTF_8;
 
 
-
-/**
- * itfxq
- * @since 2021/7/10
- * esponseBody
- */
-
 public class CustomGsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final Gson gson;
     private final TypeAdapter<T> adapter;
@@ -43,7 +34,7 @@ public class CustomGsonResponseBodyConverter<T> implements Converter<ResponseBod
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
         Log.e("查询输出",response);
-        HttpStatus httpStatus = gson.fromJson(response, HttpStatus.class);
+        /*HttpStatus httpStatus = gson.fromJson(response, HttpStatus.class);*/
 //        if (httpStatus.statusIsFailure()) {
 //            value.close();
 //            throw new ApiException(httpStatus.getCode(), httpStatus.getMsg());

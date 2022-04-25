@@ -42,10 +42,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="cn.Travels_App.ui.activity.ConditionActivity"/>
-        <activity android:name="cn.Travels_App.ui.activity.YdRecordActivity" />
-        <activity
-            android:name="cn.Travels_App.ui.activity.YdActivity"
-            android:parentActivityName="cn.Travels_App.ui.activity.MainActivity" />
         <activity
             android:name="cn.Travels_App.ui.activity.TravelsDetailActivity"
             android:parentActivityName="cn.Travels_App.ui.activity.MainActivity" />

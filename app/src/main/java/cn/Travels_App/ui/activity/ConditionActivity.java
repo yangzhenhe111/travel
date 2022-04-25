@@ -5,20 +5,12 @@ import androidx.annotation.NonNull;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.SearchView;
 
-import java.util.Map;
-
 import butterknife.BindView;
+import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
-import cn.Travels_App.common.FlowAutoRadioGroup;
-import cn.Travels_App.model.entity.City;
-import cn.Travels_App.model.entity.Level;
-import cn.Travels_App.model.entity.PriceArea;
-import cn.Travels_App.model.entity.Theme;
 import cn.Travels_App.persenter.ConditionPersenter;
 import cn.Travels_App.view.Conditionview;
 
@@ -78,11 +70,6 @@ public class ConditionActivity extends BaseActivity<Conditionview, ConditionPers
 
 
     @Override
-    public void onSuccessData(Map resultMap) {
-
-    }
-
-    @Override
     public void showProgress() {
 
     }
@@ -101,4 +88,10 @@ public class ConditionActivity extends BaseActivity<Conditionview, ConditionPers
     public void onFailed(String msg) {
 
     }
+
+    @OnClick(R.id.back)
+    void backPage(View view){
+        finish();
+    }
+
 }

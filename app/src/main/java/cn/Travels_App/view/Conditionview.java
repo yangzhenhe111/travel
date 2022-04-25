@@ -6,5 +6,4 @@ import java.util.Map;
 import cn.Travels_App.base.BaseView;
 
 public interface Conditionview extends BaseView {
-    void onSuccessData(Map resultMap);
 }

@@ -1,7 +1,6 @@
 package cn.Travels_App.utils;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
-import cn.Travels_App.model.entity.CasesEntity;
-import cn.Travels_App.model.entity.DoctorEntity;
-import cn.Travels_App.model.entity.HealthyEntity;
-import cn.Travels_App.model.entity.Hotel;
-import cn.Travels_App.model.entity.Order;
-import cn.Travels_App.model.entity.Qa;
-import cn.Travels_App.model.entity.Spots;
-import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
 
 
@@ -53,91 +43,6 @@ public class CommonUtils {
         return getDateStr(date);
     }
 
-    /**
-     * 转换医生列表
-     * @param resultJson
-     * @return
-     */
-
-    public static List<DoctorEntity> transeToNewsList(String resultJson) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<DoctorEntity>>() {
-        }.getType();
-
-        List<DoctorEntity> newsList = gson.fromJson(resultJson, listType);
-        return newsList;
-    }
-
-
-
-    public static List<DoctorEntity> getListByPos(int pos, List<DoctorEntity> newsList){
-
-        String[] titles = {"推荐","热门","社会","体育","娱乐","军事","财经","房产"};
-        List resultList = new ArrayList();
-        switch (pos){
-            case 0:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==1){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 1:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==2){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 2:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==3){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 3:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==4){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 4:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==5){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 5:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==6){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 6:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==7){
-                        resultList.add(news);
-                    }
-                });
-                break;
-            case 7:
-                newsList.forEach(news->{
-                    if(news.getLabelid()==8){
-                        resultList.add(news);
-                    }
-                });
-                break;
-
-        }
-
-        return resultList;
-
-    }
 
 
     //存储登录用户信息
@@ -208,15 +113,6 @@ public class CommonUtils {
     }*/
 
 
-    public static List<HealthyEntity> transeToHealthyList(String data) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<HealthyEntity>>() {
-        }.getType();
-
-        List<HealthyEntity> healthyEntityList = gson.fromJson(data, listType);
-        return healthyEntityList;
-    }
 
 
 
@@ -245,26 +141,6 @@ public class CommonUtils {
         listView.setLayoutParams(params);
     }
 
-    public static List<CasesEntity> transeToCasesList(String data) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<CasesEntity>>() {
-        }.getType();
-
-        List<CasesEntity> casesEntities = gson.fromJson(data, listType);
-        return casesEntities;
-    }
-
-    public static List<Order> transeToYdList(String data) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<Order>>() {
-        }.getType();
-
-        List<Order> orderList = gson.fromJson(data, listType);
-        return orderList;
-    }
-
     /*//转换json的data字符串 为 对象集合
     public static List<Travels> transeToSpotsList(String data) {
 
@@ -278,23 +154,4 @@ public class CommonUtils {
         return tjSpotsList;
     }*/
 
-    public static List<Qa> transeToQaList(String data) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<Qa>>() {
-        }.getType();
-
-        List<Qa> qaList = gson.fromJson(data, listType);
-        return qaList;
-    }
-
-    public static List<Hotel> transeToHotelList(String data) {
-        Gson gson = new Gson();
-        //通过反射得到type对象
-        Type listType = new TypeToken<List<Hotel>>() {
-        }.getType();
-
-        List<Hotel> hotels = gson.fromJson(data, listType);
-        return hotels;
-    }
 }
