@@ -2,6 +2,7 @@ package com.cy.travels.service.impl;
 
 import com.cy.travels.dao.*;
 import com.cy.travels.enums.ResultEnum;
+import com.cy.travels.enums.TravelStatusEnum;
 import com.cy.travels.enums.YesOrNoEnum;
 import com.cy.travels.exception.BusinessException;
 import com.cy.travels.model.dto.*;
@@ -55,6 +56,7 @@ public class TravelServiceImpl implements TravelService {
         result.setPublishDate(new Date());
         TravelsTitle title = new TravelsTitle();
         BeanUtils.copyProperties(result,title);
+        title.setStatus(TravelStatusEnum.PUBLISH.getCode());
         int num = titleMapper.updateByPrimaryKeySelective(title);
         if (num > 0) {
             TravelsTitleDTO resultDTO = new TravelsTitleDTO();
@@ -72,6 +74,7 @@ public class TravelServiceImpl implements TravelService {
         TravelsTitle title = new TravelsTitle();
         BeanUtils.copyProperties(travelsTitleDTO,title);
         title.setIsDeleted(YesOrNoEnum.N.getCode());
+        title.setStatus(TravelStatusEnum.SAVE.getCode());
         int num = titleMapper.insert(title);
         if (num > 0) {
             TravelsTitleDTO result = new TravelsTitleDTO();

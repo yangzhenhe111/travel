@@ -55,12 +55,22 @@ public class TravelsTitle extends BaseDO implements Serializable {
 	/**
 	 * 创建时间
 	 */
+	@Column
 	@ApiModelProperty( value="创建时间")
 	private Date createtime;
 
 	/**
+	 * 状态（1.保存2.发布）
+	 */
+	@Column
+	@ApiModelProperty("状态（1.保存2.发布）")
+	private String status;
+
+
+	/**
 	 * 创建者
 	 */
+	@Column
 	@ApiModelProperty( value="创建者")
 	private Long creator;
 

@@ -51,6 +51,12 @@ public class TravelsTitleDTO implements Serializable {
 	private Date createtime;
 
 	/**
+	 * 状态（1.保存2.发布）
+	 */
+	@ApiModelProperty("状态（1.保存2.发布）")
+	private String status;
+
+	/**
 	 * 创建者
 	 */
 	@ApiModelProperty( value="创建者")
