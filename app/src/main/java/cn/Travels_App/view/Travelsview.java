@@ -9,5 +9,5 @@ import cn.Travels_App.model.entity.Travels;
 
 public interface Travelsview extends BaseView {
     void onSuccessData(Map resultMap);
-    public void loadData(List<Travels> spotsList);
+    void loadData(List<Travels> spotsList);
 }

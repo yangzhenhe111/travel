@@ -1,7 +1,9 @@
 package cn.Travels_App.ui.fragment;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
@@ -102,6 +105,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     @Override
     public void initView() {
         this.mContext=getActivity();
+        requestWritePermission();
     }
 
     @Override
@@ -204,11 +208,10 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
                             Log.i(TAG, "原图::" + media.getPath());
                             Log.i(TAG, "裁剪::" + media.getCutPath());
                             Log.i(TAG, "Android Q 特有Path::" + media.getAndroidQToPath());
-
                             imageurl=media.getPath();
+                            write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));
                             imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
                             Log.e("imgUrl",imgUrl);
-                            write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));
                     }
                     System.out.println("w1");
                     break;
@@ -285,6 +288,12 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     @Override
     public void onFailed(String msg) {
 
+    }
+
+    private void requestWritePermission(){
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        }
     }
 
 }

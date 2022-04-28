@@ -8,9 +8,9 @@
     tools:context=".ui.activity.LoginActivity">
 
     <LinearLayout
-        android:layout_width="292dp"
+        android:layout_width="wrap_content"
         android:layout_height="286dp"
-        android:layout_marginLeft="70dp"
+       android:layout_gravity="center"
         android:background="@drawable/login1">
     </LinearLayout>
 
@@ -35,7 +35,7 @@
             android:id="@+id/log_name"
             android:layout_width="315dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/textveiw_border"
             android:drawableLeft="@drawable/yonghu"
@@ -50,7 +50,7 @@
             android:id="@+id/log_pwd"
             android:layout_width="315dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/textveiw_border"
@@ -67,8 +67,7 @@
             android:id="@+id/loginBtn"
             android:layout_width="315dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
             android:background="#182C57"
             android:onClick="loginSys"
             android:text="立即登录"

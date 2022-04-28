@@ -36,9 +36,7 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
                     public void onSuccess(HttpResult<List<Travels>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
-                            System.out.println("spper1");
                             List<Travels> spotsEntites =resp.getData();
-                            System.out.println("spper2");
                             mSpotsView.loadData(spotsEntites);
                         } else {
 
@@ -59,9 +57,7 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
                     public void onSuccess(HttpResult<List<Travels>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
-                            System.out.println("spper3");
                             List<Travels> spotsEntites =resp.getData();
-                            System.out.println("spper4");
                             mSpotsView.loadData(spotsEntites);
                         } else {
 

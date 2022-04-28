@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:orientation="horizontal"
+    android:background="#FAFAFA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA">
+        <ImageView
+            android:id="@+id/tjspots_image"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            android:focusable="false"
+            android:src="@drawable/lb1">
+        </ImageView>
+        <RelativeLayout
+            android:id="@+id/his_right"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/tjspots_image"
+            android:layout_marginLeft="10dp"
+            android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/tjspots_name"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:inputType="textMultiLine"
+                android:text="九寨沟"
+                android:textColor="#203152"
+                android:textSize="20sp"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/tjspots_createTime"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="20201118"
+                android:textSize="15sp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentBottom="true"
+                >
+            </TextView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

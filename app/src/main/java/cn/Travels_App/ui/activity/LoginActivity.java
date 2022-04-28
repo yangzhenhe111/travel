@@ -96,6 +96,7 @@ public class LoginActivity extends BaseActivity<LoginView,LoginPersenter> implem
 
     //登录系统
     public void loginSys(View view){
+        loginNameEt.setTransformationMethod(null);
         String username = loginNameEt.getText().toString().trim();
         String pwd = loginPwdEt.getText().toString().trim();
         ContentValues values = new ContentValues();

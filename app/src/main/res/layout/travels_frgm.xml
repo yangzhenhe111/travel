@@ -48,10 +48,12 @@
                 android:columnWidth="200dp"
                 android:stretchMode="spacingWidthUniform"
                 android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
                 android:numColumns="2"
                 android:scrollbarAlwaysDrawHorizontalTrack="true"
                 android:scrollbarAlwaysDrawVerticalTrack="true"
-                android:scrollbars="horizontal|vertical" />
+                android:scrollbars="horizontal|vertical"
+                />
 
         </LinearLayout>
 

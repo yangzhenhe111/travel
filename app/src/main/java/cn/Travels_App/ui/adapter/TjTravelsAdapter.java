@@ -81,14 +81,13 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
 
 
             // 点击进入详情页）
-            viewHolder.tjspots_nameTv.setOnClickListener(new View.OnClickListener() {
+            viewHolder.tjspots_createTimeTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-//                    Intent intent = new Intent(getContext(),
-//                            DoctorDetailActivity.class);
-//                    intent.putExtra("doctorEntity", spotsItem);
-//                    getContext().startActivity(intent);
+                    Intent intent = new Intent(getContext(),
+                            TravelsDetailActivity.class);
+                    intent.putExtra("travelEntity", spotsItem);
+                    getContext().startActivity(intent);
 
                 }
             });

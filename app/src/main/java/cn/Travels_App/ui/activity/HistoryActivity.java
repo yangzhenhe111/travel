@@ -37,7 +37,7 @@ public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter>
     @Override
     public void initView() {
         initData();
-        TjTravelsAdapter adapter=new TjTravelsAdapter(HistoryActivity.this,R.layout.tjlist_item,histravels);
+        TjTravelsAdapter adapter=new TjTravelsAdapter(HistoryActivity.this,R.layout.history_item,histravels);
         listView.setAdapter(adapter);
         setListViewHeight(listView);
     }

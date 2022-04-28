@@ -7,6 +7,8 @@ import java.util.List;
 
 import cn.Travels_App.common.Constants;
 
+import cn.Travels_App.model.entity.Comment;
+import cn.Travels_App.model.entity.CommentResp;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
 import io.reactivex.Observable;
@@ -43,36 +45,28 @@ public interface APIService {
     @POST(Constants.URL_PUBTRAVELS)
     Observable<HttpResult<Travels>> pubtravels(@Body Travels travels);
 
-    @Headers({"name:super"})
+    /*@Headers({"name:super"})
     @POST(Constants.URL_FINDMYORDER)
-    Observable<HttpResult<String>> findMyYdOrder(@Query("id") Long id);
+    Observable<HttpResult<String>> findMyYdOrder(@Query("id") Long id);*/
 
     //查找推荐的景区
     @Headers({"name:super"})
     @POST(Constants.URL_FINDTJSPOTS)
     Observable<HttpResult<List<Travels>>> findTjTravels();
 
-    /*@Headers({"name:super"})
-    @POST(Constants.URL_FINDALLSPOTS)
-    Observable<HttpResult<List<Travels>>> queryAllTravels();*/
-
     //根据条件查询景区
     @Headers({"name:super"})
     @POST(Constants.URL_FINDSPOTSBYCONDITION)
     Observable<HttpResult<List<Travels>>> queryTravelsByCondition(@Query("cityid")String sousuo);
 
-    //查询所有的酒店信息
+    //根据游记ID查询评论
     @Headers({"name:super"})
-    @POST(Constants.URL_FINDALLHOTELS)
-    Observable<HttpResult<String>> queryAllHotel();
+    @POST(Constants.URL_FINDComment)
+    Observable<HttpResult<List<CommentResp>>> queryAllComment(@Query("id") Long id);
 
-
-
-    @POST(Constants.URL_FINDALLQA)
+    /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})
-    Observable<HttpResult<String>> findAllQa();
+    @POST(Constants.URL_FINDTJSPOTS)
+    Observable<HttpResult<List<Comment>>> querySecondaryComment(@Query("id") Long id);*/
 
-    @POST(Constants.URL_PAYMYORDER)
-    @Headers({"name:super"})
-    Observable<HttpResult<String>>  payMyOrder(@Query("id")Long id);
 }
