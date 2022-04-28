@@ -23,4 +23,6 @@ public interface TravelService {
     TravelsDetailsDTO getDetails(TravelsTitleDTO travelsTitleDTO);
 
     TravelsTitleDTO saveOrUpdata(TravelsTitleDTO travelsTitleDTO);
+
+    TravelsTitleDTO collect(TravelsTitleDTO condition);
 }

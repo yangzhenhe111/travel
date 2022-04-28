@@ -20,4 +20,6 @@ public interface UserService {
     UserDTO login(UserDTO userDTO);
 
     List<User> getLoginUserList();
+
+    User getCurrentUser();
 }

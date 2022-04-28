@@ -122,4 +122,18 @@ public class TravelController {
 
 
     }
+    @ApiOperation("收藏游记，传来ID即可")
+    @PostMapping("/collect")
+    public ResultResponse<TravelsTitleDTO> collect(@RequestBody TravelsTitleDTO condition) {
+        TravelsTitleDTO result = travelService.collect(condition);
+        return ResultResponse.ok("收藏成功",result);
+    }
+
+    /**
+     * 点赞
+     * 转发
+     * 评论
+     */
+
+
 }

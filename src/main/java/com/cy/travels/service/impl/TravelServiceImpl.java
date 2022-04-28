@@ -7,6 +7,7 @@ import com.cy.travels.enums.YesOrNoEnum;
 import com.cy.travels.exception.BusinessException;
 import com.cy.travels.model.dto.*;
 import com.cy.travels.model.entity.*;
+import com.cy.travels.service.TravelCollectionService;
 import com.cy.travels.service.TravelService;
 import com.cy.travels.service.UserService;
 import com.cy.travels.utils.SqlUtils;
@@ -49,6 +50,9 @@ public class TravelServiceImpl implements TravelService {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private TravelCollectionService collectionService;
 
     @Override
     public TravelsTitleDTO submit(TravelsTitleDTO travelsTitleDTO) {
@@ -171,33 +175,41 @@ public class TravelServiceImpl implements TravelService {
         queryTraffic.setIsDeleted(YesOrNoEnum.N.getCode());
         queryTraffic.setTitleId(title.getId());
         TravelTraffic travelTraffic = trafficMapper.selectOne(queryTraffic);
-        TravelTrafficDTO travelTrafficDTO = new TravelTrafficDTO();
-        BeanUtils.copyProperties(travelTraffic,travelTrafficDTO);
-        result.setTraffic(travelTrafficDTO);
+        if (Objects.nonNull(travelTraffic)) {
+            TravelTrafficDTO travelTrafficDTO = new TravelTrafficDTO();
+            BeanUtils.copyProperties(travelTraffic,travelTrafficDTO);
+            result.setTraffic(travelTrafficDTO);
+        }
 
         TravelAccommodation queryAccommodation = new TravelAccommodation();
         queryAccommodation.setIsDeleted(YesOrNoEnum.N.getCode());
         queryAccommodation.setTitleId(title.getId());
         TravelAccommodation travelAccommodation = accommodationMapper.selectOne(queryAccommodation);
-        TravelAccommodationDTO travelAccommodationDTO = new TravelAccommodationDTO();
-        BeanUtils.copyProperties(travelAccommodation,travelAccommodationDTO);
-        result.setAccommodation(travelAccommodationDTO);
+        if (Objects.nonNull(travelAccommodation)) {
+            TravelAccommodationDTO travelAccommodationDTO = new TravelAccommodationDTO();
+            BeanUtils.copyProperties(travelAccommodation, travelAccommodationDTO);
+            result.setAccommodation(travelAccommodationDTO);
+        }
 
         TravelDelicacy queryDelicacy = new TravelDelicacy();
         queryDelicacy.setIsDeleted(YesOrNoEnum.N.getCode());
         queryDelicacy.setTitleId(title.getId());
         TravelDelicacy travelDelicacy = delicacyMapper.selectOne(queryDelicacy);
-        TravelDelicacyDTO travelDelicacyDTO = new TravelDelicacyDTO();
-        BeanUtils.copyProperties(travelDelicacy,travelDelicacyDTO);
-        result.setDelicacy(travelDelicacyDTO);
+        if (Objects.nonNull(travelDelicacy)) {
+            TravelDelicacyDTO travelDelicacyDTO = new TravelDelicacyDTO();
+            BeanUtils.copyProperties(travelDelicacy, travelDelicacyDTO);
+            result.setDelicacy(travelDelicacyDTO);
+        }
 
         TravelLocalOverview queryLocalOverview = new TravelLocalOverview();
         queryLocalOverview.setIsDeleted(YesOrNoEnum.N.getCode());
         queryLocalOverview.setTitleId(title.getId());
         TravelLocalOverview travelLocalOverview = localOverviewMapper.selectOne(queryLocalOverview);
-        TravelLocalOverviewDTO travelLocalOverviewDTO = new TravelLocalOverviewDTO();
-        BeanUtils.copyProperties(travelLocalOverview,travelLocalOverviewDTO);
-        result.setLocalOverview(travelLocalOverviewDTO);
+        if (Objects.nonNull(travelLocalOverview)) {
+            TravelLocalOverviewDTO travelLocalOverviewDTO = new TravelLocalOverviewDTO();
+            BeanUtils.copyProperties(travelLocalOverview, travelLocalOverviewDTO);
+            result.setLocalOverview(travelLocalOverviewDTO);
+        }
 
 
         return result;
@@ -212,6 +224,17 @@ public class TravelServiceImpl implements TravelService {
             //新增（保存）
             return this.save(travelsTitleDTO);
         }
+    }
+
+    @Override
+    public TravelsTitleDTO collect(TravelsTitleDTO condition) {
+
+        User currentUser = userService.getCurrentUser();
+        TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
+        collectionDTO.setTravelId(condition.getId());
+        collectionDTO.setUserId(currentUser.getId());
+        collectionService.save(collectionDTO);
+        return condition;
     }
 
     private void check(TravelsTitleDTO request) {

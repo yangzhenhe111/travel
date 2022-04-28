@@ -8,7 +8,9 @@ import com.cy.travels.exception.BusinessException;
 import com.cy.travels.model.dto.UserDTO;
 import com.cy.travels.model.entity.User;
 import com.cy.travels.service.UserService;
+import com.cy.travels.utils.RedisUtil;
 import com.cy.travels.utils.RequestContextUtil;
+import com.cy.travels.utils.dto.Result;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.bouncycastle.crypto.digests.MD5Digest;
@@ -20,7 +22,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,6 +37,10 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private RedisUtil redisUtil;
+    @Autowired
+    private HttpServletRequest request;
 
     @Override
     public UserDTO findUser(UserDTO userDTO) {
@@ -183,5 +192,26 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setLoginStatus(LoginStatusEnum.LOGIN.getCode());
         return userMapper.select(user);
+    }
+
+    @Override
+    public User getCurrentUser() {
+        log.info("[header-user]:" + request.getHeader("header-user"));
+        String header = request.getHeader("header-user");
+        //检查请求header的信息是否存在
+        if (Objects.nonNull(header)) {
+            //存在
+            User headerUser = new Gson().fromJson(header, User.class);
+
+            LinkedHashMap<String, Object> redisUser = (LinkedHashMap<String, Object>) redisUtil.get("user-" + headerUser.getId());
+            log.info("[redis]:" + redisUser.toString());
+
+            String redisUserId = String.valueOf(redisUser.get("id"));
+            String headerUserId = String.valueOf(headerUser.getId());
+            if (redisUserId.equals(headerUserId)) {
+                return headerUser;
+            }
+        }
+        throw new BusinessException(ResultEnum.UNAUTHORIZED.getCode(),"用户还未登陆，请登录");
     }
 }
