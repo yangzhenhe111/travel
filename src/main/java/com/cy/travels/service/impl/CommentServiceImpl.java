@@ -79,15 +79,13 @@ public class CommentServiceImpl implements CommentService {
         for (Comment c : list) {
             CommentRespDTO commentResp = new CommentRespDTO();
             BeanUtils.copyProperties(c,commentResp);
-//            //获取列表时，若是二级评论列表，且并不是一级评论的子评论，则在相应评论上加上父级评论
-//            if (query.getParentId() != null) {
-//                if (!query.getParentId().equals(c.getParentId())) {
-//                    Comment comment = commentMapper.selectByPrimaryKey(query.getParentId());
-//                    CommentDTO commentDTO = new CommentDTO();
-//                    BeanUtils.copyProperties(c,commentDTO);
-//                    commentResp.setParentComment(commentDTO);
-//                }
-//            }
+            //获取列表时，若是二级评论列表，则在相应评论上加上父级评论
+            if (c.getParentId() != null) {
+                Comment comment = commentMapper.selectByPrimaryKey(c.getParentId());
+                CommentDTO commentDTO = new CommentDTO();
+                BeanUtils.copyProperties(comment,commentDTO);
+                commentResp.setParentComment(commentDTO);
+            }
             result.add(commentResp);
         }
         PageInfo pageInfo = new PageInfo(list);
