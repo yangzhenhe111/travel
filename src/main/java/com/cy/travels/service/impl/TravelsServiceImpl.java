@@ -117,30 +117,30 @@ public class TravelsServiceImpl implements TravelsService {
 
     private void addCondition(QueryTravelsDTO query, Example example) {
         Example.Criteria criteria = example.createCriteria();
-        if (Objects.nonNull(query.getId())) {
-            criteria.andEqualTo("id",query.getId());
-        }
-        if (Objects.nonNull(query.getName())) {
-            criteria.andLike("name",SqlUtils.like(query.getName()));
-        }
-        if (Objects.nonNull(query.getAddress())) {
-            criteria.andLike("address", SqlUtils.like(query.getAddress()));
-        }
-        if (Objects.nonNull(query.getBriefDesc())) {
-            criteria.andLike("briefDesc",SqlUtils.like(query.getBriefDesc()));
-        }
-        if (Objects.nonNull(query.getCreator())) {
-            criteria.andEqualTo("creator",query.getCreator());
-        }
-        if (Objects.nonNull(query.getOpentimeStart()) && Objects.nonNull(query.getOpentimeEnd())) {
-            criteria.andBetween("opentime",query.getOpentimeStart(),query.getOpentimeEnd());
-        }
-        if (Objects.nonNull(query.getPublishDateStart()) && Objects.nonNull(query.getPublishDateEnd())) {
-            criteria.andBetween("publishDate",query.getPublishDateStart(),query.getPublishDateEnd());
-        }
-        if (Objects.nonNull(query.getBudgetMax()) && Objects.nonNull(query.getBudgetMin())) {
-            criteria.andBetween("budge",query.getBudgetMin(),query.getBudgetMax());
-        }
+//        if (Objects.nonNull(query.getId())) {
+//            criteria.andEqualTo("id",query.getId());
+//        }
+//        if (Objects.nonNull(query.getName())) {
+//            criteria.andLike("name",SqlUtils.like(query.getName()));
+//        }
+//        if (Objects.nonNull(query.getAddress())) {
+//            criteria.andLike("address", SqlUtils.like(query.getAddress()));
+//        }
+//        if (Objects.nonNull(query.getBriefDesc())) {
+//            criteria.andLike("briefDesc",SqlUtils.like(query.getBriefDesc()));
+//        }
+//        if (Objects.nonNull(query.getCreator().longValue())) {
+//            criteria.andEqualTo("creator",query.getCreator());
+//        }
+//        if (Objects.nonNull(query.getOpentimeStart()) && Objects.nonNull(query.getOpentimeEnd())) {
+//            criteria.andBetween("opentime",query.getOpentimeStart(),query.getOpentimeEnd());
+//        }
+//        if (Objects.nonNull(query.getPublishDateStart()) && Objects.nonNull(query.getPublishDateEnd())) {
+//            criteria.andBetween("publishDate",query.getPublishDateStart(),query.getPublishDateEnd());
+//        }
+//        if (Objects.nonNull(query.getBudgetMax().longValue()) && Objects.nonNull(query.getBudgetMin().longValue())) {
+//            criteria.andBetween("budget",query.getBudgetMin(),query.getBudgetMax());
+//        }
         if (Objects.nonNull(query.getInfo())) {
             List<Long> list = travelsMapper.getTravelsIdList(query.getInfo());
             criteria.andIn("id",list);

@@ -11,10 +11,7 @@ import com.cy.travels.utils.dto.ResultResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -61,6 +58,23 @@ public class CommentController {
         }else {
             return Result.fail();
         }
+    }
+
+    @ApiOperation("获取全部评论列表")
+    @GetMapping("/getCommentListAll")
+    public Result<List<CommentRespDTO>> getCommentListAll(@RequestParam("travelId") Long travelId) {
+        PageRequest<CommentDTO> request = new PageRequest<>();
+        CommentDTO commentDTO = new CommentDTO();
+        commentDTO.setTravelsId(travelId);
+        request.setData(commentDTO);
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+            request.setPageNum(1);
+        }
+        if (Objects.isNull(request.getPageSize()) || request.getPageSize() < 1) {
+            request.setPageSize(999);
+        }
+        PageBean<CommentRespDTO> result = commentService.listPage(request);
+        return Result.ok(result);
     }
 
 }
