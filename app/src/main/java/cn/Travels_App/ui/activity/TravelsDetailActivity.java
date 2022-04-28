@@ -241,12 +241,9 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick
-    public void onClick(View view) {
-        if(view.getId() == R.id.detail_page_do_comment){
-
+    @OnClick(R.id.detail_page_do_comment)
+    public void onClick() {
             showCommentDialog();
-        }
     }
 
     /**

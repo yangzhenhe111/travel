@@ -17,7 +17,7 @@ public class Constants {
     //查询所有的景区
     public static final String URL_FINDALLSPOTS = "front/travels/getAllTravelsList" ;
     //根据条件查询景区
-    public static final String URL_FINDSPOTSBYCONDITION = "/front/travels/getAllTravelsList";
+    public static final String URL_FINDSPOTSBYCONDITION = "/front/travels/listPage";
    /* //查询所有的酒店
     public static final String URL_FINDALLHOTELS = "/front/hotel/all";
     //保存预定的订单

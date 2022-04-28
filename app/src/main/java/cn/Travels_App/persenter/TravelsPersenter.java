@@ -1,10 +1,14 @@
 package cn.Travels_App.persenter;
 
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 import cn.Travels_App.App;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.QueryTravelsDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
@@ -51,7 +55,14 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
 
     //根据条件查询景区
     public void queryTravelsByCondition(String sousuo) {
-        getAppComponent().getAPIService().queryTravelsByCondition(sousuo)
+
+        PageRequest<QueryTravelsDTO> request = new PageRequest<>();
+        request.setPageNum(1);
+        request.setPageSize(10);
+        QueryTravelsDTO queryTravelsDTO = new QueryTravelsDTO();
+        queryTravelsDTO.setInfo(sousuo);
+        request.setData(queryTravelsDTO);
+         getAppComponent().getAPIService().queryTravelsByCondition(request)
                 .subscribe(new BaseObserver<HttpResult<List<Travels>>>() {
                     @Override
                     public void onSuccess(HttpResult<List<Travels>> resp) {

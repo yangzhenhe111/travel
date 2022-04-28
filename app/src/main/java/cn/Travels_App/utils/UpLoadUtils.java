@@ -53,6 +53,7 @@ public class UpLoadUtils {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            ToastUtils.showToast(context,e.getMessage());
         }
 //        call.enqueue(new Callback() {
 //            @Override
