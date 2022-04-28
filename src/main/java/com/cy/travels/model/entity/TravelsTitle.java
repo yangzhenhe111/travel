@@ -74,4 +74,14 @@ public class TravelsTitle extends BaseDO implements Serializable {
 	@ApiModelProperty( value="创建者")
 	private Long creator;
 
+	/**
+	 * 住宿信息ID
+	 */
+	@Column
+	private Long accommodationId ;
+
+	/**
+	 * 交通信息
+	 */
+
 }

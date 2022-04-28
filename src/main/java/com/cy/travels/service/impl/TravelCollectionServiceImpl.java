@@ -9,6 +9,7 @@ import com.cy.travels.model.dto.UserDTO;
 import com.cy.travels.model.entity.TravelCollection;
 import com.cy.travels.model.entity.User;
 import com.cy.travels.service.TravelCollectionService;
+import com.cy.travels.service.UserService;
 import com.cy.travels.utils.RequestContextUtil;
 import com.cy.travels.utils.dto.PageBean;
 import com.cy.travels.utils.dto.PageRequest;
@@ -22,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -34,8 +36,13 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
     @Autowired
     private TracelCollectionMapper tracelCollectionMapper;
 
+    @Resource
+    private UserService userService;
+
     @Override
     public TravelCollectionDTO save(TravelCollectionDTO condition) {
+        User user = userService.getCurrentUser();
+        condition.setUserId(user.getId());
         TravelCollectionDTO result = new TravelCollectionDTO();
         TravelCollection collection = new TravelCollection();
         BeanUtils.copyProperties(condition,collection);
@@ -51,8 +58,32 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         return result;
     }
 
+//    @Override
+//    public PageBean<TravelsTitleDTO> listPage(PageRequest<TravelCollectionDTO> request) {
+//
+//        TravelCollectionDTO query = request.getData();
+//        String userStr = RequestContextUtil.getRequestHeader("header-user");
+//        User user = new Gson().fromJson(userStr, User.class);
+//        query.setUserId(user.getId());
+//
+//        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+//        List<TravelsTitleDTO> list = tracelCollectionMapper.getAllCollectionList(query);
+//        for (TravelsTitleDTO travelsTitleDTO : list) {
+//            travelsTitleDTO.setCreatorName(user.getUsername());
+//            travelsTitleDTO.setCreatorCover(user.getHeadImg());
+//        }
+//        PageInfo pageInfo = new PageInfo(list);
+//        PageBean pageBean = new PageBean();
+//        pageBean.setPageSize(request.getPageSize());
+//        pageBean.setCurrentPage(request.getPageNum());
+//        pageBean.setData(pageInfo.getList());
+//        pageBean.setTotalPage(pageInfo.getPages());
+//        pageBean.setTotalCount(pageInfo.getSize());
+//        return pageBean;
+//    }
+
     @Override
-    public PageBean<TravelsTitleDTO> listPage(PageRequest<TravelCollectionDTO> request) {
+    public PageBean<TravelCollectionDTO> listPage(PageRequest<TravelCollectionDTO> request) {
 
         TravelCollectionDTO query = request.getData();
         String userStr = RequestContextUtil.getRequestHeader("header-user");
@@ -60,10 +91,10 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         query.setUserId(user.getId());
 
         PageHelper.startPage(request.getPageNum(),request.getPageSize());
-        List<TravelsTitleDTO> list = tracelCollectionMapper.getAllCollectionList(query);
-        for (TravelsTitleDTO travelsTitleDTO : list) {
-            travelsTitleDTO.setCreatorName(user.getUsername());
-            travelsTitleDTO.setCreatorCover(user.getHeadImg());
+        List<TravelCollectionDTO> list = tracelCollectionMapper.getAllCollectionList(query);
+        for (TravelCollectionDTO travelsTitleDTO : list) {
+            travelsTitleDTO.setUsername(user.getUsername());
+            travelsTitleDTO.setHeadImg(user.getHeadImg());
         }
         PageInfo pageInfo = new PageInfo(list);
         PageBean pageBean = new PageBean();

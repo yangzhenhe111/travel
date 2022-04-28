@@ -9,5 +9,8 @@ public interface TravelCollectionService {
 
     TravelCollectionDTO save(TravelCollectionDTO condition);
 
-    PageBean<TravelsTitleDTO> listPage(PageRequest<TravelCollectionDTO> request);
+//    PageBean<TravelsTitleDTO> listPage(PageRequest<TravelCollectionDTO> request);
+
+
+    PageBean<TravelCollectionDTO> listPage(PageRequest<TravelCollectionDTO> request);
 }

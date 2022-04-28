@@ -1,6 +1,7 @@
 package com.cy.travels.controller;
 
 import com.cy.travels.model.dto.TravelsHistoryDTO;
+import com.cy.travels.model.dto.TravelsTitleDTO;
 import com.cy.travels.service.TravelsHistoryService;
 import com.cy.travels.utils.dto.PageBean;
 import com.cy.travels.utils.dto.PageRequest;
@@ -38,5 +39,19 @@ public class TravelsHistoryController {
         PageBean<TravelsHistoryDTO> result = travelsHistoryService.listPage(request);
         return ResultResponse.ok(result);
     }
+
+
+//    @ApiOperation("查看游记历史")
+//    @PostMapping("/listPage")
+//    private ResultResponse<PageBean<TravelsTitleDTO>> listPage(@RequestBody PageRequest<TravelsHistoryDTO> request) {
+//        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+//            request.setPageNum(1);
+//        }
+//        if (Objects.isNull(request.getPageSize()) || request.getPageSize() < 1) {
+//            request.setPageSize(10);
+//        }
+//        PageBean<TravelsTitleDTO> result = travelsHistoryService.listPage(request);
+//        return ResultResponse.ok(result);
+//    }
 
 }

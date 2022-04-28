@@ -11,19 +11,37 @@
         a.is_deleted AS "isDeleted"
     </sql>
 
-    <select id="getAllCollectionList" resultType="com.cy.travels.model.dto.TravelsTitleDTO">
+<!--    <select id="getAllCollectionList" resultType="com.cy.travels.model.dto.TravelsTitleDTO">-->
+<!--        select-->
+<!--        <include refid="column">-->
+<!--        </include>,-->
+<!--        t.publish_date AS "publishDate",-->
+<!--        t.travel_cover AS "travelCover",-->
+<!--        t.title_content AS "titleContent",-->
+<!--        t.status AS "status",-->
+<!--        t.createtime AS "createtime",-->
+<!--        t.creator AS "creator"-->
+<!--        from travels_collection a-->
+<!--        left join travel_title t on a.travel_id = t.id-->
+<!--        where a.is_deleted = 'N' AND t.is_deleted = 'N'-->
+<!--        <if test="userId!=null">-->
+<!--            and a.user_id = #{userId}-->
+<!--        </if>-->
+<!--        order by t.publish_date DESC-->
+<!--    </select>-->
+
+    <select id="getAllCollectionList" resultType="com.cy.travels.model.dto.TravelCollectionDTO">
         select
         <include refid="column">
         </include>,
         t.publish_date AS "publishDate",
-        t.travel_cover AS "travelCover",
-        t.title_content AS "titleContent",
-        t.status AS "status",
-        t.createtime AS "createtime",
-        t.creator AS "creator"
-        from travels_collection a
-        left join travel_title t on a.travel_id = t.id
-        where a.is_deleted = 'N' AND t.is_deleted = 'N' AND tlo.is_deleted = 'N'
+        t.cover AS "cover",
+        t.name AS "name",
+        t.address AS "address",
+        t.opentime AS "opentime"
+        from travels_history a
+        left join travels t on a.travels_id = t.id
+        where a.is_deleted = 'N' AND t.is_deleted = 'N'
         <if test="userId!=null">
             and a.user_id = #{userId}
         </if>

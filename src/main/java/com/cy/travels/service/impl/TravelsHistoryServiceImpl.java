@@ -3,6 +3,7 @@ package com.cy.travels.service.impl;
 import com.cy.travels.dao.TravelsHistoryMapper;
 import com.cy.travels.enums.YesOrNoEnum;
 import com.cy.travels.model.dto.TravelsHistoryDTO;
+import com.cy.travels.model.dto.TravelsTitleDTO;
 import com.cy.travels.model.dto.UserDTO;
 import com.cy.travels.model.entity.TravelsHistory;
 import com.cy.travels.model.entity.User;
@@ -53,6 +54,35 @@ public class TravelsHistoryServiceImpl implements TravelsHistoryService {
         BeanUtils.copyProperties(resultDO,result);
         return result;
     }
+
+//    @Override
+//    public PageBean<TravelsTitleDTO> listPage(PageRequest<TravelsHistoryDTO> request) {
+//
+//        TravelsHistoryDTO query = request.getData();
+//
+//        if (Objects.isNull(query.getUserId())) {
+//            String userStr = RequestContextUtil.getRequestHeader("header-user");
+//            User user = new Gson().fromJson(userStr, User.class);
+//            query.setUserId(user.getId());
+//        }
+//        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+//        List<TravelsTitleDTO> list = travelsHistoryMapper.getAllHistoryList(query);
+//        for (TravelsTitleDTO travelsTitleDTO : list) {
+//            UserDTO userDTO = new UserDTO();
+//            userDTO.setId(travelsTitleDTO.getCreator());
+//            UserDTO user = userService.findUser(userDTO);
+//            travelsTitleDTO.setCreatorName(user.getUsername());
+//            travelsTitleDTO.setCreatorCover(user.getHeadImg());
+//        }
+//        PageInfo pageInfo = new PageInfo(list);
+//        PageBean pageBean = new PageBean();
+//        pageBean.setPageSize(request.getPageSize());
+//        pageBean.setCurrentPage(request.getPageNum());
+//        pageBean.setData(pageInfo.getList());
+//        pageBean.setTotalPage(pageInfo.getPages());
+//        pageBean.setTotalCount(pageInfo.getSize());
+//        return pageBean;
+//    }
 
     @Override
     public PageBean<TravelsHistoryDTO> listPage(PageRequest<TravelsHistoryDTO> request) {
