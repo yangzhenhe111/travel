@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
 
 
@@ -76,33 +77,18 @@ public class CommonUtils {
     }
 
     //储存当地概况信息
-   /* public static void savetravels(Travels travels, Context context){
+    public static void save_travels_briefdesc(String name,String address,String briefDesc,String opentime,Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
         SharedPreferences.Editor editor = settings.edit();
-        *//*private Long id;
-        private String publishDate;
-        private String cover;
-        private String name;
-        private String address;
-        private String opentime;
-        private Double budget;
-        private String briefDesc;
-        private String trafficInfo;
-        private String resraurantInfo;
-        private String hotelInfo;
-        private String createtime;
-        private Long creator;
-        private String creatorName;
-        private String creatorCover;*//*
-        editor.putString("name",String.valueOf(travels.getName()));
-        editor.putString("address",String.valueOf(travels.getAddress()));
-        editor.putString("briefDesc",String.valueOf(travels.getBriefDesc()));
-        editor.putString("opentime",String.valueOf(travels.getOpentime()));
+        editor.putString("name",name);
+        editor.putString("address",address);
+        editor.putString("briefDesc",briefDesc);
+        editor.putString("opentime",opentime);
         editor.commit();
     }
 
     //读取当地概况信息
-    public static Travels gettravels(Context context){
+    public static Travels get_travels_briefdesc(Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
         Travels travels = new Travels();
         travels.setName(settings.getString("name",""));
@@ -110,7 +96,55 @@ public class CommonUtils {
         travels.setBriefDesc(settings.getString("briefDesc",""));
         travels.setOpentime(settings.getString("opentime",""));
         return travels;
-    }*/
+    }
+
+    //储存交通信息
+    public static void save_travels_traffic(String trafficInfo,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("trafficInfo",trafficInfo);
+        editor.commit();
+    }
+
+    //读取交通信息
+    public static String get_travels_traffic(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String traffic;
+        traffic=settings.getString("trafficInfo","");
+        return traffic;
+    }
+
+    //储存住宿信息
+    public static void save_travels_hotelInfo(String hotelInfo,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("hotelInfo",hotelInfo);
+        editor.commit();
+    }
+
+    //读取住宿信息
+    public static String get_travels_hotelInfo(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String hotelInfo;
+        hotelInfo=settings.getString("hotelInfo","");
+        return hotelInfo;
+    }
+
+    //储存餐饮信息
+    public static void save_travels_resraurantInfo(String resraurantInfo,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("resraurantInfo",resraurantInfo);
+        editor.commit();
+    }
+
+    //读取餐饮信息
+    public static String get_travels_resraurantInfo(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String resraurantInfo;
+        resraurantInfo=settings.getString("resraurantInfo","");
+        return resraurantInfo;
+    }
 
 
 

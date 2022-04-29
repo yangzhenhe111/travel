@@ -16,11 +16,13 @@ import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
 import cn.Travels_App.persenter.BriefDescPersenter;
 import cn.Travels_App.persenter.LodgingPersenter;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.LodgingView;
 
 public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter> implements LodgingView{
     LodgingView lodgingView;
     LodgingPersenter lodgingPersenter;
+    CommonUtils commonUtils;
 
     @BindView(R.id.lodging_restaurant)
     EditText restaurant;
@@ -98,8 +100,10 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
         else{
             StringBuilder lo= new StringBuilder();
             lodging_shuju = lo.append(restaurant.getText().toString()).append("---").append(dishes.getText().toString()).toString();
+            commonUtils.save_travels_hotelInfo(lodging_shuju,LodgingActivity.this);
             Intent intent = new Intent(LodgingActivity.this,
                     MainActivity.class);
+            intent.putExtra("tag", "2");
             intent.putExtra("write_hotelInfo",lodging_shuju);
             startActivity(intent);
         }
@@ -136,7 +140,15 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
     }
 
     private void xianshi() {
-        Intent intent=getIntent();
+        String gethotelInfo=commonUtils.get_travels_hotelInfo(LodgingActivity.this);
+        if (gethotelInfo.equals("")){
+
+        }else{
+            String [] temp = gethotelInfo.split("---");
+            restaurant.setText(temp[0]);
+            dishes.setText(temp[1]);
+        }
+       /* Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         System.out.println("B3");
         if(bundle!=null){
@@ -145,6 +157,6 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
             String [] temp = getTrafficInfo_1.split("---");
             restaurant.setText(temp[0]);
             dishes.setText(temp[1]);
-        }
+        }*/
     }
 }

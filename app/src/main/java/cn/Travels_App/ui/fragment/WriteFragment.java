@@ -27,6 +27,7 @@ import java.util.List;
 
 import cn.Travels_App.common.Constants;
 import cn.Travels_App.ui.activity.MainActivity;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.utils.GlideEngine;
 import cn.Travels_App.utils.UpLoadUtils;
 import okhttp3.MediaType;
@@ -76,6 +77,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
 
     Writeview writeview;
+    CommonUtils commonUtils;
     String write_name;
 
 
@@ -85,6 +87,10 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     private Context mContext;
     private String imageurl;
     private String imgUrl;
+    private int a;
+    private int b;
+    private int c;
+    private int d;
 
 
     public static WriteFragment newInstance() {
@@ -116,61 +122,62 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     @OnClick(R.id.write_briefDesc)
     public void briefDesc(){
-        if(fetchdata()!=null){
+        /*if(fetchdata()!=null){*/
             Intent intent=new Intent(getContext(),BriefDescActivity.class);
-            Bundle bundle=new Bundle();
+            /*Bundle bundle=new Bundle();
             bundle.putString("name_1",travels.getName());
             bundle.putString("Address_1",travels.getAddress());
             bundle.putString("BriefDesc_1",travels.getBriefDesc());
             bundle.putString("Opentime_1",travels.getOpentime());
-            intent.putExtras(bundle);
+            System.out.println(travels.getName());
+            intent.putExtras(bundle);*/
             startActivity(intent);
-        }else {
+        /*}else {
             Intent intent=new Intent(getContext(),BriefDescActivity.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     @OnClick(R.id.write_trafficInfo)
     public void trafficInfo(){
-        if(fetchdata()!=null){
+        /*if(fetchdata()!=null){*/
             Intent intent=new Intent(getContext(),TrafficActivity.class);
-            Bundle bundle=new Bundle();
-            bundle.putString("getTrafficInfo_1",travels.getTrafficInfo());
-            intent.putExtras(bundle);
+            /*Bundle bundle=new Bundle();
+            bundle.putInt("getTrafficInfo_1",0);
+            intent.putExtras(bundle);*/
             startActivity(intent);
-        }else {
+        /*}else {
             Intent intent=new Intent(getContext(),TrafficActivity.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     @OnClick(R.id.write_hotelInfo)
     public void lodgingInfo(){
-        if(fetchdata()!=null){
+        /*if(fetchdata()!=null){*/
             Intent intent=new Intent(getContext(),LodgingActivity.class);
-            Bundle bundle=new Bundle();
+            /*Bundle bundle=new Bundle();
             bundle.putString("hotelInfo_1",travels.getHotelInfo());
-            intent.putExtras(bundle);
+            intent.putExtras(bundle);*/
             startActivity(intent);
-        }else {
+        /*}else {
             Intent intent=new Intent(getContext(),LodgingActivity.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     @OnClick(R.id.write_resraurantInfo)
     public void resraurantInfo(){
-        if(fetchdata()!=null){
+        /*if(fetchdata()!=null){*/
             Intent intent=new Intent(getContext(),DelicaciesActivity.class);
-            Bundle bundle=new Bundle();
+            /*Bundle bundle=new Bundle();
             bundle.putString("resraurantInfo_1",travels.getResraurantInfo());
-            intent.putExtras(bundle);
+            intent.putExtras(bundle);*/
             startActivity(intent);
-        }else {
+        /*}else {
             Intent intent=new Intent(getContext(),DelicaciesActivity.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     @OnClick(R.id.write_sc_but)
@@ -223,6 +230,10 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     @OnClick({R.id.wtite_baocun_image,R.id.wtite_baocun_text})
     public void write_baocun(){
+        commonUtils.save_travels_briefdesc("","","","",getContext());
+        commonUtils.save_travels_traffic("",getContext());
+        commonUtils.save_travels_hotelInfo("",getContext());
+        commonUtils.save_travels_resraurantInfo("",getContext());
         if(fetchdata()!=null){
             createPresenter().maketravels(fetchdata());
         }else {
@@ -232,6 +243,10 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     @OnClick({R.id.wtite_fabiao_image,R.id.wtite_fabiao_text})
     public void write_fabiao(){
+        commonUtils.save_travels_briefdesc("","","","",getContext());
+        commonUtils.save_travels_traffic("",getContext());
+        commonUtils.save_travels_hotelInfo("",getContext());
+        commonUtils.save_travels_resraurantInfo("",getContext());
         publication();
     }
 

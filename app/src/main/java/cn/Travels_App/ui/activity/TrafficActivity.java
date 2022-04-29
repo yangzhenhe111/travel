@@ -14,14 +14,17 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
+import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.persenter.BriefDescPersenter;
 import cn.Travels_App.persenter.TrafficPersenter;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.BriefDescView;
 import cn.Travels_App.view.TrafficView;
 
 public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter> implements TrafficView{
     TrafficView trafficView;
     TrafficPersenter trafficPersenter;
+    CommonUtils commonUtils;
     //信息
     @BindView(R.id.Traffic_suggestion)
     EditText suggestion;
@@ -35,6 +38,8 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
 
     //需要页面保存的数据
     private String traffic_shuju;
+    private String traffic_suggestion;
+    private String traffic_Information;
 
     @Override
     public int getLayoutId() {
@@ -101,6 +106,7 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
         else{
             StringBuilder tr= new StringBuilder();
             traffic_shuju = tr.append(suggestion.getText().toString()).append("---").append(information.getText().toString()).toString();
+            commonUtils.save_travels_traffic(traffic_shuju,TrafficActivity.this);
             Intent intent = new Intent(TrafficActivity.this,
                     MainActivity.class);
             intent.putExtra("tag", "2");
@@ -140,15 +146,24 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
     }
 
     private void xianshi() {
-        Intent intent=getIntent();
+        String getTrafficInfo=commonUtils.get_travels_traffic(TrafficActivity.this);
+        if (getTrafficInfo.equals("")){
+
+        }else{
+            String [] temp = getTrafficInfo.split("---");
+            suggestion.setText(temp[0]);
+            information.setText(temp[1]);
+        }
+        /*Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         System.out.println("B3");
-        if(bundle!=null){
+        System.out.println(traffic_Information);*/
+        /*if(bundle.getInt("getTrafficInfo_1")==1){
             System.out.println("B4");
             String getTrafficInfo_1=bundle.getString("getTrafficInfo_1");
             String [] temp = getTrafficInfo_1.split("---");
             suggestion.setText(temp[0]);
             information.setText(temp[1]);
-        }
+        }*/
     }
 }

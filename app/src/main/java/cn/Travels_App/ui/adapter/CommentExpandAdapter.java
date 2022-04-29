@@ -20,17 +20,18 @@ import java.util.List;
 import cn.Travels_App.R;
 import cn.Travels_App.model.entity.Comment;
 import cn.Travels_App.model.entity.CommentDetailBean;
+import cn.Travels_App.model.entity.CommentResp;
 import cn.Travels_App.model.entity.ReplyDetailBean;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CommentExpandAdapter extends BaseExpandableListAdapter {
     private static final String TAG = "CommentExpandAdapter";
-    private List<CommentDetailBean> commentBeanList;
+    private List<CommentResp> commentBeanList;
     private List<ReplyDetailBean> replyBeanList;
     private Context context;
     private int pageIndex = 1;
 
-    public CommentExpandAdapter(Context context, List<CommentDetailBean> commentBeanList) {
+    public CommentExpandAdapter(Context context, List<CommentResp> commentBeanList) {
         this.context = context;
         this.commentBeanList = commentBeanList;
     }
@@ -42,10 +43,10 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int i) {
-        if(commentBeanList.get(i).getReplyList() == null){
+        if(commentBeanList.get(i).getChildCommentList() == null){
             return 0;
         }else {
-            return commentBeanList.get(i).getReplyList().size()>0 ? commentBeanList.get(i).getReplyList().size():0;
+            return commentBeanList.get(i).getChildCommentList().size()>0 ? commentBeanList.get(i).getChildCommentList().size():0;
         }
 
     }
@@ -57,7 +58,7 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int i, int i1) {
-        return commentBeanList.get(i).getReplyList().get(i1);
+        return commentBeanList.get(i).getChildCommentList().get(i1);
     }
 
     @Override
@@ -89,8 +90,8 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
         }
         Glide.with(context).load(R.drawable.baocun)
                 .into(groupHolder.logo);
-        groupHolder.tv_name.setText(commentBeanList.get(groupPosition).getNickName());
-        groupHolder.tv_time.setText(commentBeanList.get(groupPosition).getCreateDate());
+        groupHolder.tv_name.setText(commentBeanList.get(groupPosition).getUsername());
+        groupHolder.tv_time.setText(commentBeanList.get(groupPosition).getCreateTime());
         groupHolder.tv_content.setText(commentBeanList.get(groupPosition).getContent());
         groupHolder.iv_like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,14 +121,14 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
             childHolder = (ChildHolder) convertView.getTag();
         }
 
-        String replyUser = commentBeanList.get(groupPosition).getReplyList().get(childPosition).getNickName();
+        String replyUser = commentBeanList.get(groupPosition).getChildCommentList().get(childPosition).getUserName();
         if(!TextUtils.isEmpty(replyUser)){
             childHolder.tv_name.setText(replyUser + ":");
         }else {
             childHolder.tv_name.setText("无名"+":");
         }
 
-        childHolder.tv_content.setText(commentBeanList.get(groupPosition).getReplyList().get(childPosition).getContent());
+        childHolder.tv_content.setText(commentBeanList.get(groupPosition).getChildCommentList().get(childPosition).getContent());
 
         return convertView;
     }
@@ -164,9 +165,8 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
      * func:评论成功后插入一条数据
      * @param commentDetailBean 新的评论数据
      */
-    public void addTheCommentData(CommentDetailBean commentDetailBean){
+    public void addTheCommentData(CommentResp commentDetailBean){
         if(commentDetailBean!=null){
-
             commentBeanList.add(commentDetailBean);
             notifyDataSetChanged();
         }else {
@@ -180,15 +180,15 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
      * func:回复成功后插入一条数据
      * @param replyDetailBean 新的回复数据
      */
-    public void addTheReplyData(ReplyDetailBean replyDetailBean, int groupPosition){
+    public void addTheReplyData(Comment replyDetailBean, int groupPosition){
         if(replyDetailBean!=null){
             Log.e(TAG, "addTheReplyData: >>>>该刷新回复列表了:"+replyDetailBean.toString() );
-            if(commentBeanList.get(groupPosition).getReplyList() != null ){
-                commentBeanList.get(groupPosition).getReplyList().add(replyDetailBean);
+            if(commentBeanList.get(groupPosition).getChildCommentList() != null ){
+                commentBeanList.get(groupPosition).getChildCommentList().add(replyDetailBean);
             }else {
-                List<ReplyDetailBean> replyList = new ArrayList<>();
+                List<Comment> replyList = new ArrayList<>();
                 replyList.add(replyDetailBean);
-                commentBeanList.get(groupPosition).setReplyList(replyList);
+                commentBeanList.get(groupPosition).setChildCommentList(replyList);
             }
             notifyDataSetChanged();
         }else {
@@ -203,13 +203,13 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
      * @param replyBeanList 所有回复数据
      * @param groupPosition 当前的评论
      */
-    private void addReplyList(List<ReplyDetailBean> replyBeanList, int groupPosition){
-        if(commentBeanList.get(groupPosition).getReplyList() != null ){
-            commentBeanList.get(groupPosition).getReplyList().clear();
-            commentBeanList.get(groupPosition).getReplyList().addAll(replyBeanList);
+    private void addReplyList(List<Comment> replyBeanList, int groupPosition){
+        if(commentBeanList.get(groupPosition).getChildCommentList() != null ){
+            commentBeanList.get(groupPosition).getChildCommentList().clear();
+            commentBeanList.get(groupPosition).getChildCommentList().addAll(replyBeanList);
         }else {
 
-            commentBeanList.get(groupPosition).setReplyList(replyBeanList);
+            commentBeanList.get(groupPosition).setChildCommentList(replyBeanList);
         }
 
         notifyDataSetChanged();

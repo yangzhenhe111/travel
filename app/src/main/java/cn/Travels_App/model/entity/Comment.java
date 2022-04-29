@@ -31,6 +31,16 @@ public class Comment implements Serializable {
     private Long userId;
 
     /**
+     * 评论用户姓名
+     */
+    private String userName;
+
+    /**
+     * 评论用户头像
+     */
+    private String headImg;
+
+    /**
      * 点赞数
      */
     private Long likeNum;
@@ -39,7 +49,7 @@ public class Comment implements Serializable {
     /**
      * 评论时间
      */
-    private Date createTime;
+    private String createTime;
 
     public Long getId() {
         return id;
@@ -89,11 +99,31 @@ public class Comment implements Serializable {
         this.likeNum = likeNum;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+    public Comment(String nickName, String content) {
+        this.userName = nickName;
+        this.content = content;
     }
 }

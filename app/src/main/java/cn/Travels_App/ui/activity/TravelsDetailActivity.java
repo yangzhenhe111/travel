@@ -79,7 +79,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     private CommentBean commentBean;
     private List<CommentDetailBean> commentsList;
     private BottomSheetDialog dialog;
-    private String testJson = "{\n" +
+    /*private String testJson = "{\n" +
             "\t\"code\": 1000,\n" +
             "\t\"message\": \"查看评论成功\",\n" +
             "\t\"data\": {\n" +
@@ -131,7 +131,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             "\t\t\t}\n" +
             "\t\t]\n" +
             "\t}\n" +
-            "}";
+            "}";*/
 
 
 
@@ -173,13 +173,13 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
 
     @Override
     public void initView() {
-        System.out.println("T1");
+        /*System.out.println("T1");
         expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_comment_container);
-        commentsList = generateTestData();
-        initExpandableListView(commentsList);
+        commentsList = generateTestData();*/
+        /*initExpandableListView(commentsList);*/
     }
 
-    private void initExpandableListView(final List<CommentDetailBean> commentList){
+  /*  private void initExpandableListView(final List<CommentDetailBean> commentList){
         expandableListView.setGroupIndicator(null);
         //默认展开所有回复
         adapter = new CommentExpandAdapter(TravelsDetailActivity.this, commentList);
@@ -200,9 +200,9 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                 showReplyDialog(groupPosition);
                 return true;
             }
-        });
+        });*/
 
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+       /* expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
                 Toast.makeText(TravelsDetailActivity.this,"点击了回复",Toast.LENGTH_SHORT).show();
@@ -218,19 +218,19 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             }
         });
 
-    }
+    }*/
 
     /**
      * by moos on 2018/04/20
      * func:生成测试数据
      * @return 评论数据
      */
-    private List<CommentDetailBean> generateTestData(){
+   /* private List<CommentDetailBean> generateTestData(){
         Gson gson = new Gson();
         commentBean = gson.fromJson(testJson, CommentBean.class);
         List<CommentDetailBean> commentList = commentBean.getData().getList();
         return commentList;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -241,24 +241,27 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.detail_page_do_comment)
-    public void onClick() {
+    /*@OnClick
+    public void onClick(View view) {
+        if(view.getId() == R.id.detail_page_do_comment){
+
             showCommentDialog();
-    }
+        }
+    }*/
 
     /**
      * by moos on 2018/04/20
      * func:弹出评论框
      */
-    private void showCommentDialog(){
+   /* private void showCommentDialog(){
         dialog = new BottomSheetDialog(this);
         View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
         final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
         final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
         dialog.setContentView(commentView);
-        /**
+        *//**
          * 解决bsd显示不全的情况
-         */
+         *//*
         View parent = (View) commentView.getParent();
         BottomSheetBehavior behavior = BottomSheetBehavior.from(parent);
         commentView.measure(0,0);
@@ -303,13 +306,13 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             }
         });
         dialog.show();
-    }
+    }*/
 
     /**
      * by moos on 2018/04/20
      * func:弹出回复框
      */
-    private void showReplyDialog(final int position){
+   /* private void showReplyDialog(final int position){
         dialog = new BottomSheetDialog(this);
         View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
         final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
@@ -354,7 +357,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         });
         dialog.show();
     }
-
+*/
 
     @Override
     public void initData() {

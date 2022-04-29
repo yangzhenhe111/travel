@@ -17,6 +17,7 @@ import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
 import cn.Travels_App.persenter.DelicaciesPersenter;
 import cn.Travels_App.persenter.LodgingPersenter;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.DelicaciesView;
 
 
@@ -24,6 +25,7 @@ import cn.Travels_App.view.DelicaciesView;
 public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesPersenter> implements DelicaciesView{
     DelicaciesView delicaciesView;
     DelicaciesPersenter delicaciesPersenter;
+    CommonUtils commonUtils;
 
     @BindView(R.id.delicacies_restaurant)
     EditText restaurant;
@@ -102,6 +104,7 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
         else{
             StringBuilder de= new StringBuilder();
             delicacies_shuju = de.append(restaurant.getText().toString()).append("---").append(dishes.getText().toString()).toString();
+            commonUtils.save_travels_resraurantInfo(delicacies_shuju,DelicaciesActivity.this);
             Intent intent = new Intent(DelicaciesActivity.this,
                     MainActivity.class);
             intent.putExtra("tag", "2");
@@ -140,13 +143,21 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
     }
 
     private void xianshi() {
-        Intent intent=getIntent();
+        String getresraurantInfo=commonUtils.get_travels_resraurantInfo(DelicaciesActivity.this);
+        if (getresraurantInfo.equals("")){
+
+        }else{
+            String [] temp = getresraurantInfo.split("---");
+            restaurant.setText(temp[0]);
+            dishes.setText(temp[1]);
+        }
+        /*Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
         if(bundle!=null){
             String getTrafficInfo_1=bundle.getString("resraurantInfo_1");
             String [] temp = getTrafficInfo_1.split("---");
             restaurant.setText(temp[0]);
             dishes.setText(temp[1]);
-        }
+        }*/
     }
 }

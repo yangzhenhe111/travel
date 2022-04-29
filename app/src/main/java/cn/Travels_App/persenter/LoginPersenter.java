@@ -39,6 +39,7 @@ public class LoginPersenter extends BasePresenter<LoginView> {
                 .subscribe(new BaseObserver<HttpResult<UserEntity>>() {
                     @Override
                     public void onSuccess(HttpResult<UserEntity> resp) {
+                        System.out.println("03");
                         if (resp.isSuccess()) {
                             System.out.println("0");
                             UserEntity userEntity=resp.getData();

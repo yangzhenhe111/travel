@@ -114,4 +114,5 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
     }
 
 
+
 }
