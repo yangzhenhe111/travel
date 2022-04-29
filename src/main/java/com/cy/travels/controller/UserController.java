@@ -17,6 +17,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.http.fileupload.RequestContext;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Component;
@@ -92,7 +93,9 @@ public class UserController {
         try {
             int num = userService.register(userDTO);
             if (num > 0) {
-                return ResultResponse.ok(userService.findUser(userDTO));
+                UserDTO request = new UserDTO();
+                request.setUsername(userDTO.getUsername());
+                return ResultResponse.ok(userService.findUser(request));
             }else {
                 return ResultResponse.fail("信息已被注册");
             }

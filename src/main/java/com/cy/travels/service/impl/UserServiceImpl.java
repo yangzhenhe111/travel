@@ -104,8 +104,7 @@ public class UserServiceImpl implements UserService {
             throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"手机号已存在");
         }
 
-        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
-        user.setPassword(md5Password);
+//        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
         user.setCreatetime(new Date());
         user.setTotalPoints(0L);
         user.setHeadImg("tx0.jpg");

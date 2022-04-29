@@ -1,6 +1,7 @@
 package com.cy.travels.model.dto;
 
 import com.cy.travels.model.BaseDO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
