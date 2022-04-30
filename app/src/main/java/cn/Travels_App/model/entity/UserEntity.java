@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class UserEntity {
     //用户主键id
-    private int id;
+    private Long id;
     //用户名称
     private String username;
     //用户密码
@@ -48,11 +48,11 @@ public class UserEntity {
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

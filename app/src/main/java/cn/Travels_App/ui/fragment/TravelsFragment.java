@@ -73,7 +73,9 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
 
     @Override
     public void loadData(List<Travels> spotsList) {
+        System.out.println("TF1");
         this.mSpotsList = spotsList;
+        System.out.println(spotsList);
         TravelsAdapter travelsAdapter = new TravelsAdapter(getContext(),R.layout.travels_item,
                 spotsList);
         mListView.setAdapter(travelsAdapter);

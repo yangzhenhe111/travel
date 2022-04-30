@@ -88,12 +88,16 @@ public class DelicaciesActivity extends BaseActivity<DelicaciesView, DelicaciesP
 
     @OnClick(R.id.delicacies_top_back)
     void backPage(View view){
-        finish();
+        Intent intent=new Intent(DelicaciesActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.delicacies_shanchu_image,R.id.delicacies_shanchu_text})
     void shanchu(View view){
-        finish();
+        Intent intent=new Intent(DelicaciesActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.delicacies_baocun_image,R.id.delicacies_baocun_text})

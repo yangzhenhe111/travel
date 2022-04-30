@@ -84,12 +84,16 @@ public class LodgingActivity extends BaseActivity<LodgingView, LodgingPersenter>
 
     @OnClick(R.id.lodging_top_back)
     void backPage(View view){
-        finish();
+        Intent intent=new Intent(LodgingActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.lodging_shanchu_image,R.id.lodging_shanchu_text})
     void shanchu(View view){
-        finish();
+        Intent intent=new Intent(LodgingActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.lodging_baocun_image,R.id.lodging_baocun_text})

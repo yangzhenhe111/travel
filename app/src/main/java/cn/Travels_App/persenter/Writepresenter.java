@@ -33,7 +33,7 @@ public class Writepresenter extends BasePresenter<Writeview>{
                         if (resp.isSuccess()) {
                             writeview.onCompleted();
                         } else {
-                            //上传失败
+                            //保存失败
                             writeview.onFailed(resp.getMsg());
                         }
                     }
@@ -44,6 +44,7 @@ public class Writepresenter extends BasePresenter<Writeview>{
                     }
                 });
     }
+    //上传游记
     public void publication(Travels travels) {
         getAppComponent().getAPIService().pubtravels(travels)
                 .subscribe(new BaseObserver<HttpResult<Travels>>() {

@@ -90,12 +90,16 @@ public class TrafficActivity extends BaseActivity<TrafficView, TrafficPersenter>
 
     @OnClick(R.id.traffic_top_back)
     void backPage(View view){
-        finish();
+        Intent intent=new Intent(TrafficActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.traffic_shanchu_image,R.id.traffic_shanchu_text})
     void shanchu(View view){
-        finish();
+        Intent intent=new Intent(TrafficActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.traffic_baocun_image,R.id.traffic_baocun_text})

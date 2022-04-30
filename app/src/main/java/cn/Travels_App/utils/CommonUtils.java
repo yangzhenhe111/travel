@@ -50,11 +50,16 @@ public class CommonUtils {
     public static void storeLoginUser(UserEntity userEntity, Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("id", (int) userEntity.getId());
+        editor.putLong("id", (Long) userEntity.getId());
         editor.putString("username",String.valueOf(userEntity.getUsername()));
         editor.putString("password",String.valueOf(userEntity.getPassword()));
         editor.putString("tel",String.valueOf(userEntity.getTel()));
         editor.putString("email",String.valueOf(userEntity.getEmail()));
+        if(userEntity.getHeadImg()!=null){
+            editor.putString("headImg",String.valueOf(userEntity.getHeadImg()));
+        }else {
+            editor.putString("headImg","");
+        }
 //        editor.putString("bodyweight",(String)userMap.get("bodyweight"));
 //        editor.putString("bodyheight",(String)userMap.get("bodyheight"));
         editor.commit();
@@ -64,11 +69,12 @@ public class CommonUtils {
     public static UserEntity getLoginUser(Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
         UserEntity userEntity = new UserEntity();
-        userEntity.setId(settings.getInt("id",0));
+        userEntity.setId(settings.getLong("id",0));
         userEntity.setUsername(settings.getString("username",""));
         userEntity.setPassword(settings.getString("password",""));
         userEntity.setEmail(settings.getString("email",""));
         userEntity.setTel(settings.getString("tel",""));
+        userEntity.setHeadImg(settings.getString("headImg",""));
 //        userEntity.setCreatetime(settings.getString("createtime",""));
 //        userEntity.setAge(settings.getString("age",""));
 //        userEntity.setBodyweight(settings.getString("bodyweight",""));

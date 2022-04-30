@@ -26,6 +26,7 @@ import java.io.File;
 import java.util.List;
 
 import cn.Travels_App.common.Constants;
+import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.ui.activity.MainActivity;
 import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.utils.GlideEngine;
@@ -43,6 +44,7 @@ import cn.Travels_App.ui.activity.DelicaciesActivity;
 import cn.Travels_App.ui.activity.LodgingActivity;
 import cn.Travels_App.ui.activity.TrafficActivity;
 import okhttp3.MultipartBody;
+import retrofit2.http.Url;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -82,7 +84,6 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
 
 
-    Travels travels = new Travels();
 
     private Context mContext;
     private String imageurl;
@@ -216,9 +217,12 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
                             Log.i(TAG, "裁剪::" + media.getCutPath());
                             Log.i(TAG, "Android Q 特有Path::" + media.getAndroidQToPath());
                             imageurl=media.getPath();
-                            write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));
                             imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
                             Log.e("imgUrl",imgUrl);
+                            /*write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));*/
+                            if(imgUrl!=null){
+                                Glide.with(context).load(imgUrl).into(write_sc_but);
+                            }
                     }
                     System.out.println("w1");
                     break;
@@ -234,11 +238,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
-        if(fetchdata()!=null){
-            createPresenter().maketravels(fetchdata());
-        }else {
-            Toast.makeText(mContext, "保存失败", Toast.LENGTH_SHORT).show();
-        }
+        fetchdata();
     }
 
     @OnClick({R.id.wtite_fabiao_image,R.id.wtite_fabiao_text})
@@ -251,10 +251,11 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     }
 
     //保存游记
-    public Travels fetchdata() {
+    public void fetchdata() {
         Bundle bundle = this.getArguments();
         if(bundle != null){
             String writetag =  bundle.getString("tag");
+            Travels travels=new Travels();
             travels.setName(bundle.getString("write_name"));
             travels.setAddress(bundle.getString("write_address"));
             travels.setOpentime(bundle.getString("write_opentime"));
@@ -263,9 +264,11 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setResraurantInfo(bundle.getString("write_resraurantInfo"));
             travels.setHotelInfo(bundle.getString("write_hotelInfo"));
             travels.setCover(imgUrl);
-            return travels;
+            travels.setCreator(gerenxinxi().getId());
+            travels.setCreatorCover(gerenxinxi().getHeadImg());
+            createPresenter().maketravels(travels);
         }else {
-            return null;
+            Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
         }
     }
     //发表游记
@@ -273,11 +276,17 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         Bundle bundle = this.getArguments();
         if(bundle != null){
             String writetag =  bundle.getString("tag");
+            Travels travels=new Travels();
             travels.setName(bundle.getString("write_name"));
             travels.setAddress(bundle.getString("write_address"));
             travels.setOpentime(bundle.getString("write_opentime"));
             travels.setBriefDesc(bundle.getString("write_briefDesc"));
+            travels.setTrafficInfo(bundle.getString("write_trafficInfo"));
+            travels.setResraurantInfo(bundle.getString("write_resraurantInfo"));
+            travels.setHotelInfo(bundle.getString("write_hotelInfo"));
             travels.setCover(imgUrl);
+            travels.setCreator(gerenxinxi().getId());
+            travels.setCreatorCover(gerenxinxi().getHeadImg());
             createPresenter().publication(travels);
         }else {
             Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
@@ -309,6 +318,11 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         }
+    }
+
+    public UserEntity gerenxinxi(){
+        UserEntity userEntity=commonUtils.getLoginUser(getContext());
+        return userEntity;
     }
 
 }

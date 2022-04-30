@@ -99,12 +99,16 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
 
     @OnClick(R.id.brief_top_back)
     public void backPage(){
-        finish();
+        Intent intent=new Intent(BriefDescActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.briefdesc_shanchu_image,R.id.briefdesc_shanchu_text})
     public void shanchu(){
-        finish();
+        Intent intent=new Intent(BriefDescActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.briefdesc_baocun_image,R.id.briefdesc_baocun_text})

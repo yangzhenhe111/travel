@@ -140,7 +140,6 @@ public class LoginActivity extends BaseActivity<LoginView,LoginPersenter> implem
     @Override
     public void onSuccessData(UserEntity userEntity) {
         CommonUtils.storeLoginUser(userEntity, LoginActivity.this);
-        System.out.println("2");
         onCompleted();
     }
 
