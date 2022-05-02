@@ -1,8 +1,8 @@
 package cn.Travels_App.common;
 
 public class Constants {
-    public static final String BASE_URL = "http://59.110.222.11:8080/";
-//    public static final String BASE_URL = "http://192.168.0.109:8080/";
+//    public static final String BASE_URL = "http://59.110.222.11:8080/";
+    public static final String BASE_URL = "http://192.168.0.109:8080/";
 //=======================================================================//
     public static final String KEY_FRAGMENT = "key_fragment";
     public static final String REQUEST_CODE = "200";
@@ -34,6 +34,8 @@ public class Constants {
     public static final String URL_PUBTRAVELS ="front/travels/submit";
     //查询评论
     public static final String URL_FINDComment = "front/comment/getCommentListAll";
+    //查询评论分页
+    public static final String URL_FIND_COMMENT = "front/comment/listPage";
 
 
 }

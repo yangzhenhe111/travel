@@ -3,10 +3,14 @@ package cn.Travels_App.network;
 
 
 
+import android.graphics.pdf.PdfDocument;
+
 import java.util.List;
 
 import cn.Travels_App.common.Constants;
 
+import cn.Travels_App.model.dto.CommentRespDTO;
+import cn.Travels_App.model.dto.PageBean;
 import cn.Travels_App.model.dto.PageRequest;
 import cn.Travels_App.model.dto.QueryTravelsDTO;
 import cn.Travels_App.model.entity.Comment;
@@ -58,10 +62,10 @@ public interface APIService {
     @POST(Constants.URL_FINDSPOTSBYCONDITION)
     Observable<HttpResult<List<Travels>>> queryTravelsByCondition(@Body PageRequest<QueryTravelsDTO> request);
 
-    /*//根据游记ID查询评论
+    //根据游记ID查询评论
     @Headers({"name:super"})
-    @POST(Constants.URL_FINDComment)
-    Observable<HttpResult<List<CommentResp>>> queryAllComment(@Query("id") Long id);*/
+    @POST(Constants.URL_FIND_COMMENT)
+    Observable<HttpResult<PageBean<CommentRespDTO>>> queryCommentList(@Body PageRequest<Comment> request);
 
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})

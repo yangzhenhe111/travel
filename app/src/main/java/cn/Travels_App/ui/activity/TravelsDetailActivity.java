@@ -11,10 +11,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,22 +28,45 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
+import com.google.gson.internal.LazilyParsedNumber;
+import com.google.gson.reflect.TypeToken;
+import com.luck.picture.lib.tools.ScreenUtils;
 
+import java.io.IOException;
+import java.lang.reflect.TypeVariable;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
+import cn.Travels_App.common.Constants;
+import cn.Travels_App.model.dto.CommentRespDTO;
+import cn.Travels_App.model.dto.PageBean;
+import cn.Travels_App.model.dto.PageRequest;
 import cn.Travels_App.model.entity.Comment;
 import cn.Travels_App.model.entity.CommentBean;
 import cn.Travels_App.model.entity.CommentDetailBean;
 import cn.Travels_App.model.entity.ReplyDetailBean;
 import cn.Travels_App.model.entity.Travels;
+import cn.Travels_App.model.entity.UserEntity;
+import cn.Travels_App.network.APIService;
+import cn.Travels_App.network.BaseObserver;
+import cn.Travels_App.network.HttpResult;
 import cn.Travels_App.persenter.TravelsDetailPersenter;
 import cn.Travels_App.ui.adapter.CommentExpandAdapter;
+import cn.Travels_App.ui.adapter.TravelCommentAdapter;
 import cn.Travels_App.utils.CommentExpandableListView;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.TravelsDetailView;
+import io.reactivex.Observable;
+import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, TravelsDetailPersenter> implements TravelsDetailView {
 
@@ -79,60 +105,23 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     private CommentBean commentBean;
     private List<CommentDetailBean> commentsList;
     private BottomSheetDialog dialog;
-    private String testJson = "{\n" +
-            "\t\"code\": 1000,\n" +
-            "\t\"message\": \"查看评论成功\",\n" +
-            "\t\"data\": {\n" +
-            "\t\t\"total\": 3,\n" +
-            "\t\t\"list\": [{\n" +
-            "\t\t\t\t\"id\": 42,\n" +
-            "\t\t\t\t\"nickName\": \"程序猿\",\n" +
-            "\t\t\t\t\"userLogo\": \"http://ucardstorevideo.b0.upaiyun.com/userLogo/9fa13ec6-dddd-46cb-9df0-4bbb32d83fc1.png\",\n" +
-            "\t\t\t\t\"content\": \"时间是一切财富中最宝贵的财富。\",\n" +
-            "\t\t\t\t\"imgId\": \"xcclsscrt0tev11ok364\",\n" +
-            "\t\t\t\t\"replyTotal\": 1,\n" +
-            "\t\t\t\t\"createDate\": \"三分钟前\",\n" +
-            "\t\t\t\t\"replyList\": [{\n" +
-            "\t\t\t\t\t\"nickName\": \"沐風\",\n" +
-            "\t\t\t\t\t\"userLogo\": \"http://ucardstorevideo.b0.upaiyun.com/userLogo/9fa13ec6-dddd-46cb-9df0-4bbb32d83fc1.png\",\n" +
-            "\t\t\t\t\t\"id\": 40,\n" +
-            "\t\t\t\t\t\"commentId\": \"42\",\n" +
-            "\t\t\t\t\t\"content\": \"时间总是在不经意中擦肩而过,不留一点痕迹.\",\n" +
-            "\t\t\t\t\t\"status\": \"01\",\n" +
-            "\t\t\t\t\t\"createDate\": \"一个小时前\"\n" +
-            "\t\t\t\t}]\n" +
-            "\t\t\t},\n" +
-            "\t\t\t{\n" +
-            "\t\t\t\t\"id\": 41,\n" +
-            "\t\t\t\t\"nickName\": \"设计狗\",\n" +
-            "\t\t\t\t\"userLogo\": \"http://ucardstorevideo.b0.upaiyun.com/userLogo/9fa13ec6-dddd-46cb-9df0-4bbb32d83fc1.png\",\n" +
-            "\t\t\t\t\"content\": \"这世界要是没有爱情，它在我们心中还会有什么意义！这就如一盏没有亮光的走马灯。\",\n" +
-            "\t\t\t\t\"imgId\": \"xcclsscrt0tev11ok364\",\n" +
-            "\t\t\t\t\"replyTotal\": 1,\n" +
-            "\t\t\t\t\"createDate\": \"一天前\",\n" +
-            "\t\t\t\t\"replyList\": [{\n" +
-            "\t\t\t\t\t\"nickName\": \"沐風\",\n" +
-            "\t\t\t\t\t\"userLogo\": \"http://ucardstorevideo.b0.upaiyun.com/userLogo/9fa13ec6-dddd-46cb-9df0-4bbb32d83fc1.png\",\n" +
-            "\t\t\t\t\t\"commentId\": \"41\",\n" +
-            "\t\t\t\t\t\"content\": \"时间总是在不经意中擦肩而过,不留一点痕迹.\",\n" +
-            "\t\t\t\t\t\"status\": \"01\",\n" +
-            "\t\t\t\t\t\"createDate\": \"三小时前\"\n" +
-            "\t\t\t\t}]\n" +
-            "\t\t\t},\n" +
-            "\t\t\t{\n" +
-            "\t\t\t\t\"id\": 40,\n" +
-            "\t\t\t\t\"nickName\": \"产品喵\",\n" +
-            "\t\t\t\t\"userLogo\": \"http://ucardstorevideo.b0.upaiyun.com/userLogo/9fa13ec6-dddd-46cb-9df0-4bbb32d83fc1.png\",\n" +
-            "\t\t\t\t\"content\": \"笨蛋自以为聪明，聪明人才知道自己是笨蛋。\",\n" +
-            "\t\t\t\t\"imgId\": \"xcclsscrt0tev11ok364\",\n" +
-            "\t\t\t\t\"replyTotal\": 0,\n" +
-            "\t\t\t\t\"createDate\": \"三天前\",\n" +
-            "\t\t\t\t\"replyList\": []\n" +
-            "\t\t\t}\n" +
-            "\t\t]\n" +
-            "\t}\n" +
-            "}";
 
+    /*
+    评论
+     */
+    private Comment comment;
+    /*
+    评论数据源
+     */
+    private PageBean<CommentRespDTO> commentSource;
+    /*
+    评论列表
+     */
+    private ListView commentListView;
+    /*
+    评论Adapter
+     */
+    private TravelCommentAdapter myAdapter;
 
 
 
@@ -174,9 +163,142 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     @Override
     public void initView() {
         System.out.println("T1");
-        expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_comment_container);
-        commentsList = generateTestData();
-        initExpandableListView(commentsList);
+
+//        loadingComment();
+//        expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_comment_container);
+//        commentsList = generateTestData();
+//        initExpandableListView(commentsList);
+    }
+
+    private void loadingComment() {
+
+        commentListView = findViewById(R.id.ll_comment);
+        List<CommentRespDTO> source = commentSource.getData();
+        if (Objects.nonNull(source) && source.size() > 0){
+            myAdapter = new TravelCommentAdapter(this,source,R.layout.comment_liem_layout);
+            commentListView.setAdapter(myAdapter);
+            setListViewHeight(commentListView);
+
+            commentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    showReplyDialog(position);
+                }
+            });
+        }
+
+    }
+
+
+    /**
+     * by moos on 2018/04/20
+     * func:弹出回复框
+     */
+    private void showReplyDialog(final int position){
+        BottomSheetDialog dialog = new BottomSheetDialog(TravelsDetailActivity.this);
+        View commentView = LayoutInflater.from(TravelsDetailActivity.this).inflate(R.layout.comment_dialog_layout,null);
+        final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
+        final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
+        commentText.setHint("回复 " + commentSource.getData().get(position).getUsername() + " 的评论:");
+        dialog.setContentView(commentView);
+        bt_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String replyContent = commentText.getText().toString().trim();
+                if(!TextUtils.isEmpty(replyContent)){
+
+                    //提交回复信息
+                    Comment commitInfo = new Comment();
+                    commitInfo.setContent(replyContent);
+                    commitInfo.setTravelsId(commentSource.getData().get(position).getTravelsId());
+                    commitInfo.setParentId(commentSource.getData().get(position).getId());
+
+                    if (submitData(commitInfo)){
+                        dialog.dismiss();
+                        PageRequest<Comment> request = new PageRequest<>();
+                        Comment comment1 = new Comment();
+                        comment1.setTravelsId(mSpots.getId());
+                        request.setData(comment1);
+                        request.setPageNum(1);
+                        request.setPageSize(10);
+                        //获取数据
+                        commentSource = getCommentList(request);
+                        loadingComment();
+                        Toast.makeText(TravelsDetailActivity.this,"回复成功",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(TravelsDetailActivity.this,"提交失败，请重试！",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }else {
+                    Toast.makeText(TravelsDetailActivity.this,"回复内容不能为空",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        commentText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
+                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+                }else {
+                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        dialog.show();
+    }
+
+    private boolean submitData(Comment comment) {
+        OkHttpClient client = new OkHttpClient();
+
+        //json为String类型的json数据
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(comment));
+        //创建一个请求对象
+//                        String format = String.format(KeyPath.Path.head + KeyPath.Path.waybillinfosensor, username, key, current_timestamp);
+        Request request = new Request.Builder()
+                .url(Constants.BASE_URL+"front/comment/save")
+                .addHeader("header-user", new Gson().toJson(CommonUtils.getLoginUser(TravelsDetailActivity.this)))
+                .post(requestBody)
+                .build();
+
+        try {
+            Response execute = client.newCall(request).execute();
+            HttpResult<Comment> result = new Gson().fromJson(execute.body().string(),HttpResult.class);
+            return result.isSuccess();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+
+
+    }
+
+    private PageBean<CommentRespDTO> getCommentList(PageRequest<Comment> condition) {
+        final PageBean<CommentRespDTO>[] result = new PageBean[]{new PageBean<>()};
+
+        getApp().getAppComponent().getAPIService().queryCommentList(condition)
+                .subscribe(new BaseObserver<HttpResult<PageBean<CommentRespDTO>>>() {
+                    @Override
+                    public void onSuccess(HttpResult<PageBean<CommentRespDTO>> pageBeanHttpResult) {
+                        result[0] = pageBeanHttpResult.getData();
+//                        loadingComment();
+                    }
+                    @Override
+                    public void onFailure(Throwable e) {
+                        Log.e("error",e.toString());
+                    }
+                });
+        return result[0];
     }
 
     private void initExpandableListView(final List<CommentDetailBean> commentList){
@@ -218,18 +340,6 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             }
         });
 
-    }
-
-    /**
-     * by moos on 2018/04/20
-     * func:生成测试数据
-     * @return 评论数据
-     */
-    private List<CommentDetailBean> generateTestData(){
-        Gson gson = new Gson();
-        commentBean = gson.fromJson(testJson, CommentBean.class);
-        List<CommentDetailBean> commentList = commentBean.getData().getList();
-        return commentList;
     }
 
     @Override
@@ -305,55 +415,55 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         dialog.show();
     }
 
-    /**
-     * by moos on 2018/04/20
-     * func:弹出回复框
-     */
-    private void showReplyDialog(final int position){
-        dialog = new BottomSheetDialog(this);
-        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
-        final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
-        final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
-        commentText.setHint("回复 " + commentsList.get(position).getNickName() + " 的评论:");
-        dialog.setContentView(commentView);
-        bt_comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String replyContent = commentText.getText().toString().trim();
-                if(!TextUtils.isEmpty(replyContent)){
-
-                    dialog.dismiss();
-                    ReplyDetailBean detailBean = new ReplyDetailBean("小红",replyContent);
-                    adapter.addTheReplyData(detailBean, position);
-                    expandableListView.expandGroup(position);
-                    Toast.makeText(TravelsDetailActivity.this,"回复成功",Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(TravelsDetailActivity.this,"回复内容不能为空",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        commentText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
-                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
-                }else {
-                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        dialog.show();
-    }
+//    /**
+//     * by moos on 2018/04/20
+//     * func:弹出回复框
+//     */
+//    private void showReplyDialog(final int position){
+//        dialog = new BottomSheetDialog(this);
+//        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
+//        final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
+//        final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
+//        commentText.setHint("回复 " + commentsList.get(position).getNickName() + " 的评论:");
+//        dialog.setContentView(commentView);
+//        bt_comment.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String replyContent = commentText.getText().toString().trim();
+//                if(!TextUtils.isEmpty(replyContent)){
+//
+//                    dialog.dismiss();
+//                    ReplyDetailBean detailBean = new ReplyDetailBean("小红",replyContent);
+//                    adapter.addTheReplyData(detailBean, position);
+//                    expandableListView.expandGroup(position);
+//                    Toast.makeText(TravelsDetailActivity.this,"回复成功",Toast.LENGTH_SHORT).show();
+//                }else {
+//                    Toast.makeText(TravelsDetailActivity.this,"回复内容不能为空",Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//        commentText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
+//                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+//                }else {
+//                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+//        dialog.show();
+//    }
 
 
     @Override
@@ -424,6 +534,17 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                     .load(R.drawable.login1)
                     .into(fmUrlTv);
         }
+
+        PageRequest<Comment> request = new PageRequest<>();
+        Comment comment1 = new Comment();
+        comment1.setTravelsId(mSpots.getId());
+        request.setData(comment1);
+        request.setPageNum(1);
+        request.setPageSize(10);
+        //获取数据
+        commentSource = getCommentList(request);
+        //加载页面
+        loadingComment();
     }
 
     private TravelsDetailActivity.LoadWebListener mWebListener;
@@ -494,6 +615,29 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         }
     }
 
+    //为listview动态设置高度（有多少条目就显示多少条目）
+    public void setListViewHeight(ListView listView) {
+        //获取listView的adapter
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        //listAdapter.getCount()返回数据项的数目
+        for (int i = 0,len = listAdapter.getCount(); i < len; i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        // listView.getDividerHeight()获取子项间分隔符占用的高度
+        // params.height最后得到整个ListView完整显示需要的高度
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() *  (listAdapter .getCount() - 1))+108;
+//        if(params.height > ScreenUtils.dip2px(this,2500)) {
+//            params.height = ScreenUtils.dip2px(this,2500);
+//        }
+        listView.setLayoutParams(params);
+    }
 
 
 
