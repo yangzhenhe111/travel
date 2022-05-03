@@ -39,7 +39,7 @@ public class CommentController {
 
     @ApiOperation("获取评论列表")
     @PostMapping("/listPage")
-    public Result<PageBean<CommentRespDTO>> listPage(@RequestBody PageRequest<CommentDTO> request) {
+    public ResultResponse<PageBean<CommentRespDTO>> listPage(@RequestBody PageRequest<CommentDTO> request) {
         if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
             request.setPageNum(1);
         }
@@ -47,7 +47,7 @@ public class CommentController {
             request.setPageSize(10);
         }
         PageBean<CommentRespDTO> result = commentService.listPage(request);
-        return Result.ok(result);
+        return ResultResponse.ok(result);
     }
     @ApiOperation("点赞评论")
     @PostMapping("/like")
@@ -62,7 +62,7 @@ public class CommentController {
 
     @ApiOperation("获取全部评论列表")
     @GetMapping("/getCommentListAll")
-    public Result<List<CommentRespDTO>> getCommentListAll(@RequestParam("travelId") Long travelId) {
+    public ResultResponse<List<CommentRespDTO>> getCommentListAll(@RequestParam("travelId") Long travelId) {
         PageRequest<CommentDTO> request = new PageRequest<>();
         CommentDTO commentDTO = new CommentDTO();
         commentDTO.setTravelsId(travelId);
@@ -74,7 +74,7 @@ public class CommentController {
             request.setPageSize(999);
         }
         PageBean<CommentRespDTO> result = commentService.listPage(request);
-        return Result.ok(result);
+        return ResultResponse.ok(result);
     }
 
 }

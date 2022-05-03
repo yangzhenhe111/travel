@@ -2,4 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cy.travels.dao.CommentMapper">
+
+    <select id="selectCommentListByTravelsId" resultType="com.cy.travels.model.dto.CommentRespDTO">
+        select a.id AS "id",
+        a.content AS "content",
+        a.user_id AS "userId",
+        a.travels_id AS "travelsId",
+        u.username AS "username",
+        u.head_img AS "headImg",
+        a.create_time AS "createTime",
+        a.parent_id AS "parentId"
+        from comment a
+        left join `user` u on a.user_id = u.id
+        where a.is_deleted = 'N' and u.is_deleted= 'N'
+        and a.travels_id = #{travelsId}
+        order by a.create_time desc
+
+
+    </select>
+    <select id="selectParentComment" resultType="com.cy.travels.model.dto.CommentRespDTO">
+        select a.id AS "id",
+        a.content AS "content",
+        a.user_id AS "userId",
+        a.travels_id AS "travelsId",
+        u.username AS "username",
+        u.head_img AS "headImg",
+        a.create_time AS "createTime"
+        from comment a
+        left join `user` u on a.user_id = u.id
+        where a.is_deleted = 'N' and a.is_deleted= 'N'
+        and a.id = #{parentId}
+    </select>
 </mapper>

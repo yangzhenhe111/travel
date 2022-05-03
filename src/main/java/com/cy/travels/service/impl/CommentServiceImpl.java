@@ -69,22 +69,20 @@ public class CommentServiceImpl implements CommentService {
      */
     @Override
     public PageBean<CommentRespDTO> listPage(PageRequest<CommentDTO> request) {
-        Example example = new Example(Comment.class);
+//        Example example = new Example(Comment.class);
         CommentDTO query = request.getData();
-        addCondition(query,example);
+//        addCondition(query,example);
         PageHelper.startPage(request.getPageNum(),request.getPageSize());
-        List<Comment> list = commentMapper.selectByExample(example);
+        List<CommentRespDTO> list = commentMapper.selectCommentListByTravelsId(query);
 
         List<CommentRespDTO> result = new ArrayList<>();
-        for (Comment c : list) {
+        for (CommentRespDTO c : list) {
             CommentRespDTO commentResp = new CommentRespDTO();
             BeanUtils.copyProperties(c,commentResp);
             //获取列表时，若是二级评论列表，则在相应评论上加上父级评论
             if (c.getParentId() != null) {
-                Comment comment = commentMapper.selectByPrimaryKey(c.getParentId());
-                CommentDTO commentDTO = new CommentDTO();
-                BeanUtils.copyProperties(comment,commentDTO);
-                commentResp.setParentComment(commentDTO);
+                CommentRespDTO parentComment = commentMapper.selectParentComment(c.getParentId());
+                commentResp.setParentComment(parentComment);
             }
             result.add(commentResp);
         }
@@ -100,13 +98,13 @@ public class CommentServiceImpl implements CommentService {
 
     private void addCondition(CommentDTO query, Example example) {
         Example.Criteria criteria = example.createCriteria();
-        if (Objects.nonNull(query.getId())) {
+        if (Objects.nonNull(query.getId()) && query.getId() > 0) {
             criteria.andEqualTo("id",query.getId());
         }
-        if (Objects.nonNull(query.getTravelsId())) {
+        if (Objects.nonNull(query.getTravelsId()) && query.getTravelsId() > 0) {
             criteria.andEqualTo("travelsId",query.getTravelsId());
         }
-        if (Objects.nonNull(query.getParentId())) {
+        if (Objects.nonNull(query.getParentId()) && query.getParentId() > 0) {
             criteria.andEqualTo("parentId", query.getParentId());
         }
         criteria.andLike("isDeleted", YesOrNoEnum.N.getCode());
@@ -116,9 +114,8 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public int save(CommentDTO commentDTO) {
-        UserDTO requstUser = new UserDTO();
-        requstUser.setId(commentDTO.getUserId());
-        UserDTO user = userService.findUser(requstUser);
+        User user = userService.getCurrentUser();
+        commentDTO.setUserId(user.getId());
         commentDTO.setUsername(user.getUsername());
         commentDTO.setHeadImg(user.getHeadImg());
         Comment comment = new Comment();

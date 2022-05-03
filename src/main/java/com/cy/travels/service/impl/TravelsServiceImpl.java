@@ -8,6 +8,7 @@ import com.cy.travels.model.dto.QueryTravelsDTO;
 import com.cy.travels.model.dto.TravelsDTO;
 import com.cy.travels.model.dto.UserDTO;
 import com.cy.travels.model.entity.Travels;
+import com.cy.travels.model.entity.User;
 import com.cy.travels.service.TravelsService;
 import com.cy.travels.service.UserService;
 import com.cy.travels.utils.Constant;
@@ -46,13 +47,13 @@ public class TravelsServiceImpl implements TravelsService {
         Travels travels = new Travels();
         BeanUtils.copyProperties(result,travels);
         int num = travelsMapper.updateByPrimaryKeySelective(travels);
-        if (num > 0) {
+//        if (num > 0) {
             TravelsDTO resultDTO = new TravelsDTO();
             BeanUtils.copyProperties(travels,resultDTO);
             return resultDTO;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"发布失败");
-        }
+//        }else {
+//            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"发布失败");
+//        }
     }
 
     @Override
@@ -61,6 +62,8 @@ public class TravelsServiceImpl implements TravelsService {
         travelsDTO.setCreatetime(new Date());
         Travels travels = new Travels();
         BeanUtils.copyProperties(travelsDTO,travels);
+        User currentUser = userService.getCurrentUser();
+        travels.setCreator(currentUser.getId());
         travels.setIsDeleted(YesOrNoEnum.N.getCode());
         int num = travelsMapper.insert(travels);
         if (num > 0) {
@@ -196,7 +199,7 @@ public class TravelsServiceImpl implements TravelsService {
 
     @Override
     public TravelsDTO saveOrUpdata(TravelsDTO travelsDTO) {
-        if (null != travelsDTO.getId()) {
+        if (null != travelsDTO.getId() && travelsDTO.getId() > 0) {
             //暂存（修改）
             return this.updata(travelsDTO);
         } else {

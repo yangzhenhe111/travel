@@ -33,7 +33,11 @@ public class CommentRespDTO implements Serializable {
     private Long parentId;
 
     @ApiModelProperty("父级评论")
-    private CommentDTO parentComment;
+    private CommentRespDTO parentComment;
+    @ApiModelProperty( value="父评论内容")
+    private String parentContent;
+    @ApiModelProperty( value="父评论者姓名")
+    private String parentUsername;
 
     /**
      * 所属游记id

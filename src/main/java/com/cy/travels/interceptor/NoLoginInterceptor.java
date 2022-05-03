@@ -107,6 +107,7 @@ public class NoLoginInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
         log.info(request.getHeader("header-user"));
+        log.info("responseInfo:" + response.getOutputStream().toString());
     }
 
 }

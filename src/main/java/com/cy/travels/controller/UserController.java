@@ -33,10 +33,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Slf4j
 @Api(tags = "用户接口")
@@ -157,6 +155,20 @@ public class UserController {
             return ResultResponse.fail("上传文件为null");
         }
         String fileName = file.getOriginalFilename();
+        //设置文件名
+        int count = 0;
+        //锁住的是同一对象
+        synchronized (this){
+            String string = (String) redisUtil.get("File-count");
+            if (Objects.nonNull(string)) {
+                count = Integer.valueOf(string);
+            }
+            ++count;
+            redisUtil.set("File-count",count,1);
+        }
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmmss");
+        String fileType = file.getOriginalFilename().split("\\.")[1];
+        fileName = format.format(new Date())+"_"+count+"."+fileType;
         String filePath = "/upload/user/";
         File path = new File(filePath);
         if (!path.exists()) {
