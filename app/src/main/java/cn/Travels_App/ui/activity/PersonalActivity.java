@@ -154,8 +154,8 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
                             Log.i(TAG, "裁剪::" + media.getCutPath());
                             Log.i(TAG, "Android Q 特有Path::" + media.getAndroidQToPath());
                             imageurl=media.getPath();
-                           /* imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");*/
-                            /*Log.e("imgUrl",imgUrl);*/
+                            imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
+                            Log.e("imgUrl",imgUrl);
                             Glide.with(this)
                                     .load(imageurl)
                                     .apply(RequestOptions.bitmapTransform(new CircleCrop()))
