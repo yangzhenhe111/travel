@@ -42,7 +42,6 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         Travels travelEntity=getItem(position); //获取当前项的Words实例
-
         // 加个判断，以免ListView每次滚动时都要重新加载布局，以提高运行效率
         View view;
         ViewHolder viewHolder;

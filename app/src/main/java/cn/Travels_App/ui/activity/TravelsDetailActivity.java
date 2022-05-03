@@ -301,7 +301,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         return result[0];
     }
 
-    private void initExpandableListView(final List<CommentDetailBean> commentList){
+  /*  private void initExpandableListView(final List<CommentDetailBean> commentList){
         expandableListView.setGroupIndicator(null);
         //默认展开所有回复
         adapter = new CommentExpandAdapter(TravelsDetailActivity.this, commentList);
@@ -322,9 +322,9 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                 showReplyDialog(groupPosition);
                 return true;
             }
-        });
+        });*/
 
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+       /* expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
                 Toast.makeText(TravelsDetailActivity.this,"点击了回复",Toast.LENGTH_SHORT).show();
@@ -340,7 +340,19 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             }
         });
 
-    }
+    }*/
+
+    /**
+     * by moos on 2018/04/20
+     * func:生成测试数据
+     * @return 评论数据
+     */
+   /* private List<CommentDetailBean> generateTestData(){
+        Gson gson = new Gson();
+        commentBean = gson.fromJson(testJson, CommentBean.class);
+        List<CommentDetailBean> commentList = commentBean.getData().getList();
+        return commentList;
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

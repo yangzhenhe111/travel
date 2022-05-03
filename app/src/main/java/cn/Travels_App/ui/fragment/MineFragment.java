@@ -40,6 +40,10 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
         intent.setClass(getContext(), PersonalActivity.class);
         startActivity(intent);
     }*/
+    CommonUtils commonUtils;
+    @BindView(R.id.touxiang)
+    ImageView mycove;
+
     @OnClick(R.id.touxiang)
     public void touxiang(){
         Intent intent=new Intent();
@@ -83,23 +87,20 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
 
     @Override
     public void initData() {
-        /*UserEntity loginUser = CommonUtils.getLoginUser(getContext());
-        myNameTv.setText(loginUser.getUsername());
-        myEmailTv.setText(loginUser.getEmail());
-        myTelTv.setText(loginUser.getTel());
-        *//*if(TextUtils.isEmpty(loginUser.getHeadImg())){*//*
-            *//*Glide.with(fragment)
-                .load(R.drawable.login1)
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(mycove);*//*
-
-        *//*}else {
-            Glide.with(fragment)
-                .load(loginUser.getHeadImg())
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(mycove);
-        }*//*
-*/
+        UserEntity userEntity=commonUtils.getLoginUser(getContext());
+        System.out.println(userEntity.getHeadImg());
+        if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null){
+            String img=userEntity.getHeadImg();
+            Glide.with(this)
+                    .load(img)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(mycove);
+        }else {
+            Glide.with(this)
+                    .load(R.drawable.login1)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(mycove);
+        }
     }
 
     @Override

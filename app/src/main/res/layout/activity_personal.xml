@@ -43,6 +43,11 @@
                 tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,14 +57,15 @@
             android:layout_marginRight="20dp"
             >
             <TextView
+                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="头像"
                 android:textSize="20sp"
                 android:textColor="@color/black">
             </TextView>
             <ImageView
+                android:layout_centerVertical="true"
                 android:id="@+id/gerentouxiang"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -83,13 +89,15 @@
                 android:layout_marginBottom="10dp"
                 android:text="昵称"
                 android:textSize="20sp"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:layout_centerVertical="true">
             </TextView>
             <TextView
                 android:id="@+id/my_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 >
             </TextView>
         </RelativeLayout>
@@ -109,13 +117,15 @@
                 android:layout_marginBottom="10dp"
                 android:text="我的邮箱"
                 android:textSize="20sp"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:layout_centerVertical="true">
             </TextView>
             <TextView
                 android:id="@+id/my_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 >
             </TextView>
         </RelativeLayout>
@@ -135,12 +145,14 @@
                 android:layout_marginTop="10dp"
                 android:text="我的电话"
                 android:textColor="@color/black"
-                android:textSize="20sp"></TextView>
+                android:textSize="20sp"
+                android:layout_centerVertical="true"></TextView>
             <TextView
                 android:id="@+id/my_tel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 >
             </TextView>
         </RelativeLayout>
@@ -160,13 +172,15 @@
                 android:layout_marginBottom="10dp"
                 android:text="性别"
                 android:textSize="20sp"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:layout_centerVertical="true">
             </TextView>
             <TextView
                 android:id="@+id/my_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 >
             </TextView>
         </RelativeLayout>
@@ -186,17 +200,20 @@
                 android:layout_marginBottom="10dp"
                 android:text="个性签名"
                 android:textSize="20sp"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:layout_centerVertical="true">
             </TextView>
             <TextView
                 android:id="@+id/my_signature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 >
             </TextView>
         </RelativeLayout>
         <View style="@style/line_4"/>
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

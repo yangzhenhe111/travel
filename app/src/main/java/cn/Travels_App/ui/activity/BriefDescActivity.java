@@ -15,14 +15,17 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
+import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.persenter.BriefDescPersenter;
 import cn.Travels_App.ui.fragment.WriteFragment;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.BriefDescView;
 
 public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPersenter> implements BriefDescView{
 
     BriefDescView briefDescView;
     BriefDescPersenter briefDescPersenter;
+    CommonUtils commonUtils;
     private WriteFragment writeFragment;
 
     @BindView(R.id.BriefDesc_name)
@@ -96,12 +99,16 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
 
     @OnClick(R.id.brief_top_back)
     public void backPage(){
-        finish();
+        Intent intent=new Intent(BriefDescActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.briefdesc_shanchu_image,R.id.briefdesc_shanchu_text})
     public void shanchu(){
-        finish();
+        Intent intent=new Intent(BriefDescActivity.this,MainActivity.class);
+        intent.putExtra("gotoFragmentTag", "2");
+        startActivity(intent);
     }
 
     @OnClick({R.id.briefdesc_baocun_image,R.id.briefdesc_baocun_text})
@@ -112,6 +119,7 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
         }
         else{
             System.out.println("B1");
+            commonUtils.save_travels_briefdesc(name.getText().toString(),address.getText().toString(),briefDesc.getText().toString(),time.getText().toString(),BriefDescActivity.this);
             Intent intent = new Intent(BriefDescActivity.this,
                     MainActivity.class);
             intent.putExtra("tag", "2");
@@ -182,15 +190,10 @@ public class BriefDescActivity extends BaseActivity<BriefDescView, BriefDescPers
     }
 
     private void xianshi() {
-        Intent intent=getIntent();
-        Bundle bundle=intent.getExtras();
-        System.out.println("B3");
-        if(bundle!=null){
-            System.out.println("B4");
-            name.setText(bundle.getString("name_1"));
-            address.setText(bundle.getString("Address_1"));
-            briefDesc.setText(bundle.getString("BriefDesc_1"));
-            time.setText(bundle.getString("Opentime_1"));
-        }
+        Travels travels=commonUtils.get_travels_briefdesc(BriefDescActivity.this);
+        name.setText(travels.getName());
+        address.setText(travels.getAddress());
+        briefDesc.setText(travels.getBriefDesc());
+        time.setText(travels.getOpentime());
     }
 }

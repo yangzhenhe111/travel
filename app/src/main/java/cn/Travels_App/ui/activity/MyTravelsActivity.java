@@ -35,7 +35,7 @@ public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPers
     @Override
     public void initView() {
         initData();
-        TjTravelsAdapter adapter=new TjTravelsAdapter(MyTravelsActivity.this,R.layout.tjlist_item,mytravels);
+        TjTravelsAdapter adapter=new TjTravelsAdapter(MyTravelsActivity.this,R.layout.history_item,mytravels);
         listView.setAdapter(adapter);
         setListViewHeight(listView);
     }
