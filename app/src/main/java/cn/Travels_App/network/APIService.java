@@ -13,6 +13,7 @@ import cn.Travels_App.model.dto.CommentRespDTO;
 import cn.Travels_App.model.dto.PageBean;
 import cn.Travels_App.model.dto.PageRequest;
 import cn.Travels_App.model.dto.QueryTravelsDTO;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
 import cn.Travels_App.model.entity.Comment;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
@@ -68,6 +69,26 @@ public interface APIService {
     Observable<HttpResult<PageBean<CommentRespDTO>>> queryCommentList(@Body PageRequest<Comment> request);
 
 
+    //根据游记ID添加收藏
+    @Headers({"name:super"})
+    @POST(Constants.URL_COLLECTION)
+    Observable<HttpResult<TravelCollectionDTO>> collection(@Body TravelCollectionDTO request);
+
+    //根据游记ID取消收藏
+    @Headers({"name:super"})
+    @POST(Constants.URL_CANCEL_COLLECTION)
+    Observable<HttpResult<TravelCollectionDTO>> cancelCollection(@Body TravelCollectionDTO collectionDTO);
+
+
+    //根据游记ID取消收藏
+    @Headers({"name:super"})
+    @POST(Constants.URL_IS_COLLECTION)
+    Observable<HttpResult<TravelCollectionDTO>> selectOne(@Body TravelCollectionDTO collectionDTO);
+
+    //根据游记ID获取收藏数
+    @Headers({"name:super"})
+    @POST(Constants.URL_COLLECTION_COUNT)
+    Observable<HttpResult<Integer>> selectCount(@Body TravelCollectionDTO collectionDTO);
 
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})

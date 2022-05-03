@@ -37,6 +37,7 @@ import cn.Travels_App.di.module.RegModule;
 import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.persenter.RegPersenter;
 import cn.Travels_App.utils.ItFxqConstants;
+import cn.Travels_App.utils.MD5Utils;
 import cn.Travels_App.view.RegView;
 
 import static com.blankj.utilcode.util.RegexUtils.isEmail;
@@ -140,7 +141,7 @@ public class RegActivity extends BaseActivity<RegView, RegPersenter> implements 
         } else{
             UserEntity userEntity = new UserEntity();
             userEntity.setUsername(username);
-            userEntity.setPassword(pwd);
+            userEntity.setPassword(MD5Utils.getMD5Code(pwd));
             userEntity.setTel(tel);
             userEntity.setEmail(email);
             /*DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

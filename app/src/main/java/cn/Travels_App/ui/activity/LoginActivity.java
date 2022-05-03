@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import java.security.MessageDigest;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -20,6 +21,7 @@ import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.persenter.LoginPersenter;
 import cn.Travels_App.R;
 import cn.Travels_App.utils.CommonUtils;
+import cn.Travels_App.utils.MD5Utils;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.LoginView;
 import cn.Travels_App.base.BaseActivity;
@@ -54,7 +56,7 @@ public class LoginActivity extends BaseActivity<LoginView,LoginPersenter> implem
             StrictMode.setThreadPolicy(policy);
         }
 
-        //登录监听事件
+        //注册监听事件
         regTv.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -107,7 +109,8 @@ public class LoginActivity extends BaseActivity<LoginView,LoginPersenter> implem
             Toast.makeText(this,"用户名和密码不能为空", Toast.LENGTH_SHORT).show();
         }else {
             System.out.println("00");
-            createPresenter().login(username,pwd);
+
+            createPresenter().login(username, MD5Utils.getMD5Code(pwd));
         }
 
     }

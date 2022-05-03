@@ -1,6 +1,7 @@
 package cn.Travels_App.ui.activity;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Editable;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.Resource;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
@@ -45,6 +47,7 @@ import cn.Travels_App.common.Constants;
 import cn.Travels_App.model.dto.CommentRespDTO;
 import cn.Travels_App.model.dto.PageBean;
 import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
 import cn.Travels_App.model.entity.Comment;
 import cn.Travels_App.model.entity.CommentBean;
 import cn.Travels_App.model.entity.CommentDetailBean;
@@ -59,6 +62,7 @@ import cn.Travels_App.ui.adapter.CommentExpandAdapter;
 import cn.Travels_App.ui.adapter.TravelCommentAdapter;
 import cn.Travels_App.utils.CommentExpandableListView;
 import cn.Travels_App.utils.CommonUtils;
+import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.TravelsDetailView;
 import io.reactivex.Observable;
 import okhttp3.Call;
@@ -92,6 +96,10 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     TextView zhusu;
     @BindView(R.id.spotsdetail_meishi)
     TextView meishi;
+    @BindView(R.id.collection)
+    ImageView imgCollect;
+    @BindView(R.id.collection_num)
+    TextView collectNum;
 
 
     TravelsDetailView mTravelsDetailView;
@@ -122,6 +130,10 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     评论Adapter
      */
     private TravelCommentAdapter myAdapter;
+    /*
+    是否收藏
+     */
+    private boolean collection = false;
 
 
 
@@ -311,10 +323,6 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.detail_page_do_comment)
-    public void onClick() {
-            showCommentDialog();
-    }
 
     /**
      * by moos on 2018/04/20
@@ -520,6 +528,55 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         commentSource = getCommentList(request);
         //加载页面
         loadingComment();
+        //获取收藏信息
+        isCollcetion();
+        //获取收藏数
+        getCollectionCount();
+
+
+    }
+
+    private void getCollectionCount() {
+        TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
+        collectionDTO.setTravelId(mSpots.getId());
+        getApp().getAppComponent().getAPIService().selectCount(collectionDTO)
+                .subscribe(new BaseObserver<HttpResult<Integer>>() {
+                    @Override
+                    public void onSuccess(HttpResult<Integer> travelCollectionDTOHttpResult) {
+                        if (travelCollectionDTOHttpResult.isSuccess()) {
+                            if (travelCollectionDTOHttpResult.getData() != null) {
+                                collectNum.setText(travelCollectionDTOHttpResult.getData()+"");
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        Log.e("收藏信息报错",e.getMessage());
+                    }
+                });
+    }
+
+    private void isCollcetion() {
+        TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
+        collectionDTO.setTravelId(mSpots.getId());
+        getApp().getAppComponent().getAPIService().selectOne(collectionDTO)
+                .subscribe(new BaseObserver<HttpResult<TravelCollectionDTO>>() {
+                    @Override
+                    public void onSuccess(HttpResult<TravelCollectionDTO> travelCollectionDTOHttpResult) {
+                        if (travelCollectionDTOHttpResult.isSuccess()) {
+                            if (travelCollectionDTOHttpResult.getData() != null) {
+                                collection = true;
+                                imgCollect.setImageResource(R.drawable.icon_collect_ok);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        Log.e("收藏信息报错",e.getMessage());
+                    }
+                });
     }
 
     private TravelsDetailActivity.LoadWebListener mWebListener;
@@ -550,6 +607,77 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     public void onSuccess(String msg) {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
 
+    }
+
+    //    @OnClick(R.id.detail_page_do_comment)
+//    public void onClick() {
+//            showCommentDialog();
+//    }
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.detail_page_do_comment :
+                showCommentDialog();
+                break;
+            case R.id.collection:
+                if (collection) {
+                    //取消收藏
+                    cancelCollection();
+                }else {
+                    //添加收藏
+                    collection();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void cancelCollection() {
+        //添加数据库
+        TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
+        collectionDTO.setTravelId(mSpots.getId());
+        getApp().getAppComponent().getAPIService().cancelCollection(collectionDTO)
+                .subscribe(new BaseObserver<HttpResult<TravelCollectionDTO>>() {
+                    @Override
+                    public void onSuccess(HttpResult<TravelCollectionDTO> travelCollectionDTOHttpResult) {
+                        if (travelCollectionDTOHttpResult.isSuccess()) {
+                            ToastUtils.showToast(TravelsDetailActivity.this,"取消收藏成功");
+                            imgCollect.setImageResource(R.drawable.icon_collect);
+                            collection = false;
+                        }else {
+                            ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        ToastUtils.showToast(TravelsDetailActivity.this,e.getMessage());
+                    }
+                });
+    }
+
+    private void collection() {
+        //添加数据库
+        TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
+        collectionDTO.setTravelId(mSpots.getId());
+        getApp().getAppComponent().getAPIService().collection(collectionDTO)
+                .subscribe(new BaseObserver<HttpResult<TravelCollectionDTO>>() {
+                    @Override
+                    public void onSuccess(HttpResult<TravelCollectionDTO> travelCollectionDTOHttpResult) {
+                        if (travelCollectionDTOHttpResult.isSuccess()) {
+                            ToastUtils.showToast(TravelsDetailActivity.this,"收藏成功");
+                            imgCollect.setImageResource(R.drawable.icon_collect_ok);
+                            collection = true;
+                        }else {
+                            ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        ToastUtils.showToast(TravelsDetailActivity.this,e.getMessage());
+                    }
+                });
     }
 
 
@@ -614,11 +742,11 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         listView.setLayoutParams(params);
     }
 
-    //收藏
-    @OnClick(R.id.collection)
-    void collection(View view){
-        Toast.makeText(TravelsDetailActivity.this,"收藏成功",Toast.LENGTH_SHORT).show();
-    }
+//    //收藏
+//    @OnClick(R.id.collection)
+//    void collection(View view){
+//        Toast.makeText(TravelsDetailActivity.this,"收藏成功",Toast.LENGTH_SHORT).show();
+//    }
 
 
 }

@@ -36,6 +36,14 @@ public class Constants {
     public static final String URL_FINDComment = "front/comment/getCommentListAll";
     //查询评论分页
     public static final String URL_FIND_COMMENT = "front/comment/listPage";
+    //添加收藏
+    public static final String URL_COLLECTION ="front/travel/collection/collect";
+    //取消收藏
+    public static final String URL_CANCEL_COLLECTION ="front/travel/collection/cancelCollect";
+    //获取收藏信息
+    public static final String URL_IS_COLLECTION ="front/travel/collection/selectOne";
+    //获取收藏数
+    public static final String URL_COLLECTION_COUNT ="front/travel/collection/selectCount";
 
 
 }

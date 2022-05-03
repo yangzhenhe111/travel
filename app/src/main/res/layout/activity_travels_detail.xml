@@ -301,15 +301,18 @@
             android:paddingLeft="18dp"
             android:text="说点什么吧..."
             android:textColor="#B6B6B6"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/collection"
+            android:onClick="onClick"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:src="@drawable/icon_collect" />
 
         <TextView
+            android:id="@+id/collection_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
