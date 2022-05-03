@@ -165,14 +165,14 @@ public class CommentExpandAdapter extends BaseExpandableListAdapter {
      * func:评论成功后插入一条数据
      * @param commentDetailBean 新的评论数据
      */
-    public void addTheCommentData(CommentResp commentDetailBean){
-        if(commentDetailBean!=null){
-            commentBeanList.add(commentDetailBean);
-            notifyDataSetChanged();
-        }else {
-            throw new IllegalArgumentException("评论数据为空!");
-        }
-
+    public void addTheCommentData(CommentDetailBean commentDetailBean){
+//        if(commentDetailBean!=null){
+//            commentBeanList.add(commentDetailBean);
+//            notifyDataSetChanged();
+//        }else {
+//            throw new IllegalArgumentException("评论数据为空!");
+//        }
+//
     }
 
     /**

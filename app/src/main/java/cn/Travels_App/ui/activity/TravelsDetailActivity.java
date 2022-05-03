@@ -301,59 +301,6 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         return result[0];
     }
 
-  /*  private void initExpandableListView(final List<CommentDetailBean> commentList){
-        expandableListView.setGroupIndicator(null);
-        //默认展开所有回复
-        adapter = new CommentExpandAdapter(TravelsDetailActivity.this, commentList);
-        expandableListView.setAdapter(adapter);
-        for(int i = 0; i<commentList.size(); i++){
-            expandableListView.expandGroup(i);
-        }
-        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView expandableListView, View view, int groupPosition, long l) {
-                boolean isExpanded = expandableListView.isGroupExpanded(groupPosition);
-                Log.e(TAG, "onGroupClick: 当前的评论id>>>"+commentList.get(groupPosition).getId());
-//                if(isExpanded){
-//                    expandableListView.collapseGroup(groupPosition);
-//                }else {
-//                    expandableListView.expandGroup(groupPosition, true);
-//                }
-                showReplyDialog(groupPosition);
-                return true;
-            }
-        });*/
-
-       /* expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
-                Toast.makeText(TravelsDetailActivity.this,"点击了回复",Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                //toast("展开第"+groupPosition+"个分组");
-
-            }
-        });
-
-    }*/
-
-    /**
-     * by moos on 2018/04/20
-     * func:生成测试数据
-     * @return 评论数据
-     */
-   /* private List<CommentDetailBean> generateTestData(){
-        Gson gson = new Gson();
-        commentBean = gson.fromJson(testJson, CommentBean.class);
-        List<CommentDetailBean> commentList = commentBean.getData().getList();
-        return commentList;
-    }*/
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == android.R.id.home){
@@ -387,43 +334,58 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         behavior.setPeekHeight(commentView.getMeasuredHeight());
 
         bt_comment.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-                String commentContent = commentText.getText().toString().trim();
-                if(!TextUtils.isEmpty(commentContent)){
+                String replyContent = commentText.getText().toString().trim();
+                if(!TextUtils.isEmpty(replyContent)){
 
-                    //commentOnWork(commentContent);
-                    dialog.dismiss();
-                    CommentDetailBean detailBean = new CommentDetailBean("小明", commentContent,"刚刚");
-                    adapter.addTheCommentData(detailBean);
-                    Toast.makeText(TravelsDetailActivity.this,"评论成功",Toast.LENGTH_SHORT).show();
+                    //提交回复信息
+                    Comment commitInfo = new Comment();
+                    commitInfo.setContent(replyContent);
+                    commitInfo.setTravelsId(mSpots.getId());
+
+                    if (submitData(commitInfo)){
+                        dialog.dismiss();
+                        PageRequest<Comment> request = new PageRequest<>();
+                        Comment comment1 = new Comment();
+                        comment1.setTravelsId(mSpots.getId());
+                        request.setData(comment1);
+                        request.setPageNum(1);
+                        request.setPageSize(10);
+                        //获取数据
+                        commentSource = getCommentList(request);
+                        loadingComment();
+                        Toast.makeText(TravelsDetailActivity.this,"回复成功",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(TravelsDetailActivity.this,"提交失败，请重试！",Toast.LENGTH_SHORT).show();
+
+                    }
 
                 }else {
-                    Toast.makeText(TravelsDetailActivity.this,"评论内容不能为空",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TravelsDetailActivity.this,"回复内容不能为空",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        commentText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
-                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
-                }else {
-                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
+//        commentText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
+//                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+//                }else {
+//                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
         dialog.show();
     }
 

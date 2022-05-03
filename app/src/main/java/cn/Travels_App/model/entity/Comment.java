@@ -126,4 +126,7 @@ public class Comment implements Serializable {
         this.userName = nickName;
         this.content = content;
     }
+
+    public Comment() {
+    }
 }
