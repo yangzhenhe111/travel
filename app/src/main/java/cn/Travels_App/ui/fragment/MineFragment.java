@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.Travels_App.model.entity.UserEntity;
+import cn.Travels_App.ui.activity.CollectionActivity;
 import cn.Travels_App.ui.activity.HistoryActivity;
 import cn.Travels_App.ui.activity.LoginActivity;
 import cn.Travels_App.persenter.Minepresenter;
@@ -43,7 +44,10 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
     CommonUtils commonUtils;
     @BindView(R.id.touxiang)
     ImageView mycove;
-
+    @BindView(R.id.my_name)
+    TextView myname;
+    @BindView(R.id.my_jianjie)
+    TextView myjianjie;
     @OnClick(R.id.touxiang)
     public void touxiang(){
         Intent intent=new Intent();
@@ -62,6 +66,13 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
     public void mytv(){
         Intent intent=new Intent();
         intent.setClass(getContext(), MyTravelsActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.my_shoucang)
+    public void myshoucang(){
+        Intent intent=new Intent();
+        intent.setClass(getContext(), CollectionActivity.class);
         startActivity(intent);
     }
 
@@ -88,6 +99,7 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
     @Override
     public void initData() {
         UserEntity userEntity=commonUtils.getLoginUser(getContext());
+        myname.setText(userEntity.getUsername());
         System.out.println(userEntity.getHeadImg());
         if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null){
             String img=userEntity.getHeadImg();

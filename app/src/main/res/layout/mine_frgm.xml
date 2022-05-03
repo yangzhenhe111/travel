@@ -164,7 +164,7 @@
                         android:id="@+id/my_shoucang"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/wodeyouji"
+                        android:background="@drawable/shoucang"
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:textColor="#6200EE"

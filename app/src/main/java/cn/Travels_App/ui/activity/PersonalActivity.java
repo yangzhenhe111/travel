@@ -76,18 +76,20 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
 
     @Override
     public void initData() {
-        /*if(TextUtils.isEmpty(loginUser.getHeadImg())){*/
+        UserEntity userEntity=commonUtils.getLoginUser(PersonalActivity.this);
+        System.out.println(userEntity.getHeadImg());
+        if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null){
+            String img=userEntity.getHeadImg();
             Glide.with(this)
-                .load(R.drawable.login1)
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(mycove);
-
-        /*}else {
-            Glide.with(fragment)
-                .load(loginUser.getHeadImg())
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(mycove);
-        }*/
+                    .load(img)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(mycove);
+        }else {
+            Glide.with(this)
+                    .load(R.drawable.login1)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(mycove);
+        }
     }
 
     @Override

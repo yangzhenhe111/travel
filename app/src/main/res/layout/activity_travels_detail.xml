@@ -304,6 +304,7 @@
             android:textSize="12sp" />
 
         <ImageView
+            android:id="@+id/collection"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:src="@drawable/icon_collect" />

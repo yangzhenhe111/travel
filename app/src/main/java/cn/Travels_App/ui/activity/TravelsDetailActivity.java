@@ -144,6 +144,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     }
 
 
+
     @NonNull
     @Override
     public TravelsDetailPersenter createPresenter() {
@@ -613,8 +614,11 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         listView.setLayoutParams(params);
     }
 
-
-
+    //收藏
+    @OnClick(R.id.collection)
+    void collection(View view){
+        Toast.makeText(TravelsDetailActivity.this,"收藏成功",Toast.LENGTH_SHORT).show();
+    }
 
 
 }

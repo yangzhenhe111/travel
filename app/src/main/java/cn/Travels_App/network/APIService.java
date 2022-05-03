@@ -67,6 +67,8 @@ public interface APIService {
     @POST(Constants.URL_FIND_COMMENT)
     Observable<HttpResult<PageBean<CommentRespDTO>>> queryCommentList(@Body PageRequest<Comment> request);
 
+
+
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})
     @POST(Constants.URL_FINDTJSPOTS)
