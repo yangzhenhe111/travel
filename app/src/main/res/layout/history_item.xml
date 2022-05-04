@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="#FAFAFA">
         <ImageView
-            android:id="@+id/tjspots_image"
+            android:id="@+id/his_spots_image"
             android:layout_width="200dp"
             android:layout_height="120dp"
             android:scaleType="fitXY"
@@ -24,12 +24,12 @@
         <RelativeLayout
             android:id="@+id/his_right"
             android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/tjspots_image"
+            android:layout_toRightOf="@+id/his_spots_image"
             android:layout_marginLeft="10dp"
             android:layout_height="120dp">
 
             <TextView
-                android:id="@+id/tjspots_name"
+                android:id="@+id/his_spots_name"
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
                 android:inputType="textMultiLine"
@@ -39,7 +39,7 @@
                 >
             </TextView>
             <TextView
-                android:id="@+id/tjspots_createTime"
+                android:id="@+id/his_spots_createTime"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="20201118"

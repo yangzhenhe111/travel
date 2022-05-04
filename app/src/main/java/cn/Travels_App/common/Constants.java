@@ -48,6 +48,8 @@ public class Constants {
     public static final String URL_findCollectionTracels ="front/travel/collection/listPage";
     //获取历史游记
     public static final String URL_findHistoryTracels ="front/travelsHistory/listPage";
+    //获取游记详情
+    public static final String URL_getDetailsTRAVELS ="front/travels/getDetails";
 
 
 }

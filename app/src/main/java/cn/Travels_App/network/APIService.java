@@ -101,6 +101,12 @@ public interface APIService {
     @POST(Constants.URL_COLLECTION_COUNT)
     Observable<HttpResult<Integer>> selectCount(@Body TravelCollectionDTO collectionDTO);
 
+    //根据游记ID获取游记详情
+    @Headers({"name:super"})
+    @POST(Constants.URL_getDetailsTRAVELS)
+    Observable<HttpResult<Travels>> getDetails(@Body Travels travels);
+
+
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})
     @POST(Constants.URL_FINDTJSPOTS)

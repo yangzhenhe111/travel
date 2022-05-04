@@ -64,7 +64,7 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelsId", spotsItem.getId());
                     getContext().startActivity(intent);
                 }
             });
@@ -74,7 +74,7 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelsId", spotsItem.getId());
                     getContext().startActivity(intent);
                 }
             });
@@ -86,7 +86,7 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelsId", spotsItem.getId());
                     getContext().startActivity(intent);
 
                 }
