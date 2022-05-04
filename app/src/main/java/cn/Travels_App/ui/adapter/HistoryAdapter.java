@@ -101,8 +101,8 @@ public class HistoryAdapter extends ArrayAdapter<TravelsHistoryDTO> {
         }else{
             viewHolder.tjspots_nameTv.setText("---");
         }
-        if((isEmpty(spotsItem.getPublishDate())==true)){
-            String[] str=spotsItem.getPublishDate().split("[T]");
+        if((isEmpty(spotsItem.getCreateTime())==true)){
+            String[] str=spotsItem.getCreateTime().split("[T]");
             viewHolder.tjspots_createTimeTv.setText(str[0]);
         }else{
             viewHolder.tjspots_createTimeTv.setText("------");

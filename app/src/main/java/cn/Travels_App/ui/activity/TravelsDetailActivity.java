@@ -466,8 +466,8 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             fbname.setText("————");
         }
 
-        if((isEmpty(mSpots.getCreatetime())==true)){
-            String[] str=mSpots.getCreatetime().split("[T]");
+        if((isEmpty(mSpots.getPublishDate())==true)){
+            String[] str=mSpots.getPublishDate().split("[T]");
             fbtime.setText("发布于 "+str[0]);
         }else{
             fbtime.setText("发布于 "+"---");
