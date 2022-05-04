@@ -452,10 +452,13 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     @Override
     public void initData() {
         /*mSpots = (Travels) getIntent().getExtras().get("travelEntity");*/
-        Travels travels=new Travels();
         Long travelsId=getIntent().getExtras().getLong("travelsId");
-        travels.setId(Long.valueOf(travelsId));
-        getDetails(travels);
+        System.out.println(travelsId);
+        Travels travelDetail=new Travels();
+        travelDetail.setId(travelsId);
+        System.out.println(travelDetail.getId());
+        System.out.println("T1");
+        getDetails(travelDetail);
 
         if((isEmpty(mSpots.getCreatorName())==true)){
             fbname.setText(mSpots.getCreatorName());

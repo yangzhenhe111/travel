@@ -49,9 +49,9 @@ public class CollectionAdapter extends ArrayAdapter<TravelCollectionDTO> {
 
             // 避免每次调用getView()时都要重新获取控件实例
             viewHolder=new CollectionAdapter.ViewHolder();
-            viewHolder.tjspots_image=view.findViewById(R.id.tjspots_image);
-            viewHolder.tjspots_nameTv=view.findViewById(R.id.tjspots_name);
-            viewHolder.tjspots_createTimeTv=view.findViewById(R.id.tjspots_createTime);
+            viewHolder.tjspots_image=view.findViewById(R.id.his_spots_image);
+            viewHolder.tjspots_nameTv=view.findViewById(R.id.his_spots_name);
+            viewHolder.tjspots_createTimeTv=view.findViewById(R.id.his_spots_createTime);
 
 
             //进行景区详情

@@ -1,6 +1,8 @@
 package cn.Travels_App.persenter;
 
 
+import android.util.Log;
+
 import java.util.List;
 
 import cn.Travels_App.App;
@@ -17,6 +19,7 @@ public class TravelsDetailPersenter extends BasePresenter<TravelsDetailView> {
 
 
     TravelsDetailView mTravelsDetailView;
+    Travels travel;
 
     public TravelsDetailPersenter(App app) {
         super(app);
@@ -72,9 +75,6 @@ public class TravelsDetailPersenter extends BasePresenter<TravelsDetailView> {
                     }
                 });
     }*/
-
-
-
 
 }
 

@@ -152,6 +152,23 @@ public class CommonUtils {
         return resraurantInfo;
     }
 
+    //储存封面信息
+    public static void save_travels_imageurl(String imageurl,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("imageurl",imageurl);
+        editor.commit();
+    }
+
+    //读取封面信息
+    public static String get_travels_imageurl(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String traffic;
+        traffic=settings.getString("imageurl","");
+        return traffic;
+    }
+
+
 
 
 

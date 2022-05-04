@@ -26,26 +26,24 @@
             android:layout_below="@+id/spotsfmIv"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/spotsnameTv"
-                android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_marginLeft="21dp"
-                android:layout_marginTop="5dp"
-                android:text="景区名:峨眉山"
-                android:layout_below="@+id/spotsfmIv"
-                android:textColor="#7C8698"
-                android:textSize="12dp"
-                android:gravity="left"/>
-            <TextView
                 android:id="@+id/biaoti"
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="5dp"
                 android:text="小湾环岛骑行"
-                android:layout_below="@+id/spotsnameTv"
                 android:textColor="#203152"
                 android:textSize="20dp"
+                android:gravity="left"/>
+            <TextView
+                android:id="@+id/spotsnameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="5dp"
+                android:text="景区名:峨眉山"
+                android:textColor="#7C8698"
+                android:textSize="12dp"
                 android:gravity="left"/>
         </LinearLayout>
 

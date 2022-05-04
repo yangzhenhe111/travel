@@ -98,7 +98,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
 
 
         viewHolder.spotsnameTv.setText(travelEntity.getName());
-        viewHolder.titleTv.setTextColor(Color.RED);
+        viewHolder.titleTv.setTextColor(Color.BLACK);
 
         Glide.with(getContext())
                 .load(travelEntity.getCover())

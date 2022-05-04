@@ -117,8 +117,9 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     @Override
     public void initData() {
-
-
+        if(commonUtils.get_travels_imageurl(getContext())!=null||commonUtils.get_travels_imageurl(getContext())!=""){
+            Glide.with(mContext).load(commonUtils.get_travels_imageurl(getContext())).into(write_sc_but);
+        }
     }
 
     @OnClick(R.id.write_briefDesc)
@@ -217,11 +218,12 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
                             Log.i(TAG, "裁剪::" + media.getCutPath());
                             Log.i(TAG, "Android Q 特有Path::" + media.getAndroidQToPath());
                             imageurl=media.getPath();
+                            commonUtils.save_travels_imageurl(imageurl,getContext());
                             imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
                             Log.e("imgUrl",imgUrl);
                             /*write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));*/
                             if(imgUrl!=null){
-                                Glide.with(context).load(imgUrl).into(write_sc_but);
+                                Glide.with(mContext).load(imgUrl).into(write_sc_but);
                             }
                     }
                     System.out.println("w1");
@@ -238,6 +240,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
+        commonUtils.save_travels_imageurl("",getContext());
         fetchdata();
     }
 
@@ -247,6 +250,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
+        commonUtils.save_travels_imageurl("",getContext());
         publication();
     }
 
