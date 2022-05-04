@@ -2,6 +2,7 @@ package cn.Travels_App.ui.activity;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -45,6 +46,7 @@ public class CollectionActivity extends BaseActivity<Collectionview, CollectionP
             CollectionAdapter adapter=new CollectionAdapter(CollectionActivity.this,R.layout.history_item,collectiontravels);
             listView.setAdapter(adapter);
             setListViewHeight(listView);
+
         }
     }
 

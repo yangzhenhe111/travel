@@ -61,7 +61,7 @@ public class HistoryAdapter extends ArrayAdapter<TravelsHistoryDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelsId());
                     getContext().startActivity(intent);
                 }
             });
@@ -71,7 +71,7 @@ public class HistoryAdapter extends ArrayAdapter<TravelsHistoryDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelsId());
                     getContext().startActivity(intent);
                 }
             });
@@ -83,7 +83,7 @@ public class HistoryAdapter extends ArrayAdapter<TravelsHistoryDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelsId());
                     getContext().startActivity(intent);
 
                 }

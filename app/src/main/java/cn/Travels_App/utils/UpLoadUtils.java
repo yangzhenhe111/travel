@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 
 import cn.Travels_App.common.Constants;
+import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.network.HttpResult;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -35,9 +36,11 @@ public class UpLoadUtils {
         builder.addFormDataPart("file",path, RequestBody.create(MediaType.parse("image/jpg"),file));
         RequestBody requestBody = builder.build();
         Request.Builder reqBuilder = new Request.Builder();
+        UserEntity user = CommonUtils.getLoginUser(context);
+        user.setUsername(null);
         Request request = reqBuilder
                 .url(url)
-                .header("header-user", new Gson().toJson(CommonUtils.getLoginUser(context)))
+                .header("header-user", new Gson().toJson(user))
                 .post(requestBody)
                 .build();
         Call call = okHttpClient.newCall(request);

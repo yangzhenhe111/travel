@@ -134,6 +134,10 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     是否收藏
      */
     private boolean collection = false;
+    /*
+    游记ID
+     */
+    private Long travelsId;
 
 
 
@@ -451,7 +455,10 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
 
     @Override
     public void initData() {
-        mSpots = (Travels) getIntent().getExtras().get("travelEntity");
+//        mSpots = (Travels) getIntent().getExtras().get("travelEntity");
+
+        travelsId = getIntent().getExtras().getLong("travelId");
+        getTravels();
 
         if((isEmpty(mSpots.getCreatorName())==true)){
             fbname.setText(mSpots.getCreatorName());
@@ -535,6 +542,15 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
 
 
     }
+
+    private void getTravels() {
+        Travels travels = new Travels();
+        travels.setId(travelsId);
+//        getApp().getAppComponent().getAPIService().get
+//        mSpots = ;
+
+    }
+
 
     private void getCollectionCount() {
         TravelCollectionDTO collectionDTO = new TravelCollectionDTO();

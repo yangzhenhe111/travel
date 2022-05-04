@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.security.MessageDigest;
 import java.util.Map;
@@ -63,11 +64,24 @@ public class LoginActivity extends BaseActivity<LoginView,LoginPersenter> implem
                 Intent intent=new Intent();
                 intent.setClass(LoginActivity.this, RegActivity.class);
                 //启动
-                startActivity(intent);
+                startActivityForResult(intent,1);
+//                startActivity(intent);
             }
         });
         //焦点监听事件
         jiaodian();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == 2) {
+            String username = data.getStringExtra("username");
+            String pwd = data.getStringExtra("pwd");
+            loginNameEt.setText(username);
+            loginPwdEt.setText(pwd);
+//            notifyAll();
+        }
     }
 
     @NonNull

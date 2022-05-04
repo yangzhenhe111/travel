@@ -183,6 +183,11 @@ public class RegActivity extends BaseActivity<RegView, RegPersenter> implements 
     @Override
     public void onCompleted() {
         Toast.makeText(this,"注册成功", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent();
+        intent.putExtra("username",usernameEt.getText().toString().trim());
+        intent.putExtra("pwd",pwdEt.getText().toString().trim());
+        setResult(2,intent);
+        finish();
     }
 
     @Override
@@ -215,8 +220,13 @@ public class RegActivity extends BaseActivity<RegView, RegPersenter> implements 
                         dlog.setPositiveButton("确定",new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dlg, int arg1) {
-                                Intent intent = new Intent(RegActivity.this, LoginActivity.class);
-                                startActivity(intent);
+//                                Intent intent = new Intent(RegActivity.this, LoginActivity.class);
+//                                startActivity(intent);
+                                Intent intent = new Intent();
+                                intent.putExtra("username",usernameEt.getText());
+                                intent.putExtra("pwd",pwdEt.getText());
+                                setResult(2,intent);
+                                finish();
                             }
                         });
                         dlog.setNegativeButton("取消",new DialogInterface.OnClickListener(){

@@ -8,11 +8,13 @@ import com.google.gson.Gson;
 
 import cn.Travels_App.App;
 import cn.Travels_App.common.Constants;
+import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.network.APIService;
 import cn.Travels_App.network.converter.CustomGsonConverterFactory;
 
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +23,7 @@ import javax.inject.Singleton;
 import javax.net.ssl.SSLContext;
 
 import cn.Travels_App.utils.CommonUtils;
+import cn.Travels_App.utils.StringUtils;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.ConnectionSpec;
@@ -155,7 +158,11 @@ public class AppModule {
                 //删除原有配置中的值,就是namesAndValues集合里的值
                 builder.removeHeader("name");
 
-                builder.addHeader("header-user", new Gson().toJson(CommonUtils.getLoginUser(context)));//添加请求头
+                UserEntity user = CommonUtils.getLoginUser(context);
+                user.setUsername(null);
+                String str = new Gson().toJson(user).trim();
+                String strUTF8 = URLDecoder.decode(str, "UTF-8");
+                builder.addHeader("header-user", strUTF8);//添加请求头
                 //获取头信息中配置的value,如：manage或者mdffx
                 String urlname = urlnameList.get(0);
                 HttpUrl baseURL = HttpUrl.parse(Constants.BASE_URL);

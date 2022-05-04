@@ -61,7 +61,7 @@ public class CollectionAdapter extends ArrayAdapter<TravelCollectionDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelId());
                     getContext().startActivity(intent);
                 }
             });
@@ -71,7 +71,7 @@ public class CollectionAdapter extends ArrayAdapter<TravelCollectionDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelId());
                     getContext().startActivity(intent);
                 }
             });
@@ -83,7 +83,7 @@ public class CollectionAdapter extends ArrayAdapter<TravelCollectionDTO> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelEntity", spotsItem);
+                    intent.putExtra("travelId", spotsItem.getTravelId());
                     getContext().startActivity(intent);
 
                 }
