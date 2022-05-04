@@ -667,6 +667,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                         if (travelCollectionDTOHttpResult.isSuccess()) {
                             ToastUtils.showToast(TravelsDetailActivity.this,"取消收藏成功");
                             imgCollect.setImageResource(R.drawable.icon_collect);
+                            collectNum.setText(Integer.valueOf(collectNum.getText().toString())+1);
                             collection = false;
                         }else {
                             ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());
@@ -691,6 +692,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                         if (travelCollectionDTOHttpResult.isSuccess()) {
                             ToastUtils.showToast(TravelsDetailActivity.this,"收藏成功");
                             imgCollect.setImageResource(R.drawable.icon_collect_ok);
+                            collectNum.setText(Integer.valueOf(collectNum.getText().toString())+1);
                             collection = true;
                         }else {
                             ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());

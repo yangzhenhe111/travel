@@ -72,7 +72,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),
                             TravelsDetailActivity.class);
-                    intent.putExtra("travelId", travelEntity.getId());
+                    intent.putExtra("travelsId", travelEntity.getId());
                     getContext().startActivity(intent);
                 }
             });
