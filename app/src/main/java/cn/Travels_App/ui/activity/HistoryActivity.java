@@ -51,6 +51,7 @@ public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter>
         PageRequest<TravelsHistoryDTO> query = new PageRequest<>();
         query.setPageNum(1);
         query.setPageSize(10);
+        query.setData(new TravelsHistoryDTO());
         createPresenter().findHistoryTracels(query);
     }
 
