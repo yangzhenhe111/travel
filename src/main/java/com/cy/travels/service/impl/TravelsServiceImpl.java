@@ -132,9 +132,9 @@ public class TravelsServiceImpl implements TravelsService {
 //        if (Objects.nonNull(query.getBriefDesc())) {
 //            criteria.andLike("briefDesc",SqlUtils.like(query.getBriefDesc()));
 //        }
-//        if (Objects.nonNull(query.getCreator().longValue())) {
-//            criteria.andEqualTo("creator",query.getCreator());
-//        }
+        if (Objects.nonNull(query.getCreator()) && query.getCreator() > 0) {
+            criteria.andEqualTo("creator",query.getCreator());
+        }
 //        if (Objects.nonNull(query.getOpentimeStart()) && Objects.nonNull(query.getOpentimeEnd())) {
 //            criteria.andBetween("opentime",query.getOpentimeStart(),query.getOpentimeEnd());
 //        }

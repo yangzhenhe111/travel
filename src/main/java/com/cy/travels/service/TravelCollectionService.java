@@ -15,9 +15,11 @@ public interface TravelCollectionService {
 
     PageBean<TravelCollectionDTO> listPage(PageRequest<TravelCollectionDTO> request);
 
-    TravelCollectionDTO selectOne(TravelCollectionDTO condition);
+    int isCollection(TravelCollectionDTO condition);
 
     int updata(TravelCollectionDTO condition);
 
     Integer selectCount(TravelCollectionDTO condition);
+
+    TravelCollectionDTO selectOne(TravelCollectionDTO condition);
 }

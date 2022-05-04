@@ -100,16 +100,15 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
     }
 
     @Override
-    public TravelCollectionDTO selectOne(TravelCollectionDTO condition) {
+    public int isCollection(TravelCollectionDTO condition) {
         User user = userService.getCurrentUser();
         condition.setUserId(user.getId());
         TravelCollection collection = new TravelCollection();
         BeanUtils.copyProperties(condition,collection);
         collection.setIsDeleted(YesOrNoEnum.N.getCode());
         collection.setId(null);
-        TravelCollection selectOne = tracelCollectionMapper.selectOne(collection);
-        BeanUtils.copyProperties(selectOne,condition);
-        return condition;
+        int selectCount = tracelCollectionMapper.selectCount(collection);
+        return selectCount;
     }
 
     @Override
@@ -131,5 +130,18 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         query.setId(null);
         int count = tracelCollectionMapper.selectCount(query);
         return count;
+    }
+
+    @Override
+    public TravelCollectionDTO selectOne(TravelCollectionDTO condition) {
+        User user = userService.getCurrentUser();
+        condition.setUserId(user.getId());
+        TravelCollection collection = new TravelCollection();
+        BeanUtils.copyProperties(condition,collection);
+        collection.setIsDeleted(YesOrNoEnum.N.getCode());
+        collection.setId(null);
+        TravelCollection selectOne = tracelCollectionMapper.selectOne(collection);
+        BeanUtils.copyProperties(selectOne,condition);
+        return condition;
     }
 }

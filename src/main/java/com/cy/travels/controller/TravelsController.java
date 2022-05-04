@@ -72,33 +72,7 @@ public class TravelsController {
 
     @ApiOperation("暂存游记")
     @PostMapping("/saveOrUpdata")
-    public ResultResponse<TravelsDTO> saveOrUpdata(/*@RequestParam("file") MultipartFile file,*/
-                                                   @RequestBody TravelsDTO travelsDTO) {
-      /*  //保存图片
-        if (file.isEmpty()) {
-            return ResultResponse.fail("上传文件为null");
-        }
-        String fileName = file.getOriginalFilename();
-        String filePath = "/upload/travels/cover/";
-        File path = new File(filePath);
-        if (!path.exists()) {
-            path.mkdirs();
-        }
-        File dest = new File(filePath + fileName);
-        OutputStream out = null;
-        try {
-            if (!dest.exists()) {
-                dest.createNewFile();
-            }
-            out = new BufferedOutputStream(new FileOutputStream(dest));
-            out.write(file.getBytes());
-            out.close();
-            travelsDTO.setCover(Constant.BaseUrl+"static/travels/cover/" + fileName);
-//            return Result.ok("上传成功");
-//            return ResultResponse.ok(Constant.BaseUrl+"static/travels/cover/" + fileName);
-        } catch (IOException e) {
-            return ResultResponse.fail("上传失败");
-        }*/
+    public ResultResponse<TravelsDTO> saveOrUpdata(@RequestBody TravelsDTO travelsDTO) {
         //保存用户游记信息
         String userStr = RequestContextUtil.getRequestHeader("header-user");
         User user = new Gson().fromJson(userStr,User.class);

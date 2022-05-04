@@ -74,21 +74,20 @@ public class TravelCollectionController {
         int updata = collectionService.updata(condition);
         TravelCollectionDTO result = new TravelCollectionDTO();
         if (updata > 0) {
-            result = collectionService.selectOne(condition);
+            return ResultResponse.ok("取消成功",result);
         }else {
-            BeanUtils.copyProperties(condition,result);
+            return ResultResponse.ok("取消失败",condition);
         }
+    }
+
+    @ApiOperation("是否收藏，传来ID即可")
+    @PostMapping("/isCollection")
+    public ResultResponse<Integer> isCollection(@RequestBody TravelCollectionDTO condition) {
+        int result = collectionService.isCollection(condition);
         return ResultResponse.ok("收藏成功",result);
     }
 
-    @ApiOperation("取消收藏游记，传来ID即可")
-    @PostMapping("/selectOne")
-    public ResultResponse<TravelCollectionDTO> selectOne(@RequestBody TravelCollectionDTO condition) {
-        TravelCollectionDTO result = collectionService.selectOne(condition);
-        return ResultResponse.ok("收藏成功",result);
-    }
-
-    @ApiOperation("取消收藏游记，传来ID即可")
+    @ApiOperation("收藏数量，传来ID即可")
     @PostMapping("/selectCount")
     public ResultResponse<Integer> selectCount(@RequestBody TravelCollectionDTO condition) {
         Integer result = collectionService.selectCount(condition);
