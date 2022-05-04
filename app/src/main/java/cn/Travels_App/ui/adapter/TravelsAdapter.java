@@ -53,8 +53,8 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
             // 避免每次调用getView()时都要重新获取控件实例
             viewHolder=new ViewHolder();
             viewHolder.spotsfmIv=view.findViewById(R.id.spotsfmIv);
-            viewHolder.spotsnameTv=view.findViewById(R.id.spotsnameTv);
-            viewHolder.titleTv=view.findViewById(R.id.biaoti);
+            viewHolder.creatorName=view.findViewById(R.id.spotsnameTv);
+            viewHolder.spotsnameTv=view.findViewById(R.id.biaoti);
             /*viewHolder.ydBtn=view.findViewById(R.id.ydBtn);
 
             viewHolder.ydBtn.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +98,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
 
 
         viewHolder.spotsnameTv.setText(travelEntity.getName());
-        viewHolder.titleTv.setTextColor(Color.BLACK);
+        viewHolder.creatorName.setText(travelEntity.getCreatorName());
 
         Glide.with(getContext())
                 .load(travelEntity.getCover())
@@ -110,7 +110,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
     // 定义一个内部类，用于对控件的实例进行缓存
     class ViewHolder{
         ImageView spotsfmIv;
-        TextView spotsnameTv,titleTv;
+        TextView spotsnameTv,creatorName;
     }
 
     public static boolean isEmpty(final Object obj) {

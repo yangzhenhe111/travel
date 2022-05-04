@@ -31,7 +31,7 @@
                 android:layout_height="28dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="5dp"
-                android:text="小湾环岛骑行"
+                android:text="---"
                 android:textColor="#203152"
                 android:textSize="20dp"
                 android:gravity="left"/>
@@ -41,9 +41,10 @@
                 android:layout_height="17dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="5dp"
-                android:text="景区名:峨眉山"
+                android:text="---"
                 android:textColor="#7C8698"
                 android:textSize="12dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="left"/>
         </LinearLayout>
 

@@ -25,9 +25,11 @@ import butterknife.BindView;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.persenter.HomePerenter;
 import cn.Travels_App.R;
+import cn.Travels_App.ui.activity.CollectionActivity;
 import cn.Travels_App.ui.activity.HistoryActivity;
 import cn.Travels_App.ui.activity.MainActivity;
 import cn.Travels_App.ui.activity.MyTravelsActivity;
+import cn.Travels_App.ui.activity.PersonalActivity;
 import cn.Travels_App.ui.adapter.TjTravelsAdapter;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.HomeView;
@@ -40,7 +42,7 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
 
     @BindView(R.id.spotstjListViewId)
     ListView listView;
-    //景区目的地
+    //收藏游记
     @BindView(R.id.h_spotsMddTv)
     TextView h_spotsMddTv;
     //编写游记
@@ -129,8 +131,7 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),
-                        MainActivity.class);
-                intent.putExtra("gotoFragmentTag","1");
+                        CollectionActivity.class);
                 startActivity(intent);
             }
         });
@@ -147,10 +148,8 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
         h_my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Home0");
                 Intent intent = new Intent(getContext(),
-                        MainActivity.class);
-                intent.putExtra("gotoFragmentTag","3");
+                        PersonalActivity.class);
                 startActivity(intent);
             }
         });

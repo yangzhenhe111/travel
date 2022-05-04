@@ -113,9 +113,10 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
     }
     @OnClick(R.id.detail_top_back)
     void backPage(View view){
-        Intent intent=new Intent(PersonalActivity.this,MainActivity.class);
+        /*Intent intent=new Intent(PersonalActivity.this,MainActivity.class);
         intent.putExtra("gotoFragmentTag", "3");
-        startActivity(intent);
+        startActivity(intent);*/
+        finish();
     }
 
     @OnClick(R.id.gerentouxiang)

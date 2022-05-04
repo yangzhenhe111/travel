@@ -55,52 +55,7 @@
             android:layout_height="160dp"
             android:orientation="horizontal"
             android:layout_gravity="bottom">
-            <!-- 第一个start-->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1">
-                <!-- 圆形按钮start-->
-                <LinearLayout
-                    android:id="@+id/h_fj"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/h_spotsMddTv"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/zhuye"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:textColor="#6200EE"
-                        android:textAlignment="center"
-                        >
-                    </TextView>
-                </LinearLayout>
-                <!-- 圆形按钮end-->
-                <!-- 字体start-->
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    >
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="景区聚集地"
-                        android:textSize="20sp"
-                        >
-                    </TextView>
-                </LinearLayout>
-                <!-- 字体end-->
 
-            </LinearLayout>
-            <!-- 第一个end-->
 
             <!-- 第二个start-->
             <LinearLayout
@@ -186,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="center"
-                        android:text="个人中心"
+                        android:text="个人页面"
                         android:textSize="20sp"
                         >
                     </TextView>
@@ -287,6 +242,53 @@
                 </LinearLayout>
                 <!-- 字体end-->
             </LinearLayout>
+
+            <!-- 第一个start-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+                <!-- 圆形按钮start-->
+                <LinearLayout
+                    android:id="@+id/h_fj"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/h_spotsMddTv"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/shoucang"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textColor="#6200EE"
+                        android:textAlignment="center"
+                        >
+                    </TextView>
+                </LinearLayout>
+                <!-- 圆形按钮end-->
+                <!-- 字体start-->
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="我的收藏"
+                        android:textSize="20sp"
+                        >
+                    </TextView>
+                </LinearLayout>
+                <!-- 字体end-->
+
+            </LinearLayout>
+            <!-- 第一个end-->
         </LinearLayout>
     </HorizontalScrollView>
 
