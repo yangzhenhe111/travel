@@ -14,14 +14,18 @@ import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
 import cn.Travels_App.model.entity.Travels;
+import cn.Travels_App.model.entity.UserEntity;
 import cn.Travels_App.persenter.MyTravelsPersenter;
+import cn.Travels_App.ui.adapter.MyTracelsAdapter;
 import cn.Travels_App.ui.adapter.TjTravelsAdapter;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.MyTravelsView;
 
 public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPersenter> implements MyTravelsView{
     MyTravelsView myTravelsView;
     List<Travels> mytravels;
+    CommonUtils commonUtils;
 
     @BindView(R.id.travelstjListViewId)
     ListView listView;
@@ -35,15 +39,18 @@ public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPers
     @Override
     public void initView() {
         initData();
-        TjTravelsAdapter adapter=new TjTravelsAdapter(MyTravelsActivity.this,R.layout.history_item,mytravels);
+        System.out.println("MT2");
+        MyTracelsAdapter adapter=new MyTracelsAdapter(MyTravelsActivity.this,R.layout.history_item,mytravels);
+        System.out.println("MT3");
         listView.setAdapter(adapter);
         setListViewHeight(listView);
     }
 
     @Override
     public void initData() {
-        createPresenter().findMyTracels();
-
+        UserEntity userEntity= commonUtils.getLoginUser(MyTravelsActivity.this);
+        createPresenter().queryTravelsByID(userEntity.getId());
+        System.out.println(userEntity.getId());
     }
 
     @NonNull
@@ -97,6 +104,7 @@ public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPers
 
     @Override
     public void loadData(List<Travels> myTravelList) {
+        System.out.println("MT1");
         this.mytravels=myTravelList;
     }
 }

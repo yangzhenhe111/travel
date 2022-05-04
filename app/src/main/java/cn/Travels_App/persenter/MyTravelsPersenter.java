@@ -4,6 +4,9 @@ import java.util.List;
 
 import cn.Travels_App.App;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.model.dto.PageBean;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.QueryTravelsDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
@@ -36,6 +39,34 @@ public class MyTravelsPersenter extends BasePresenter<MyTravelsView> {
                         }
                     }
 
+                    @Override
+                    public void onFailure(Throwable e) {
+                        System.out.println(e.getMessage());
+                    }
+                });
+    }
+
+    //根据ID获取游记
+    public void queryTravelsByID(Long id) {
+        PageRequest<QueryTravelsDTO> request = new PageRequest<>();
+        request.setPageNum(1);
+        request.setPageSize(10);
+        QueryTravelsDTO queryTravelsDTO = new QueryTravelsDTO();
+        System.out.println(id);
+        queryTravelsDTO.setId(id);
+        request.setData(queryTravelsDTO);
+        System.out.println("MT0");
+        getAppComponent().getAPIService().queryTravelsByCondition(request)
+                .subscribe(new BaseObserver<HttpResult<PageBean<Travels>>>() {
+                    @Override
+                    public void onSuccess(HttpResult<PageBean<Travels>> resp) {
+                        if (resp.isSuccess()) {
+                            //查询成功
+                            List<Travels> spotsEntites =resp.getData().getData();
+                            myTravelsView.loadData(spotsEntites);
+                        } else {
+                        }
+                    }
                     @Override
                     public void onFailure(Throwable e) {
                         System.out.println(e.getMessage());

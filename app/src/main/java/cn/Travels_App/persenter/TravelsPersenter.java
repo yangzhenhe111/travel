@@ -69,11 +69,8 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
                     public void onSuccess(HttpResult<PageBean<Travels>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
-                            System.out.println("TP1");
                             List<Travels> spotsEntites =resp.getData().getData();
-                            System.out.println("TP2");
                             mSpotsView.loadData(spotsEntites);
-                            System.out.println("TP3");
                         } else {
 
                         }
