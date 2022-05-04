@@ -66,6 +66,11 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
            String queryTag =  bundle.getString("queryTag");
             String sousuo = bundle.getString("sousuo");
             createPresenter().queryTravelsByCondition(sousuo);
+            if(mSpotsList!=null&&mSpotsList.size()!=0){
+            }else {
+                Toast.makeText(getContext(), "抱歉！您搜索内容不存在，已为您展现其他精彩内容。", Toast.LENGTH_SHORT).show();
+                createPresenter().queryAllTravels();
+            }
         }else {
             createPresenter().queryAllTravels();
         }

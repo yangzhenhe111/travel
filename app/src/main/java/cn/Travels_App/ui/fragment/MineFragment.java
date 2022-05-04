@@ -48,7 +48,8 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
     TextView myname;
     @BindView(R.id.my_jianjie)
     TextView myjianjie;
-    @OnClick(R.id.touxiang)
+
+    @OnClick({R.id.touxiang,R.id.my_name,R.id.my_jianjie})
     public void touxiang(){
         Intent intent=new Intent();
         intent.setClass(getContext(), PersonalActivity.class);

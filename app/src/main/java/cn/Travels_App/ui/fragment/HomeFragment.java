@@ -200,21 +200,18 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
 
     @Override
     public void initData() {
+        //查找推荐的景区
+        createPresenter().findTjTravels();
+
         //轮播图
         image.clear();
         title.clear();
         image.add(R.drawable.lb1);
         image.add(R.drawable.lb1);
         image.add(R.drawable.lb1);
-        image.add(R.drawable.lb1);
-        image.add(R.drawable.lb1);
         title.add("不一样的美");
         title.add("不一样的美");
         title.add("不一样的美");
-        title.add("不一样的美");
-        title.add("不一样的美");
-        //查找推荐的景区
-        createPresenter().findTjTravels();
     }
 
     private void bannerview() {
