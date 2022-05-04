@@ -44,6 +44,10 @@ public class Constants {
     public static final String URL_IS_COLLECTION ="front/travel/collection/selectOne";
     //获取收藏数
     public static final String URL_COLLECTION_COUNT ="front/travel/collection/selectCount";
+    //获取收藏
+    public static final String URL_findCollectionTracels ="front/travel/collection/listPage";
+    //获取历史游记
+    public static final String URL_findHistoryTracels ="front/travelsHistory/listPage";
 
 
 }

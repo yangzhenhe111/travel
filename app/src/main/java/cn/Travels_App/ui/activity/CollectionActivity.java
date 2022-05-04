@@ -14,14 +14,17 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.persenter.CollectionPersenter;
+import cn.Travels_App.ui.adapter.CollectionAdapter;
 import cn.Travels_App.ui.adapter.TjTravelsAdapter;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.Collectionview;
 
 public class CollectionActivity extends BaseActivity<Collectionview, CollectionPersenter> implements Collectionview{
-    List<Travels> collectiontravels;
+    List<TravelCollectionDTO> collectiontravels;
     Collectionview collectionview;
 
     @BindView(R.id.collectionlistView)
@@ -39,7 +42,7 @@ public class CollectionActivity extends BaseActivity<Collectionview, CollectionP
             Toast.makeText(CollectionActivity.this, "还没有添加过收藏偶！收藏到了喜欢的游记再来吧！", Toast.LENGTH_SHORT).show();
             finish();
         }else{
-            TjTravelsAdapter adapter=new TjTravelsAdapter(CollectionActivity.this,R.layout.history_item,collectiontravels);
+            CollectionAdapter adapter=new CollectionAdapter(CollectionActivity.this,R.layout.history_item,collectiontravels);
             listView.setAdapter(adapter);
             setListViewHeight(listView);
         }
@@ -47,11 +50,15 @@ public class CollectionActivity extends BaseActivity<Collectionview, CollectionP
 
     @Override
     public void initData() {
-        createPresenter().findCollectionTracels();
+        PageRequest<TravelCollectionDTO> query = new PageRequest<>();
+        query.setPageNum(1);
+        query.setPageSize(10);
+        query.setData(new TravelCollectionDTO());
+        createPresenter().findCollectionTracels(query);
     }
 
     @Override
-    public void loadData(List<Travels> collectTravelList) {
+    public void loadData(List<TravelCollectionDTO> collectTravelList) {
         this.collectiontravels=collectTravelList;
     }
 

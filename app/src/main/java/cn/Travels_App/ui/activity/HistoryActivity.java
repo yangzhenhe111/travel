@@ -13,16 +13,20 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
 import cn.Travels_App.base.BaseActivity;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
+import cn.Travels_App.model.dto.TravelsHistoryDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.persenter.HistoryPersenter;
 import cn.Travels_App.persenter.MyTravelsPersenter;
+import cn.Travels_App.ui.adapter.HistoryAdapter;
 import cn.Travels_App.ui.adapter.TjTravelsAdapter;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.HistoryView;
 import cn.Travels_App.view.MyTravelsView;
 
 public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter> implements HistoryView{
-    List<Travels> histravels;
+    List<TravelsHistoryDTO> histravels;
     HistoryView historyView;
 
     @BindView(R.id.historyListViewId)
@@ -37,18 +41,21 @@ public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter>
     @Override
     public void initView() {
         initData();
-        TjTravelsAdapter adapter=new TjTravelsAdapter(HistoryActivity.this,R.layout.history_item,histravels);
+        HistoryAdapter adapter=new HistoryAdapter(HistoryActivity.this,R.layout.history_item,histravels);
         listView.setAdapter(adapter);
         setListViewHeight(listView);
     }
 
     @Override
     public void initData() {
-        createPresenter().findHistoryTracels();
+        PageRequest<TravelsHistoryDTO> query = new PageRequest<>();
+        query.setPageNum(1);
+        query.setPageSize(10);
+        createPresenter().findHistoryTracels(query);
     }
 
     @Override
-    public void loadData(List<Travels> myTravelList) {
+    public void loadData(List<TravelsHistoryDTO> myTravelList) {
         this.histravels=myTravelList;
     }
 

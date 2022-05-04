@@ -4,6 +4,10 @@ import java.util.List;
 
 import cn.Travels_App.App;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.model.dto.PageBean;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
+import cn.Travels_App.model.dto.TravelsHistoryDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
@@ -20,14 +24,14 @@ public class HistoryPersenter extends BasePresenter<HistoryView> {
         this.historyView =view;
     }
 
-    public void findHistoryTracels() {
-        getAppComponent().getAPIService().findTjTravels()
-                .subscribe(new BaseObserver<HttpResult<List<Travels>>>() {
+    public void findHistoryTracels(PageRequest< TravelsHistoryDTO > request) {
+        getAppComponent().getAPIService().findHistoryTracels(request)
+                .subscribe(new BaseObserver<HttpResult<PageBean<TravelsHistoryDTO>>>() {
                     @Override
-                    public void onSuccess(HttpResult<List<Travels>> resp) {
+                    public void onSuccess(HttpResult<PageBean<TravelsHistoryDTO>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
-                            List<Travels> myTravelList = resp.getData();
+                            List<TravelsHistoryDTO> myTravelList = resp.getData().getData();
                             historyView.loadData(myTravelList);
                             historyView.onCompleted();
                         } else {

@@ -1,15 +1,9 @@
 package cn.Travels_App.model.dto;
 
-
 import java.io.Serializable;
 import java.util.Date;
 
-public class TravelCollectionDTO implements Serializable {
-
-
-    /**
-     * id
-     */
+public class TravelsHistoryDTO implements Serializable {
     private Long id;
 
     /**
@@ -20,22 +14,7 @@ public class TravelCollectionDTO implements Serializable {
     /**
      * 游记ID
      */
-    private Long travelId;
-
-    /**
-     * 创建时间
-     */
-    private String createdDate;
-
-    /**
-     * 作者姓名
-     */
-    private String username;
-
-    /**
-     * 作者头像
-     */
-    private String headImg;
+    private Long travelsId;
 
     /**
      * 发布时间
@@ -62,6 +41,25 @@ public class TravelCollectionDTO implements Serializable {
      */
     private String opentime;
 
+    /**
+     * 创建时间
+     */
+    private String createTime;
+
+
+    /**
+     * 作者姓名
+     */
+    private String username;
+
+    /**
+     * 作者头像
+     */
+    private String headImg;
+
+    public TravelsHistoryDTO() {
+
+    }
 
     public Long getId() {
         return id;
@@ -79,36 +77,12 @@ public class TravelCollectionDTO implements Serializable {
         this.userId = userId;
     }
 
-    public Long getTravelId() {
-        return travelId;
+    public Long getTravelsId() {
+        return travelsId;
     }
 
-    public void setTravelId(Long travelId) {
-        this.travelId = travelId;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getHeadImg() {
-        return headImg;
-    }
-
-    public void setHeadImg(String headImg) {
-        this.headImg = headImg;
+    public void setTravelsId(Long travelsId) {
+        this.travelsId = travelsId;
     }
 
     public String getPublishDate() {
@@ -149,5 +123,29 @@ public class TravelCollectionDTO implements Serializable {
 
     public void setOpentime(String opentime) {
         this.opentime = opentime;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
     }
 }

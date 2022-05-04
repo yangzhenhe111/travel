@@ -14,6 +14,7 @@ import cn.Travels_App.model.dto.PageBean;
 import cn.Travels_App.model.dto.PageRequest;
 import cn.Travels_App.model.dto.QueryTravelsDTO;
 import cn.Travels_App.model.dto.TravelCollectionDTO;
+import cn.Travels_App.model.dto.TravelsHistoryDTO;
 import cn.Travels_App.model.entity.Comment;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.model.entity.UserEntity;
@@ -61,13 +62,23 @@ public interface APIService {
     //根据条件查询景区
     @Headers({"name:super"})
     @POST(Constants.URL_FINDSPOTSBYCONDITION)
-    Observable<HttpResult<List<Travels>>> queryTravelsByCondition(@Body PageRequest<QueryTravelsDTO> request);
+    Observable<HttpResult<PageBean<Travels>>> queryTravelsByCondition(@Body PageRequest<QueryTravelsDTO> request);
+
 
     //根据游记ID查询评论
     @Headers({"name:super"})
     @POST(Constants.URL_FIND_COMMENT)
     Observable<HttpResult<PageBean<CommentRespDTO>>> queryCommentList(@Body PageRequest<Comment> request);
 
+    //获取历史游记
+    @Headers({"name:super"})
+    @POST(Constants.URL_findHistoryTracels)
+    Observable<HttpResult<PageBean<TravelsHistoryDTO>>> findHistoryTracels(@Body PageRequest<TravelsHistoryDTO> request);
+
+    //获取收藏游记
+    @Headers({"name:super"})
+    @POST(Constants.URL_findCollectionTracels)
+    Observable<HttpResult<PageBean<TravelCollectionDTO>>> findCollectionTracels(@Body PageRequest<TravelCollectionDTO> request);
 
     //根据游记ID添加收藏
     @Headers({"name:super"})

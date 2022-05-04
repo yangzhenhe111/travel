@@ -7,6 +7,7 @@ import java.util.List;
 
 import cn.Travels_App.App;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.model.dto.PageBean;
 import cn.Travels_App.model.dto.PageRequest;
 import cn.Travels_App.model.dto.QueryTravelsDTO;
 import cn.Travels_App.model.entity.Travels;
@@ -63,13 +64,13 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
         queryTravelsDTO.setInfo(sousuo);
         request.setData(queryTravelsDTO);
          getAppComponent().getAPIService().queryTravelsByCondition(request)
-                .subscribe(new BaseObserver<HttpResult<List<Travels>>>() {
+                .subscribe(new BaseObserver<HttpResult<PageBean<Travels>>>() {
                     @Override
-                    public void onSuccess(HttpResult<List<Travels>> resp) {
+                    public void onSuccess(HttpResult<PageBean<Travels>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
                             System.out.println("TP1");
-                            List<Travels> spotsEntites =resp.getData();
+                            List<Travels> spotsEntites =resp.getData().getData();
                             System.out.println("TP2");
                             mSpotsView.loadData(spotsEntites);
                             System.out.println("TP3");

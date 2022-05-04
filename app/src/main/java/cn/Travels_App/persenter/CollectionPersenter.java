@@ -4,6 +4,9 @@ import java.util.List;
 
 import cn.Travels_App.App;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.model.dto.PageBean;
+import cn.Travels_App.model.dto.PageRequest;
+import cn.Travels_App.model.dto.TravelCollectionDTO;
 import cn.Travels_App.model.entity.Travels;
 import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
@@ -20,14 +23,14 @@ public class CollectionPersenter extends BasePresenter<Collectionview> {
         this.collectionview =view;
     }
 
-    public void findCollectionTracels() {
-        getAppComponent().getAPIService().findTjTravels()
-                .subscribe(new BaseObserver<HttpResult<List<Travels>>>() {
+    public void findCollectionTracels(PageRequest<TravelCollectionDTO> request) {
+        getAppComponent().getAPIService().findCollectionTracels(request)
+                .subscribe(new BaseObserver<HttpResult<PageBean<TravelCollectionDTO>>>() {
                     @Override
-                    public void onSuccess(HttpResult<List<Travels>> resp) {
+                    public void onSuccess(HttpResult<PageBean<TravelCollectionDTO>> resp) {
                         if (resp.isSuccess()) {
                             //查询成功
-                            List<Travels> myTravelList = resp.getData();
+                            List<TravelCollectionDTO> myTravelList = resp.getData().getData();
                             collectionview.loadData(myTravelList);
                             collectionview.onCompleted();
                         } else {
