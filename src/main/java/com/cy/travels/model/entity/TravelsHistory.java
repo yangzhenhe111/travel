@@ -44,13 +44,6 @@ public class TravelsHistory extends BaseDO  implements Serializable {
 	private Long travelsId;
 
 	/**
-	 * 发布时间
-	 */
-	@Column
-	@ApiModelProperty( value="发布时间")
-	private Date publishDate;
-
-	/**
 	 * 创建时间
 	 */
 	@Column

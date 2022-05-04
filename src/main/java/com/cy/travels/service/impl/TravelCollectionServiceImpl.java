@@ -40,22 +40,15 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
     private UserService userService;
 
     @Override
-    public TravelCollectionDTO save(TravelCollectionDTO condition) {
+    public int save(TravelCollectionDTO condition) {
         User user = userService.getCurrentUser();
         condition.setUserId(user.getId());
-        TravelCollectionDTO result = new TravelCollectionDTO();
         TravelCollection collection = new TravelCollection();
         BeanUtils.copyProperties(condition,collection);
-        collection.setCreatDate(new Date());
+        collection.setCreatedDate(new Date());
         collection.setIsDeleted(YesOrNoEnum.N.getCode());
         int insert = tracelCollectionMapper.insert(collection);
-        if (insert > 0) {
-            TravelCollection selectOne = tracelCollectionMapper.selectOne(collection);
-            BeanUtils.copyProperties(selectOne,result);
-        }else {
-            BeanUtils.copyProperties(collection,result);
-        }
-        return result;
+        return insert;
     }
 
 //    @Override
@@ -104,5 +97,39 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         pageBean.setTotalPage(pageInfo.getPages());
         pageBean.setTotalCount(pageInfo.getSize());
         return pageBean;
+    }
+
+    @Override
+    public TravelCollectionDTO selectOne(TravelCollectionDTO condition) {
+        User user = userService.getCurrentUser();
+        condition.setUserId(user.getId());
+        TravelCollection collection = new TravelCollection();
+        BeanUtils.copyProperties(condition,collection);
+        collection.setIsDeleted(YesOrNoEnum.N.getCode());
+        collection.setId(null);
+        TravelCollection selectOne = tracelCollectionMapper.selectOne(collection);
+        BeanUtils.copyProperties(selectOne,condition);
+        return condition;
+    }
+
+    @Override
+    public int updata(TravelCollectionDTO condition) {
+        TravelCollectionDTO selectOne = this.selectOne(condition);
+        TravelCollection collection = new TravelCollection();
+        BeanUtils.copyProperties(selectOne,collection);
+        collection.setIsDeleted(YesOrNoEnum.Y.getCode());
+        int updata = tracelCollectionMapper.updateByPrimaryKeySelective(collection);
+        return updata;
+    }
+
+    @Override
+    public Integer selectCount(TravelCollectionDTO condition) {
+        TravelCollection query = new TravelCollection();
+        BeanUtils.copyProperties(condition,query);
+        query.setIsDeleted(YesOrNoEnum.N.getCode());
+        query.setUserId(null);
+        query.setId(null);
+        int count = tracelCollectionMapper.selectCount(query);
+        return count;
     }
 }

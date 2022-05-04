@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Data
 @ApiModel
-public class TravelCollectionDTO extends BaseDO implements Serializable {
+public class TravelCollectionDTO implements Serializable {
 
     private static final long serialVersionUID =  1L;
 
@@ -45,7 +45,7 @@ public class TravelCollectionDTO extends BaseDO implements Serializable {
      */
     @Column
     @ApiModelProperty("创建时间")
-    private Date creatDate;
+    private Date createdDate;
 
     /**
      * 作者姓名

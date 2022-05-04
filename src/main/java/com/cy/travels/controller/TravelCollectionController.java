@@ -3,6 +3,7 @@ package com.cy.travels.controller;
 import com.cy.travels.model.dto.TravelCollectionDTO;
 import com.cy.travels.model.dto.TravelsHistoryDTO;
 import com.cy.travels.model.dto.TravelsTitleDTO;
+import com.cy.travels.model.entity.TravelCollection;
 import com.cy.travels.service.TravelCollectionService;
 import com.cy.travels.utils.dto.PageBean;
 import com.cy.travels.utils.dto.PageRequest;
@@ -10,6 +11,7 @@ import com.cy.travels.utils.dto.ResultResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,7 +58,40 @@ public class TravelCollectionController {
     @ApiOperation("收藏游记，传来ID即可")
     @PostMapping("/collect")
     public ResultResponse<TravelCollectionDTO> collect(@RequestBody TravelCollectionDTO condition) {
-        TravelCollectionDTO result = collectionService.save(condition);
+        int insert = collectionService.save(condition);
+        TravelCollectionDTO result = new TravelCollectionDTO();
+        if (insert > 0) {
+            result = collectionService.selectOne(condition);
+        }else {
+            BeanUtils.copyProperties(condition,result);
+        }
+        return ResultResponse.ok("收藏成功",result);
+    }
+
+    @ApiOperation("取消收藏游记，传来ID即可")
+    @PostMapping("/cancelCollect")
+    public ResultResponse<TravelCollectionDTO> cancelCollect(@RequestBody TravelCollectionDTO condition) {
+        int updata = collectionService.updata(condition);
+        TravelCollectionDTO result = new TravelCollectionDTO();
+        if (updata > 0) {
+            result = collectionService.selectOne(condition);
+        }else {
+            BeanUtils.copyProperties(condition,result);
+        }
+        return ResultResponse.ok("收藏成功",result);
+    }
+
+    @ApiOperation("取消收藏游记，传来ID即可")
+    @PostMapping("/selectOne")
+    public ResultResponse<TravelCollectionDTO> selectOne(@RequestBody TravelCollectionDTO condition) {
+        TravelCollectionDTO result = collectionService.selectOne(condition);
+        return ResultResponse.ok("收藏成功",result);
+    }
+
+    @ApiOperation("取消收藏游记，传来ID即可")
+    @PostMapping("/selectCount")
+    public ResultResponse<Integer> selectCount(@RequestBody TravelCollectionDTO condition) {
+        Integer result = collectionService.selectCount(condition);
         return ResultResponse.ok("收藏成功",result);
     }
 }

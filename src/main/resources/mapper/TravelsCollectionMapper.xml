@@ -7,7 +7,7 @@
         a.id AS "id",
         a.user_id AS "userId",
         a.travel_id AS "travelId",
-        a.create_date AS "createDate",
+        a.created_date AS "createdDate",
         a.is_deleted AS "isDeleted"
     </sql>
 
@@ -39,8 +39,8 @@
         t.name AS "name",
         t.address AS "address",
         t.opentime AS "opentime"
-        from travels_history a
-        left join travels t on a.travels_id = t.id
+        from travel_collection a
+        left join travels t on a.travel_id = t.id
         where a.is_deleted = 'N' AND t.is_deleted = 'N'
         <if test="userId!=null">
             and a.user_id = #{userId}

@@ -86,18 +86,21 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         BeanUtils.copyProperties(userDTO,user);
         User query = new User();
+        query.setIsDeleted(YesOrNoEnum.N.getCode());
         query.setUsername(userDTO.getUsername());
         int count = userMapper.selectCount(query);
         if (count > 0) {
             throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"账号已存在");
         }
         User query1 = new User();
+        query1.setIsDeleted(YesOrNoEnum.N.getCode());
         query1.setEmail(userDTO.getEmail());
         int count1 = userMapper.selectCount(query1);
         if (count1 > 0) {
             throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"邮箱已存在");
         }
         User query2 = new User();
+        query2.setIsDeleted(YesOrNoEnum.N.getCode());
         query2.setTel(userDTO.getTel());
         int count2 = userMapper.selectCount(query2);
         if (count2 > 0) {
@@ -105,6 +108,7 @@ public class UserServiceImpl implements UserService {
         }
 
 //        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+//        user.setPassword(md5Password);
         user.setCreatetime(new Date());
         user.setTotalPoints(0L);
         user.setHeadImg("tx0.jpg");
@@ -153,7 +157,7 @@ public class UserServiceImpl implements UserService {
 
         User user = new Gson().fromJson(userStr,User.class);
         User userData = userMapper.selectByPrimaryKey(user.getId());
-        user.setHeadImg(userDTO.getHeadImg());
+        userData.setHeadImg(userDTO.getHeadImg());
         int num = userMapper.updateByPrimaryKeySelective(userData);
 
         if (num > 0) {
@@ -162,15 +166,15 @@ public class UserServiceImpl implements UserService {
             BeanUtils.copyProperties(resultUser,result);
             return result;
         }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"更新密码失败");
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"更新头像失败");
         }
     }
 
     @Override
     public UserDTO login(UserDTO userDTO) {
         User user = new User();
-        String md5Password = DigestUtils.md5DigestAsHex(userDTO.getPassword().getBytes());
-        userDTO.setPassword(md5Password);
+//        String md5Password = DigestUtils.md5DigestAsHex(userDTO.getPassword().getBytes());
+//        userDTO.setPassword(md5Password);
         UserDTO findUser = this.findUser(userDTO);
         if (null != findUser) {
             BeanUtils.copyProperties(findUser,user);

@@ -41,6 +41,6 @@ public class TravelCollection extends BaseDO implements Serializable {
      * 创建时间
      */
     @Column
-    private Date creatDate;
+    private Date createdDate;
 
 }

@@ -49,10 +49,10 @@ public class TravelsHistoryServiceImpl implements TravelsHistoryService {
         travelsHistory.setIsDeleted(YesOrNoEnum.N.getCode());
         travelsHistoryMapper.insert(travelsHistory);
         //将id添到返回值
-        TravelsHistory resultDO =  travelsHistoryMapper.selectByPrimaryKey(travelsHistory.getId());
-        TravelsHistoryDTO result = new TravelsHistoryDTO();
-        BeanUtils.copyProperties(resultDO,result);
-        return result;
+//        TravelsHistory resultDO =  travelsHistoryMapper.selectByPrimaryKey(travelsHistory.getId());
+//        TravelsHistoryDTO result = new TravelsHistoryDTO();
+//        BeanUtils.copyProperties(resultDO,result);
+        return travelsHistoryDTO;
     }
 
 //    @Override
@@ -88,20 +88,17 @@ public class TravelsHistoryServiceImpl implements TravelsHistoryService {
     public PageBean<TravelsHistoryDTO> listPage(PageRequest<TravelsHistoryDTO> request) {
 
         TravelsHistoryDTO query = request.getData();
-
-        if (Objects.isNull(query.getUserId())) {
-            String userStr = RequestContextUtil.getRequestHeader("header-user");
-            User user = new Gson().fromJson(userStr, User.class);
-            query.setUserId(user.getId());
-        }
+        String userStr = RequestContextUtil.getRequestHeader("header-user");
+        User user = new Gson().fromJson(userStr, User.class);
+        query.setUserId(user.getId());
         PageHelper.startPage(request.getPageNum(),request.getPageSize());
         List<TravelsHistoryDTO> list = travelsHistoryMapper.getAllHistoryList(query);
         for (TravelsHistoryDTO travelsHistoryDTO : list) {
             UserDTO userDTO = new UserDTO();
             userDTO.setId(travelsHistoryDTO.getUserId());
-            UserDTO user = userService.findUser(userDTO);
-            travelsHistoryDTO.setUsername(user.getUsername());
-            travelsHistoryDTO.setHeadImg(user.getHeadImg());
+            UserDTO user1 = userService.findUser(userDTO);
+            travelsHistoryDTO.setUsername(user1.getUsername());
+            travelsHistoryDTO.setHeadImg(user1.getHeadImg());
         }
         PageInfo pageInfo = new PageInfo(list);
         PageBean pageBean = new PageBean();
