@@ -41,7 +41,7 @@ public class Constants {
     //取消收藏
     public static final String URL_CANCEL_COLLECTION ="front/travel/collection/cancelCollect";
     //获取收藏信息
-    public static final String URL_IS_COLLECTION ="front/travel/collection/selectOne";
+    public static final String URL_IS_COLLECTION ="front/travel/collection/isCollection";
     //获取收藏数
     public static final String URL_COLLECTION_COUNT ="front/travel/collection/selectCount";
     //获取收藏

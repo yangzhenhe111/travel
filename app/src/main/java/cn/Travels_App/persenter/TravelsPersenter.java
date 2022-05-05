@@ -55,10 +55,10 @@ public class TravelsPersenter extends BasePresenter<Travelsview> {
     }
 
     //根据条件查询景区
-    public void queryTravelsByCondition(String sousuo) {
+    public void queryTravelsByCondition(String sousuo,int pageNum) {
 
         PageRequest<QueryTravelsDTO> request = new PageRequest<>();
-        request.setPageNum(1);
+        request.setPageNum(pageNum);
         request.setPageSize(10);
         QueryTravelsDTO queryTravelsDTO = new QueryTravelsDTO();
         queryTravelsDTO.setInfo(sousuo);

@@ -36,12 +36,16 @@
                 android:theme="@style/loginEditText"></EditText>
         </LinearLayout>
 
-        <LinearLayout
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/sousuo_travels_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:background="#EDEDED">
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <GridView
                 android:id="@+id/spotslistview"
                 android:layout_width="match_parent"
@@ -56,7 +60,7 @@
                 android:scrollbars="horizontal|vertical"
                 />
 
-        </LinearLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 
     </LinearLayout>

@@ -94,7 +94,7 @@ public interface APIService {
     //根据游记ID取消收藏
     @Headers({"name:super"})
     @POST(Constants.URL_IS_COLLECTION)
-    Observable<HttpResult<TravelCollectionDTO>> selectOne(@Body TravelCollectionDTO collectionDTO);
+    Observable<HttpResult<Integer>> selectOne(@Body TravelCollectionDTO collectionDTO);
 
     //根据游记ID获取收藏数
     @Headers({"name:super"})

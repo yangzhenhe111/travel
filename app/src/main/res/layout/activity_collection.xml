@@ -33,13 +33,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- 首页菜单end -->
-    <ScrollView
-        android:layout_marginTop="5dp"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="vertical"
-        android:fadingEdge="vertical">
         <!-- 推荐景区start -->
 
         <LinearLayout
@@ -48,19 +41,21 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
-            <LinearLayout
-                android:id="@+id/tjlistView_layout"
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/collection_listView_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
                 <ListView
                     android:id="@+id/collectionlistView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:divider="#00000000">
                 </ListView>
-            </LinearLayout>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
             <!--推荐景区end-->
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>

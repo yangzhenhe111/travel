@@ -588,11 +588,11 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         TravelCollectionDTO collectionDTO = new TravelCollectionDTO();
         collectionDTO.setTravelId(mSpots.getId());
         getApp().getAppComponent().getAPIService().selectOne(collectionDTO)
-                .subscribe(new BaseObserver<HttpResult<TravelCollectionDTO>>() {
+                .subscribe(new BaseObserver<HttpResult<Integer>>() {
                     @Override
-                    public void onSuccess(HttpResult<TravelCollectionDTO> travelCollectionDTOHttpResult) {
+                    public void onSuccess(HttpResult<Integer> travelCollectionDTOHttpResult) {
                         if (travelCollectionDTOHttpResult.isSuccess()) {
-                            if (travelCollectionDTOHttpResult.getData() != null) {
+                            if (travelCollectionDTOHttpResult.getData() != null && travelCollectionDTOHttpResult.getData() > 0) {
                                 collection = true;
                                 imgCollect.setImageResource(R.drawable.icon_collect_ok);
                             }
@@ -670,7 +670,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                         if (travelCollectionDTOHttpResult.isSuccess()) {
                             ToastUtils.showToast(TravelsDetailActivity.this,"取消收藏成功");
                             imgCollect.setImageResource(R.drawable.icon_collect);
-                            collectNum.setText(Integer.valueOf(collectNum.getText().toString())+1);
+                            collectNum.setText(Integer.valueOf(collectNum.getText().toString())-1+"");
                             collection = false;
                         }else {
                             ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());
@@ -695,7 +695,8 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                         if (travelCollectionDTOHttpResult.isSuccess()) {
                             ToastUtils.showToast(TravelsDetailActivity.this,"收藏成功");
                             imgCollect.setImageResource(R.drawable.icon_collect_ok);
-                            collectNum.setText(Integer.valueOf(collectNum.getText().toString())+1);
+                            Integer num = Integer.valueOf(collectNum.getText().toString().trim());
+                            collectNum.setText(String.valueOf(Integer.valueOf(num)+1));
                             collection = true;
                         }else {
                             ToastUtils.showToast(TravelsDetailActivity.this,travelCollectionDTOHttpResult.getMsg());

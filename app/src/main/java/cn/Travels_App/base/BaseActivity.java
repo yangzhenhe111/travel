@@ -21,7 +21,7 @@ public abstract class BaseActivity<V extends MvpView, P extends MvpPresenter<V>>
         ButterKnife.bind(this);
         initView();
         
-        initData();
+//        initData();
     }
 
     /**

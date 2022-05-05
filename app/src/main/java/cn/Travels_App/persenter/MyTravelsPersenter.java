@@ -47,14 +47,7 @@ public class MyTravelsPersenter extends BasePresenter<MyTravelsView> {
     }
 
     //根据ID获取游记
-    public void queryTravelsByID(Long id) {
-        PageRequest<QueryTravelsDTO> request = new PageRequest<>();
-        request.setPageNum(1);
-        request.setPageSize(10);
-        QueryTravelsDTO queryTravelsDTO = new QueryTravelsDTO();
-        System.out.println(id);
-        queryTravelsDTO.setId(id);
-        request.setData(queryTravelsDTO);
+    public void queryTravelsByID(PageRequest<QueryTravelsDTO> request) {
         System.out.println("MT0");
         getAppComponent().getAPIService().queryTravelsByCondition(request)
                 .subscribe(new BaseObserver<HttpResult<PageBean<Travels>>>() {

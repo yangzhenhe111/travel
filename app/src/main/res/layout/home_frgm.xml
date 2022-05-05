@@ -319,7 +319,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/tjlistView_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -333,7 +333,7 @@
                     android:dividerHeight="14dp">
                 </ListView>
 
-        </LinearLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
         <!--推荐景区end-->
     </LinearLayout>
 
