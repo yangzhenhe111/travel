@@ -121,6 +121,7 @@
                 android:textColor="#182C57"
                 android:textColorHint="#182C57"
                 android:hint="介绍一下如何到达景点吧"
+                android:textCursorDrawable="@drawable/shap"
                 android:background="@drawable/edittext_back"></EditText>
 
 
@@ -154,6 +155,7 @@
                 android:background="@drawable/edittext_back"
                 android:theme="@style/loginEditText"
                 android:drawablePadding="10dp"
+                android:textCursorDrawable="@drawable/shap"
                 android:hint="对于本地的交通，告诉大家一些建议吧！"></EditText>
 
         </LinearLayout>

@@ -30,6 +30,7 @@ import cn.Travels_App.ui.activity.HistoryActivity;
 import cn.Travels_App.ui.activity.MainActivity;
 import cn.Travels_App.ui.activity.MyTravelsActivity;
 import cn.Travels_App.ui.activity.PersonalActivity;
+import cn.Travels_App.ui.activity.TravelsDetailActivity;
 import cn.Travels_App.ui.adapter.TjTravelsAdapter;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.HomeView;
@@ -38,7 +39,11 @@ import cn.Travels_App.base.BaseFragment;
 public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implements HomeView {
 
     //推荐景区列表
-    List<Travels> tjSpotsList;
+    private List<Travels> tjSpotsList;
+    private List<Travels> bannerList;
+    private Long id1;
+    private Long id2;
+    private Long id3;
 
     @BindView(R.id.spotstjListViewId)
     ListView listView;
@@ -65,8 +70,8 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
 
     HomeView mView;
 
-    private List<Integer> image=new ArrayList<>();
-    private List<String> title=new ArrayList<>();
+    private ArrayList<String> image = new ArrayList<>();
+    private ArrayList<String> title = new ArrayList<>();
 
 
     public static HomeFragment newInstance() {
@@ -202,16 +207,32 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
     public void initData() {
         //查找推荐的景区
         createPresenter().findTjTravels();
+        System.out.println("hf0");
+        /*bannerList= tjSpotsList.subList(0,3);//取前3条数据
+        System.out.println(bannerList.get(0).getCover());
+        System.out.println("hf1");
 
+        System.out.println("hf2");
+        Travels travels1=bannerList.get(0);
+        Travels travels2=bannerList.get(1);
+        Travels travels3=bannerList.get(2);*/
+       /* System.out.println(travels1.getCover());*/
+        id1=tjSpotsList.get(0).getId();
+        id2=tjSpotsList.get(1).getId();
+        id3=tjSpotsList.get(2).getId();
         //轮播图
         image.clear();
         title.clear();
-        image.add(R.drawable.lb1);
-        image.add(R.drawable.lb1);
-        image.add(R.drawable.lb1);
-        title.add("不一样的美");
-        title.add("不一样的美");
-        title.add("不一样的美");
+        image.add(tjSpotsList.get(0).getCover());
+        image.add(tjSpotsList.get(1).getCover());
+        image.add(tjSpotsList.get(2).getCover());
+        title.add(tjSpotsList.get(0).getName());
+        title.add(tjSpotsList.get(1).getName());
+        title.add(tjSpotsList.get(2).getName());
+
+        tjSpotsList.remove(0);
+        tjSpotsList.remove(1);
+        tjSpotsList.remove(2);
     }
 
     private void bannerview() {
@@ -237,7 +258,22 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
     }
 
     public void OnBannerClick(int position) {
-        Toast.makeText(getActivity(), "你点了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(),
+                TravelsDetailActivity.class);
+        switch (position){
+            case 0:
+                intent.putExtra("travelsId",id1);
+                getContext().startActivity(intent);
+                break;
+            case 1:
+                intent.putExtra("travelsId",id2);
+                getContext().startActivity(intent);
+                break;
+            case 2:
+                intent.putExtra("travelsId",id3);
+                getContext().startActivity(intent);
+                break;
+        }
     }
 
     private class MyImageLoader extends ImageLoader {

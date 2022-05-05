@@ -98,7 +98,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
             mysex.setText(userEntity.getSex());
         }
         if (TextUtils.isEmpty(userEntity.getSignature())){
-            mysignature.setText("什么也没有偶！");
+            mysignature.setText("这个人很神秘，什么都没有写");
         }else {
             mysignature.setText(userEntity.getSignature());
         }
@@ -182,7 +182,11 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
                 UserEntity userEntity=commonUtils.getLoginUser(PersonalActivity.this);
                 userEntity.setSignature(signature);
                 saveUserEntity(userEntity);
-                mysignature.setText(signature);
+                if(signature.equals("")){
+                    mysignature.setText("这个人很神秘，什么都没有写");
+                }else {
+                    mysignature.setText(signature);
+                }
                 Toast.makeText(PersonalActivity.this,"修改成功",Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }

@@ -121,6 +121,7 @@
                 android:textColor="#182C57"
                 android:textColorHint="#182C57"
                 android:hint="将舒适的旅馆推荐给大家吧"
+                android:textCursorDrawable="@drawable/shap"
                 android:background="@drawable/edittext_back"></EditText>
 
 
@@ -154,6 +155,7 @@
                 android:background="@drawable/edittext_back"
                 android:theme="@style/loginEditText"
                 android:drawablePadding="10dp"
+                android:textCursorDrawable="@drawable/shap"
                 android:hint="为大家提供一些住宿建议吧！"></EditText>
 
         </LinearLayout>
