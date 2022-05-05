@@ -102,7 +102,7 @@ public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPers
         adapter=new MyTracelsAdapter(MyTravelsActivity.this,R.layout.history_item,mytravels);
         System.out.println("MT3");
         listView.setAdapter(adapter);
-        setListViewHeight(listView);
+//        setListViewHeight(listView);
         smartRefreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
         //上拉
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {

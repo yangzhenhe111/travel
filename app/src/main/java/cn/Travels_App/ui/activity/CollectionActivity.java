@@ -102,7 +102,7 @@ public class CollectionActivity extends BaseActivity<Collectionview, CollectionP
         }else{
             adapter=new CollectionAdapter(CollectionActivity.this,R.layout.history_item,collectiontravels);
             listView.setAdapter(adapter);
-            setListViewHeight(listView);
+//            setListViewHeight(listView);
             smartRefreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
             //上拉
             smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {

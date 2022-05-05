@@ -138,7 +138,10 @@ public class ConditionShowActivity extends BaseActivity<ConditionShowView, Condi
         System.out.println(sousuo);
         if(sousuo != null&&sousuo!=""){
             createPresenter().queryTravelsByCondition(sousuo,pageNum++);
-            conditionShow_sousuo.setText(sousuo);
+            String condition = conditionShow_sousuo.getText().toString().trim();
+            if (Objects.isNull(condition) || condition.equals("")) {
+                conditionShow_sousuo.setText(sousuo);
+            }
             String condition=conditionShow_sousuo.getText().toString().trim();
             if(Objects.isNull(condition)||condition.equals(sousuo)){
                 conditionShow_sousuo.setText(sousuo);

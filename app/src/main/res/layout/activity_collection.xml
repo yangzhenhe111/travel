@@ -35,16 +35,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
         <!-- 推荐景区start -->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
             <com.scwang.smartrefresh.layout.SmartRefreshLayout
                 android:id="@+id/collection_listView_layout"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
                 <com.scwang.smartrefresh.layout.header.ClassicsHeader
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -56,6 +57,6 @@
                 </ListView>
             </com.scwang.smartrefresh.layout.SmartRefreshLayout>
             <!--推荐景区end-->
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 </LinearLayout>

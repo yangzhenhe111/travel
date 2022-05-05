@@ -101,7 +101,7 @@ public class HistoryActivity extends BaseActivity<HistoryView, HistoryPersenter>
         initData();
         adapter = new HistoryAdapter(HistoryActivity.this, R.layout.history_item, histravels);
         listView.setAdapter(adapter);
-        setListViewHeight(listView);
+//        setListViewHeight(listView);
         smartRefreshLayout.setRefreshFooter(new BallPulseFooter(this).setSpinnerStyle(SpinnerStyle.Scale));
         //上拉
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {

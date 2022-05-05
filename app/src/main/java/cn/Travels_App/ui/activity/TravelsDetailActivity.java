@@ -1,5 +1,6 @@
 package cn.Travels_App.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -176,6 +177,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     @Override
     public void initView() {
         System.out.println("T1");
+        initData();
 
 //        loadingComment();
 //        expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_comment_container);
