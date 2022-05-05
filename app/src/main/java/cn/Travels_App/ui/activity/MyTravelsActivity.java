@@ -141,7 +141,7 @@ public class MyTravelsActivity extends BaseActivity<MyTravelsView, MyTravelsPers
         request.setPageSize(10);
         QueryTravelsDTO queryTravelsDTO = new QueryTravelsDTO();
         System.out.println(userEntity.getId());
-        queryTravelsDTO.setId(userEntity.getId());
+        queryTravelsDTO.setCreator(userEntity.getId());
         request.setData(queryTravelsDTO);
         createPresenter().queryTravelsByID(request);
         System.out.println(userEntity.getId());

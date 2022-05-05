@@ -20,6 +20,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -138,6 +139,10 @@ public class ConditionShowActivity extends BaseActivity<ConditionShowView, Condi
         if(sousuo != null&&sousuo!=""){
             createPresenter().queryTravelsByCondition(sousuo,pageNum++);
             conditionShow_sousuo.setText(sousuo);
+            String condition=conditionShow_sousuo.getText().toString().trim();
+            if(Objects.isNull(condition)||condition.equals(sousuo)){
+                conditionShow_sousuo.setText(sousuo);
+            }
             if(mSpotsList!=null&&mSpotsList.size()!=0){
             }else {
                 Toast.makeText(ConditionShowActivity.this, "抱歉！您搜索内容不存在，已为您展现其他精彩内容。", Toast.LENGTH_SHORT).show();

@@ -95,12 +95,17 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
 
     @Override
     public void initView() {
+
     }
 
     @Override
     public void initData() {
         UserEntity userEntity=commonUtils.getLoginUser(getContext());
         myname.setText(userEntity.getUsername());
+        String signature=commonUtils.get_travels_signature(getContext());
+        if(signature!=""&&signature!=null){
+            myjianjie.setText(signature);
+        }
         System.out.println(userEntity.getHeadImg());
         if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null){
             String img=userEntity.getHeadImg();

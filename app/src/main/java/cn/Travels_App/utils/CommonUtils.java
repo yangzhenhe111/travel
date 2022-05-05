@@ -193,6 +193,22 @@ public class CommonUtils {
         return traffic;
     }
 
+    //储存签名信息
+    public static void save_travels_signature(String signature,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("signature",signature);
+        editor.commit();
+    }
+
+    //读取签名信息
+    public static String get_travels_signature(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String signature;
+        signature=settings.getString("signature","");
+        return signature;
+    }
+
 
 
 

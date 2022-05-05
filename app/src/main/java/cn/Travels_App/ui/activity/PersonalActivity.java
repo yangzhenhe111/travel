@@ -83,6 +83,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
 
     @Override
     public void initView() {
+        initData();
         UserEntity userEntity1=new UserEntity();
         UserEntity loginUser = CommonUtils.getLoginUser(PersonalActivity.this);
         System.out.println(loginUser.getId());
@@ -181,6 +182,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
                 String signature = commentText.getText().toString().trim();
                 UserEntity userEntity=commonUtils.getLoginUser(PersonalActivity.this);
                 userEntity.setSignature(signature);
+                commonUtils.save_travels_signature(signature,PersonalActivity.this);
                 saveUserEntity(userEntity);
                 if(signature.equals("")){
                     mysignature.setText("这个人很神秘，什么都没有写");
@@ -214,12 +216,60 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
         dialog.show();
     }
 
+    //昵称
+    @OnClick(R.id.my_name)
+    void my_name(View my_name){
+        BottomSheetDialog dialog = new BottomSheetDialog(PersonalActivity.this);
+        View commentView = LayoutInflater.from(PersonalActivity.this).inflate(R.layout.username_dialog_layout,null);
+        final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
+        final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
+        dialog.setContentView(commentView);
+        bt_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = commentText.getText().toString().trim();
+                UserEntity userEntity=commonUtils.getLoginUser(PersonalActivity.this);
+                userEntity.setUsername(username);
+                commonUtils.storeLoginUser(userEntity,PersonalActivity.this);
+                saveUserEntity(userEntity);
+                if(username.equals("")){
+                    myNameTv.setText("没有昵称");
+                }else {
+                    myNameTv.setText(username);
+                }
+                Toast.makeText(PersonalActivity.this,"修改成功",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        commentText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
+                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+                }else {
+                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        dialog.show();
+    }
+
     @OnClick(R.id.detail_top_back)
     void backPage(View view){
-        /*Intent intent=new Intent(PersonalActivity.this,MainActivity.class);
+        Intent intent=new Intent(PersonalActivity.this,MainActivity.class);
         intent.putExtra("gotoFragmentTag", "3");
-        startActivity(intent);*/
-        finish();
+        startActivity(intent);
+        /*finish();*/
     }
 
     @OnClick(R.id.gerentouxiang)
@@ -265,7 +315,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
                                     .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                                     .into(mycove);
                             UserEntity userEntity=commonUtils.getLoginUser(PersonalActivity.this);
-                            userEntity.setHeadImg(imageurl);
+                            userEntity.setHeadImg(imgUrl);
                             commonUtils.storeLoginUser(userEntity,PersonalActivity.this);
 
                         }
