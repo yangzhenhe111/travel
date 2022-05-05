@@ -34,20 +34,15 @@ public class LoginPersenter extends BasePresenter<LoginView> {
 
 
     public void login(String username,String password){
-        System.out.println("02");
         getAppComponent().getAPIService().login(username,password)
                 .subscribe(new BaseObserver<HttpResult<UserEntity>>() {
                     @Override
                     public void onSuccess(HttpResult<UserEntity> resp) {
-                        System.out.println("03");
                         if (resp.isSuccess()) {
-                            System.out.println("0");
                             UserEntity userEntity=resp.getData();
-                            System.out.println("1");
                             mLoginView.onSuccessData(userEntity);
                         } else {
                             //登录失败
-                            System.out.println("11");
                             mLoginView.onFailed(resp.getMsg());
                         }
                     }

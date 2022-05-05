@@ -22,6 +22,10 @@ public class UserEntity {
     private String headImg;
     //总点数
     private int totalPoints;
+    //性别
+    private String sex;
+    //个性签名
+    private String signature;
 
     public String getCreatetime() {
         return createtime;
@@ -88,4 +92,19 @@ public class UserEntity {
         this.tel = tel;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
 }

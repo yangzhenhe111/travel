@@ -106,6 +106,16 @@ public interface APIService {
     @POST(Constants.URL_getDetailsTRAVELS)
     Observable<HttpResult<Travels>> getDetails(@Body Travels travels);
 
+    //根据用户ID查询用户信息
+    @Headers({"name:super"})
+    @POST(Constants.URL_finduserbyid)
+    Observable<HttpResult<UserEntity>> finduserbyid(@Body UserEntity userEntity);
+
+    //编辑用户信息
+    @Headers({"name:super"})
+    @POST(Constants.URL_saveuserbyid)
+    Observable<HttpResult<UserEntity>> saveUserEntityByID(@Body UserEntity userEntity);
+
 
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})

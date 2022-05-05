@@ -50,6 +50,11 @@ public class Constants {
     public static final String URL_findHistoryTracels ="front/travelsHistory/listPage";
     //获取游记详情
     public static final String URL_getDetailsTRAVELS ="front/travels/getDetails";
+    //获取用户信息
+    public static final String URL_finduserbyid ="front/user/info";
+    //编辑用户信息
+    public static final String URL_saveuserbyid ="front/user/editSaveUserInfo";
+
 
 
 }
