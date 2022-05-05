@@ -25,6 +25,7 @@ import cn.Travels_App.ui.fragment.MineFragment;
 import cn.Travels_App.persenter.MainPersenter;
 import cn.Travels_App.R;
 import cn.Travels_App.ui.fragment.WriteFragment;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.utils.ToastUtils;
 import cn.Travels_App.view.MainView;
 import cn.Travels_App.base.BaseActivity;
@@ -65,6 +66,7 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
     private TravelsFragment travelsFragment;
     private WriteFragment writeFragment;
     private MineFragment mineFragment;
+    private CommonUtils commonUtils;
 
     private String  queryTag;
     public static String write_name = null;
@@ -95,10 +97,11 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
     public void initView() {
         mainInstance = this;
         mainRadioGroup.setOnCheckedChangeListener(this);
+
         //获取参数，是否是搜索景区，跳转到第二个
         Intent intent = getIntent();
         String queryTag = intent.getStringExtra("queryTag");
-        String sousuo = intent.getStringExtra("sousuo");
+
 
 
         //如果等于1 表示跳转到景区
@@ -140,7 +143,6 @@ public class MainActivity extends BaseActivity<MainView, MainPersenter> implemen
                 //有搜索条件的参数
                 Bundle bundle = new Bundle();
                 bundle.putString("queryTag","1");
-                bundle.putString("sousuo",sousuo);
                 travelsFragment.setArguments(bundle);
             showAsFragment(1);
         }else if("2".equals(writetag)){

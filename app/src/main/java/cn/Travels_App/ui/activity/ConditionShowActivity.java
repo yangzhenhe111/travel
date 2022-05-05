@@ -1,16 +1,12 @@
-package cn.Travels_App.ui.fragment;
+package cn.Travels_App.ui.activity;
 
-
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
-import android.view.View;
+import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,42 +20,34 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.Travels_App.R;
-import cn.Travels_App.base.BaseFragment;
+import cn.Travels_App.base.BaseActivity;
 import cn.Travels_App.model.entity.Travels;
+import cn.Travels_App.persenter.ConditionPersenter;
+import cn.Travels_App.persenter.ConditionShowPersenter;
 import cn.Travels_App.persenter.TravelsPersenter;
-import cn.Travels_App.ui.activity.CollectionActivity;
-import cn.Travels_App.ui.activity.ConditionActivity;
-import cn.Travels_App.ui.adapter.CollectionAdapter;
 import cn.Travels_App.ui.adapter.TravelsAdapter;
-import cn.Travels_App.view.Travelsview;
+import cn.Travels_App.ui.fragment.TravelsFragment;
+import cn.Travels_App.view.ConditionShowView;
+import cn.Travels_App.view.Conditionview;
 
-public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter> implements Travelsview {
-
-
-
-     Travelsview mTravelsview;
-
-     List<Travels> mSpotsList;
-
-     @BindView(R.id.spotslistview)
-     GridView mListView;
-
+public class ConditionShowActivity extends BaseActivity<ConditionShowView, ConditionShowPersenter> implements ConditionShowView {
+    @BindView(R.id.spotslistview)
+    GridView mListView;
     @BindView(R.id.sousuo_travels_list)
     SmartRefreshLayout smartRefreshLayout;
+    @BindView(R.id.ConditionShow_sousuo)
+    EditText conditionShow_sousuo;
 
+    ConditionShowView conditionShowView;
+    List<Travels> mSpotsList;
     int pageNum = 1;
-
     int pageSize = 10;
 
     TravelsAdapter  adapter;
-
-    String sousuo;
-
 
     private Handler mainHandler = new Handler(){
         @Override
@@ -75,48 +63,9 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         }
     };
 
-    private class LoadMoreTask extends AsyncTask {
-        @Override
-        protected Object doInBackground(Object[] objects) {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-            initData();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Object o) {
-            super.onPostExecute(o);
-            //刷新界面
-            adapter.notifyDataSetChanged();
-            //结束加载更多动画
-            smartRefreshLayout.finishLoadMore();
-        }
-    }
-
-     //搜索框绑定事件
-    /* @BindView(R.id.spotsSV)
-     SearchView mSearchView;*/
-
-    public static TravelsFragment newInstance() {
-        return new TravelsFragment();
-    }
-
-    public TravelsFragment() {
-    }
-
-    @Override
-    public TravelsPersenter createPresenter() {
-        mTravelsview = getMvpView();
-        return new TravelsPersenter(getApp(), mTravelsview);
-    }
-
     @Override
     public int getLayoutId() {
-        return R.layout.travels_frgm;
+        return R.layout.activity_conditionshow;
     }
 
     @Override
@@ -126,12 +75,12 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         }else {
             this.mSpotsList.clear();
         }
-//        initData();
+        initData();
         System.out.println(mSpotsList);
-        adapter = new TravelsAdapter(getContext(),R.layout.travels_item,
+        adapter = new TravelsAdapter(ConditionShowActivity.this,R.layout.travels_item,
                 mSpotsList);
         mListView.setAdapter(adapter);
-        smartRefreshLayout.setRefreshFooter(new BallPulseFooter(getContext()).setSpinnerStyle(SpinnerStyle.Scale));
+        smartRefreshLayout.setRefreshFooter(new BallPulseFooter(ConditionShowActivity.this).setSpinnerStyle(SpinnerStyle.Scale));
         //刷新
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
@@ -159,44 +108,45 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         });
     }
 
+    private class LoadMoreTask extends AsyncTask {
+        @Override
+        protected Object doInBackground(Object[] objects) {
+//            try {
+//                Thread.sleep(3000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+            initData();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            //刷新界面
+            adapter.notifyDataSetChanged();
+            //结束加载更多动画
+            smartRefreshLayout.finishLoadMore();
+        }
+    }
+
     @Override
     public void initData() {
-
-        /*Bundle bundle = this.getArguments();
-        if(bundle != null){
-            String queryTag =  bundle.getString("queryTag");
-            sousuo = bundle.getString("sousuo");
-
+        Intent intent = getIntent();
+        String sousuo = intent.getStringExtra("sousuo");
+        System.out.println(sousuo);
+        if(sousuo != null&&sousuo!=""){
             createPresenter().queryTravelsByCondition(sousuo,pageNum++);
+            conditionShow_sousuo.setText(sousuo);
             if(mSpotsList!=null&&mSpotsList.size()!=0){
             }else {
-                Toast.makeText(getContext(), "抱歉！您搜索内容不存在，已为您展现其他精彩内容。", Toast.LENGTH_SHORT).show();
-//                mSpotsList.clear();
-                createPresenter().queryTravelsByCondition(null,pageNum);
+                Toast.makeText(ConditionShowActivity.this, "抱歉！您搜索内容不存在，已为您展现其他精彩内容。", Toast.LENGTH_SHORT).show();
+                mSpotsList.clear();
+                createPresenter().queryTravelsByCondition(null,pageNum++);
             }
-        }else {*/
+        }else {
             createPresenter().queryTravelsByCondition(null,pageNum++);
-        /*}*/
-    }
-
-    @Override
-    public void loadData(List<Travels> spotsList) {
-        System.out.println("TF1");
-        this.mSpotsList.addAll(spotsList);
-
-    }
-
-    @OnClick(R.id.travels_sousuo)
-    public void sousuo(){
-        Intent intent=new Intent();
-        intent.setClass(getContext(), ConditionActivity.class);
-        startActivity(intent);
-    }
-
-
-
-    @Override
-    public void onSuccessData(Map resultMap) {
+        }
 
     }
 
@@ -220,6 +170,23 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
 
     }
 
+    @NonNull
+    @Override
+    public ConditionShowPersenter createPresenter() {
+        conditionShowView = getMvpView();
+        return new ConditionShowPersenter(getApp(), conditionShowView);
+    }
 
+    @Override
+    public void loadData(List<Travels> spotsList) {
+        this.mSpotsList.addAll(spotsList);
+    }
 
+    @OnClick(R.id.back)
+    public void fanhui(){
+        Intent intent=new Intent();
+        intent.setClass(ConditionShowActivity.this, MainActivity.class);
+        intent.putExtra("queryTag","1");
+        startActivity(intent);
+    }
 }

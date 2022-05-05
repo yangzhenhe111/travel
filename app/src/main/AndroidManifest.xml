@@ -76,6 +76,9 @@
             android:name="cn.Travels_App.ui.activity.CollectionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
+            android:name="cn.Travels_App.ui.activity.ConditionShowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name="cn.Travels_App.ui.activity.PersonalActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

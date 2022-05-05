@@ -48,9 +48,7 @@ public class ConditionActivity extends BaseActivity<Conditionview, ConditionPers
             @Override
             public boolean onQueryTextSubmit(String s) {
                 Intent intent=new Intent();
-                intent.setClass(ConditionActivity.this, MainActivity.class);
-                intent.putExtra("queryTag", "1");
-                /*intent.putExtra("write_cover",0L);*/
+                intent.setClass(ConditionActivity.this, ConditionShowActivity.class);
                 intent.putExtra("sousuo",s);
                 startActivity(intent);
                 return false;
@@ -91,7 +89,10 @@ public class ConditionActivity extends BaseActivity<Conditionview, ConditionPers
 
     @OnClick(R.id.back)
     void backPage(View view){
-        finish();
+        Intent intent=new Intent();
+        intent.setClass(ConditionActivity.this, MainActivity.class);
+        intent.putExtra("queryTag","1");
+        startActivity(intent);
     }
 
 }

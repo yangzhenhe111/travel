@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED"
+        >
+        <EditText
+            android:id="@+id/ConditionShow_sousuo"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/sousuokuang_bck"
+            android:drawableLeft="@drawable/sousuo2"
+            android:drawablePadding="10dp"
+            android:hint="请输入账号名称"
+            android:textCursorDrawable="@drawable/shap"
+            android:textColor="#182C57"
+            android:textColorHint="#919295"
+            android:layout_centerVertical="true"
+            android:theme="@style/loginEditText"></EditText>
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_weight="9"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:text="取消"
+            android:textSize="20dp"
+            android:layout_gravity="center"></TextView>
+
+    </RelativeLayout>
+    <!-- 首页菜单end -->
+    <!--    <ScrollView-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_width="fill_parent"-->
+    <!--        android:layout_height="fill_parent"-->
+    <!--        android:scrollbars="vertical"-->
+    <!--        android:fadingEdge="vertical">-->
+    <!-- 推荐景区start -->
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/sousuo_travels_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:background="#EDEDED">
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <GridView
+            android:id="@+id/spotslistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="200dp"
+            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="0dp"
+            android:numColumns="2"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="horizontal|vertical"
+            />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <!--    </ScrollView>-->
+
+</LinearLayout>

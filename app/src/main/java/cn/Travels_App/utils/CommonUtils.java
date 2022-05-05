@@ -82,6 +82,31 @@ public class CommonUtils {
         return userEntity;
     }
 
+    //储存搜索信息
+    public static void save_travels_Condition(String sousuo,String queryTag,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Condition",sousuo);
+        editor.putString("queryTag",queryTag);
+        editor.commit();
+    }
+
+    //读取搜索信息
+    public static String get_travels_Condition(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String sousuo;
+        sousuo=settings.getString("Condition","");
+        return sousuo;
+    }
+
+    //读取搜索信息
+    public static String get_travels_queryTag(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String sousuo;
+        sousuo=settings.getString("queryTag","");
+        return sousuo;
+    }
+
     //储存当地概况信息
     public static void save_travels_briefdesc(String name,String address,String briefDesc,String opentime,Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
