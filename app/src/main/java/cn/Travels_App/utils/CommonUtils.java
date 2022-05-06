@@ -193,6 +193,22 @@ public class CommonUtils {
         return traffic;
     }
 
+    //储存封面信息
+    public static void save_travels_imgUrl(String imageurl,Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("imgUrl",imageurl);
+        editor.commit();
+    }
+
+    //读取封面信息
+    public static String get_travels_imgUrl(Context context){
+        SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
+        String traffic;
+        traffic=settings.getString("imgUrl","");
+        return traffic;
+    }
+
     //储存签名信息
     public static void save_travels_signature(String signature,Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);
