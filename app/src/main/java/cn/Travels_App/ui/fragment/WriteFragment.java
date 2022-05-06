@@ -237,14 +237,14 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     }
 
 
-    @OnClick({R.id.wtite_baocun_image,R.id.wtite_baocun_text})
+   /* @OnClick({R.id.wtite_baocun_image,R.id.wtite_baocun_text})
     public void write_baocun(){
-        /*commonUtils.save_travels_briefdesc("","","","",getContext());
+        *//*commonUtils.save_travels_briefdesc("","","","",getContext());
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
         commonUtils.save_travels_imageurl("",getContext());
-        Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);*/
+        Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);*//*
 
         Travels travels=new Travels();
         travels.setBriefDesc(commonUtils.get_travels_briefdesc(getContext()).getBriefDesc());
@@ -254,11 +254,11 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
         travels.setTrafficInfo(commonUtils.get_travels_traffic(getContext()));
         travels.setResraurantInfo(commonUtils.get_travels_resraurantInfo(getContext()));
         travels.setHotelInfo(commonUtils.get_travels_hotelInfo(getContext()));
-        /*travels.setCover(imgUrl);*/
+        *//*travels.setCover(imgUrl);*//*
         travels.setCreator(gerenxinxi().getId());
         travels.setCreatorCover(gerenxinxi().getHeadImg());
         fetchdata(travels);
-    }
+    }*/
 
     @OnClick({R.id.wtite_fabiao_image,R.id.wtite_fabiao_text})
     public void write_fabiao(){
@@ -303,6 +303,12 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setCreator(gerenxinxi().getId());
             travels.setCreatorCover(gerenxinxi().getHeadImg());*/
             createPresenter().maketravels(travels);
+            commonUtils.save_travels_briefdesc("","","","",getContext());
+            commonUtils.save_travels_traffic("",getContext());
+            commonUtils.save_travels_hotelInfo("",getContext());
+            commonUtils.save_travels_resraurantInfo("",getContext());
+            commonUtils.save_travels_imageurl("",getContext());
+            Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);
         }else {
             Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
         }
