@@ -56,7 +56,6 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
             viewHolder.tjspots_nameTv=view.findViewById(R.id.tjspots_name);
             viewHolder.tjspots_createTimeTv=view.findViewById(R.id.tjspots_createTime);
 
-
             //进行景区详情
             viewHolder.tjspots_nameTv.setOnClickListener(new View.OnClickListener(){
 
@@ -78,7 +77,6 @@ public class TjTravelsAdapter extends ArrayAdapter<Travels> {
                     getContext().startActivity(intent);
                 }
             });
-
 
             // 点击进入详情页）
             viewHolder.tjspots_createTimeTv.setOnClickListener(new View.OnClickListener() {

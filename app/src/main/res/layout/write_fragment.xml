@@ -48,7 +48,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     >
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/baocun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -66,28 +66,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="保存"></TextView>
-                </LinearLayout>
+                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp">
-                    <ImageButton
-                        android:id="@+id/wtite_fabiao_image"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/zhuangfa"
-                        android:background="@null"
-                        android:tint="@color/blue_edit" />
-                    <TextView
-                        android:id="@+id/wtite_fabiao_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="发表"></TextView>
-                </LinearLayout>
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/wtite_fabiao_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/zhuangfa"
+                            android:tint="@color/blue_edit" />
+
+                        <TextView
+                            android:id="@+id/wtite_fabiao_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发表"></TextView>
+                    </LinearLayout>
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

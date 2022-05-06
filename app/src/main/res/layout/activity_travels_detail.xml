@@ -316,25 +316,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:text="32"
             android:textColor="#9A9A9A"
             android:textSize="14sp" />
-
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/icon_work_like" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="14dp"
-            android:text="66"
-            android:textColor="#9A9A9A"
-            android:textSize="14sp" />
-
     </LinearLayout>
 
 </RelativeLayout>
