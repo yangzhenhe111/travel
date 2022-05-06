@@ -142,7 +142,7 @@ public class ConditionShowActivity extends BaseActivity<ConditionShowView, Condi
             if (Objects.isNull(condition) || condition.equals("")) {
                 conditionShow_sousuo.setText(sousuo);
             }
-            String condition=conditionShow_sousuo.getText().toString().trim();
+            condition=conditionShow_sousuo.getText().toString().trim();
             if(Objects.isNull(condition)||condition.equals(sousuo)){
                 conditionShow_sousuo.setText(sousuo);
             }

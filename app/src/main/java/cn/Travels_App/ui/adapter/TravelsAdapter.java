@@ -42,6 +42,7 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         Travels travelEntity=getItem(position); //获取当前项的Words实例
+        /*System.out.println(travelEntity.getId());*/
         // 加个判断，以免ListView每次滚动时都要重新加载布局，以提高运行效率
         View view;
         ViewHolder viewHolder;
@@ -68,6 +69,26 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
             });*/
             // 点击进入详情页）
             viewHolder.spotsfmIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(),
+                            TravelsDetailActivity.class);
+                    intent.putExtra("travelsId", travelEntity.getId());
+                    getContext().startActivity(intent);
+                }
+            });
+
+            viewHolder.creatorName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(),
+                            TravelsDetailActivity.class);
+                    intent.putExtra("travelsId", travelEntity.getId());
+                    getContext().startActivity(intent);
+                }
+            });
+
+            viewHolder.spotsnameTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getContext(),

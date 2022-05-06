@@ -113,6 +113,7 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
     public void initView() {
         this.mContext=getActivity();
         requestWritePermission();
+
     }
 
     @Override
@@ -222,8 +223,9 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
                             imgUrl = UpLoadUtils.uploadImg(getApp().getApplicationContext(),media.getPath(), Constants.BASE_URL+"front/travels/uploadCover");
                             Log.e("imgUrl",imgUrl);
                             /*write_sc_but.setImageBitmap(BitmapFactory.decodeFile(media.getPath()));*/
-                            if(imgUrl!=null){
-                                Glide.with(mContext).load(imgUrl).into(write_sc_but);
+                            String imageurl1=commonUtils.get_travels_imageurl(getContext());
+                            if(imageurl1!=null&&imageurl1!=""){
+                                Glide.with(mContext).load(imageurl1).into(write_sc_but);
                             }
                     }
                     System.out.println("w1");
@@ -236,30 +238,59 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
 
     @OnClick({R.id.wtite_baocun_image,R.id.wtite_baocun_text})
     public void write_baocun(){
-        commonUtils.save_travels_briefdesc("","","","",getContext());
+        /*commonUtils.save_travels_briefdesc("","","","",getContext());
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
         commonUtils.save_travels_imageurl("",getContext());
-        fetchdata();
+        Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);*/
+
+        Travels travels=new Travels();
+        travels.setBriefDesc(commonUtils.get_travels_briefdesc(getContext()).getBriefDesc());
+        travels.setName(commonUtils.get_travels_briefdesc(getContext()).getName());
+        travels.setAddress(commonUtils.get_travels_briefdesc(getContext()).getAddress());
+        travels.setOpentime(commonUtils.get_travels_briefdesc(getContext()).getOpentime());
+        travels.setTrafficInfo(commonUtils.get_travels_traffic(getContext()));
+        travels.setResraurantInfo(commonUtils.get_travels_resraurantInfo(getContext()));
+        travels.setHotelInfo(commonUtils.get_travels_hotelInfo(getContext()));
+        /*travels.setCover(imgUrl);*/
+        travels.setCreator(gerenxinxi().getId());
+        travels.setCreatorCover(gerenxinxi().getHeadImg());
+        fetchdata(travels);
     }
 
     @OnClick({R.id.wtite_fabiao_image,R.id.wtite_fabiao_text})
     public void write_fabiao(){
+        /*System.out.println("上传成功");
         commonUtils.save_travels_briefdesc("","","","",getContext());
         commonUtils.save_travels_traffic("",getContext());
         commonUtils.save_travels_hotelInfo("",getContext());
         commonUtils.save_travels_resraurantInfo("",getContext());
         commonUtils.save_travels_imageurl("",getContext());
-        publication();
+        Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);*/
+
+        Travels travels=new Travels();
+        travels.setBriefDesc(commonUtils.get_travels_briefdesc(getContext()).getBriefDesc());
+        travels.setName(commonUtils.get_travels_briefdesc(getContext()).getName());
+        travels.setAddress(commonUtils.get_travels_briefdesc(getContext()).getAddress());
+        travels.setOpentime(commonUtils.get_travels_briefdesc(getContext()).getOpentime());
+        travels.setTrafficInfo(commonUtils.get_travels_traffic(getContext()));
+        travels.setResraurantInfo(commonUtils.get_travels_resraurantInfo(getContext()));
+        travels.setHotelInfo(commonUtils.get_travels_hotelInfo(getContext()));
+        String imageurl1=commonUtils.get_travels_imageurl(getContext());
+        travels.setCover(imageurl1);
+        travels.setCreator(gerenxinxi().getId());
+        travels.setCreatorCover(gerenxinxi().getHeadImg());
+        publication(travels);
     }
 
     //保存游记
-    public void fetchdata() {
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            String writetag =  bundle.getString("tag");
-            Travels travels=new Travels();
+    public void fetchdata(Travels travels) {
+        /*Bundle bundle = this.getArguments();*/
+        String imageurl1=commonUtils.get_travels_imageurl(getContext());
+        if(imageurl1 != null&&imageurl1!=""){
+            /*String writetag =  bundle.getString("tag");*/
+            /*Travels travels=new Travels();
             travels.setName(bundle.getString("write_name"));
             travels.setAddress(bundle.getString("write_address"));
             travels.setOpentime(bundle.getString("write_opentime"));
@@ -269,17 +300,18 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setHotelInfo(bundle.getString("write_hotelInfo"));
             travels.setCover(imgUrl);
             travels.setCreator(gerenxinxi().getId());
-            travels.setCreatorCover(gerenxinxi().getHeadImg());
+            travels.setCreatorCover(gerenxinxi().getHeadImg());*/
             createPresenter().maketravels(travels);
         }else {
             Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
         }
     }
     //发表游记
-    private void publication() {
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            String writetag =  bundle.getString("tag");
+    private void publication(Travels travels) {
+        /*Bundle bundle = this.getArguments();*/
+        String imageurl1=commonUtils.get_travels_imageurl(getContext());
+        if(imageurl1 != null&&imageurl1!=""){
+           /* String writetag =  bundle.getString("tag");
             Travels travels=new Travels();
             travels.setName(bundle.getString("write_name"));
             travels.setAddress(bundle.getString("write_address"));
@@ -290,8 +322,15 @@ public class WriteFragment extends BaseFragment<Writeview,Writepresenter> implem
             travels.setHotelInfo(bundle.getString("write_hotelInfo"));
             travels.setCover(imgUrl);
             travels.setCreator(gerenxinxi().getId());
-            travels.setCreatorCover(gerenxinxi().getHeadImg());
+            travels.setCreatorCover(gerenxinxi().getHeadImg());*/
+            System.out.println("上传成功");
             createPresenter().publication(travels);
+            commonUtils.save_travels_briefdesc("","","","",getContext());
+            commonUtils.save_travels_traffic("",getContext());
+            commonUtils.save_travels_hotelInfo("",getContext());
+            commonUtils.save_travels_resraurantInfo("",getContext());
+            commonUtils.save_travels_imageurl("",getContext());
+            Glide.with(mContext).load(R.drawable.shangchuanfengmian).into(write_sc_but);
         }else {
             Toast.makeText(mContext, "请将信息填写完整", Toast.LENGTH_SHORT).show();
         }
