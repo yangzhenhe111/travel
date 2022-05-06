@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -81,6 +83,15 @@ public class ConditionShowActivity extends BaseActivity<ConditionShowView, Condi
         adapter = new TravelsAdapter(ConditionShowActivity.this,R.layout.travels_item,
                 mSpotsList);
         mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent= new Intent(ConditionShowActivity.this,TravelsDetailActivity.class);
+                Long travelsId = mSpotsList.get(position).getId();
+                intent.putExtra("travelsId", travelsId);
+                startActivity(intent);
+            }
+        });
         smartRefreshLayout.setRefreshFooter(new BallPulseFooter(ConditionShowActivity.this).setSpinnerStyle(SpinnerStyle.Scale));
         //刷新
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -140,10 +151,6 @@ public class ConditionShowActivity extends BaseActivity<ConditionShowView, Condi
             createPresenter().queryTravelsByCondition(sousuo,pageNum++);
             String condition = conditionShow_sousuo.getText().toString().trim();
             if (Objects.isNull(condition) || condition.equals("")) {
-                conditionShow_sousuo.setText(sousuo);
-            }
-            String condition=conditionShow_sousuo.getText().toString().trim();
-            if(Objects.isNull(condition)||condition.equals(sousuo)){
                 conditionShow_sousuo.setText(sousuo);
             }
             if(mSpotsList!=null&&mSpotsList.size()!=0){
