@@ -277,7 +277,6 @@ public class HomeFragment extends BaseFragment<HomeView, HomePerenter> implement
     }
 
     private class MyImageLoader extends ImageLoader {
-
         public void displayImage(Context context, Object path, ImageView imageView) {
             Glide.with(context).load(path).into(imageView);
         }

@@ -209,6 +209,7 @@ public class CommonUtils {
         return traffic;
     }
 
+
     //储存签名信息
     public static void save_travels_signature(String signature,Context context){
         SharedPreferences settings = context.getSharedPreferences(ItFxqConstants.LOGIN_USER_KEY, 0);

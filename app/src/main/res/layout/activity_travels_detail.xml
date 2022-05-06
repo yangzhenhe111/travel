@@ -74,13 +74,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp">
+                        <ImageView
+                            android:id="@+id/faburen_cover"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true">
+
+                        </ImageView>
 
                         <TextView
                             android:id="@+id/faburenxingming"
+                            android:layout_toRightOf="@+id/faburen_cover"
+                            android:layout_marginLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="20dp"
+                            android:layout_centerVertical="true"
                             android:text="曹旭帆"></TextView>
 
                         <TextView
@@ -90,6 +100,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
                             android:text="发布于 05.01 16:00"
+                            android:layout_centerVertical="true"
                             android:textSize="12dp"></TextView>
                     </RelativeLayout>
 

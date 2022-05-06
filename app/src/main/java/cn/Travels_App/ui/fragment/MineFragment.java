@@ -107,7 +107,7 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
             myjianjie.setText(signature);
         }
         System.out.println(userEntity.getHeadImg());
-        if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null){
+        if(userEntity.getHeadImg()!=""&&userEntity.getHeadImg()!=null&&!userEntity.getHeadImg().equals("tx0.jpg")){
             String img=userEntity.getHeadImg();
             Glide.with(this)
                     .load(img)
@@ -115,7 +115,7 @@ public class MineFragment extends BaseFragment<MineFview, Minepresenter> {
                     .into(mycove);
         }else {
             Glide.with(this)
-                    .load(R.drawable.login1)
+                    .load(R.drawable.touxaing)
                     .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                     .into(mycove);
         }

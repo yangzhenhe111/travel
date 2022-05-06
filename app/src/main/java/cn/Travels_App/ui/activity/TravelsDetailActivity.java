@@ -28,6 +28,8 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.Resource;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
@@ -99,6 +101,8 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     TextView meishi;
     @BindView(R.id.collection)
     ImageView imgCollect;
+    @BindView(R.id.faburen_cover)
+    ImageView faburen_cover;
     @BindView(R.id.collection_num)
     TextView collectNum;
 
@@ -542,6 +546,18 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
                     .load(R.drawable.login1)
                     .into(fmUrlTv);
         }
+        if((isEmpty(mSpots.getCreatorCover())==true)){
+            Glide.with(this)
+                    .load(mSpots.getCreatorCover())
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(faburen_cover);
+        }else{
+            Glide.with(this)
+                    .load(R.drawable.touxaing)
+                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                    .into(faburen_cover);
+        }
+
 
         PageRequest<Comment> request = new PageRequest<>();
         Comment comment1 = new Comment();

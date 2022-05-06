@@ -108,7 +108,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
     @Override
     public void initData() {
         UserEntity userEntity2=commonUtils.getLoginUser(PersonalActivity.this);
-        if(userEntity2.getHeadImg()!=""&&userEntity2.getHeadImg()!=null){
+        if(userEntity2.getHeadImg()!=""&&userEntity2.getHeadImg()!=null && !userEntity2.getHeadImg().equals("tx0.jpg")){
             String img=userEntity2.getHeadImg();
             Glide.with(this)
                     .load(img)
@@ -116,7 +116,7 @@ public class PersonalActivity extends BaseActivity<PersonalView, PersonalPersent
                     .into(mycove);
         }else {
             Glide.with(this)
-                    .load(R.drawable.login1)
+                    .load(R.drawable.touxaing)
                     .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                     .into(mycove);
         }
