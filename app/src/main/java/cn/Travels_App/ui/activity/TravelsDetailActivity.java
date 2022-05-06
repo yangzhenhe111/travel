@@ -495,20 +495,31 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
             fbtime.setText("发布于 "+"---");
         }
 
-        if((isEmpty(mSpots.getTrafficInfo())==true)){
-            jiaotong.setText(mSpots.getTrafficInfo());
+        if((isEmpty(mSpots.getTrafficInfo())==true)&&!mSpots.getTrafficInfo().equals("")){
+            String[] strarray=mSpots.getTrafficInfo().split("---");
+            StringBuilder tr= new StringBuilder();
+            String tra = tr.append("\t\t\t").append(strarray[1]).append("\n").append("\t\t\t").append(strarray[0]).toString();
+            jiaotong.setText(tra);
         }else{
             jiaotong.setText("");
         }
 
-        if((isEmpty(mSpots.getHotelInfo())==true)){
-            zhusu.setText(mSpots.getHotelInfo());
+        if((isEmpty(mSpots.getHotelInfo())==true)&&!mSpots.getHotelInfo().equals("")){
+            String[] strarray=mSpots.getHotelInfo().split("---");
+            StringBuilder tr= new StringBuilder();
+            String tra = tr.append("\t\t\t").append(strarray[1]).append("\n").append("\t\t\t").append(strarray[0]).toString();
+            zhusu.setText(tra);
+            /*zhusu.setText(mSpots.getHotelInfo());*/
         }else{
             zhusu.setText("");
         }
 
-        if((isEmpty(mSpots.getResraurantInfo())==true)){
-            meishi.setText(mSpots.getResraurantInfo());
+        if((isEmpty(mSpots.getResraurantInfo())==true)&&!mSpots.getResraurantInfo().equals("")){
+            String[] strarray=mSpots.getResraurantInfo().split("---");
+            StringBuilder tr= new StringBuilder();
+            String tra = tr.append("\t\t\t").append(strarray[1]).append("\n").append("\t\t\t").append(strarray[0]).toString();
+            meishi.setText(tra);
+           /* meishi.setText(mSpots.getResraurantInfo());*/
         }else{
             meishi.setText("");
         }
@@ -532,7 +543,9 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
         }
 
         if((isEmpty(mSpots.getBriefDesc())==true)){
-            briefDesc.setText(mSpots.getBriefDesc());
+            StringBuilder tr= new StringBuilder();
+            String tra = tr.append("\t\t\t").append(mSpots.getBriefDesc()).toString();
+            briefDesc.setText(tra);
         }else{
             briefDesc.setText("");
         }
