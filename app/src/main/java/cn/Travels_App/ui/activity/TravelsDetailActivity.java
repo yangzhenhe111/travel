@@ -183,7 +183,7 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
 //        expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_comment_container);
 //        commentsList = generateTestData();
 //        initExpandableListView(commentsList);
-        initData();
+//        initData();
     }
 
     private void loadingComment() {

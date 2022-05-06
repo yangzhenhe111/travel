@@ -68,15 +68,16 @@ public class TravelsAdapter extends ArrayAdapter<Travels> {
                 }
             });*/
             // 点击进入详情页）
-            viewHolder.spotsfmIv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getContext(),
-                            TravelsDetailActivity.class);
-                    intent.putExtra("travelsId", travelEntity.getId());
-                    getContext().startActivity(intent);
-                }
-            });
+//            viewHolder.spotsfmIv.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(getContext(),
+//                            TravelsDetailActivity.class);
+//                    Long id = travelEntity.getId();
+//                    intent.putExtra("travelsId", id);
+//                    getContext().startActivity(intent);
+//                }
+//            });
 
             viewHolder.creatorName.setOnClickListener(new View.OnClickListener() {
                 @Override

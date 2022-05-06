@@ -133,6 +133,15 @@ public class TravelsFragment extends BaseFragment<Travelsview, TravelsPersenter>
         adapter = new TravelsAdapter(getContext(),R.layout.travels_item,
                 mSpotsList);
         mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent= new Intent(getContext(),TravelsDetailActivity.class);
+                        Long travelsId = mSpotsList.get(position).getId();
+                        intent.putExtra("travelsId", travelsId);
+                        getContext().startActivity(intent);
+            }
+        });
         smartRefreshLayout.setRefreshFooter(new BallPulseFooter(getContext()).setSpinnerStyle(SpinnerStyle.Scale));
         //刷新
         smartRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
