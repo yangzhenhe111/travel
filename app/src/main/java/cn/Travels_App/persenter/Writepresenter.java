@@ -8,11 +8,13 @@ import cn.Travels_App.network.BaseObserver;
 import cn.Travels_App.network.HttpResult;
 import cn.Travels_App.ui.fragment.Writeview;
 import cn.Travels_App.base.BasePresenter;
+import cn.Travels_App.utils.CommonUtils;
 import cn.Travels_App.view.RegView;
 import okhttp3.MultipartBody;
 
 public class Writepresenter extends BasePresenter<Writeview>{
     Writeview writeview;
+    CommonUtils commonUtils;
     public Writepresenter(App app) {
         super(app);
     }
@@ -52,6 +54,8 @@ public class Writepresenter extends BasePresenter<Writeview>{
                     public void onSuccess(HttpResult<Travels> resp) {
                         if (resp.isSuccess()) {
                             writeview.onCompleted();
+                            System.out.println("上传成功");
+
                         } else {
                             //上传失败
                             writeview.onFailed(resp.getMsg());
