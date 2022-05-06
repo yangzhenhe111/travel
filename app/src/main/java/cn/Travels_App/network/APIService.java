@@ -117,6 +117,12 @@ public interface APIService {
     Observable<HttpResult<UserEntity>> saveUserEntityByID(@Body UserEntity userEntity);
 
 
+    //编辑用户信息
+    @Headers({"name:super"})
+    @POST(Constants.URL_ADD_COMMENT)
+    Observable<HttpResult<Comment>> addComment(@Body Comment comment);
+
+
     /*//根据一级评论ID查询二级评论
     @Headers({"name:super"})
     @POST(Constants.URL_FINDTJSPOTS)

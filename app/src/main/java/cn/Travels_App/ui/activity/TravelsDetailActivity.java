@@ -275,27 +275,42 @@ public class TravelsDetailActivity extends BaseActivity<TravelsDetailView, Trave
     }
 
     private boolean submitData(Comment comment) {
-        OkHttpClient client = new OkHttpClient();
+//        OkHttpClient client = new OkHttpClient();
+//
+//        //json为String类型的json数据
+//        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(comment));
+//        //创建一个请求对象
+////                        String format = String.format(KeyPath.Path.head + KeyPath.Path.waybillinfosensor, username, key, current_timestamp);
+//        Request request = new Request.Builder()
+//                .url(Constants.BASE_URL+"front/comment/save")
+//                .addHeader("header-user", new Gson().toJson(CommonUtils.getLoginUser(TravelsDetailActivity.this)))
+//                .post(requestBody)
+//                .build();
+//
+//        try {
+//            Response execute = client.newCall(request).execute();
+//            HttpResult<Comment> result = new Gson().fromJson(execute.body().string(),HttpResult.class);
+//            return result.isSuccess();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return false;
 
-        //json为String类型的json数据
-        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), new Gson().toJson(comment));
-        //创建一个请求对象
-//                        String format = String.format(KeyPath.Path.head + KeyPath.Path.waybillinfosensor, username, key, current_timestamp);
-        Request request = new Request.Builder()
-                .url(Constants.BASE_URL+"front/comment/save")
-                .addHeader("header-user", new Gson().toJson(CommonUtils.getLoginUser(TravelsDetailActivity.this)))
-                .post(requestBody)
-                .build();
+        final Boolean[] result = {false};
+        getApp().getAppComponent().getAPIService().addComment(comment)
+                .subscribe(new BaseObserver<HttpResult<Comment>>() {
+                    @Override
+                    public void onSuccess(HttpResult<Comment> commentHttpResult) {
+                        result[0] = commentHttpResult.isSuccess();
+                    }
 
-        try {
-            Response execute = client.newCall(request).execute();
-            HttpResult<Comment> result = new Gson().fromJson(execute.body().string(),HttpResult.class);
-            return result.isSuccess();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
+                    @Override
+                    public void onFailure(Throwable e) {
+                        ToastUtils.showToast(TravelsDetailActivity.this,"保存评论失败");
+                    }
+                });
 
+        return result[0];
 
     }
 

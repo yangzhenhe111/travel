@@ -54,6 +54,8 @@ public class Constants {
     public static final String URL_finduserbyid ="front/user/info";
     //编辑用户信息
     public static final String URL_saveuserbyid ="front/user/editSaveUserInfo";
+    //添加评论
+    public static final String URL_ADD_COMMENT = "front/comment/save";
 
 
 
