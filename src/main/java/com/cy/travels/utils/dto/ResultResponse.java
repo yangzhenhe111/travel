@@ -49,23 +49,24 @@ public class ResultResponse<T> implements Serializable {
         this.data = data;
     }
 
-    public static ResultResponse ok(){
-        return new ResultResponse(true,"请求成功");
+    public static ResultResponse ok() {
+        return new ResultResponse(true, "请求成功");
     }
 
     public static ResultResponse ok(Object data) {
-        return new ResultResponse(true,"请求成功",data);
+        return new ResultResponse(true, "请求成功", data);
     }
 
     public static ResultResponse ok(String msg) {
-        return new ResultResponse(true,msg);
+        return new ResultResponse(true, msg);
     }
 
-    public static ResultResponse ok(String msg,Object data){
-        return new ResultResponse(true,msg, data);
+    public static ResultResponse ok(String msg, Object data) {
+        return new ResultResponse(true, msg, data);
     }
-    public static ResultResponse fail(String msg){
-        return new ResultResponse(false,msg);
+
+    public static ResultResponse fail(String msg) {
+        return new ResultResponse(false, msg);
     }
     /*
     public ResultResponse(String message) {

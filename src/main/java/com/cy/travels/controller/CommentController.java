@@ -19,7 +19,7 @@ import java.util.Objects;
 
 @Slf4j
 @RestController
-@Api(value = "评论管理",tags = "评论管理")
+@Api(value = "评论管理", tags = "评论管理")
 @RequestMapping("/front/comment")
 public class CommentController {
 
@@ -32,7 +32,7 @@ public class CommentController {
         int num = commentService.save(commentDTO);
         if (num > 0) {
             return ResultResponse.ok();
-        }else {
+        } else {
             return ResultResponse.fail("保存失败，请重新请求。");
         }
     }
@@ -40,7 +40,7 @@ public class CommentController {
     @ApiOperation("获取评论列表")
     @PostMapping("/listPage")
     public ResultResponse<PageBean<CommentRespDTO>> listPage(@RequestBody PageRequest<CommentDTO> request) {
-        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() < 1) {
             request.setPageNum(1);
         }
         if (Objects.isNull(request.getPageSize()) || request.getPageNum() < 1) {
@@ -49,13 +49,14 @@ public class CommentController {
         PageBean<CommentRespDTO> result = commentService.listPage(request);
         return ResultResponse.ok(result);
     }
+
     @ApiOperation("点赞评论")
     @PostMapping("/like")
     public Result like(@RequestBody CommentDTO commentDTO) {
         int num = commentService.like(commentDTO);
         if (num > 0) {
             return Result.ok();
-        }else {
+        } else {
             return Result.fail();
         }
     }
@@ -67,7 +68,7 @@ public class CommentController {
         CommentDTO commentDTO = new CommentDTO();
         commentDTO.setTravelsId(travelId);
         request.setData(commentDTO);
-        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() < 1) {
             request.setPageNum(1);
         }
         if (Objects.isNull(request.getPageSize()) || request.getPageSize() < 1) {

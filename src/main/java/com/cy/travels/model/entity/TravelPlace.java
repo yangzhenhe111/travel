@@ -9,53 +9,53 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @Description  TravelPlace 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelPlace
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @Entity
-@Table ( name ="travel_place" )
+@Table(name = "travel_place")
 @ApiModel
 public class TravelPlace extends BaseDO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * ID
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty("ID")
-	private Long id;
+    /**
+     * ID
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("ID")
+    private Long id;
 
-	/**
-	 * 景点介绍
-	 */
-	@Column
-	@ApiModelProperty("景点介绍")
-	private String placeInformation;
+    /**
+     * 景点介绍
+     */
+    @Column
+    @ApiModelProperty("景点介绍")
+    private String placeInformation;
 
-	/**
-	 * 标题
-	 */
-	@Column
-	@ApiModelProperty("标题")
-	private String title;
+    /**
+     * 标题
+     */
+    @Column
+    @ApiModelProperty("标题")
+    private String title;
 
-	/**
-	 * 游玩建议
-	 */
-	@Column
-	@ApiModelProperty("游玩建议")
-	private String travelAdvice;
+    /**
+     * 游玩建议
+     */
+    @Column
+    @ApiModelProperty("游玩建议")
+    private String travelAdvice;
 
-	/**
-	 * 标题ID
-	 */
-	@Column
-	@ApiModelProperty("标题ID")
-	private Long titleId;
+    /**
+     * 标题ID
+     */
+    @Column
+    @ApiModelProperty("标题ID")
+    private Long titleId;
 
 
 }

@@ -15,7 +15,7 @@ public class Result<T> {
 
     private T data;
 
-    public Result(){
+    public Result() {
     }
 
     public Result(String status, String message, T data) {
@@ -37,19 +37,23 @@ public class Result<T> {
         this.message = message;
         this.data = null;
     }
-    public static Result ok(){
+
+    public static Result ok() {
         return new Result(ResultEnum.OK.getCode(), ResultEnum.OK.getMsg());
     }
-    public static Result ok(Object data){
+
+    public static Result ok(Object data) {
         return new Result(ResultEnum.OK.getCode(), data);
     }
-    public static Result ok(String message, Object data){
+
+    public static Result ok(String message, Object data) {
         return new Result(ResultEnum.OK.getCode(), message, data);
     }
 
-    public static Result ok(String message){
+    public static Result ok(String message) {
         return new Result(ResultEnum.OK.getCode(), message);
     }
+
     public static Result fail(String status, String message) {
         return new Result(status, message);
     }
@@ -63,6 +67,6 @@ public class Result<T> {
     }
 
     public static Result build(String status, String message, Object data) {
-        return new Result(status,message,data);
+        return new Result(status, message, data);
     }
 }

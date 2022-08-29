@@ -9,46 +9,46 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @Description  TravelDelicacy 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelDelicacy
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @Entity
-@Table ( name ="travel_delicacy" )
+@Table(name = "travel_delicacy")
 @ApiModel
 public class TravelDelicacy extends BaseDO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty("id")
-	private Long id;
+    /**
+     * id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("id")
+    private Long id;
 
-	/**
-	 * 餐馆名称
-	 */
-	@Column
-	@ApiModelProperty("餐馆名称")
-	private String restaurantName;
+    /**
+     * 餐馆名称
+     */
+    @Column
+    @ApiModelProperty("餐馆名称")
+    private String restaurantName;
 
-	/**
-	 * 标题
-	 */
-	@Column
-	@ApiModelProperty("标题")
-	private String title;
+    /**
+     * 标题
+     */
+    @Column
+    @ApiModelProperty("标题")
+    private String title;
 
-	/**
-	 * 推荐菜品
-	 */
-	@Column
-	@ApiModelProperty("推荐菜品")
-	private String recommendDishes;
+    /**
+     * 推荐菜品
+     */
+    @Column
+    @ApiModelProperty("推荐菜品")
+    private String recommendDishes;
 
 //	/**
 //	 * 人均消费
@@ -57,12 +57,12 @@ public class TravelDelicacy extends BaseDO implements Serializable {
 //	@ApiModelProperty("人均消费")
 //	private String averageConsumption;
 
-	/**
-	 * 标题ID
-	 */
-	@Column
-	@ApiModelProperty("标题ID")
-	private Long titleId;
+    /**
+     * 标题ID
+     */
+    @Column
+    @ApiModelProperty("标题ID")
+    private Long titleId;
 
 
 }

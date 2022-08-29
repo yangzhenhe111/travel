@@ -10,53 +10,53 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Description  TravelLocalOverview 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelLocalOverview
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @Entity
-@Table ( name ="travel_local_overview" )
+@Table(name = "travel_local_overview")
 @ApiModel
 public class TravelLocalOverview extends BaseDO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty("id")
-	private Long id;
+    /**
+     * id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("id")
+    private Long id;
 
-	/**
-	 * 景点名称
-	 */
-	@Column
-	@ApiModelProperty( value="景点名称")
-	private String name;
+    /**
+     * 景点名称
+     */
+    @Column
+    @ApiModelProperty(value = "景点名称")
+    private String name;
 
-	/**
-	 * 所在地
-	 */
-	@Column
-	@ApiModelProperty( value="所在地")
-	private String address;
+    /**
+     * 所在地
+     */
+    @Column
+    @ApiModelProperty(value = "所在地")
+    private String address;
 
-	/**
-	 * 开放时间
-	 */
-	@Column
-	@ApiModelProperty( value="开放时间")
-	private String openTime;
+    /**
+     * 开放时间
+     */
+    @Column
+    @ApiModelProperty(value = "开放时间")
+    private String openTime;
 
-	/**
-	 * 简介
-	 */
-	@Column
-	@ApiModelProperty( value="简介")
-	private String briefDesc;
+    /**
+     * 简介
+     */
+    @Column
+    @ApiModelProperty(value = "简介")
+    private String briefDesc;
 
 //	/**
 //	 * 创建时间
@@ -72,12 +72,12 @@ public class TravelLocalOverview extends BaseDO implements Serializable {
 //	@ApiModelProperty( value="修改时间")
 //	private Date modifytime;
 
-	/**
-	 * 标题ID
-	 */
-	@Column
-	@ApiModelProperty("标题ID")
-	private Long titleId;
+    /**
+     * 标题ID
+     */
+    @Column
+    @ApiModelProperty("标题ID")
+    private Long titleId;
 
 
 }

@@ -30,7 +30,7 @@ public class TravelsHistoryController {
     @ApiOperation("查看游记历史")
     @PostMapping("/listPage")
     private ResultResponse<PageBean<TravelsHistoryDTO>> listPage(@RequestBody PageRequest<TravelsHistoryDTO> request) {
-        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() < 1) {
             request.setPageNum(1);
         }
         if (Objects.isNull(request.getPageSize()) || request.getPageSize() < 1) {

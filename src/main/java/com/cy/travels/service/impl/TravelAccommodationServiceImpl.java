@@ -29,7 +29,7 @@ public class TravelAccommodationServiceImpl implements TravelAccommodationServic
         if (Objects.isNull(condition.getId())) {
             //保存
             return save(condition);
-        }else {
+        } else {
             //修改
             return update(condition);
         }
@@ -38,25 +38,25 @@ public class TravelAccommodationServiceImpl implements TravelAccommodationServic
     private TravelAccommodationDTO update(TravelAccommodationDTO condition) {
         TravelAccommodationDTO result = new TravelAccommodationDTO();
         TravelAccommodation Accommodation = accommodationMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Accommodation,result);
+        BeanUtils.copyProperties(Accommodation, result);
 
-        BeanUtils.copyProperties(condition,Accommodation);
+        BeanUtils.copyProperties(condition, Accommodation);
         int insert = accommodationMapper.updateByPrimaryKeySelective(Accommodation);
         if (insert > 0) {
-            BeanUtils.copyProperties(Accommodation,result);
+            BeanUtils.copyProperties(Accommodation, result);
         }
         return result;
     }
 
     private TravelAccommodationDTO save(TravelAccommodationDTO condition) {
         TravelAccommodation Accommodation = new TravelAccommodation();
-        BeanUtils.copyProperties(condition,Accommodation);
+        BeanUtils.copyProperties(condition, Accommodation);
         int insert = accommodationMapper.insert(Accommodation);
         TravelAccommodationDTO result = new TravelAccommodationDTO();
-        BeanUtils.copyProperties(condition,result);
+        BeanUtils.copyProperties(condition, result);
         if (insert > 0) {
             TravelAccommodation dbAccommodation = accommodationMapper.selectOne(Accommodation);
-            BeanUtils.copyProperties(dbAccommodation,result);
+            BeanUtils.copyProperties(dbAccommodation, result);
         }
         return result;
     }
@@ -69,13 +69,13 @@ public class TravelAccommodationServiceImpl implements TravelAccommodationServic
         TravelAccommodationDTO result = new TravelAccommodationDTO();
         if (condition.getId() != null) {
             query.setId(condition.getId());
-        }else if (condition.getTitleId() != null){
+        } else if (condition.getTitleId() != null) {
             query.setTitleId(condition.getTitleId());
-        }else {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"id不能为null");
+        } else {
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "id不能为null");
         }
         dbAccommodation = accommodationMapper.selectOne(query);
-        BeanUtils.copyProperties(dbAccommodation,result);
+        BeanUtils.copyProperties(dbAccommodation, result);
         return result;
     }
 
@@ -83,12 +83,12 @@ public class TravelAccommodationServiceImpl implements TravelAccommodationServic
     public TravelAccommodationDTO delete(TravelAccommodationDTO condition) {
         TravelAccommodationDTO result = new TravelAccommodationDTO();
         TravelAccommodation Accommodation = accommodationMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Accommodation,result);
+        BeanUtils.copyProperties(Accommodation, result);
 
         Accommodation.setIsDeleted(YesOrNoEnum.Y.getCode());
         int insert = accommodationMapper.updateByPrimaryKeySelective(Accommodation);
         if (insert > 0) {
-            BeanUtils.copyProperties(Accommodation,result);
+            BeanUtils.copyProperties(Accommodation, result);
         }
         return result;
     }

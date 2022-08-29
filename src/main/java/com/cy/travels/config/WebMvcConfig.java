@@ -16,11 +16,12 @@ import org.springframework.web.servlet.config.annotation.*;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Bean
-    public LoginInterceptor loginInterceptor(){
+    public LoginInterceptor loginInterceptor() {
         return new LoginInterceptor();
     }
+
     @Bean
-    public NoLoginInterceptor noLoginInterceptor(){
+    public NoLoginInterceptor noLoginInterceptor() {
         return new NoLoginInterceptor();
     }
 
@@ -30,7 +31,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addPathPatterns("/swagger-ui.html");
         registry.addInterceptor(noLoginInterceptor())
                 .addPathPatterns("/**")//拦截所有
-                .excludePathPatterns("/","/front/user/login","/front/user/register")//放行登录注册相关请求
+                .excludePathPatterns("/", "/front/user/login", "/front/user/register")//放行登录注册相关请求
                 .excludePathPatterns("/static/**")//放行静态资源相关请求
                 .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");//放行swagger相关请求请求
     }

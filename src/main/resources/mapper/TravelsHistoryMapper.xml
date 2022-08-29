@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cy.travels.dao.TravelsHistoryMapper">
-
     <sql id="column">
         a.id AS "id",
         a.user_id AS "userId",
@@ -25,25 +24,25 @@
         <if test="userId!=null">
             and a.user_id = #{userId}
         </if>
-        order by t.publish_date DESC
+        order by a.create_time DESC
     </select>
 
-<!--    <select id="getAllHistoryList" resultType="com.cy.travels.model.dto.TravelsTitleDTO">-->
-<!--        select-->
-<!--        <include refid="column">-->
-<!--        </include>,-->
-<!--        t.publish_date AS "publishDate",-->
-<!--        t.travel_cover AS "travelCover",-->
-<!--        t.title_content AS "titleContent",-->
-<!--        t.status AS "status",-->
-<!--        t.createtime AS "createtime",-->
-<!--        t.creator AS "creator"-->
-<!--        from travels_history a-->
-<!--        left join travel_title t on a.travel_id = t.id-->
-<!--        where a.is_deleted = 'N' AND t.is_deleted = 'N'-->
-<!--        <if test="userId!=null">-->
-<!--            and a.user_id = #{userId}-->
-<!--        </if>-->
-<!--        order by t.publish_date DESC-->
-<!--    </select>-->
+    <!--    <select id="getAllHistoryList" resultType="com.cy.travels.model.dto.TravelsTitleDTO">-->
+    <!--        select-->
+    <!--        <include refid="column">-->
+    <!--        </include>,-->
+    <!--        t.publish_date AS "publishDate",-->
+    <!--        t.travel_cover AS "travelCover",-->
+    <!--        t.title_content AS "titleContent",-->
+    <!--        t.status AS "status",-->
+    <!--        t.createtime AS "createtime",-->
+    <!--        t.creator AS "creator"-->
+    <!--        from travels_history a-->
+    <!--        left join travel_title t on a.travel_id = t.id-->
+    <!--        where a.is_deleted = 'N' AND t.is_deleted = 'N'-->
+    <!--        <if test="userId!=null">-->
+    <!--            and a.user_id = #{userId}-->
+    <!--        </if>-->
+    <!--        order by t.publish_date DESC-->
+    <!--    </select>-->
 </mapper>

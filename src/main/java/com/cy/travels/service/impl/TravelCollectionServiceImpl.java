@@ -44,7 +44,7 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         User user = userService.getCurrentUser();
         condition.setUserId(user.getId());
         TravelCollection collection = new TravelCollection();
-        BeanUtils.copyProperties(condition,collection);
+        BeanUtils.copyProperties(condition, collection);
         collection.setCreatedDate(new Date());
         collection.setIsDeleted(YesOrNoEnum.N.getCode());
         int insert = tracelCollectionMapper.insert(collection);
@@ -83,7 +83,7 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         User user = new Gson().fromJson(userStr, User.class);
         query.setUserId(user.getId());
 
-        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<TravelCollectionDTO> list = tracelCollectionMapper.getAllCollectionList(query);
         for (TravelCollectionDTO travelsTitleDTO : list) {
             travelsTitleDTO.setUsername(user.getUsername());
@@ -104,7 +104,7 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         User user = userService.getCurrentUser();
         condition.setUserId(user.getId());
         TravelCollection collection = new TravelCollection();
-        BeanUtils.copyProperties(condition,collection);
+        BeanUtils.copyProperties(condition, collection);
         collection.setIsDeleted(YesOrNoEnum.N.getCode());
         collection.setId(null);
         int selectCount = tracelCollectionMapper.selectCount(collection);
@@ -115,7 +115,7 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
     public int updata(TravelCollectionDTO condition) {
         TravelCollectionDTO selectOne = this.selectOne(condition);
         TravelCollection collection = new TravelCollection();
-        BeanUtils.copyProperties(selectOne,collection);
+        BeanUtils.copyProperties(selectOne, collection);
         collection.setIsDeleted(YesOrNoEnum.Y.getCode());
         int updata = tracelCollectionMapper.updateByPrimaryKeySelective(collection);
         return updata;
@@ -124,7 +124,7 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
     @Override
     public Integer selectCount(TravelCollectionDTO condition) {
         TravelCollection query = new TravelCollection();
-        BeanUtils.copyProperties(condition,query);
+        BeanUtils.copyProperties(condition, query);
         query.setIsDeleted(YesOrNoEnum.N.getCode());
         query.setUserId(null);
         query.setId(null);
@@ -137,11 +137,11 @@ public class TravelCollectionServiceImpl implements TravelCollectionService {
         User user = userService.getCurrentUser();
         condition.setUserId(user.getId());
         TravelCollection collection = new TravelCollection();
-        BeanUtils.copyProperties(condition,collection);
+        BeanUtils.copyProperties(condition, collection);
         collection.setIsDeleted(YesOrNoEnum.N.getCode());
         collection.setId(null);
         TravelCollection selectOne = tracelCollectionMapper.selectOne(collection);
-        BeanUtils.copyProperties(selectOne,condition);
+        BeanUtils.copyProperties(selectOne, condition);
         return condition;
     }
 }

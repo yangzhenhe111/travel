@@ -9,53 +9,53 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @Description  TravelTraffic 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelTraffic
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @Entity
-@Table ( name ="travel_traffic" )
+@Table(name = "travel_traffic")
 @ApiModel
 public class TravelTraffic extends BaseDO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty("id")
-	private Long id;
+    /**
+     * id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("id")
+    private Long id;
 
-	/**
-	 * 交通信息
-	 */
-	@Column
-	@ApiModelProperty("交通信息")
-	private String trafficInformation;
+    /**
+     * 交通信息
+     */
+    @Column
+    @ApiModelProperty("交通信息")
+    private String trafficInformation;
 
-	/**
-	 * 标题
-	 */
-	@Column
-	@ApiModelProperty("标题")
-	private String title;
+    /**
+     * 标题
+     */
+    @Column
+    @ApiModelProperty("标题")
+    private String title;
 
-	/**
-	 * 交通建议
-	 */
-	@Column
-	@ApiModelProperty("交通建议")
-	private String trafficAdvice;
+    /**
+     * 交通建议
+     */
+    @Column
+    @ApiModelProperty("交通建议")
+    private String trafficAdvice;
 
-	/**
-	 * 标题ID
-	 */
-	@Column
-	@ApiModelProperty("标题ID")
-	private Long titleId;
+    /**
+     * 标题ID
+     */
+    @Column
+    @ApiModelProperty("标题ID")
+    private Long titleId;
 
 
 }

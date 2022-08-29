@@ -10,78 +10,78 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Description  TravelsTitle 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelsTitle
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @Entity
-@Table ( name ="travel_title" )
+@Table(name = "travel_title")
 @ApiModel
 public class TravelsTitle extends BaseDO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty("id")
-	private Long id;
+    /**
+     * id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty("id")
+    private Long id;
 
-	/**
-	 * 标题内容
-	 */
-	@Column
-	@ApiModelProperty("标题内容")
-	private String titleContent;
+    /**
+     * 标题内容
+     */
+    @Column
+    @ApiModelProperty("标题内容")
+    private String titleContent;
 
-	/**
-	 * 游记封面
-	 */
-	@Column
-	@ApiModelProperty("游记封面")
-	private String travelCover;
+    /**
+     * 游记封面
+     */
+    @Column
+    @ApiModelProperty("游记封面")
+    private String travelCover;
 
-	/**
-	 * 发布时间
-	 */
-	@Column
-	@ApiModelProperty("发布时间")
-	private Date publishDate;
-
-
-	/**
-	 * 创建时间
-	 */
-	@Column
-	@ApiModelProperty( value="创建时间")
-	private Date createtime;
-
-	/**
-	 * 状态（1.保存2.发布）
-	 */
-	@Column
-	@ApiModelProperty("状态（1.保存2.发布）")
-	private String status;
+    /**
+     * 发布时间
+     */
+    @Column
+    @ApiModelProperty("发布时间")
+    private Date publishDate;
 
 
-	/**
-	 * 创建者
-	 */
-	@Column
-	@ApiModelProperty( value="创建者")
-	private Long creator;
+    /**
+     * 创建时间
+     */
+    @Column
+    @ApiModelProperty(value = "创建时间")
+    private Date createtime;
 
-	/**
-	 * 住宿信息ID
-	 */
-	@Column
-	private Long accommodationId ;
+    /**
+     * 状态（1.保存2.发布）
+     */
+    @Column
+    @ApiModelProperty("状态（1.保存2.发布）")
+    private String status;
 
-	/**
-	 * 交通信息
-	 */
+
+    /**
+     * 创建者
+     */
+    @Column
+    @ApiModelProperty(value = "创建者")
+    private Long creator;
+
+    /**
+     * 住宿信息ID
+     */
+    @Column
+    private Long accommodationId;
+
+    /**
+     * 交通信息
+     */
 
 }

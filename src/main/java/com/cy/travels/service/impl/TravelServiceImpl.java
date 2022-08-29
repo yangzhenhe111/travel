@@ -59,15 +59,15 @@ public class TravelServiceImpl implements TravelService {
         TravelsTitleDTO result = this.saveOrUpdata(travelsTitleDTO);
         result.setPublishDate(new Date());
         TravelsTitle title = new TravelsTitle();
-        BeanUtils.copyProperties(result,title);
+        BeanUtils.copyProperties(result, title);
         title.setStatus(TravelStatusEnum.PUBLISH.getCode());
         int num = titleMapper.updateByPrimaryKeySelective(title);
         if (num > 0) {
             TravelsTitleDTO resultDTO = new TravelsTitleDTO();
-            BeanUtils.copyProperties(title,resultDTO);
+            BeanUtils.copyProperties(title, resultDTO);
             return resultDTO;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"发布失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "发布失败");
         }
     }
 
@@ -76,16 +76,16 @@ public class TravelServiceImpl implements TravelService {
         check(travelsTitleDTO);
         travelsTitleDTO.setCreatetime(new Date());
         TravelsTitle title = new TravelsTitle();
-        BeanUtils.copyProperties(travelsTitleDTO,title);
+        BeanUtils.copyProperties(travelsTitleDTO, title);
         title.setIsDeleted(YesOrNoEnum.N.getCode());
         title.setStatus(TravelStatusEnum.SAVE.getCode());
         int num = titleMapper.insert(title);
         if (num > 0) {
             TravelsTitleDTO result = new TravelsTitleDTO();
-            BeanUtils.copyProperties(title,result);
+            BeanUtils.copyProperties(title, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"保存失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "保存失败");
         }
     }
 
@@ -94,15 +94,15 @@ public class TravelServiceImpl implements TravelService {
         check(travelsTitleDTO);
         travelsTitleDTO.setCreatetime(new Date());
         TravelsTitle title = new TravelsTitle();
-        BeanUtils.copyProperties(travelsTitleDTO,title);
+        BeanUtils.copyProperties(travelsTitleDTO, title);
         title.setIsDeleted(YesOrNoEnum.N.getCode());
         int num = titleMapper.updateByPrimaryKeySelective(title);
         if (num > 0) {
             TravelsTitleDTO result = new TravelsTitleDTO();
-            BeanUtils.copyProperties(title,result);
+            BeanUtils.copyProperties(title, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"保存失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "保存失败");
         }
     }
 
@@ -116,7 +116,7 @@ public class TravelServiceImpl implements TravelService {
         List<TravelsTitleDTO> resultList = new ArrayList<>();
         for (TravelsTitle t : result) {
             TravelsTitleDTO titleDTO = new TravelsTitleDTO();
-            BeanUtils.copyProperties(t,titleDTO);
+            BeanUtils.copyProperties(t, titleDTO);
             UserDTO userDTO = new UserDTO();
             userDTO.setId(titleDTO.getCreator());
             UserDTO user = userService.findUser(userDTO);
@@ -132,14 +132,14 @@ public class TravelServiceImpl implements TravelService {
         Example example = new Example(Travels.class);
 
         QueryTravelsDTO query = request.getData();
-        addCondition(query,example);
+        addCondition(query, example);
 
-        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<TravelsTitle> list = titleMapper.selectByExample(example);
         List<TravelsTitleDTO> resultList = new ArrayList<>();
         for (TravelsTitle t : list) {
             TravelsTitleDTO titleDTO = new TravelsTitleDTO();
-            BeanUtils.copyProperties(t,titleDTO);
+            BeanUtils.copyProperties(t, titleDTO);
             UserDTO userDTO = new UserDTO();
             userDTO.setId(titleDTO.getCreator());
             UserDTO user = userService.findUser(userDTO);
@@ -162,7 +162,7 @@ public class TravelServiceImpl implements TravelService {
         TravelsDetailsDTO result = new TravelsDetailsDTO();
         TravelsTitle title = titleMapper.selectByPrimaryKey(travelsTitleDTO.getId());
         TravelsTitleDTO titleDTO = new TravelsTitleDTO();
-        BeanUtils.copyProperties(title,titleDTO);
+        BeanUtils.copyProperties(title, titleDTO);
         UserDTO userDTO = new UserDTO();
         userDTO.setId(titleDTO.getCreator());
         UserDTO user = userService.findUser(userDTO);
@@ -177,7 +177,7 @@ public class TravelServiceImpl implements TravelService {
         TravelTraffic travelTraffic = trafficMapper.selectOne(queryTraffic);
         if (Objects.nonNull(travelTraffic)) {
             TravelTrafficDTO travelTrafficDTO = new TravelTrafficDTO();
-            BeanUtils.copyProperties(travelTraffic,travelTrafficDTO);
+            BeanUtils.copyProperties(travelTraffic, travelTrafficDTO);
             result.setTraffic(travelTrafficDTO);
         }
 
@@ -239,14 +239,14 @@ public class TravelServiceImpl implements TravelService {
 
     private void check(TravelsTitleDTO request) {
         if (Objects.isNull(request.getTitleContent())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"景点地名不能为空！");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "景点地名不能为空！");
         }
     }
 
     private void addCondition(QueryTravelsDTO query, Example example) {
         Example.Criteria criteria = example.createCriteria();
         if (Objects.nonNull(query.getId())) {
-            criteria.andEqualTo("id",query.getId());
+            criteria.andEqualTo("id", query.getId());
         }
         if (Objects.nonNull(query.getName())) {
             criteria.andLike("name", SqlUtils.like(query.getName()));
@@ -255,23 +255,23 @@ public class TravelServiceImpl implements TravelService {
             criteria.andLike("address", SqlUtils.like(query.getAddress()));
         }
         if (Objects.nonNull(query.getBriefDesc())) {
-            criteria.andLike("briefDesc",SqlUtils.like(query.getBriefDesc()));
+            criteria.andLike("briefDesc", SqlUtils.like(query.getBriefDesc()));
         }
         if (Objects.nonNull(query.getCreator())) {
-            criteria.andEqualTo("creator",query.getCreator());
+            criteria.andEqualTo("creator", query.getCreator());
         }
         if (Objects.nonNull(query.getOpentimeStart()) && Objects.nonNull(query.getOpentimeEnd())) {
-            criteria.andBetween("opentime",query.getOpentimeStart(),query.getOpentimeEnd());
+            criteria.andBetween("opentime", query.getOpentimeStart(), query.getOpentimeEnd());
         }
         if (Objects.nonNull(query.getPublishDateStart()) && Objects.nonNull(query.getPublishDateEnd())) {
-            criteria.andBetween("publishDate",query.getPublishDateStart(),query.getPublishDateEnd());
+            criteria.andBetween("publishDate", query.getPublishDateStart(), query.getPublishDateEnd());
         }
         if (Objects.nonNull(query.getBudgetMax()) && Objects.nonNull(query.getBudgetMin())) {
-            criteria.andBetween("budge",query.getBudgetMin(),query.getBudgetMax());
+            criteria.andBetween("budge", query.getBudgetMin(), query.getBudgetMax());
         }
         if (Objects.nonNull(query.getInfo())) {
             List<Long> list = titleMapper.getTravelsIdList(query.getInfo());
-            criteria.andIn("id",list);
+            criteria.andIn("id", list);
         }
         criteria.andLike("isDeleted", YesOrNoEnum.N.getCode());
         example.setOrderByClause("publish_date DESC");

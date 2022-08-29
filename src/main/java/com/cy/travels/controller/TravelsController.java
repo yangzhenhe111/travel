@@ -49,7 +49,7 @@ public class TravelsController {
     @ApiOperation("分页获取游记列表")
     @PostMapping("/listPage")
     public ResultResponse<PageBean<TravelsDTO>> listPage(@RequestBody PageRequest<QueryTravelsDTO> request) {
-        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() < 1) {
             request.setPageNum(1);
         }
         if (Objects.isNull(request.getPageSize()) || request.getPageNum() < 1) {
@@ -75,7 +75,7 @@ public class TravelsController {
     public ResultResponse<TravelsDTO> saveOrUpdata(@RequestBody TravelsDTO travelsDTO) {
         //保存用户游记信息
         String userStr = RequestContextUtil.getRequestHeader("header-user");
-        User user = new Gson().fromJson(userStr,User.class);
+        User user = new Gson().fromJson(userStr, User.class);
         travelsDTO.setCreator(user.getId());
         TravelsDTO result = travelsService.saveOrUpdata(travelsDTO);
         return ResultResponse.ok(result);
@@ -94,10 +94,10 @@ public class TravelsController {
     public ResultResponse<TravelsDTO> getDetails(@RequestBody TravelsDTO travelsDTO) {
         TravelsDTO result = travelsService.getDetails(travelsDTO);
         //保存浏览历史
-        User user = new Gson().fromJson(RequestContextUtil.getRequestHeader("header-user"),User.class);
+        User user = new Gson().fromJson(RequestContextUtil.getRequestHeader("header-user"), User.class);
         if (!user.getId().equals(result.getCreator())) {
             TravelsHistoryDTO travelsHistoryDTO = new TravelsHistoryDTO();
-            BeanUtils.copyProperties(result,travelsHistoryDTO);
+            BeanUtils.copyProperties(result, travelsHistoryDTO);
             travelsHistoryDTO.setId(null);
             travelsHistoryDTO.setTravelsId(result.getId());
             travelsHistoryDTO.setUserId(user.getId());
@@ -106,7 +106,7 @@ public class TravelsController {
         return ResultResponse.ok(result);
     }
 
-//    @Deprecated
+    //    @Deprecated
     @ApiOperation("上传首页图片")
     @PostMapping("/uploadCover")
     public ResultResponse uploadCover(@RequestParam("file") MultipartFile file) {
@@ -117,17 +117,17 @@ public class TravelsController {
         //设置文件名
         int count = 0;
         //锁住的是同一对象
-        synchronized (this){
+        synchronized (this) {
             String string = (String) redisUtil.get("File-count");
             if (Objects.nonNull(string)) {
                 count = Integer.valueOf(string);
             }
             ++count;
-            redisUtil.set("File-count",count,1);
+            redisUtil.set("File-count", count, 1);
         }
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmmss");
         String fileType = file.getOriginalFilename().split("\\.")[1];
-        fileName = format.format(new Date())+"_"+count+"."+fileType;
+        fileName = format.format(new Date()) + "_" + count + "." + fileType;
         String filePath = "/upload/travels/cover/";
         File path = new File(filePath);
         if (!path.exists()) {
@@ -143,7 +143,7 @@ public class TravelsController {
             out.write(file.getBytes());
             out.close();
 //            return Result.ok("上传成功");
-            return ResultResponse.ok(Constant.BaseUrl+"static/travels/cover/" + fileName);
+            return ResultResponse.ok(Constant.BaseUrl + "static/travels/cover/" + fileName);
         } catch (IOException e) {
             System.out.println(e);
             return ResultResponse.fail("上传失败");

@@ -15,6 +15,7 @@ public class RequestContextUtil {
 
     /**
      * 获取request header中的值
+     *
      * @param name
      * @return
      */
@@ -26,6 +27,7 @@ public class RequestContextUtil {
 
     /**
      * 获取cookie的值
+     *
      * @param name
      * @return
      */
@@ -33,11 +35,11 @@ public class RequestContextUtil {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
                 .getRequest();
         Cookie[] cookies = request.getCookies();
-        if(null == cookies || cookies.length == 0) {
+        if (null == cookies || cookies.length == 0) {
             return null;
         }
-        for(Cookie c : cookies) {
-            if(c.getName().equals(name)) {
+        for (Cookie c : cookies) {
+            if (c.getName().equals(name)) {
                 return c.getValue();
             }
         }
@@ -46,6 +48,7 @@ public class RequestContextUtil {
 
     /**
      * 获取httpsession
+     *
      * @return
      */
     public static HttpSession getHttpSession() {
@@ -56,6 +59,7 @@ public class RequestContextUtil {
 
     /**
      * 获取客户端ip地址
+     *
      * @param request
      * @return
      */
@@ -63,7 +67,7 @@ public class RequestContextUtil {
         String ip = request.getHeader("x-forwarded-for");
         if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
             // 多次反向代理后会有多个ip值，第一个ip才是真实ip
-            if( ip.indexOf(",")!=-1 ){
+            if (ip.indexOf(",") != -1) {
                 ip = ip.split(",")[0];
             }
         }

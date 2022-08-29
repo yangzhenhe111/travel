@@ -44,7 +44,7 @@ public class TravelsHistoryServiceImpl implements TravelsHistoryService {
     public TravelsHistoryDTO save(TravelsHistoryDTO travelsHistoryDTO) {
 
         TravelsHistory travelsHistory = new TravelsHistory();
-        BeanUtils.copyProperties(travelsHistoryDTO,travelsHistory);
+        BeanUtils.copyProperties(travelsHistoryDTO, travelsHistory);
         travelsHistory.setCreateTime(new Date());
         travelsHistory.setIsDeleted(YesOrNoEnum.N.getCode());
         travelsHistoryMapper.insert(travelsHistory);
@@ -91,7 +91,7 @@ public class TravelsHistoryServiceImpl implements TravelsHistoryService {
         String userStr = RequestContextUtil.getRequestHeader("header-user");
         User user = new Gson().fromJson(userStr, User.class);
         query.setUserId(user.getId());
-        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<TravelsHistoryDTO> list = travelsHistoryMapper.getAllHistoryList(query);
         for (TravelsHistoryDTO travelsHistoryDTO : list) {
             UserDTO userDTO = new UserDTO();

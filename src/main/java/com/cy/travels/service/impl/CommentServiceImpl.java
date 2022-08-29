@@ -51,19 +51,20 @@ public class CommentServiceImpl implements CommentService {
     public int like(CommentDTO commentDTO) {
         check(commentDTO);
         Comment comment = commentMapper.selectByPrimaryKey(commentDTO.getId());
-        comment.setLikeNum(comment.getLikeNum()+1);
+        comment.setLikeNum(comment.getLikeNum() + 1);
 
         return commentMapper.updateByPrimaryKeySelective(comment);
     }
 
     private void check(CommentDTO request) {
         if (Objects.isNull(request.getId())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"ID不能为空！");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "ID不能为空！");
         }
     }
 
     /**
      * 对于获取评论，初始界面可只获取最简单的评论，随后点进去之后，还有二级评论列表
+     *
      * @param request
      * @return
      */
@@ -72,13 +73,13 @@ public class CommentServiceImpl implements CommentService {
 //        Example example = new Example(Comment.class);
         CommentDTO query = request.getData();
 //        addCondition(query,example);
-        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<CommentRespDTO> list = commentMapper.selectCommentListByTravelsId(query);
 
         List<CommentRespDTO> result = new ArrayList<>();
         for (CommentRespDTO c : list) {
             CommentRespDTO commentResp = new CommentRespDTO();
-            BeanUtils.copyProperties(c,commentResp);
+            BeanUtils.copyProperties(c, commentResp);
             //获取列表时，若是二级评论列表，则在相应评论上加上父级评论
             if (c.getParentId() != null) {
                 CommentRespDTO parentComment = commentMapper.selectParentComment(c.getParentId());
@@ -99,10 +100,10 @@ public class CommentServiceImpl implements CommentService {
     private void addCondition(CommentDTO query, Example example) {
         Example.Criteria criteria = example.createCriteria();
         if (Objects.nonNull(query.getId()) && query.getId() > 0) {
-            criteria.andEqualTo("id",query.getId());
+            criteria.andEqualTo("id", query.getId());
         }
         if (Objects.nonNull(query.getTravelsId()) && query.getTravelsId() > 0) {
-            criteria.andEqualTo("travelsId",query.getTravelsId());
+            criteria.andEqualTo("travelsId", query.getTravelsId());
         }
         if (Objects.nonNull(query.getParentId()) && query.getParentId() > 0) {
             criteria.andEqualTo("parentId", query.getParentId());

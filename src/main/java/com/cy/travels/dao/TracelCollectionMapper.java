@@ -10,6 +10,6 @@ import java.util.List;
 
 @Mapper
 public interface TracelCollectionMapper extends BaseMapper<TravelCollection> {
-//    List<TravelsTitleDTO> getAllCollectionList(TravelCollectionDTO query);
+    //    List<TravelsTitleDTO> getAllCollectionList(TravelCollectionDTO query);
     List<TravelCollectionDTO> getAllCollectionList(TravelCollectionDTO query);
 }

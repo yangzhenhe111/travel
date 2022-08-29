@@ -5,7 +5,7 @@ package com.cy.travels.enums;
  */
 public enum ResultEnum {
     //200
-    OK("200","请求成功"),
+    OK("200", "请求成功"),
     // 400
     BAD_REQUEST("400", "请求数据格式不正确!"),
     UNAUTHORIZED("401", "登录凭证过期!"),
@@ -17,7 +17,7 @@ public enum ResultEnum {
     // 未知异常
     UNKNOWN("10000", "未知异常!"),
     // 自定义
-    IS_NOT_NULL("10001","%s不能为空");
+    IS_NOT_NULL("10001", "%s不能为空");
 
     /**
      * 错误码

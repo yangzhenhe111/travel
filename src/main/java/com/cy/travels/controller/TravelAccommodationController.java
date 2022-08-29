@@ -54,7 +54,7 @@ public class TravelAccommodationController {
 
     @ApiOperation("上传图片")
     @PostMapping("/uploadImg")
-    public ResultResponse<String> uploadImg(@RequestParam("file")MultipartFile file) {
+    public ResultResponse<String> uploadImg(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return ResultResponse.fail("上传文件为null");
         }
@@ -74,7 +74,7 @@ public class TravelAccommodationController {
             out.write(file.getBytes());
             out.close();
 //            return Result.ok("上传成功");
-            return ResultResponse.ok(Constant.BaseUrl+"static/travels/accommodation/" + fileName);
+            return ResultResponse.ok(Constant.BaseUrl + "static/travels/accommodation/" + fileName);
         } catch (IOException e) {
             System.out.println(e);
             return ResultResponse.fail("上传失败");

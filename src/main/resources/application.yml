@@ -5,19 +5,19 @@ spring:
     active: local
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: travels*********20220401
-    password: travels*********20220401
-    url: jdbc:mysql://59.XXX.XXX.11:3306/travels?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
-#    #hikari数据源特性配置
-#    hikari:
-#      maximum-pool-size: 800 #最大连接数,默认值10.
-#      minimum-idle: 10 #最小空闲连接，默认值10.
-#      connection-timeout: 10000 #连接超时时间(毫秒),默认值30秒.
-#      #空闲连接超时时间，默认值600000(10分钟),只有空闲连接数大于最大连接数且空闲时间超过该值，才会被释放
-#      #如果大于等于 max-lifetime 且 max-lifetime>0,则会被重置为0.
-#      idle-timeout: 600000
-#      max-lifetime: 300 #连接最大存活时间,默认值30分钟.设置应该比mysql设置的超时时间短
-#      connection-test-query: select 1 #连接测试查询
+    username: travelsdevmysqluser20220401
+    password: travelsdevmysqlpassword20220401
+    url: jdbc:mysql://59.110.222.11:3306/travels?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    #hikari数据源特性配置
+  #    hikari:
+  #      maximum-pool-size: 800 #最大连接数,默认值10.
+  #      minimum-idle: 10 #最小空闲连接，默认值10.
+  #      connection-timeout: 10000 #连接超时时间(毫秒),默认值30秒.
+  #      #空闲连接超时时间，默认值600000(10分钟),只有空闲连接数大于最大连接数且空闲时间超过该值，才会被释放
+  #      #如果大于等于 max-lifetime 且 max-lifetime>0,则会被重置为0.
+  #      idle-timeout: 600000
+  #      max-lifetime: 300 #连接最大存活时间,默认值30分钟.设置应该比mysql设置的超时时间短
+  #      connection-test-query: select 1 #连接测试查询
   #dispatcherServlet自启动
   mvc:
     servlet:
@@ -28,9 +28,9 @@ spring:
       matching-strategy: ant_path_matcher
 
   #    static-path-pattern: /static/**
-#  web:
-#    resources:
-#      static-locations: classpath:/upload/,classpath/static/
+  #  web:
+  #    resources:
+  #      static-locations: classpath:/upload/,classpath/static/
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
@@ -40,8 +40,8 @@ spring:
       max-file-size: 200MB
       enabled: true
   redis:
-    host: 59.XXX.XXX.11
-    password: t*********0330
+    host: 59.110.222.11
+    password: travelsdev20220330
     database: 0
     port: 6379
     jedis:

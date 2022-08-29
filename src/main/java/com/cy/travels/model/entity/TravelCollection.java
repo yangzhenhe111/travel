@@ -11,11 +11,11 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table ( name ="travel_collection" )
+@Table(name = "travel_collection")
 @ApiModel
 public class TravelCollection extends BaseDO implements Serializable {
 
-    private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * id

@@ -29,7 +29,7 @@ public class TravelTrafficServiceImpl implements TravelTrafficService {
         if (Objects.isNull(condition.getId())) {
             //保存
             return save(condition);
-        }else {
+        } else {
             //修改
             return update(condition);
         }
@@ -38,25 +38,25 @@ public class TravelTrafficServiceImpl implements TravelTrafficService {
     private TravelTrafficDTO update(TravelTrafficDTO condition) {
         TravelTrafficDTO result = new TravelTrafficDTO();
         TravelTraffic Traffic = trafficMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Traffic,result);
+        BeanUtils.copyProperties(Traffic, result);
 
-        BeanUtils.copyProperties(condition,Traffic);
+        BeanUtils.copyProperties(condition, Traffic);
         int insert = trafficMapper.updateByPrimaryKeySelective(Traffic);
         if (insert > 0) {
-            BeanUtils.copyProperties(Traffic,result);
+            BeanUtils.copyProperties(Traffic, result);
         }
         return result;
     }
 
     private TravelTrafficDTO save(TravelTrafficDTO condition) {
         TravelTraffic Traffic = new TravelTraffic();
-        BeanUtils.copyProperties(condition,Traffic);
+        BeanUtils.copyProperties(condition, Traffic);
         int insert = trafficMapper.insert(Traffic);
         TravelTrafficDTO result = new TravelTrafficDTO();
-        BeanUtils.copyProperties(condition,result);
+        BeanUtils.copyProperties(condition, result);
         if (insert > 0) {
             TravelTraffic dbTraffic = trafficMapper.selectOne(Traffic);
-            BeanUtils.copyProperties(dbTraffic,result);
+            BeanUtils.copyProperties(dbTraffic, result);
         }
         return result;
     }
@@ -69,13 +69,13 @@ public class TravelTrafficServiceImpl implements TravelTrafficService {
         TravelTrafficDTO result = new TravelTrafficDTO();
         if (condition.getId() != null) {
             query.setId(condition.getId());
-        }else if (condition.getTitleId() != null){
+        } else if (condition.getTitleId() != null) {
             query.setTitleId(condition.getTitleId());
-        }else {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"id不能为null");
+        } else {
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "id不能为null");
         }
         dbTraffic = trafficMapper.selectOne(query);
-        BeanUtils.copyProperties(dbTraffic,result);
+        BeanUtils.copyProperties(dbTraffic, result);
         return result;
     }
 
@@ -83,12 +83,12 @@ public class TravelTrafficServiceImpl implements TravelTrafficService {
     public TravelTrafficDTO delete(TravelTrafficDTO condition) {
         TravelTrafficDTO result = new TravelTrafficDTO();
         TravelTraffic Traffic = trafficMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Traffic,result);
+        BeanUtils.copyProperties(Traffic, result);
 
         Traffic.setIsDeleted(YesOrNoEnum.Y.getCode());
         int insert = trafficMapper.updateByPrimaryKeySelective(Traffic);
         if (insert > 0) {
-            BeanUtils.copyProperties(Traffic,result);
+            BeanUtils.copyProperties(Traffic, result);
         }
         return result;
     }

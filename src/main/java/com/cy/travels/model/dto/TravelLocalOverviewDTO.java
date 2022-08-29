@@ -8,55 +8,55 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * @Description  TravelLocalOverview 
- * @Author  yzh
- * @Date 2022-02-09 
+ * @Description TravelLocalOverview
+ * @Author yzh
+ * @Date 2022-02-09
  */
 @Data
 @ApiModel
-public class TravelLocalOverviewDTO  implements Serializable {
+public class TravelLocalOverviewDTO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * id
-	 */
-	@ApiModelProperty("id")
-	private Long id;
+    /**
+     * id
+     */
+    @ApiModelProperty("id")
+    private Long id;
 
-	/**
-	 * 景点名称
-	 */
-	@Column
-	@ApiModelProperty( value="景点名称")
-	private String name;
+    /**
+     * 景点名称
+     */
+    @Column
+    @ApiModelProperty(value = "景点名称")
+    private String name;
 
-	/**
-	 * 所在地
-	 */
-	@Column
-	@ApiModelProperty( value="所在地")
-	private String address;
+    /**
+     * 所在地
+     */
+    @Column
+    @ApiModelProperty(value = "所在地")
+    private String address;
 
-	/**
-	 * 开放时间
-	 */
-	@Column
-	@ApiModelProperty( value="开放时间")
-	private String opentime;
+    /**
+     * 开放时间
+     */
+    @Column
+    @ApiModelProperty(value = "开放时间")
+    private String opentime;
 
-	/**
-	 * 简介
-	 */
-	@Column
-	@ApiModelProperty( value="简介")
-	private String briefDesc;
+    /**
+     * 简介
+     */
+    @Column
+    @ApiModelProperty(value = "简介")
+    private String briefDesc;
 
-	/**
-	 * 标题ID
-	 */
-	@ApiModelProperty("标题ID")
-	private Long titleId;
+    /**
+     * 标题ID
+     */
+    @ApiModelProperty("标题ID")
+    private Long titleId;
 
 
 }

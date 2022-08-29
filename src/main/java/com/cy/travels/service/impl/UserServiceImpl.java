@@ -46,65 +46,65 @@ public class UserServiceImpl implements UserService {
     public UserDTO findUser(UserDTO userDTO) {
         Example example = new Example(User.class);
         Example.Criteria criteria = example.createCriteria();
-        if (Objects.nonNull(userDTO.getId())) {
-            criteria.andEqualTo("id",userDTO.getId());
+        if (Objects.nonNull(userDTO.getId()) && userDTO.getId() > 0) {
+            criteria.andEqualTo("id", userDTO.getId());
         }
         if (Objects.nonNull(userDTO.getEmail())) {
-            criteria.andEqualTo("email",userDTO.getEmail());
+            criteria.andEqualTo("email", userDTO.getEmail());
         }
 //        if (Objects.nonNull(userDTO.getPassword())) {
 //            criteria.andEqualTo("password",userDTO.getPassword());
 //        }
         if (Objects.nonNull(userDTO.getUsername())) {
-            criteria.andEqualTo("username",userDTO.getUsername());
+            criteria.andEqualTo("username", userDTO.getUsername());
         }
         if (Objects.nonNull(userDTO.getTel())) {
-            criteria.andEqualTo("tel",userDTO.getTel());
+            criteria.andEqualTo("tel", userDTO.getTel());
         }
-        criteria.andEqualTo("isDeleted",YesOrNoEnum.N.getCode());
+        criteria.andEqualTo("isDeleted", YesOrNoEnum.N.getCode());
         User user = userMapper.selectOneByExample(example);
         UserDTO result = new UserDTO();
-        BeanUtils.copyProperties(user,result);
+        BeanUtils.copyProperties(user, result);
         return result;
     }
 
     @Override
     public int register(UserDTO userDTO) {
         if (Objects.isNull(userDTO.getPassword())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"password不能为null");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "password不能为null");
         }
         if (Objects.isNull(userDTO.getUsername())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"username不能为null");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "username不能为null");
         }
         if (Objects.isNull(userDTO.getTel())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"tel不能为null");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "tel不能为null");
         }
         if (Objects.isNull(userDTO.getEmail())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"email不能为null");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "email不能为null");
         }
 
         User user = new User();
-        BeanUtils.copyProperties(userDTO,user);
+        BeanUtils.copyProperties(userDTO, user);
         User query = new User();
         query.setIsDeleted(YesOrNoEnum.N.getCode());
         query.setUsername(userDTO.getUsername());
         int count = userMapper.selectCount(query);
         if (count > 0) {
-            throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"账号已存在");
+            throw new BusinessException(ResultEnum.UNKNOWN.getCode(), "账号已存在");
         }
         User query1 = new User();
         query1.setIsDeleted(YesOrNoEnum.N.getCode());
         query1.setEmail(userDTO.getEmail());
         int count1 = userMapper.selectCount(query1);
         if (count1 > 0) {
-            throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"邮箱已存在");
+            throw new BusinessException(ResultEnum.UNKNOWN.getCode(), "邮箱已存在");
         }
         User query2 = new User();
         query2.setIsDeleted(YesOrNoEnum.N.getCode());
         query2.setTel(userDTO.getTel());
         int count2 = userMapper.selectCount(query2);
         if (count2 > 0) {
-            throw new BusinessException(ResultEnum.UNKNOWN.getCode(),"手机号已存在");
+            throw new BusinessException(ResultEnum.UNKNOWN.getCode(), "手机号已存在");
         }
 
 //        String md5Password = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
@@ -120,22 +120,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO editSaveUserInfo(UserDTO userDTO) {
         User user = new User();
-        BeanUtils.copyProperties(userDTO,user);
+        BeanUtils.copyProperties(userDTO, user);
         int num = userMapper.updateByPrimaryKeySelective(user);
         if (num > 0) {
             User resultUser = userMapper.selectByPrimaryKey(user.getId());
             UserDTO result = new UserDTO();
-            BeanUtils.copyProperties(resultUser,result);
+            BeanUtils.copyProperties(resultUser, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"保存信息失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "保存信息失败");
         }
     }
 
     @Override
     public UserDTO updatePwd(UserDTO userDTO) {
         User user = new User();
-        BeanUtils.copyProperties(userDTO,user);
+        BeanUtils.copyProperties(userDTO, user);
         User userData = userMapper.selectByPrimaryKey(user.getId());
         userData.setPassword(user.getPassword());
         int num = userMapper.updateByPrimaryKeySelective(userData);
@@ -143,10 +143,10 @@ public class UserServiceImpl implements UserService {
         if (num > 0) {
             User resultUser = userMapper.selectByPrimaryKey(user.getId());
             UserDTO result = new UserDTO();
-            BeanUtils.copyProperties(resultUser,result);
+            BeanUtils.copyProperties(resultUser, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"更新密码失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "更新密码失败");
         }
     }
 
@@ -155,7 +155,7 @@ public class UserServiceImpl implements UserService {
 
         String userStr = RequestContextUtil.getRequestHeader("header-user");
 
-        User user = new Gson().fromJson(userStr,User.class);
+        User user = new Gson().fromJson(userStr, User.class);
         User userData = userMapper.selectByPrimaryKey(user.getId());
         userData.setHeadImg(userDTO.getHeadImg());
         int num = userMapper.updateByPrimaryKeySelective(userData);
@@ -163,10 +163,10 @@ public class UserServiceImpl implements UserService {
         if (num > 0) {
             User resultUser = userMapper.selectByPrimaryKey(user.getId());
             UserDTO result = new UserDTO();
-            BeanUtils.copyProperties(resultUser,result);
+            BeanUtils.copyProperties(resultUser, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"更新头像失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "更新头像失败");
         }
     }
 
@@ -177,13 +177,13 @@ public class UserServiceImpl implements UserService {
 //        userDTO.setPassword(md5Password);
         UserDTO findUser = this.findUser(userDTO);
         if (null != findUser) {
-            BeanUtils.copyProperties(findUser,user);
+            BeanUtils.copyProperties(findUser, user);
             user.setLoginStatus(LoginStatusEnum.LOGIN.getCode());
             int num = userMapper.updateByPrimaryKeySelective(user);
             if (num > 0) {
                 return findUser;
-            }else {
-                throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"修改登录状态错误");
+            } else {
+                throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "修改登录状态错误");
             }
         }
 
@@ -215,6 +215,6 @@ public class UserServiceImpl implements UserService {
                 return headerUser;
             }
         }
-        throw new BusinessException(ResultEnum.UNAUTHORIZED.getCode(),"用户还未登陆，请登录");
+        throw new BusinessException(ResultEnum.UNAUTHORIZED.getCode(), "用户还未登陆，请登录");
     }
 }

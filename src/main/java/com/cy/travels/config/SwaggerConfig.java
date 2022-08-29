@@ -48,7 +48,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .globalOperationParameters(addRequestHeader());
     }
 
-    private List<Parameter> addRequestHeader(){
+    private List<Parameter> addRequestHeader() {
         User user = new User();
         user.setId(1L);
         user.setUsername("zhangsan");

@@ -28,7 +28,7 @@ public class TravelDelicacyServiceImpl implements TravelDelicacyService {
         if (Objects.isNull(condition.getId())) {
             //保存
             return save(condition);
-        }else {
+        } else {
             //修改
             return update(condition);
         }
@@ -37,25 +37,25 @@ public class TravelDelicacyServiceImpl implements TravelDelicacyService {
     private TravelDelicacyDTO update(TravelDelicacyDTO condition) {
         TravelDelicacyDTO result = new TravelDelicacyDTO();
         TravelDelicacy Delicacy = delicacyMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Delicacy,result);
+        BeanUtils.copyProperties(Delicacy, result);
 
-        BeanUtils.copyProperties(condition,Delicacy);
+        BeanUtils.copyProperties(condition, Delicacy);
         int insert = delicacyMapper.updateByPrimaryKeySelective(Delicacy);
         if (insert > 0) {
-            BeanUtils.copyProperties(Delicacy,result);
+            BeanUtils.copyProperties(Delicacy, result);
         }
         return result;
     }
 
     private TravelDelicacyDTO save(TravelDelicacyDTO condition) {
         TravelDelicacy Delicacy = new TravelDelicacy();
-        BeanUtils.copyProperties(condition,Delicacy);
+        BeanUtils.copyProperties(condition, Delicacy);
         int insert = delicacyMapper.insert(Delicacy);
         TravelDelicacyDTO result = new TravelDelicacyDTO();
-        BeanUtils.copyProperties(condition,result);
+        BeanUtils.copyProperties(condition, result);
         if (insert > 0) {
             TravelDelicacy dbDelicacy = delicacyMapper.selectOne(Delicacy);
-            BeanUtils.copyProperties(dbDelicacy,result);
+            BeanUtils.copyProperties(dbDelicacy, result);
         }
         return result;
     }
@@ -68,13 +68,13 @@ public class TravelDelicacyServiceImpl implements TravelDelicacyService {
         TravelDelicacyDTO result = new TravelDelicacyDTO();
         if (condition.getId() != null) {
             query.setId(condition.getId());
-        }else if (condition.getTitleId() != null){
+        } else if (condition.getTitleId() != null) {
             query.setTitleId(condition.getTitleId());
-        }else {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"id不能为null");
+        } else {
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "id不能为null");
         }
         dbDelicacy = delicacyMapper.selectOne(query);
-        BeanUtils.copyProperties(dbDelicacy,result);
+        BeanUtils.copyProperties(dbDelicacy, result);
         return result;
     }
 
@@ -82,12 +82,12 @@ public class TravelDelicacyServiceImpl implements TravelDelicacyService {
     public TravelDelicacyDTO delete(TravelDelicacyDTO condition) {
         TravelDelicacyDTO result = new TravelDelicacyDTO();
         TravelDelicacy Delicacy = delicacyMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(Delicacy,result);
+        BeanUtils.copyProperties(Delicacy, result);
 
         Delicacy.setIsDeleted(YesOrNoEnum.Y.getCode());
         int insert = delicacyMapper.updateByPrimaryKeySelective(Delicacy);
         if (insert > 0) {
-            BeanUtils.copyProperties(Delicacy,result);
+            BeanUtils.copyProperties(Delicacy, result);
         }
         return result;
     }

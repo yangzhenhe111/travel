@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cy.travels.dao.TravelsTitleMapper">
-
     <select id="getTravelsIdList" resultType="java.lang.Long">
         select t.id
         from travels t
@@ -17,7 +16,7 @@
         or t.traffic_info like concat('%',concat(#{info},'%'))
         or t.resraurant_info like concat('%',concat(#{info},'%'))
         or t.hotel_info like concat('%',concat(#{info},'%'))
-<!--        or t.creator_name like concat('%',concat(#{info},'%'))-->
+        <!--        or t.creator_name like concat('%',concat(#{info},'%'))-->
 
         )
     </select>

@@ -51,11 +51,11 @@ public class UserController {
     @Autowired
     private RedisUtil redisUtil;
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ApiOperation("登录")
     public ResultResponse<UserDTO> login(@RequestParam("username") String username,
-                                @RequestParam("password") String password,
-                                HttpServletRequest request){
+                                         @RequestParam("password") String password,
+                                         HttpServletRequest request) {
 
         ServletContext context = request.getSession().getServletContext();
 
@@ -74,19 +74,19 @@ public class UserController {
 //                map.put("" + loginUser.getId(), gson.toJson(loginUser));
 //                context.setAttribute("usermap",map);
 //            }
-            if (Objects.isNull(redisUtil.get("user-"+loginUser.getId()))){
-                redisUtil.set("user-"+loginUser.getId(),loginUser);
+            if (Objects.isNull(redisUtil.get("user-" + loginUser.getId()))) {
+                redisUtil.set("user-" + loginUser.getId(), loginUser);
             }
             return ResultResponse.ok(loginUser);
-        }else {
+        } else {
             return ResultResponse.fail("用户名或者密码不正确");
         }
 
     }
 
-    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ApiOperation("注册用户")
-    public ResultResponse<UserDTO> register(@RequestBody UserDTO userDTO){
+    public ResultResponse<UserDTO> register(@RequestBody UserDTO userDTO) {
 
         try {
             int num = userService.register(userDTO);
@@ -94,12 +94,12 @@ public class UserController {
                 UserDTO request = new UserDTO();
                 request.setUsername(userDTO.getUsername());
                 return ResultResponse.ok(userService.findUser(request));
-            }else {
+            } else {
                 return ResultResponse.fail("信息已被注册");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return ResultResponse.fail("操作失败"+e.getMessage());
+            return ResultResponse.fail("操作失败" + e.getMessage());
         }
 
     }
@@ -108,12 +108,12 @@ public class UserController {
     //编辑保存用户信息
     @ApiOperation("编辑保存用户信息")
     @PostMapping("/editSaveUserInfo")
-    public ResultResponse<UserDTO> editSaveUserInfo(@RequestBody UserDTO userDTO){
+    public ResultResponse<UserDTO> editSaveUserInfo(@RequestBody UserDTO userDTO) {
         try {
             //注册顾客
             UserDTO userDTO1 = userService.editSaveUserInfo(userDTO);
             return ResultResponse.ok(userDTO1);
-        }catch (Exception e) {
+        } catch (Exception e) {
             return ResultResponse.fail(e.getMessage());
         }
 
@@ -122,11 +122,11 @@ public class UserController {
     //编辑保存用户信息
     @ApiOperation("更新密码")
     @PostMapping("/updatePwd")
-    public ResultResponse<UserDTO> updatePwd(@RequestBody UserDTO userDTO){
+    public ResultResponse<UserDTO> updatePwd(@RequestBody UserDTO userDTO) {
         try {
             UserDTO userDTO1 = userService.updatePwd(userDTO);
             return ResultResponse.ok(userDTO1);
-        }catch (Exception e) {
+        } catch (Exception e) {
             return ResultResponse.fail(e.getMessage());
         }
 
@@ -136,11 +136,11 @@ public class UserController {
     @Deprecated
     @ApiOperation("更新头像名称")
     @PostMapping("/updateHeadImg")
-    public ResultResponse<UserDTO> updateHeadImg(@RequestBody UserDTO userDTO){
+    public ResultResponse<UserDTO> updateHeadImg(@RequestBody UserDTO userDTO) {
         try {
             UserDTO userDTO1 = userService.updateHeadImg(userDTO);
             return ResultResponse.ok(userDTO1);
-        }catch (Exception e) {
+        } catch (Exception e) {
             return ResultResponse.fail(e.getMessage());
         }
 
@@ -149,7 +149,7 @@ public class UserController {
     //更新用户头像
     @ApiOperation("更新头像(现用)")
     @PostMapping("/uploadHeadImg")
-    public ResultResponse<UserDTO> uploadHeadImg(@RequestParam("file") MultipartFile file){
+    public ResultResponse<UserDTO> uploadHeadImg(@RequestParam("file") MultipartFile file) {
 
         if (file.isEmpty()) {
             return ResultResponse.fail("上传文件为null");
@@ -158,17 +158,17 @@ public class UserController {
         //设置文件名
         int count = 0;
         //锁住的是同一对象
-        synchronized (this){
+        synchronized (this) {
             String string = (String) redisUtil.get("File-count");
             if (Objects.nonNull(string)) {
                 count = Integer.valueOf(string);
             }
             ++count;
-            redisUtil.set("File-count",count,1);
+            redisUtil.set("File-count", count, 1);
         }
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmmss");
         String fileType = file.getOriginalFilename().split("\\.")[1];
-        fileName = format.format(new Date())+"_"+count+"."+fileType;
+        fileName = format.format(new Date()) + "_" + count + "." + fileType;
         String filePath = "/upload/user/";
         File path = new File(filePath);
         if (!path.exists()) {
@@ -184,12 +184,12 @@ public class UserController {
             out.write(file.getBytes());
             out.close();
 //            return Result.ok("上传成功");
-            String headImg = Constant.BaseUrl+ "static/user/" + fileName;
+            String headImg = Constant.BaseUrl + "static/user/" + fileName;
 
             UserDTO userDTO = new UserDTO();
             userDTO.setHeadImg(headImg);
             UserDTO userDTO1 = userService.updateHeadImg(userDTO);
-            return ResultResponse.ok(headImg,userDTO1);
+            return ResultResponse.ok(headImg, userDTO1);
         } catch (IOException e) {
             System.out.println(e);
             return ResultResponse.fail("上传失败");
@@ -197,13 +197,10 @@ public class UserController {
 
     }
 
-    
-    
-    
 
-    @RequestMapping(value = "/info",method = RequestMethod.POST)
+    @RequestMapping(value = "/info", method = RequestMethod.POST)
     @ApiOperation("获取用户信息")
-    public ResultResponse<UserDTO> info(@RequestBody UserDTO userDTO){
+    public ResultResponse<UserDTO> info(@RequestBody UserDTO userDTO) {
         UserDTO result = userService.findUser(userDTO);
         return ResultResponse.ok(result);
     }

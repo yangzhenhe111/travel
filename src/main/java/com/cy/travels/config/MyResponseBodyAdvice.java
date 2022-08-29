@@ -56,28 +56,28 @@ public class MyResponseBodyAdvice extends AbstractController implements Response
                                   ServerHttpResponse response) {
         log.info(body.toString());
         WebApplicationContext context = getWebApplicationContext();
-        Map<String, User> map = (Map)context.getServletContext().getAttribute("usermap");
+        Map<String, User> map = (Map) context.getServletContext().getAttribute("usermap");
         if (map == null) {
             map = new HashMap<>();
         }
         Gson gson = new Gson();
-        Result result = (Result)body;
+        Result result = (Result) body;
         //判断是否登陆成功
         if (ResultEnum.OK.getCode().equals(result.getStatus())) {
             //登录成功
-            log.info("login:"+ResultEnum.OK.getMsg());
-            User user = (User)result.getData();
+            log.info("login:" + ResultEnum.OK.getMsg());
+            User user = (User) result.getData();
             //检验是否是首次登录
-            if (map.get(user.getId()+"")== null) {
+            if (map.get(user.getId() + "") == null) {
                 //首次登录，保存
                 map.put("" + user.getId(), user);
-                context.getServletContext().setAttribute("usermap",map);
-            }else {
+                context.getServletContext().setAttribute("usermap", map);
+            } else {
                 //非首次登录，不必管
             }
             ResultResponse resultResponse = ResultResponse.ok(user);
-            body =gson.toJson(resultResponse);
-        }else {
+            body = gson.toJson(resultResponse);
+        } else {
             //登录失败，返回的异常信息不变
         }
 

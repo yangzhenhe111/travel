@@ -29,7 +29,7 @@ public class TravelLocalOverviewServiceImpl implements TravelLocalOverviewServic
         if (Objects.isNull(condition.getId())) {
             //保存
             return save(condition);
-        }else {
+        } else {
             //修改
             return update(condition);
         }
@@ -38,25 +38,25 @@ public class TravelLocalOverviewServiceImpl implements TravelLocalOverviewServic
     private TravelLocalOverviewDTO update(TravelLocalOverviewDTO condition) {
         TravelLocalOverviewDTO result = new TravelLocalOverviewDTO();
         TravelLocalOverview localOverview = localOverviewMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(localOverview,result);
+        BeanUtils.copyProperties(localOverview, result);
 
-        BeanUtils.copyProperties(condition,localOverview);
+        BeanUtils.copyProperties(condition, localOverview);
         int insert = localOverviewMapper.updateByPrimaryKeySelective(localOverview);
         if (insert > 0) {
-            BeanUtils.copyProperties(localOverview,result);
+            BeanUtils.copyProperties(localOverview, result);
         }
         return result;
     }
 
     private TravelLocalOverviewDTO save(TravelLocalOverviewDTO condition) {
         TravelLocalOverview localOverview = new TravelLocalOverview();
-        BeanUtils.copyProperties(condition,localOverview);
+        BeanUtils.copyProperties(condition, localOverview);
         int insert = localOverviewMapper.insert(localOverview);
         TravelLocalOverviewDTO result = new TravelLocalOverviewDTO();
-        BeanUtils.copyProperties(condition,result);
+        BeanUtils.copyProperties(condition, result);
         if (insert > 0) {
             TravelLocalOverview dbLocalOverview = localOverviewMapper.selectOne(localOverview);
-            BeanUtils.copyProperties(dbLocalOverview,result);
+            BeanUtils.copyProperties(dbLocalOverview, result);
         }
         return result;
     }
@@ -69,13 +69,13 @@ public class TravelLocalOverviewServiceImpl implements TravelLocalOverviewServic
         TravelLocalOverviewDTO result = new TravelLocalOverviewDTO();
         if (condition.getId() != null) {
             query.setId(condition.getId());
-        }else if (condition.getTitleId() != null){
+        } else if (condition.getTitleId() != null) {
             query.setTitleId(condition.getTitleId());
-        }else {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"id不能为null");
+        } else {
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "id不能为null");
         }
         dbLocalOverview = localOverviewMapper.selectOne(query);
-        BeanUtils.copyProperties(dbLocalOverview,result);
+        BeanUtils.copyProperties(dbLocalOverview, result);
         return result;
     }
 
@@ -83,12 +83,12 @@ public class TravelLocalOverviewServiceImpl implements TravelLocalOverviewServic
     public TravelLocalOverviewDTO delete(TravelLocalOverviewDTO condition) {
         TravelLocalOverviewDTO result = new TravelLocalOverviewDTO();
         TravelLocalOverview localOverview = localOverviewMapper.selectByPrimaryKey(condition.getId());
-        BeanUtils.copyProperties(localOverview,result);
+        BeanUtils.copyProperties(localOverview, result);
 
         localOverview.setIsDeleted(YesOrNoEnum.Y.getCode());
         int insert = localOverviewMapper.updateByPrimaryKeySelective(localOverview);
         if (insert > 0) {
-            BeanUtils.copyProperties(localOverview,result);
+            BeanUtils.copyProperties(localOverview, result);
         }
         return result;
     }

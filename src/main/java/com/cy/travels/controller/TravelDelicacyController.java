@@ -73,7 +73,7 @@ public class TravelDelicacyController {
             out.write(file.getBytes());
             out.close();
 //            return Result.ok("上传成功");
-            return ResultResponse.ok(Constant.BaseUrl+"static/travels/delicacy/" + fileName);
+            return ResultResponse.ok(Constant.BaseUrl + "static/travels/delicacy/" + fileName);
         } catch (IOException e) {
             System.out.println(e);
             return ResultResponse.fail("上传失败");

@@ -30,8 +30,10 @@ public class NoLoginInterceptor implements HandlerInterceptor {
 
     @Autowired
     private RedisUtil redisUtil;
+
     /**
      * 目标方法执行之前
+     *
      * @param request
      * @param response
      * @param handler
@@ -43,7 +45,7 @@ public class NoLoginInterceptor implements HandlerInterceptor {
 
         Gson gson = new Gson();
 
-        log.info("[content-type]:"+ request.getHeader("content-type"));
+        log.info("[content-type]:" + request.getHeader("content-type"));
         log.info("[method]:" + request.getMethod());
         log.info("[path]:" + request.getPathInfo());
         log.info("[URL]:" + request.getRequestURL());
@@ -53,7 +55,7 @@ public class NoLoginInterceptor implements HandlerInterceptor {
         //检查请求header的信息是否存在
         if (Objects.nonNull(header)) {
             //存在
-            User headerUser = gson.fromJson(header,User.class);
+            User headerUser = gson.fromJson(header, User.class);
 //            Map<String,String> usermap = (Map) request.getSession().getServletContext().getAttribute("usermap");
 //            //根据请求头获取session保存的usermap,检查登录信息是否存在
 //            /**
@@ -70,14 +72,14 @@ public class NoLoginInterceptor implements HandlerInterceptor {
 //            }
 //            String userStr = usermap.get(headerUser.getId()+"");
 //            User sessionUser = gson.fromJson(userStr,User.class);
-            LinkedHashMap<String,Object> redisUser = (LinkedHashMap<String, Object>) redisUtil.get("user-" + headerUser.getId());
-            log.info("[redis]:"+redisUser.toString());
+            LinkedHashMap<String, Object> redisUser = (LinkedHashMap<String, Object>) redisUtil.get("user-" + headerUser.getId());
+            log.info("[redis]:" + redisUser.toString());
 
             String redisUserId = String.valueOf(redisUser.get("id"));
             String headerUserId = String.valueOf(headerUser.getId());
             if (redisUserId.equals(headerUserId)) {
                 return true;
-            }else {
+            } else {
                 //不存在
             }
 //            //获取保存在session的信息，判断是否存在
@@ -87,16 +89,17 @@ public class NoLoginInterceptor implements HandlerInterceptor {
 //            }else {
 //                //不存在
 //            }
-        }else {
+        } else {
             //不存在，基本不可能
         }
         response.setHeader("Content-type", "text/html;charset=UTF-8");
-        response.getWriter().print(Result.fail(ResultEnum.UNAUTHORIZED.getCode(),"用户还未登陆，请登录"));
+        response.getWriter().print(Result.fail(ResultEnum.UNAUTHORIZED.getCode(), "用户还未登陆，请登录"));
         return false;
     }
 
     /**
      * 目标方法执行之后
+     *
      * @param request
      * @param response
      * @param handler

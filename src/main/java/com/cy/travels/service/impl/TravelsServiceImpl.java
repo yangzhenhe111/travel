@@ -45,12 +45,12 @@ public class TravelsServiceImpl implements TravelsService {
         TravelsDTO result = this.saveOrUpdata(travelsDTO);
         result.setPublishDate(new Date());
         Travels travels = new Travels();
-        BeanUtils.copyProperties(result,travels);
+        BeanUtils.copyProperties(result, travels);
         int num = travelsMapper.updateByPrimaryKeySelective(travels);
 //        if (num > 0) {
-            TravelsDTO resultDTO = new TravelsDTO();
-            BeanUtils.copyProperties(travels,resultDTO);
-            return resultDTO;
+        TravelsDTO resultDTO = new TravelsDTO();
+        BeanUtils.copyProperties(travels, resultDTO);
+        return resultDTO;
 //        }else {
 //            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"发布失败");
 //        }
@@ -60,18 +60,19 @@ public class TravelsServiceImpl implements TravelsService {
     public TravelsDTO save(TravelsDTO travelsDTO) {
         this.check(travelsDTO);
         travelsDTO.setCreatetime(new Date());
+        travelsDTO.setPublishDate(new Date());
         Travels travels = new Travels();
-        BeanUtils.copyProperties(travelsDTO,travels);
+        BeanUtils.copyProperties(travelsDTO, travels);
         User currentUser = userService.getCurrentUser();
         travels.setCreator(currentUser.getId());
         travels.setIsDeleted(YesOrNoEnum.N.getCode());
         int num = travelsMapper.insert(travels);
         if (num > 0) {
             TravelsDTO result = new TravelsDTO();
-            BeanUtils.copyProperties(travels,result);
+            BeanUtils.copyProperties(travels, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"保存失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "保存失败");
         }
     }
 
@@ -79,20 +80,20 @@ public class TravelsServiceImpl implements TravelsService {
     public TravelsDTO updata(TravelsDTO travelsDTO) {
         this.check(travelsDTO);
         Travels travels = new Travels();
-        BeanUtils.copyProperties(travelsDTO,travels);
+        BeanUtils.copyProperties(travelsDTO, travels);
         int num = travelsMapper.updateByPrimaryKeySelective(travels);
         if (num > 0) {
             TravelsDTO result = new TravelsDTO();
-            BeanUtils.copyProperties(travels,result);
+            BeanUtils.copyProperties(travels, result);
             return result;
-        }else {
-            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(),"修改失败");
+        } else {
+            throw new BusinessException(ResultEnum.INTERNAL_SERVER_ERROR.getCode(), "修改失败");
         }
     }
 
     private void check(TravelsDTO request) {
         if (Objects.isNull(request.getName())) {
-            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(),"景点地名不能为空！");
+            throw new BusinessException(ResultEnum.IS_NOT_NULL.getCode(), "景点地名不能为空！");
         }
     }
 
@@ -103,11 +104,12 @@ public class TravelsServiceImpl implements TravelsService {
         Example.Criteria criteria = example.createCriteria();
         criteria.andLike("isDeleted", YesOrNoEnum.N.getCode());
         example.setOrderByClause("publish_date DESC");
+        PageHelper.startPage(1, 13);
         List<Travels> result = travelsMapper.selectByExample(example);
         List<TravelsDTO> resultList = new ArrayList<>();
         for (Travels t : result) {
             TravelsDTO travelsDTO = new TravelsDTO();
-            BeanUtils.copyProperties(t,travelsDTO);
+            BeanUtils.copyProperties(t, travelsDTO);
             UserDTO userDTO = new UserDTO();
             userDTO.setId(travelsDTO.getCreator());
             UserDTO user = userService.findUser(userDTO);
@@ -133,7 +135,7 @@ public class TravelsServiceImpl implements TravelsService {
 //            criteria.andLike("briefDesc",SqlUtils.like(query.getBriefDesc()));
 //        }
         if (Objects.nonNull(query.getCreator()) && query.getCreator() > 0) {
-            criteria.andEqualTo("creator",query.getCreator());
+            criteria.andEqualTo("creator", query.getCreator());
         }
 //        if (Objects.nonNull(query.getOpentimeStart()) && Objects.nonNull(query.getOpentimeEnd())) {
 //            criteria.andBetween("opentime",query.getOpentimeStart(),query.getOpentimeEnd());
@@ -146,7 +148,7 @@ public class TravelsServiceImpl implements TravelsService {
 //        }
         if (Objects.nonNull(query.getInfo())) {
             List<Long> list = travelsMapper.getTravelsIdList(query.getInfo());
-            criteria.andIn("id",list);
+            criteria.andIn("id", list);
         }
         criteria.andLike("isDeleted", YesOrNoEnum.N.getCode());
         example.setOrderByClause("publish_date DESC");
@@ -158,14 +160,14 @@ public class TravelsServiceImpl implements TravelsService {
         Example example = new Example(Travels.class);
 
         QueryTravelsDTO query = request.getData();
-        addCondition(query,example);
+        addCondition(query, example);
 
-        PageHelper.startPage(request.getPageNum(),request.getPageSize());
+        PageHelper.startPage(request.getPageNum(), request.getPageSize());
         List<Travels> list = travelsMapper.selectByExample(example);
         List<TravelsDTO> resultList = new ArrayList<>();
         for (Travels t : list) {
             TravelsDTO travelsDTO = new TravelsDTO();
-            BeanUtils.copyProperties(t,travelsDTO);
+            BeanUtils.copyProperties(t, travelsDTO);
             UserDTO userDTO = new UserDTO();
             userDTO.setId(travelsDTO.getCreator());
             UserDTO user = userService.findUser(userDTO);
@@ -188,7 +190,7 @@ public class TravelsServiceImpl implements TravelsService {
 
         Travels travels = travelsMapper.selectByPrimaryKey(travelsDTO.getId());
         TravelsDTO resultDTO = new TravelsDTO();
-        BeanUtils.copyProperties(travels,resultDTO);
+        BeanUtils.copyProperties(travels, resultDTO);
         UserDTO userDTO = new UserDTO();
         userDTO.setId(resultDTO.getCreator());
         UserDTO user = userService.findUser(userDTO);

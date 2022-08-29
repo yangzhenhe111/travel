@@ -38,7 +38,7 @@ public class TravelController {
     @ApiOperation("分页获取游记列表")
     @PostMapping("/listPage")
     public ResultResponse<PageBean<TravelsTitleDTO>> listPage(@RequestBody PageRequest<QueryTravelsDTO> request) {
-        if (Objects.isNull(request.getPageNum()) || request.getPageNum() <1) {
+        if (Objects.isNull(request.getPageNum()) || request.getPageNum() < 1) {
             request.setPageNum(1);
         }
         if (Objects.isNull(request.getPageSize()) || request.getPageNum() < 1) {
@@ -61,7 +61,7 @@ public class TravelController {
 
         //保存用户游记信息
         String userStr = RequestContextUtil.getRequestHeader("header-user");
-        User user = new Gson().fromJson(userStr,User.class);
+        User user = new Gson().fromJson(userStr, User.class);
         condition.setCreator(user.getId());
         TravelsTitleDTO result = travelService.saveOrUpdata(condition);
         return ResultResponse.ok(result);
@@ -80,10 +80,10 @@ public class TravelController {
     public ResultResponse<TravelsDetailsDTO> getDetails(@RequestBody TravelsTitleDTO condition) {
         TravelsDetailsDTO result = travelService.getDetails(condition);
         //保存浏览历史
-        User user = new Gson().fromJson(RequestContextUtil.getRequestHeader("header-user"),User.class);
+        User user = new Gson().fromJson(RequestContextUtil.getRequestHeader("header-user"), User.class);
         if (!user.getId().equals(result.getTitle().getCreator())) {
             TravelsHistoryDTO travelsHistoryDTO = new TravelsHistoryDTO();
-            BeanUtils.copyProperties(result,travelsHistoryDTO);
+            BeanUtils.copyProperties(result, travelsHistoryDTO);
             travelsHistoryDTO.setId(null);
             travelsHistoryDTO.setTravelsId(result.getTitle().getId());
             travelsHistoryDTO.setUserId(user.getId());
@@ -122,11 +122,12 @@ public class TravelController {
 
 
     }
+
     @ApiOperation("收藏游记，传来ID即可")
     @PostMapping("/collect")
     public ResultResponse<TravelsTitleDTO> collect(@RequestBody TravelsTitleDTO condition) {
         TravelsTitleDTO result = travelService.collect(condition);
-        return ResultResponse.ok("收藏成功",result);
+        return ResultResponse.ok("收藏成功", result);
     }
 
     /**

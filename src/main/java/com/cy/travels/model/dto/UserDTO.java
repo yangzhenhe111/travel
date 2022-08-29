@@ -11,62 +11,74 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Description  User 
- * @Author  yzh
- * @Date 2022-02-16 
+ * @Description User
+ * @Author yzh
+ * @Date 2022-02-16
  */
 @Data
 @ApiModel
 public class UserDTO implements Serializable {
 
-	private static final long serialVersionUID =  1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * ID
-	 */
-	private Long id;
+    /**
+     * ID
+     */
+    private Long id;
 
-	/**
-	 * 用户名
-	 */
-	@ApiModelProperty( value="用户名")
-	private String username;
+    /**
+     * 用户名
+     */
+    @ApiModelProperty(value = "用户名")
+    private String username;
 
-	/**
-	 * 邮箱
-	 */
-	@ApiModelProperty( value="邮箱")
-	private String email;
+    /**
+     * 邮箱
+     */
+    @ApiModelProperty(value = "邮箱")
+    private String email;
 
-	/**
-	 * 手机号
-	 */
-	@ApiModelProperty( value="手机号")
-	private String tel;
+    /**
+     * 手机号
+     */
+    @ApiModelProperty(value = "手机号")
+    private String tel;
 
-	/**
-	 * 总点数
-	 */
-	@ApiModelProperty( value="总点数")
-	private Long totalPoints;
+    /**
+     * 总点数
+     */
+    @ApiModelProperty(value = "总点数")
+    private Long totalPoints;
 
-	/**
-	 * 密码
-	 */
-	@ApiModelProperty( value="密码")
-	private String password;
+    /**
+     * 密码
+     */
+    @ApiModelProperty(value = "密码")
+    private String password;
 
-	/**
-	 * 头像名
-	 */
-	@ApiModelProperty( value="头像名")
-	private String headImg;
+    /**
+     * 头像名
+     */
+    @ApiModelProperty(value = "头像名")
+    private String headImg;
 
-	/**
-	 * 创建时间
-	 */
-	@ApiModelProperty( value="创建时间")
-	private Date createtime;
+    /**
+     * 创建时间
+     */
+    @ApiModelProperty(value = "创建时间")
+    private Date createtime;
+
+    /**
+     * 性别
+     */
+    @Column
+    private String sex;
+
+    /**
+     * 签名
+     */
+    @Column
+    private String signature;
 
 //	public void setId(Long id) {
 //		this.id = Long.parseLong(id.toString());

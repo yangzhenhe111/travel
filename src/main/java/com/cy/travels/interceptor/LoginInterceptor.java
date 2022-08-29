@@ -22,6 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Autowired
     private RedisUtil redisUtil;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -43,8 +44,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 //            context.put("" + user.getId(), user);
 //            request.getSession().getServletContext().setAttribute("usermap",map);
 //        }
-        if (Objects.isNull(redisUtil.get("1"))){
-            redisUtil.set("user-1",user);
+        if (Objects.isNull(redisUtil.get("1"))) {
+            redisUtil.set("user-1", user);
         }
         return true;
     }
@@ -58,33 +59,33 @@ public class LoginInterceptor implements HandlerInterceptor {
     }
 
 
-    private void addHeader(HttpServletRequest request, Map<String,String> headerMap){
-        if (headerMap==null||headerMap.isEmpty()){
+    private void addHeader(HttpServletRequest request, Map<String, String> headerMap) {
+        if (headerMap == null || headerMap.isEmpty()) {
             return;
         }
 
-        Class<? extends HttpServletRequest> c=request.getClass();
+        Class<? extends HttpServletRequest> c = request.getClass();
         System.out.println(c.getName());
 
-        try{
-            Field requestField=c.getDeclaredField("request");
+        try {
+            Field requestField = c.getDeclaredField("request");
             requestField.setAccessible(true);
 
-            Object o=requestField.get(request);
-            Field coyoteRequest=o.getClass().getDeclaredField("coyoteRequest");
+            Object o = requestField.get(request);
+            Field coyoteRequest = o.getClass().getDeclaredField("coyoteRequest");
             coyoteRequest.setAccessible(true);
 
-            Object o2=coyoteRequest.get(o);
-            Field headers=o2.getClass().getDeclaredField("headers");
+            Object o2 = coyoteRequest.get(o);
+            Field headers = o2.getClass().getDeclaredField("headers");
             headers.setAccessible(true);
 
-            MimeHeaders mimeHeaders=(MimeHeaders) headers.get(o2);
-            for (Map.Entry<String,String> entry:headerMap.entrySet()){
+            MimeHeaders mimeHeaders = (MimeHeaders) headers.get(o2);
+            for (Map.Entry<String, String> entry : headerMap.entrySet()) {
                 mimeHeaders.removeHeader(entry.getKey());
                 mimeHeaders.addValue(entry.getKey()).setString(entry.getValue());
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
