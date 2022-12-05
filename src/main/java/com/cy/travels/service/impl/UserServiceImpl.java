@@ -13,13 +13,11 @@ import com.cy.travels.utils.RequestContextUtil;
 import com.cy.travels.utils.dto.Result;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import org.bouncycastle.crypto.digests.MD5Digest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.servlet.http.HttpServletRequest;
