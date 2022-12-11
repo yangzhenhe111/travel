@@ -13,7 +13,7 @@
     <version>0.0.1</version>
     <name>test</name>
     <properties>
-        <java.version>11.0.17</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <!--        <dependency>-->
